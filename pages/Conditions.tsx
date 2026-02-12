@@ -13,7 +13,11 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
 
   return (
     <>
-      <SEOHead title={t.seo.conditionsTitle} description={t.seo.conditionsDesc} />
+      <SEOHead 
+        title={t.seo.conditionsTitle} 
+        description={t.seo.conditionsDesc} 
+        keywords={lang === 'fr' ? 'hernie discale, sciatique, arthrose, paralysie faciale, AVC, rhumatologie, lombalgie, cervicalgie, traumatologie sport, kiné dos, kiné articulations, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné Casablanca' : 'الترويض, الترويض الطبي, ألم الظهر, ألم السياتيك, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
+      />
       
       <div className="bg-medical-50 py-12">
         <div className="container mx-auto px-4 text-center">

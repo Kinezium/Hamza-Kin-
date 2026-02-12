@@ -14,7 +14,11 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
 
   return (
     <>
-      <SEOHead title={seo.contactTitle} description={seo.contactDesc} />
+         <SEOHead 
+            title={seo.contactTitle} 
+            description={seo.contactDesc} 
+            keywords={lang === 'fr' ? 'contact kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire, kiné bébé' : 'اتصال الترويض الطبي, الترويض, الترويض الطبي, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
+         />
       
       <div className="bg-gray-50 min-h-screen py-16">
         <div className="container mx-auto px-4">

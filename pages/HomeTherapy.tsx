@@ -14,7 +14,11 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
 
   return (
     <>
-      <SEOHead title={`Kiné à Domicile Casablanca | ${seo.homeTitle}`} description={t.description} />
+         <SEOHead 
+            title={`Kiné à Domicile Casablanca | ${seo.homeTitle}`} 
+            description={t.description} 
+            keywords={lang === 'fr' ? 'kiné à domicile, kiné Casablanca, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire, kiné bébé, kiné sport, kiné orthopédique, kiné fonctionnelle' : 'الترويض المنزلي, الترويض الطبي, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات, علاج التنفس, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم'}
+         />
       
       <div className="relative bg-medical-50 py-20">
          <div className="container mx-auto px-4 flex flex-col items-center text-center">
@@ -34,11 +38,12 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
       <div className="container mx-auto px-4 py-20">
          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-               <img 
-                 src="https://picsum.photos/id/1025/600/600" 
-                 alt="Kiné à domicile" 
-                 className="rounded-3xl shadow-2xl"
-               />
+                      <img 
+                         src="https://picsum.photos/id/1025/600/600" 
+                         alt="Kiné à domicile" 
+                         className="rounded-3xl shadow-2xl" 
+                         loading="lazy"
+                      />
             </div>
             <div>
                <h2 className="text-3xl font-bold text-slate-900 mb-8">

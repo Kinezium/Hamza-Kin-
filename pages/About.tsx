@@ -12,7 +12,11 @@ const About: React.FC<AboutProps> = ({ lang }) => {
   
   return (
     <>
-      <SEOHead title={`À Propos | ${CONTENT[lang].seo.homeTitle}`} description={t.mission} />
+      <SEOHead 
+        title={`À Propos | ${CONTENT[lang].seo.homeTitle}`} 
+        description={t.mission} 
+        keywords={lang === 'fr' ? 'centre kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire, kiné bébé' : 'مركز الترويض الطبي, الترويض, الترويض الطبي, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
+      />
       
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
@@ -34,7 +38,7 @@ const About: React.FC<AboutProps> = ({ lang }) => {
               {/* Doctor / Staff Card Placeholder */}
               <div className="bg-white p-6 rounded-2xl shadow-md flex items-center gap-6">
                  <div className="w-24 h-24 bg-gray-200 rounded-full shrink-0 overflow-hidden">
-                    <img src="https://picsum.photos/id/1005/200/200" alt="Doctor" className="w-full h-full object-cover" />
+                    <img src="https://picsum.photos/id/1005/200/200" alt="Doctor" className="w-full h-full object-cover" loading="lazy" />
                  </div>
                  <div>
                     <h4 className="font-bold text-lg">Dr. Chnider</h4>
@@ -45,7 +49,7 @@ const About: React.FC<AboutProps> = ({ lang }) => {
               
                <div className="bg-white p-6 rounded-2xl shadow-md flex items-center gap-6">
                  <div className="w-24 h-24 bg-gray-200 rounded-full shrink-0 overflow-hidden">
-                    <img src="https://picsum.photos/id/1027/200/200" alt="Team" className="w-full h-full object-cover" />
+                    <img src="https://picsum.photos/id/1027/200/200" alt="Team" className="w-full h-full object-cover" loading="lazy" />
                  </div>
                  <div>
                     <h4 className="font-bold text-lg">{lang === 'fr' ? 'L\'Équipe' : 'الفريق'}</h4>

@@ -28,7 +28,11 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
   
   return (
     <>
-      <SEOHead title={t.seo.homeTitle} description={t.seo.homeDesc} />
+      <SEOHead 
+        title={t.seo.homeTitle} 
+        description={t.seo.homeDesc} 
+        keywords={lang === 'fr' ? 'kiné autour de moi, kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné bébé, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire' : 'الترويض, الترويض الطبي, ألم الظهر, ألم السياتيك, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
+      />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-medical-50 to-white pt-12 pb-20 overflow-hidden">
@@ -64,7 +68,8 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
               <img 
                 src="https://picsum.photos/id/1062/800/600" 
                 alt="Physical Therapy Session" 
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover" 
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
                  <div className="text-white">

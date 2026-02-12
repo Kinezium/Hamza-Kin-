@@ -24,7 +24,11 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
 
   return (
     <>
-      <SEOHead title={t.seo.servicesTitle} description={t.seo.servicesDesc} />
+      <SEOHead 
+        title={t.seo.servicesTitle} 
+        description={t.seo.servicesDesc} 
+        keywords={lang === 'fr' ? 'kiné orthopédique, kiné fonctionnelle, kiné respiratoire, hijama médicale, kiné à domicile, kiné sport, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné bébé, kiné Casablanca' : 'الترويض, الترويض الطبي, علاج العظام, علاج العضلات, علاج التنفس, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم'}
+      />
       
       <div className="bg-medical-700 text-white py-16">
         <div className="container mx-auto px-4 text-center">
@@ -66,7 +70,8 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
                    <img 
                     src={`https://picsum.photos/600/400?random=${index}`} 
                     alt={service.title} 
-                    className="rounded-3xl shadow-lg w-full h-64 object-cover"
+                    className="rounded-3xl shadow-lg w-full h-64 object-cover" 
+                    loading="lazy"
                    />
                 </div>
               </div>
