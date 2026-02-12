@@ -53,7 +53,7 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
                     {lang === 'fr' ? 'Consultation recommandée' : 'ينصح بالاستشارة'}
                  </span>
                  <a href={`tel:${PHONE_NUMBER}`} className="text-medical-600 font-bold hover:underline">
-                    {lang === 'fr' ? 'Réserver' : 'حجز'} ->
+                    {lang === 'fr' ? 'Réserver →' : 'حجز ←'}
                  </a>
               </div>
             </div>
