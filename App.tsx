@@ -7,6 +7,7 @@ import Services from './pages/Services';
 import HomeTherapy from './pages/HomeTherapy';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
 import StickyCTA from './components/StickyCTA';
 import { Language } from './types';
 
@@ -39,6 +40,7 @@ const App: React.FC = () => {
           <Route path="/home-therapy" element={<HomeTherapy lang={lang} />} />
           <Route path="/about" element={<About lang={lang} />} />
           <Route path="/contact" element={<Contact lang={lang} />} />
+          <Route path="/blog" element={<Blog lang={lang} />} />
         </Routes>
       </Layout>
       <StickyCTA lang={lang} />

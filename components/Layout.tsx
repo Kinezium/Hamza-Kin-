@@ -67,6 +67,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <NavLink to="/conditions" className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.conditions}</NavLink>
               <NavLink to="/services" className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.services}</NavLink>
               <NavLink to="/home-therapy" className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.homeTherapy}</NavLink>
+              <NavLink to="/blog" className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{lang === 'fr' ? 'Blog' : 'مدونة'}</NavLink>
               <NavLink to="/about" className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.about}</NavLink>
               <NavLink to="/contact" className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.contact}</NavLink>
               
@@ -103,6 +104,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <Link to="/conditions" onClick={closeMenu} className={linkClass('/conditions')}>{t.conditions}</Link>
               <Link to="/services" onClick={closeMenu} className={linkClass('/services')}>{t.services}</Link>
               <Link to="/home-therapy" onClick={closeMenu} className={linkClass('/home-therapy')}>{t.homeTherapy}</Link>
+              <Link to="/blog" onClick={closeMenu} className={linkClass('/blog')}>{lang === 'fr' ? 'Blog' : 'مدونة'}</Link>
               <Link to="/about" onClick={closeMenu} className={linkClass('/about')}>{t.about}</Link>
               <Link to="/contact" onClick={closeMenu} className={linkClass('/contact')}>{t.contact}</Link>
               <div className="pt-4 pb-2">
@@ -138,6 +140,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                 <li><Link to="/conditions" className="hover:text-white">{t.conditions}</Link></li>
                 <li><Link to="/services" className="hover:text-white">{t.services}</Link></li>
                 <li><Link to="/home-therapy" className="hover:text-white">{t.homeTherapy}</Link></li>
+                <li><Link to="/blog" className="hover:text-white">{lang === 'fr' ? 'Blog' : 'مدونة'}</Link></li>
               </ul>
             </div>
             <div>
