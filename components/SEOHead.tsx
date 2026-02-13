@@ -28,6 +28,52 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       }
       metaKeywords.setAttribute('content', keywords);
     }
+
+    // Add favicon
+    let favicon = document.querySelector('link[rel="icon"]');
+    if (!favicon) {
+      favicon = document.createElement('link');
+      favicon.setAttribute('rel', 'icon');
+      document.head.appendChild(favicon);
+    }
+    favicon.setAttribute('type', 'image/png');
+    favicon.setAttribute('href', 'https://blogger.googleusercontent.com/img/a/AVvXsEgqPIgD3IXtaNPpdHEp5AS2U57DzDN6r4cJ4OPYBA_wWrGxsTgFiAnM3yiO92FYXyz8_ovkiPQFLrpiTRnsAnyM2uIzqP2gf_lipcetIF8-pv5ok0sO2Jtl_Vu9SU79w1AsXpaiJuTjnsA8rUkUF5cr3fBJR8-fEDQWnJnNHa-TLWkxj0Fbt8JkIby0=s16000');
+
+    // Add canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', window.location.origin + window.location.pathname);
+
+    // Add Schema.org MedicalBusiness structured data
+    let script = document.querySelector('script[type="application/ld+json"][data-schema="medicalbusiness"]');
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-schema', 'medicalbusiness');
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'MedicalBusiness',
+      'name': title,
+      'description': description,
+      'url': window.location.origin,
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Casablanca',
+        'addressRegion': 'Grand Casablanca',
+        'addressCountry': 'MA',
+        'streetAddress': 'Sbata'
+      },
+      'areaServed': 'Casablanca',
+      'image': 'https://kinesitherapie.clinaxis.ma/cover.jpg',
+      'telephone': '+212600000000',
+      'priceRange': '$$'
+    });
   }, [title, description, keywords]);
   return null;
 };

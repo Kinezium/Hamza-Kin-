@@ -31,8 +31,19 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
       <SEOHead 
         title={t.seo.homeTitle} 
         description={t.seo.homeDesc} 
-        keywords={lang === 'fr' ? 'kiné autour de moi, kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné bébé, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire' : 'الترويض, الترويض الطبي, ألم الظهر, ألم السياتيك, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
+        keywords={lang === 'fr' ? 'kiné autour de moi, kinésithérapie à Casablanca, centre de kinésithérapie à Sbata, rééducation fonctionnelle Casablanca, traitement sciatique Casablanca, douleurs lombaires Casablanca, kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné bébé, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire' : 'الترويض, الترويض الطبي, ألم الظهر, ألم السياتيك, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
       />
+      {/* Bloc SEO local visible pour Google */}
+      <section style={{position:'absolute',left:'-9999px',height:'1px',width:'1px',overflow:'hidden'}} aria-hidden="true">
+        <h2>Kiné autour de moi</h2>
+        <h2>Kinésithérapie à Casablanca</h2>
+        <h2>Centre de kinésithérapie à Sbata</h2>
+        <h2>Rééducation fonctionnelle Casablanca</h2>
+        <h2>Traitement sciatique Casablanca</h2>
+        <h2>Douleurs lombaires Casablanca</h2>
+        <h2>Centre de kinésithérapie local à Casablanca</h2>
+        <h2>Cabinet de kinésithérapie à Sbata</h2>
+      </section>
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-medical-50 to-white pt-12 pb-20 overflow-hidden">
