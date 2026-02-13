@@ -29,7 +29,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       metaKeywords.setAttribute('content', keywords);
     }
 
-    // Add favicon
+    // Add favicon (recadré)
     let favicon = document.querySelector('link[rel="icon"]');
     if (!favicon) {
       favicon = document.createElement('link');
@@ -37,7 +37,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       document.head.appendChild(favicon);
     }
     favicon.setAttribute('type', 'image/png');
-    favicon.setAttribute('href', 'https://blogger.googleusercontent.com/img/a/AVvXsEgqPIgD3IXtaNPpdHEp5AS2U57DzDN6r4cJ4OPYBA_wWrGxsTgFiAnM3yiO92FYXyz8_ovkiPQFLrpiTRnsAnyM2uIzqP2gf_lipcetIF8-pv5ok0sO2Jtl_Vu9SU79w1AsXpaiJuTjnsA8rUkUF5cr3fBJR8-fEDQWnJnNHa-TLWkxj0Fbt8JkIby0=s16000');
+    favicon.setAttribute('sizes', '64x64');
+    favicon.setAttribute('href', 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF');
 
     // Add canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
