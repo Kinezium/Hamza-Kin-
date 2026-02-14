@@ -66,7 +66,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             {/* Logo */}
             <Link to={homePath} className="flex items-center gap-2" onClick={closeMenu}>
                <div className="w-10 h-10 bg-medical-600 rounded-full flex items-center justify-center">
-                 <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjsWuKuX19KnqVNPYNlFK8n6uZOvLh2T3BNGhxpK-Bwsej15kkdBHfand2jK-m1exW0e2RyBr0fhmXk34rTw17EXVPHlTGoDD5-IiFVdZVDdmNJZ5qwGeUdU5ZMo17y1cWzZxqBKNliSuNAT96ZlPBrQrHeY_l7VyNOGO0MtXkVRQcDaWKNT3g-afKR" alt="Logo Centre Chnider" style={{width:'32px',height:'32px',objectFit:'contain'}} />
+                 <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjsWuKuX19KnqVNPYNlFK8n6uZOvLh2T3BNGhxpK-Bwsej15kkdBHfand2jK-m1exW0e2RyBr0fhmXk34rTw17EXVPHlTGoDD5-IiFVdZVDdmNJZ5qwGeUdU5ZMo17y1cWzZxqBKNliSuNAT96ZlPBrQrHeY_l7VyNOGO0MtXkVRQcDaWKNT3g-afKR" alt="Logo Centre Chnider" style={{width:'32px',height:'32px',objectFit:'contain'}} loading="lazy" />
                </div>
                <div className="leading-tight">
                  <h1 className="text-xl font-bold text-gray-900 tracking-tight">{lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}</h1>

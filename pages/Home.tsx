@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useCountUp } from '../components/useCountUp';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, MapPin, Bus, Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity } from 'lucide-react';
 import { Language } from '../types';
@@ -66,8 +67,9 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
             
             {/* Animated Benefits Banner */}
             <div className="mb-6 h-8 flex items-center">
-              <span 
-                className={`inline-block px-4 py-2 bg-yellow-100 text-yellow-800 text-sm font-bold rounded-full border border-yellow-200 shadow-sm transition-opacity duration-500 transform ${isAnimating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}
+              <span
+                className={`inline-block px-4 py-2 bg-yellow-100 text-yellow-800 text-sm font-bold rounded-full border border-yellow-200 shadow-sm transition-opacity duration-500 transform ${isAnimating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'} animate-fadein`}
+                style={{animation: isAnimating ? 'fadeOut 0.5s' : 'fadeIn 0.5s'}}
               >
                 {t.hero.benefits[benefitIndex]}
               </span>
@@ -111,19 +113,25 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
       <div className="bg-medical-800 text-white py-8">
         <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-3xl font-bold mb-1">10+</div>
-            <div className="text-medical-200 text-sm">{lang === 'fr' ? 'Années d\'expérience' : 'سنوات من الخبرة'}</div>
+            <div className="text-3xl font-bold mb-1">
+              <span ref={useCountUp(5, 1200)} />+
+            </div>
+            <div className="text-medical-200 text-sm">{lang === 'fr' ? "+ de 5 ans d'expérience" : 'أكثر من 5 سنوات خبرة'}</div>
           </div>
           <div>
-            <div className="text-3xl font-bold mb-1">500+</div>
+            <div className="text-3xl font-bold mb-1">
+              <span ref={useCountUp(500, 1200)} />+
+            </div>
             <div className="text-medical-200 text-sm">{lang === 'fr' ? 'Patients Heureux' : 'مريض سعيد'}</div>
           </div>
           <div>
-            <div className="text-3xl font-bold mb-1">100%</div>
+            <div className="text-3xl font-bold mb-1">
+              <span ref={useCountUp(100, 1200)} />%
+            </div>
             <div className="text-medical-200 text-sm">{lang === 'fr' ? 'Engagement' : 'التزام بالجودة'}</div>
           </div>
           <div>
-            <div className="text-3xl font-bold mb-1">24/7</div>
+            <div className="text-3xl font-bold mb-1 animate-pulse">24/7</div>
             <div className="text-medical-200 text-sm">{lang === 'fr' ? 'Support WhatsApp' : 'دعم واتساب'}</div>
           </div>
         </div>
@@ -205,21 +213,71 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
       {/* Testimonials */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">{t.reviews.title}</h2>
+          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Avis de nos Patients</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {t.reviews.items.map((review) => (
-              <div key={review.id} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(review.rating)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
-                </div>
-                <p className="text-slate-700 mb-6 italic">"{review.text}"</p>
-                <div className="flex justify-between items-center border-t pt-4">
-                  <span className="font-bold text-slate-900">{review.name}</span>
-                  <span className="text-xs text-slate-400">{review.date}</span>
-                </div>
+            {/* Real Google reviews (static for now) */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <div className="flex text-yellow-400 mb-4">{[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}</div>
+              <p className="text-slate-700 mb-6 italic">"Hamza is an excellent kiné therapist who is attentive, listens carefully, and helps you understand the source of your pain and the process to alleviate it. He is very professional and supportive. After completing my shoulder treatment, I now feel significantly stronger. Currently, I'm addressing a herniated disc, and after 20 sessions overall, I'm very happy and satisfied with Hamza’s service. I highly recommend him."</p>
+              <div className="flex justify-between items-center border-t pt-4">
+                <span className="font-bold text-slate-900">anass elhadi</span>
+                <span className="text-xs text-slate-400">il y a 1 an</span>
               </div>
-            ))}
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <div className="flex text-yellow-400 mb-4">{[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}</div>
+              <p className="text-slate-700 mb-6 italic">"Une personne jeune, attentif, un bon sense de l'écoute et surtout humain et qui métrise son domaine d'activité."</p>
+              <div className="flex justify-between items-center border-t pt-4">
+                <span className="font-bold text-slate-900">Anass Chbani</span>
+                <span className="text-xs text-slate-400">il y a 1 mois</span>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <div className="flex text-yellow-400 mb-4">{[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}</div>
+              <p className="text-slate-700 mb-6 italic">"مركز يستحق خمس نجوم بما يتوفر عليه من تجهيزات في حالة جيدة .السيد حمزة شنيدر المشرف العام على المركز شاب متمكن من مهنته اما عن تجربتي الخاصة عن هذا المركز كنت اعاني من الام عرق النسا في درجة متقدمة والحمد لله بعد اجراء 15 حصة بدات اتعافى والحمد لله من اللام وذالك بفضل احترافية السيد حمزة الذي كان له الفضل  بعد الله في اجتياز هذه المرحلة انصح كل من يعاني من معضلة الام عرق النسا التوجه بدون تردد لمركز شنيدر الترويض الطبي شكرا سي حمزة حفظك الله ورعاك."</p>
+              <div className="flex justify-between items-center border-t pt-4">
+                <span className="font-bold text-slate-900">brahim haddam</span>
+                <span className="text-xs text-slate-400">il y a 1 an</span>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <div className="flex text-yellow-400 mb-4">{[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}</div>
+              <p className="text-slate-700 mb-6 italic">"Il est très magnifique et très humain... Sans lui mon père jamais kan ghadi yat7essen.. It was all because of him"</p>
+              <div className="flex justify-between items-center border-t pt-4">
+                <span className="font-bold text-slate-900">Salma El Montassir</span>
+                <span className="text-xs text-slate-400">il y a 2 ans</span>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <div className="flex text-yellow-400 mb-4">{[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}</div>
+              <p className="text-slate-700 mb-6 italic">"Ce monsieur est très avenant, sérieux dans son travail, toujours à l'écoute, je suis satisfaite du résultat."</p>
+              <div className="flex justify-between items-center border-t pt-4">
+                <span className="font-bold text-slate-900">Zahra Abou</span>
+                <span className="text-xs text-slate-400">il y a 1 an</span>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <div className="flex text-yellow-400 mb-4">{[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}</div>
+              <p className="text-slate-700 mb-6 italic">"- Kiné très compétent et professionnel. - bon service avec un prix raisonnable."</p>
+              <div className="flex justify-between items-center border-t pt-4">
+                <span className="font-bold text-slate-900">Benriane Aniss</span>
+                <span className="text-xs text-slate-400">il y a 1 an</span>
+              </div>
+            </div>
           </div>
+          <div className="mt-12 text-center">
+            <a
+              href="https://www.google.com/maps/place/Centre+de+kin%C3%A9sith%C3%A9rapie+CHNIDER+-+%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B6+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%E2%80%AD/@33.5427003,-7.5662519,17z/data=!4m8!3m7!1s0xda633a36d6890ad:0xbc43853714712366!8m2!3d33.5426133!4d-7.5636178!9m1!1b1!16s%2Fg%2F11kj7fl0mh!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-sm"
+            >
+              Voir plus d'avis sur Google
+              <ArrowRight size={20} />
+            </a>
+          </div>
+        </div>
+      </section>
           
           <div className="mt-12 text-center">
             <a href="https://g.page/r/placeholder" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-medical-600 hover:underline">
