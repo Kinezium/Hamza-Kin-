@@ -13,6 +13,10 @@ import { Language } from './types';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
+  // Check pathname for /ar (works even when hash is missing on mobile)
+  const pathname = window.location.pathname || '';
+  if (pathname.startsWith('/ar')) return 'ar';
+
   // Check URL hash for /ar prefix
   const hash = window.location.hash;
   if (hash.includes('/ar')) return 'ar';

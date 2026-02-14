@@ -91,7 +91,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           <div className="md:w-1/2 mt-12 md:mt-0 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
               <img 
-                src="https://picsum.photos/id/1062/800/600" 
+                src="https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it" 
                 alt="Physical Therapy Session" 
                 className="w-full h-auto object-cover" 
                 loading="lazy"
