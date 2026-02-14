@@ -47,7 +47,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', window.location.origin + window.location.pathname);
+    canonical.setAttribute('href', 'https://kinesitherapie.clinaxis.ma' + window.location.hash.replace('#', ''));
 
     // Add Schema.org MedicalBusiness structured data
     let script = document.querySelector('script[type="application/ld+json"][data-schema="medicalbusiness"]');
@@ -62,17 +62,17 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       '@type': 'MedicalBusiness',
       'name': title,
       'description': description,
-      'url': window.location.origin,
+      'url': 'https://kinesitherapie.clinaxis.ma',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Casablanca',
-        'addressRegion': 'Grand Casablanca',
+        'addressRegion': 'Casablanca-Settat',
         'addressCountry': 'MA',
-        'streetAddress': 'Sbata'
+        'streetAddress': '500 Boulevard Mecdad Laherizi, Sbata'
       },
       'areaServed': 'Casablanca',
-      'image': 'https://kinesitherapie.clinaxis.ma/cover.jpg',
-      'telephone': '+212600000000',
+      'image': 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
+      'telephone': '+212665646754',
       'priceRange': '$$'
     });
   }, [title, description, keywords]);

@@ -72,6 +72,7 @@ export interface ConditionItem {
   title: string;
   description: string;
   symptoms: string;
+  iconName?: string;
 }
 
 export interface ServiceItem {

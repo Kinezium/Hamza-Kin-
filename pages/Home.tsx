@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Star, MapPin, Bus } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, MapPin, Bus, Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity } from 'lucide-react';
 import { Language } from '../types';
 import { CONTENT, WHATSAPP_NUMBER, PHONE_NUMBER, MAP_EMBED_URL } from '../constants';
 import SEOHead from '../components/SEOHead';
+
+const getConditionIcon = (iconName?: string, size = 20) => {
+  switch (iconName) {
+    case 'Zap': return <Zap size={size} />;
+    case 'Spine': return <ArrowUpDown size={size} />;
+    case 'Dumbbell': return <Dumbbell size={size} />;
+    case 'Bone': return <Bone size={size} />;
+    case 'Stethoscope': return <Stethoscope size={size} />;
+    case 'Brain': return <Brain size={size} />;
+    case 'Baby': return <Baby size={size} />;
+    case 'Flame': return <Flame size={size} />;
+    default: return <Activity size={size} />;
+  }
+};
 
 interface HomeProps {
   lang: Language;
@@ -126,6 +140,9 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {t.conditions.items.slice(0, 3).map((item) => (
               <div key={item.id} className="bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition duration-300 border border-slate-100">
+                <div className="w-12 h-12 bg-medical-100 text-medical-600 rounded-full flex items-center justify-center mb-4">
+                  {getConditionIcon(item.iconName)}
+                </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
                 <p className="text-slate-600 mb-4">{item.description}</p>
                 <div className="flex items-center text-sm text-medical-600 font-medium bg-medical-50 p-3 rounded-lg">
@@ -171,6 +188,16 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
 
           <div className="mt-8 bg-blue-50 border border-blue-100 p-4 rounded-lg text-center text-blue-800 font-medium">
              {t.services.genderNote}
+             <div className="grid grid-cols-2 gap-3 mt-3">
+               <div className="bg-pink-50 border border-pink-200 rounded-lg p-3">
+                 <span className="text-lg">👩‍⚕️</span>
+                 <p className="text-sm font-bold text-pink-700">{lang === 'fr' ? 'Femme: Lun/Mer/Ven' : 'نساء: إثنين/أربعاء/جمعة'}</p>
+               </div>
+               <div className="bg-blue-100 border border-blue-200 rounded-lg p-3">
+                 <span className="text-lg">👨‍⚕️</span>
+                 <p className="text-sm font-bold text-blue-700">{lang === 'fr' ? 'Homme: Mar/Jeu/Sam' : 'رجال: ثلاثاء/خميس/سبت'}</p>
+               </div>
+             </div>
           </div>
         </div>
       </section>
@@ -241,6 +268,43 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                 ></iframe>
               </div>
            </div>
+        </div>
+      </section>
+
+      {/* CLINAXIS LGCP - Point fort */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-slate-50 to-blue-50 p-8 md:p-10 rounded-3xl border border-blue-100 shadow-lg">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shrink-0 shadow-md">
+                CX
+              </div>
+              <div className="text-center md:text-start rtl:md:text-right">
+                <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                  {lang === 'fr' ? 'Gestion digitale par CLINAXIS LGCP' : 'إدارة رقمية بواسطة CLINAXIS LGCP'}
+                </h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  {lang === 'fr'
+                    ? 'Le Centre Chnider utilise CLINAXIS LGCP, le meilleur logiciel de gestion de cabinets médicaux au Maroc, pour la gestion des dossiers patients et des rendez-vous. Vos données médicales sont protégées par un chiffrement de niveau bancaire.'
+                    : 'يستخدم مركز اشنيدر برنامج CLINAXIS LGCP، أفضل برنامج لإدارة العيادات الطبية في المغرب، لتدبير ملفات المرضى والمواعيد. بياناتكم الطبية محمية بتشفير بمستوى بنكي.'}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5 justify-center md:justify-start rtl:md:justify-end">
+                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">🔒 {lang === 'fr' ? 'Données chiffrées' : 'بيانات مشفرة'}</span>
+                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">📅 {lang === 'fr' ? 'Gestion RDV' : 'تدبير المواعيد'}</span>
+                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold">📊 {lang === 'fr' ? 'Dossiers patients' : 'ملفات المرضى'}</span>
+                  <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-bold">🛡️ {lang === 'fr' ? 'Sécurité maximale' : 'أمان أقصى'}</span>
+                </div>
+                <a
+                  href="https://lgcp-vitrine.clinaxis.ma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-sm"
+                >
+                  {lang === 'fr' ? 'Découvrir CLINAXIS LGCP →' : '← اكتشف CLINAXIS LGCP'}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

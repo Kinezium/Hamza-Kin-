@@ -39,56 +39,64 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
           id: "sciatica",
           title: "Sciatique & Hernie Discale",
           description: "Soulagement de la douleur du nerf sciatique et décompression vertébrale sans chirurgie.",
-          symptoms: "Douleur fessier, jambe, décharge électrique."
+          symptoms: "Douleur fessier, jambe, décharge électrique.",
+          iconName: "Zap"
         },
         {
           id: "backpain",
           title: "Lombalgie & Cervicalgie",
           description: "Traitement des douleurs de dos chroniques, torticolis et correction posturale.",
-          symptoms: "Raideur, blocage, douleur au réveil."
+          symptoms: "Raideur, blocage, douleur au réveil.",
+          iconName: "Spine"
         },
         {
           id: "sport",
           title: "Traumatologie du Sport",
           description: "Soins des entorses, tendinites, déchirures musculaires et préparation à la reprise.",
-          symptoms: "Douleur à l'effort, gonflement, claquage."
+          symptoms: "Douleur à l'effort, gonflement, claquage.",
+          iconName: "Dumbbell"
         },
         {
           id: "knee",
           title: "Arthrose & Douleurs Articulaires",
           description: "Rééducation du genou (gonarthrose), hanche et épaule pour retrouver la souplesse.",
-          symptoms: "Craquement, douleur à la marche, raideur."
+          symptoms: "Craquement, douleur à la marche, raideur.",
+          iconName: "Bone"
         },
         {
           id: "postop",
           title: "Rééducation Post-Opératoire",
           description: "Récupération après chirurgie : prothèse (hanche/genou), ligaments croisés, fractures.",
-          symptoms: "Suite à une intervention chirurgicale."
+          symptoms: "Suite à une intervention chirurgicale.",
+          iconName: "Stethoscope"
         },
         {
           id: "neuro",
           title: "Neurologie & Paralysie Faciale",
           description: "Rééducation après AVC, hémiplégie, Parkinson et traitement de la paralysie faciale a frigore.",
-          symptoms: "Perte de motricité, visage figé, tremblements."
+          symptoms: "Perte de motricité, visage figé, tremblements.",
+          iconName: "Brain"
         },
         {
           id: "pediatric",
           title: "Kinésithérapie Pédiatrique",
           description: "Bronchiolite du nourrisson (Kiné respiratoire), torticolis congénital, pieds bots.",
-          symptoms: "Encombrement, difficultés motrices chez l'enfant."
+          symptoms: "Encombrement, difficultés motrices chez l'enfant.",
+          iconName: "Baby"
         },
         {
           id: "rheuma",
           title: "Rhumatologie",
           description: "Soulagement des douleurs inflammatoires, polyarthrite et spondylarthrite.",
-          symptoms: "Douleurs articulaires multiples, inflammations."
+          symptoms: "Douleurs articulaires multiples, inflammations.",
+          iconName: "Flame"
         }
       ]
     },
     services: {
       title: "Nos Services & Spécialités",
       subtitle: "Des soins professionnels remboursables par votre mutuelle.",
-      genderNote: "Note: Équipe mixte. Kinésithérapeute Homme et Femme disponibles selon votre choix.",
+      genderNote: "Pour votre confort : Kinésithérapeute Femme pour les patientes (Lundi, Mercredi, Vendredi) | Kinésithérapeute Homme pour les patients (Mardi, Jeudi, Samedi). Des jours séparés pour que tout le monde soit à l'aise.",
       items: [
         {
           id: "ortho",
@@ -205,56 +213,64 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
           id: "sciatica",
           title: "السياتيك والانزلاق الغضروفي",
           description: "علاج عرق النسا والديسك (القرص الغضروفي) بتقنيات حديثة لتجنب الجراحة.",
-          symptoms: "ألم يمتد للساق، تنميل، كهرباء."
+          symptoms: "ألم يمتد للساق، تنميل، كهرباء.",
+          iconName: "Zap"
         },
         {
           id: "backpain",
           title: "آلام الظهر والرقبة",
           description: "علاج بوزلوم، تشنج العنق، وتصحيح الوضعية والعمود الفقري.",
-          symptoms: "ألم أسفل الظهر، تيبس الرقبة."
+          symptoms: "ألم أسفل الظهر، تيبس الرقبة.",
+          iconName: "Spine"
         },
         {
           id: "sport",
           title: "الإصابات الرياضية",
           description: "علاج الالتواءات (Entorse)، التهاب الأوتار (Tendinite)، والتمزق العضلي للرياضيين.",
-          symptoms: "ألم عند الحركة، انتفاخ المفاصل."
+          symptoms: "ألم عند الحركة، انتفاخ المفاصل.",
+          iconName: "Dumbbell"
         },
         {
           id: "knee",
           title: "خشونة الركبة والمفاصل",
           description: "ترويض الركبة (La Gonarthrose)، الكتف المتجمد، والورك.",
-          symptoms: "صعوبة المشي، طقطقة المفاصل."
+          symptoms: "صعوبة المشي، طقطقة المفاصل.",
+          iconName: "Bone"
         },
         {
           id: "postop",
           title: "الترويض بعد العمليات",
           description: "إعادة التأهيل بعد جراحة الكسور، الرباط الصليبي، والمفاصل الاصطناعية.",
-          symptoms: "بعد العمليات الجراحية."
+          symptoms: "بعد العمليات الجراحية.",
+          iconName: "Stethoscope"
         },
         {
           id: "neuro",
           title: "ترويض الجهاز العصبي وشلل الوجه",
           description: "تأهيل حالات الشلل النصفي (AVC)، الباركنسون، وشلل الوجه النصفي (La paralysie faciale).",
-          symptoms: "ثقل الحركة، اعوجاج الفم."
+          symptoms: "ثقل الحركة، اعوجاج الفم.",
+          iconName: "Brain"
         },
         {
           id: "pediatric",
           title: "ترويض الأطفال والرضع",
           description: "علاج صعوبة التنفس (Bronchiolite)، تأخر المشي، وتشوهات القدمين.",
-          symptoms: "كحة، ضيق تنفس، مشاكل النمو."
+          symptoms: "كحة، ضيق تنفس، مشاكل النمو.",
+          iconName: "Baby"
         },
         {
           id: "rheuma",
           title: "الروماتيزم والتهاب المفاصل",
           description: "تخفيف آلام الروماتيزم المزمنة والالتهابات.",
-          symptoms: "ألم وتورم في عدة مفاصل."
+          symptoms: "ألم وتورم في عدة مفاصل.",
+          iconName: "Flame"
         }
       ]
     },
     services: {
       title: "خدمات المركز",
       subtitle: "علاج طبيعي احترافي مع توفير جميع وثائق التعويض.",
-      genderNote: "ملاحظة: طاقم مختلط. يتوفر لدينا مروضون رجال ومروضات نساء حسب رغبتكم.",
+      genderNote: "لراحتكم: مروضة طبية للنساء (الإثنين، الأربعاء، الجمعة) | مروض طبي للرجال (الثلاثاء، الخميس، السبت). أيام منفصلة لراحة الجميع.",
       items: [
         {
           id: "ortho",

@@ -39,7 +39,21 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
 
       <div className="container mx-auto px-4 py-16">
          <div className="mb-12 p-6 bg-blue-50 rounded-xl border-l-4 border-medical-500 text-blue-900 shadow-sm">
-             <p className="text-center font-medium text-lg">{t.services.genderNote}</p>
+             <p className="text-center font-medium text-lg mb-4">{t.services.genderNote}</p>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+               <div className="bg-pink-50 border border-pink-200 rounded-xl p-4 text-center">
+                 <div className="text-3xl mb-2">👩‍⚕️</div>
+                 <h3 className="font-bold text-pink-700 text-lg">{lang === 'fr' ? 'Kinésithérapeute Femme' : 'مروضة طبية'}</h3>
+                 <p className="text-pink-600 font-medium mt-1">{lang === 'fr' ? 'Lundi • Mercredi • Vendredi' : 'الإثنين • الأربعاء • الجمعة'}</p>
+                 <p className="text-sm text-pink-500 mt-1">{lang === 'fr' ? 'Prise en charge exclusive des patientes' : 'رعاية حصرية للنساء'}</p>
+               </div>
+               <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+                 <div className="text-3xl mb-2">👨‍⚕️</div>
+                 <h3 className="font-bold text-blue-700 text-lg">{lang === 'fr' ? 'Kinésithérapeute Homme' : 'مروض طبي'}</h3>
+                 <p className="text-blue-600 font-medium mt-1">{lang === 'fr' ? 'Mardi • Jeudi • Samedi' : 'الثلاثاء • الخميس • السبت'}</p>
+                 <p className="text-sm text-blue-500 mt-1">{lang === 'fr' ? 'Prise en charge exclusive des patients' : 'رعاية حصرية للرجال'}</p>
+               </div>
+             </div>
          </div>
 
          <div className="space-y-12">

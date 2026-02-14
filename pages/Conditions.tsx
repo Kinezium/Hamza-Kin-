@@ -2,11 +2,25 @@ import React from 'react';
 import { Language } from '../types';
 import { CONTENT, PHONE_NUMBER } from '../constants';
 import SEOHead from '../components/SEOHead';
-import { Activity, AlertCircle } from 'lucide-react';
+import { Activity, AlertCircle, Zap, Bone, Dumbbell, Stethoscope, Brain, Baby, Flame, ArrowUpDown } from 'lucide-react';
 
 interface ConditionsProps {
   lang: Language;
 }
+
+const getConditionIcon = (iconName?: string) => {
+  switch (iconName) {
+    case 'Zap': return <Zap size={28} />;
+    case 'Spine': return <ArrowUpDown size={28} />;
+    case 'Dumbbell': return <Dumbbell size={28} />;
+    case 'Bone': return <Bone size={28} />;
+    case 'Stethoscope': return <Stethoscope size={28} />;
+    case 'Brain': return <Brain size={28} />;
+    case 'Baby': return <Baby size={28} />;
+    case 'Flame': return <Flame size={28} />;
+    default: return <Activity size={28} />;
+  }
+};
 
 const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
   const t = CONTENT[lang];
@@ -31,7 +45,7 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
           {t.conditions.items.map((item, index) => (
             <div key={item.id} className="bg-white border border-gray-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-14 h-14 bg-medical-100 text-medical-600 rounded-full flex items-center justify-center mb-6">
-                <Activity size={28} />
+                {getConditionIcon(item.iconName)}
               </div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h2>
               <p className="text-slate-600 text-lg mb-6 leading-relaxed">
