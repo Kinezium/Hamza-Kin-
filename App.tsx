@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Conditions from './pages/Conditions';
@@ -13,13 +13,9 @@ import { Language } from './types';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
-  // Check pathname for /ar (works even when hash is missing on mobile)
+  // Check pathname for /ar
   const pathname = window.location.pathname || '';
   if (pathname.startsWith('/ar')) return 'ar';
-
-  // Check URL hash for /ar prefix
-  const hash = window.location.hash;
-  if (hash.includes('/ar')) return 'ar';
   
   // Check referrer or search query for Arabic keywords
   const searchParams = new URLSearchParams(window.location.search);
@@ -63,12 +59,21 @@ const App: React.FC = () => {
   const [lang, setLang] = useState<Language>(detectLanguage());
 
   useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#/')) {
+      const cleanPath = hash.slice(1);
+      window.history.replaceState(null, '', cleanPath + window.location.search);
+      setLang(cleanPath.startsWith('/ar') ? 'ar' : 'fr');
+    }
+  }, []);
+
+  useEffect(() => {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
   }, [lang]);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <LangSync setLang={setLang} />
       <Layout lang={lang} setLang={setLang}>
@@ -93,7 +98,7 @@ const App: React.FC = () => {
         </Routes>
       </Layout>
       <StickyCTA lang={lang} />
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

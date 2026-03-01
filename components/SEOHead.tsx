@@ -47,7 +47,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://kinesitherapie.clinaxis.ma' + window.location.hash.replace('#', ''));
+    canonical.setAttribute(
+      'href',
+      new URL(window.location.pathname + window.location.search, 'https://kinesitherapie.clinaxis.ma').toString()
+    );
 
     // Add Schema.org MedicalBusiness structured data
     let script = document.querySelector('script[type="application/ld+json"][data-schema="medicalbusiness"]');

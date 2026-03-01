@@ -18,3 +18,24 @@ View your app in AI Studio: https://ai.studio/apps/drive/1DFHo_ZW0zP6ZcgkKDdKT-j
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## SPA Deployment (BrowserRouter)
+
+This app uses clean URLs (`/page`) and needs a SPA fallback to `index.html` in production.
+
+- Nginx:
+   ```nginx
+   location / {
+      try_files $uri $uri/ /index.html;
+   }
+   ```
+
+- Static hosting with `serve`:
+   ```bash
+   npx serve dist --single --config serve.json
+   ```
+
+- Optional safety fallback (generate static route copies after build):
+   ```bash
+   npm run build:fallbacks
+   ```

@@ -26,6 +26,7 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ lang }) => {
   const t = CONTENT[lang];
+  const prefix = lang === 'ar' ? '/ar' : '';
   const [benefitIndex, setBenefitIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -160,7 +161,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link to="/conditions" className="inline-flex items-center gap-2 text-medical-700 font-bold hover:underline text-lg">
+            <Link to={`${prefix}/conditions`} className="inline-flex items-center gap-2 text-medical-700 font-bold hover:underline text-lg">
               {lang === 'fr' ? 'Voir toutes les pathologies' : 'عرض جميع الأمراض'} <ArrowRight size={20} />
             </Link>
           </div>
@@ -175,7 +176,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t.services.title}</h2>
               <p className="text-slate-600 text-lg">{t.services.subtitle}</p>
             </div>
-            <Link to="/services" className="hidden md:inline-block px-6 py-3 bg-white text-medical-700 font-bold border border-medical-200 rounded-lg hover:bg-medical-50 transition">
+            <Link to={`${prefix}/services`} className="hidden md:inline-block px-6 py-3 bg-white text-medical-700 font-bold border border-medical-200 rounded-lg hover:bg-medical-50 transition">
               {lang === 'fr' ? 'Tout voir' : 'عرض الكل'}
             </Link>
           </div>
@@ -278,14 +279,6 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           </div>
         </div>
       </section>
-          
-          <div className="mt-12 text-center">
-            <a href="https://g.page/r/placeholder" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-medical-600 hover:underline">
-               {lang === 'fr' ? 'Voir plus d\'avis sur Google' : 'شاهد المزيد من التقييمات على جوجل'}
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* Map & Location */}
       <section className="bg-slate-50 py-20">
@@ -310,7 +303,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                    </div>
                  </div>
 
-                 <Link to="/contact" className="mt-8 inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-lg text-center hover:bg-slate-800 transition">
+                 <Link to={`${prefix}/contact`} className="mt-8 inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-lg text-center hover:bg-slate-800 transition">
                    {t.contact.title}
                  </Link>
               </div>
