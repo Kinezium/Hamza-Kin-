@@ -8,6 +8,12 @@ interface SEOHeadProps {
 
 const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
   useEffect(() => {
+    const baseUrl = 'https://kinesitherapie.clinaxis.ma';
+    const pathname = window.location.pathname || '/';
+    const isArabicPath = pathname === '/ar' || pathname.startsWith('/ar/');
+    const frPath = isArabicPath ? (pathname.replace(/^\/ar(?=\/|$)/, '') || '/') : pathname;
+    const arPath = isArabicPath ? pathname : `/ar${pathname === '/' ? '' : pathname}`;
+
     document.title = title;
     // Update meta description
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -47,10 +53,91 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute(
-      'href',
-      new URL(window.location.pathname + window.location.search, 'https://kinesitherapie.clinaxis.ma').toString()
-    );
+    canonical.setAttribute('href', new URL(pathname, baseUrl).toString());
+
+    // Add dynamic hreflang alternates
+    const ensureAlternateLink = (hreflang: string, href: string) => {
+      let alt = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+      if (!alt) {
+        alt = document.createElement('link');
+        alt.setAttribute('rel', 'alternate');
+        alt.setAttribute('hreflang', hreflang);
+        document.head.appendChild(alt);
+      }
+      alt.setAttribute('href', href);
+    };
+
+    ensureAlternateLink('fr', new URL(frPath, baseUrl).toString());
+    ensureAlternateLink('ar', new URL(arPath, baseUrl).toString());
+    ensureAlternateLink('x-default', new URL(frPath, baseUrl).toString());
+
+    // Add dynamic BreadcrumbList JSON-LD
+    const frLabels: Record<string, string> = {
+      '': 'Accueil',
+      'pathologies': 'Pathologies',
+      'services': 'Services',
+      'a-domicile': 'À Domicile',
+      'blog': 'Blog',
+      'a-propos': 'À Propos',
+      'contact': 'Contact'
+    };
+
+    const arLabels: Record<string, string> = {
+      '': 'الرئيسية',
+      'pathologies': 'الأمراض المعالجة',
+      'services': 'خدماتنا',
+      'a-domicile': 'ترويض منزلي',
+      'blog': 'مدونة',
+      'a-propos': 'عن المركز',
+      'contact': 'اتصل بنا'
+    };
+
+    const pathWithoutLang = isArabicPath ? (pathname.replace(/^\/ar(?=\/|$)/, '') || '/') : pathname;
+    const segments = pathWithoutLang.split('/').filter(Boolean);
+    const labels = isArabicPath ? arLabels : frLabels;
+    const rootPath = isArabicPath ? '/ar' : '/';
+
+    const breadcrumbItems = [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: labels[''],
+        item: new URL(rootPath, baseUrl).toString()
+      }
+    ];
+
+    let cumulative = rootPath === '/' ? '' : rootPath;
+    segments.forEach((segment, index) => {
+      cumulative += `/${segment}`;
+      breadcrumbItems.push({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: labels[segment] || decodeURIComponent(segment).replace(/-/g, ' '),
+        item: new URL(cumulative, baseUrl).toString()
+      });
+    });
+
+    let breadcrumbScript = document.querySelector('script[type="application/ld+json"][data-schema="breadcrumb"]');
+    if (!breadcrumbScript) {
+      breadcrumbScript = document.createElement('script');
+      breadcrumbScript.type = 'application/ld+json';
+      breadcrumbScript.setAttribute('data-schema', 'breadcrumb');
+      document.head.appendChild(breadcrumbScript);
+    }
+    breadcrumbScript.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbItems
+    });
+
+    // Keep Open Graph URL aligned with current route
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+      ogUrl = document.createElement('meta');
+      ogUrl.setAttribute('property', 'og:url');
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute('content', new URL(pathname, baseUrl).toString());
 
     // Add Schema.org MedicalBusiness structured data
     let script = document.querySelector('script[type="application/ld+json"][data-schema="medicalbusiness"]');
