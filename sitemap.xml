@@ -11,7 +11,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://kinesitherapie.clinaxis.ma/conditions</loc>
+    <loc>https://kinesitherapie.clinaxis.ma/pathologies</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -29,13 +29,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kinesitherapie.clinaxis.ma/about</loc>
+    <loc>https://kinesitherapie.clinaxis.ma/a-propos</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kinesitherapie.clinaxis.ma/home-therapy</loc>
+    <loc>https://kinesitherapie.clinaxis.ma/a-domicile</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -57,7 +57,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://kinesitherapie.clinaxis.ma/ar/conditions</loc>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/pathologies</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -75,13 +75,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kinesitherapie.clinaxis.ma/ar/about</loc>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/a-propos</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kinesitherapie.clinaxis.ma/ar/home-therapy</loc>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/a-domicile</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

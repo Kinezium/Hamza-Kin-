@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Conditions from './pages/Conditions';
@@ -80,21 +80,31 @@ const App: React.FC = () => {
         <Routes>
           {/* French routes (default) */}
           <Route path="/" element={<Home lang={lang} />} />
-          <Route path="/conditions" element={<Conditions lang={lang} />} />
+          <Route path="/pathologies" element={<Conditions lang={lang} />} />
           <Route path="/services" element={<Services lang={lang} />} />
-          <Route path="/home-therapy" element={<HomeTherapy lang={lang} />} />
-          <Route path="/about" element={<About lang={lang} />} />
+          <Route path="/a-domicile" element={<HomeTherapy lang={lang} />} />
+          <Route path="/a-propos" element={<About lang={lang} />} />
           <Route path="/contact" element={<Contact lang={lang} />} />
           <Route path="/blog" element={<Blog lang={lang} />} />
 
+          {/* Legacy French slugs redirects */}
+          <Route path="/conditions" element={<Navigate to="/pathologies" replace />} />
+          <Route path="/home-therapy" element={<Navigate to="/a-domicile" replace />} />
+          <Route path="/about" element={<Navigate to="/a-propos" replace />} />
+
           {/* Arabic routes /ar */}
           <Route path="/ar" element={<Home lang="ar" />} />
-          <Route path="/ar/conditions" element={<Conditions lang="ar" />} />
+          <Route path="/ar/pathologies" element={<Conditions lang="ar" />} />
           <Route path="/ar/services" element={<Services lang="ar" />} />
-          <Route path="/ar/home-therapy" element={<HomeTherapy lang="ar" />} />
-          <Route path="/ar/about" element={<About lang="ar" />} />
+          <Route path="/ar/a-domicile" element={<HomeTherapy lang="ar" />} />
+          <Route path="/ar/a-propos" element={<About lang="ar" />} />
           <Route path="/ar/contact" element={<Contact lang="ar" />} />
           <Route path="/ar/blog" element={<Blog lang="ar" />} />
+
+          {/* Legacy Arabic slugs redirects */}
+          <Route path="/ar/conditions" element={<Navigate to="/ar/pathologies" replace />} />
+          <Route path="/ar/home-therapy" element={<Navigate to="/ar/a-domicile" replace />} />
+          <Route path="/ar/about" element={<Navigate to="/ar/a-propos" replace />} />
         </Routes>
       </Layout>
       <StickyCTA lang={lang} />

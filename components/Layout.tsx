@@ -77,11 +77,11 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
               <NavLink to={`${prefix}/`} end className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.home}</NavLink>
-              <NavLink to={`${prefix}/conditions`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.conditions}</NavLink>
+              <NavLink to={`${prefix}/pathologies`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.conditions}</NavLink>
               <NavLink to={`${prefix}/services`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.services}</NavLink>
-              <NavLink to={`${prefix}/home-therapy`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.homeTherapy}</NavLink>
+              <NavLink to={`${prefix}/a-domicile`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.homeTherapy}</NavLink>
               <NavLink to={`${prefix}/blog`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{lang === 'fr' ? 'Blog' : 'مدونة'}</NavLink>
-              <NavLink to={`${prefix}/about`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.about}</NavLink>
+              <NavLink to={`${prefix}/a-propos`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.about}</NavLink>
               <NavLink to={`${prefix}/contact`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.contact}</NavLink>
               
               <button onClick={toggleLang} className="flex items-center gap-1 px-3 py-1 border border-gray-300 rounded-full text-sm hover:bg-gray-50 transition">
@@ -114,11 +114,11 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
           <div className="md:hidden bg-white border-b border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link to={`${prefix}/`} onClick={closeMenu} className={linkClass(`${prefix}/`)}>{t.home}</Link>
-              <Link to={`${prefix}/conditions`} onClick={closeMenu} className={linkClass(`${prefix}/conditions`)}>{t.conditions}</Link>
+              <Link to={`${prefix}/pathologies`} onClick={closeMenu} className={linkClass(`${prefix}/pathologies`)}>{t.conditions}</Link>
               <Link to={`${prefix}/services`} onClick={closeMenu} className={linkClass(`${prefix}/services`)}>{t.services}</Link>
-              <Link to={`${prefix}/home-therapy`} onClick={closeMenu} className={linkClass(`${prefix}/home-therapy`)}>{t.homeTherapy}</Link>
+              <Link to={`${prefix}/a-domicile`} onClick={closeMenu} className={linkClass(`${prefix}/a-domicile`)}>{t.homeTherapy}</Link>
               <Link to={`${prefix}/blog`} onClick={closeMenu} className={linkClass(`${prefix}/blog`)}>{lang === 'fr' ? 'Blog' : 'مدونة'}</Link>
-              <Link to={`${prefix}/about`} onClick={closeMenu} className={linkClass(`${prefix}/about`)}>{t.about}</Link>
+              <Link to={`${prefix}/a-propos`} onClick={closeMenu} className={linkClass(`${prefix}/a-propos`)}>{t.about}</Link>
               <Link to={`${prefix}/contact`} onClick={closeMenu} className={linkClass(`${prefix}/contact`)}>{t.contact}</Link>
               <div className="pt-4 pb-2">
                 <Link to={`${prefix}/contact`} onClick={closeMenu} className="block w-full text-center bg-medical-600 text-white px-4 py-3 rounded-lg font-bold">
@@ -150,9 +150,9 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             <div>
               <h3 className="text-lg font-bold mb-4">{lang === 'fr' ? 'Liens Rapides' : 'روابط سريعة'}</h3>
               <ul className="space-y-2 text-slate-300">
-                <li><Link to={`${prefix}/conditions`} className="hover:text-white">{t.conditions}</Link></li>
+                <li><Link to={`${prefix}/pathologies`} className="hover:text-white">{t.conditions}</Link></li>
                 <li><Link to={`${prefix}/services`} className="hover:text-white">{t.services}</Link></li>
-                <li><Link to={`${prefix}/home-therapy`} className="hover:text-white">{t.homeTherapy}</Link></li>
+                <li><Link to={`${prefix}/a-domicile`} className="hover:text-white">{t.homeTherapy}</Link></li>
                 <li><Link to={`${prefix}/blog`} className="hover:text-white">{lang === 'fr' ? 'Blog' : 'مدونة'}</Link></li>
               </ul>
             </div>

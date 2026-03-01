@@ -161,7 +161,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link to={`${prefix}/conditions`} className="inline-flex items-center gap-2 text-medical-700 font-bold hover:underline text-lg">
+            <Link to={`${prefix}/pathologies`} className="inline-flex items-center gap-2 text-medical-700 font-bold hover:underline text-lg">
               {lang === 'fr' ? 'Voir toutes les pathologies' : 'عرض جميع الأمراض'} <ArrowRight size={20} />
             </Link>
           </div>

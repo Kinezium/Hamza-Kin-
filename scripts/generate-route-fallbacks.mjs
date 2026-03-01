@@ -5,17 +5,17 @@ const distDir = path.resolve('dist');
 const indexFile = path.join(distDir, 'index.html');
 
 const routes = [
-  'conditions',
+  'pathologies',
   'services',
-  'home-therapy',
-  'about',
+  'a-domicile',
+  'a-propos',
   'contact',
   'blog',
   'ar',
-  'ar/conditions',
+  'ar/pathologies',
   'ar/services',
-  'ar/home-therapy',
-  'ar/about',
+  'ar/a-domicile',
+  'ar/a-propos',
   'ar/contact',
   'ar/blog'
 ];
