@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const distDir = path.resolve('dist');
 const indexFile = path.join(distDir, 'index.html');
-const staticFiles = ['robots.txt', 'sitemap.xml', 'sitemaps.xml'];
+const staticFiles = ['robots.txt', 'robot.txt', 'sitemap.xml', 'sitemaps.xml'];
 
 const routes = [
   'pathologies',
