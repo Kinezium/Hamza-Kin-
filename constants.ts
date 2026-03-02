@@ -4,6 +4,7 @@ export const PHONE_NUMBER = "0665646754";
 export const WHATSAPP_NUMBER = "212665646754"; // Format for API
 export const ADDRESS = "500 Boulevard Mecdad Laherizi, Sbata – Casablanca, Morocco";
 export const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.414193762785!2d-7.563617799999999!3d33.5426133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda633a36d6890ad%3A0xbc43853714712366!2zQ2VudHJlIGRlIGtpbsOpc2l0aMOpcmFwaWUgQ0hOSURFUiAtINin2YTYqtix2YjZiti2INin2YTYt9io2Yo!5e0!3m2!1sen!2sma!4v1770853502303!5m2!1sen!2sma"; 
+export const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/Centre+de+kin%C3%A9sith%C3%A9rapie+CHNIDER+-+%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B6+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%E2%80%AD/@33.5427003,-7.5662519,17z/data=!4m8!3m7!1s0xda633a36d6890ad:0xbc43853714712366!8m2!3d33.5426133!4d-7.5636178!9m1!1b1!16s%2Fg%2F11kj7fl0mh!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D";
 
 export const CONTENT: Record<'fr' | 'ar', ContentData> = {
   fr: {
