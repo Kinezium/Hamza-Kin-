@@ -80,13 +80,15 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
                    </div>
                 </div>
                 <div className="md:w-1/2">
-                   {/* Placeholder for service image */}
-                   <img 
-                    src={`https://picsum.photos/600/400?random=${index}`} 
-                    alt={service.title} 
-                    className="rounded-3xl shadow-lg w-full h-64 object-cover" 
-                    loading="lazy"
-                   />
+                   <div className="rounded-3xl shadow-lg w-full h-64 border border-medical-100 bg-gradient-to-br from-medical-50 via-white to-blue-50 p-8 flex flex-col items-center justify-center text-center">
+                     <div className="w-20 h-20 rounded-2xl bg-medical-600 text-white flex items-center justify-center shadow-md mb-4">
+                       {getIcon(service.iconName)}
+                     </div>
+                     <h3 className="font-bold text-slate-900 text-xl mb-2">{service.title}</h3>
+                     <p className="text-slate-600 text-sm">
+                       {lang === 'fr' ? 'Illustration du service traité' : 'صورة توضيحية للخدمة المقدمة'}
+                     </p>
+                   </div>
                 </div>
               </div>
             ))}

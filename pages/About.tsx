@@ -2,6 +2,7 @@ import React from 'react';
 import { Language } from '../types';
 import { CONTENT } from '../constants';
 import SEOHead from '../components/SEOHead';
+import { Building2, Users } from 'lucide-react';
 
 interface AboutProps {
   lang: Language;
@@ -37,8 +38,8 @@ const About: React.FC<AboutProps> = ({ lang }) => {
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Doctor / Staff Card Placeholder */}
               <div className="bg-white p-6 rounded-2xl shadow-md flex items-center gap-6">
-                 <div className="w-24 h-24 bg-gray-200 rounded-full shrink-0 overflow-hidden">
-                    <img src="https://picsum.photos/id/1005/200/200" alt="Doctor" className="w-full h-full object-cover" loading="lazy" />
+                  <div className="w-24 h-24 bg-medical-100 text-medical-700 rounded-full shrink-0 flex items-center justify-center">
+                    <Building2 size={38} />
                  </div>
                  <div>
                     <h4 className="font-bold text-lg">Dr. Chnider</h4>
@@ -48,8 +49,8 @@ const About: React.FC<AboutProps> = ({ lang }) => {
               </div>
               
                <div className="bg-white p-6 rounded-2xl shadow-md flex items-center gap-6">
-                 <div className="w-24 h-24 bg-gray-200 rounded-full shrink-0 overflow-hidden">
-                    <img src="https://picsum.photos/id/1027/200/200" alt="Team" className="w-full h-full object-cover" loading="lazy" />
+                <div className="w-24 h-24 bg-blue-100 text-blue-700 rounded-full shrink-0 flex items-center justify-center">
+                  <Users size={38} />
                  </div>
                  <div>
                     <h4 className="font-bold text-lg">{lang === 'fr' ? 'L\'Équipe' : 'الفريق'}</h4>

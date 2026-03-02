@@ -44,6 +44,17 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {t.conditions.items.map((item, index) => (
             <div key={item.id} className="bg-white border border-gray-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="mb-6 rounded-2xl border border-medical-100 bg-gradient-to-br from-medical-50 via-white to-blue-50 p-6 flex items-center gap-4">
+                <div className="w-14 h-14 bg-medical-600 text-white rounded-xl flex items-center justify-center shrink-0">
+                  {getConditionIcon(item.iconName)}
+                </div>
+                <div>
+                  <p className="text-sm text-slate-500">
+                    {lang === 'fr' ? 'Pathologie traitée' : 'الحالة المعالجة'}
+                  </p>
+                  <p className="font-semibold text-slate-900">{item.title}</p>
+                </div>
+              </div>
               <div className="w-14 h-14 bg-medical-100 text-medical-600 rounded-full flex items-center justify-center mb-6">
                 {getConditionIcon(item.iconName)}
               </div>

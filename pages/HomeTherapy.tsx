@@ -2,7 +2,7 @@ import React from 'react';
 import { Language } from '../types';
 import { CONTENT, PHONE_NUMBER } from '../constants';
 import SEOHead from '../components/SEOHead';
-import { Check, Phone } from 'lucide-react';
+import { Check, Home, Phone } from 'lucide-react';
 
 interface HomeTherapyProps {
   lang: Language;
@@ -38,12 +38,19 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
       <div className="container mx-auto px-4 py-20">
          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-                      <img 
-                         src="https://picsum.photos/id/1025/600/600" 
-                         alt="Kiné à domicile" 
-                         className="rounded-3xl shadow-2xl" 
-                         loading="lazy"
-                      />
+                                 <div className="rounded-3xl shadow-2xl border border-medical-100 bg-gradient-to-br from-medical-50 via-white to-blue-50 p-10 min-h-[420px] flex flex-col justify-center items-center text-center">
+                                    <div className="w-24 h-24 rounded-2xl bg-medical-600 text-white flex items-center justify-center shadow-lg mb-6">
+                                       <Home size={48} />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                                       {lang === 'fr' ? 'Rééducation à domicile' : 'ترويض منزلي'}
+                                    </h3>
+                                    <p className="text-slate-600 max-w-md leading-relaxed">
+                                       {lang === 'fr'
+                                          ? 'Prise en charge professionnelle chez vous avec matériel adapté, en toute discrétion et confort.'
+                                          : 'رعاية مهنية في المنزل بمعدات مناسبة، مع الخصوصية والراحة.'}
+                                    </p>
+                                 </div>
             </div>
             <div>
                <h2 className="text-3xl font-bold text-slate-900 mb-8">

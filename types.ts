@@ -88,4 +88,5 @@ export interface ReviewItem {
   rating: number;
   text: string;
   date: string;
+  avatarUrl?: string;
 }

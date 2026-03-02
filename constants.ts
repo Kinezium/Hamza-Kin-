@@ -4,7 +4,7 @@ export const PHONE_NUMBER = "0665646754";
 export const WHATSAPP_NUMBER = "212665646754"; // Format for API
 export const ADDRESS = "500 Boulevard Mecdad Laherizi, Sbata – Casablanca, Morocco";
 export const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.414193762785!2d-7.563617799999999!3d33.5426133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda633a36d6890ad%3A0xbc43853714712366!2zQ2VudHJlIGRlIGtpbsOpc2l0aMOpcmFwaWUgQ0hOSURFUiAtINin2YTYqtix2YjZiti2INin2YTYt9io2Yo!5e0!3m2!1sen!2sma!4v1770853502303!5m2!1sen!2sma"; 
-export const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/Centre+de+kin%C3%A9sith%C3%A9rapie+CHNIDER+-+%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B6+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%E2%80%AD/@33.5427003,-7.5662519,17z/data=!4m8!3m7!1s0xda633a36d6890ad:0xbc43853714712366!8m2!3d33.5426133!4d-7.5636178!9m1!1b1!16s%2Fg%2F11kj7fl0mh!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D";
+export const GOOGLE_REVIEWS_URL = "https://www.google.com/search?hl=en-MA&gl=ma&q=Centre+de+kin%C3%A9sith%C3%A9rapie+CHNIDER+-+%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B6+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A,+500+Bd+Mekdad+Lahrizi,+Casablanca&ludocid=13565832974182720358&lsig=AB86z5XXNPd09IjW1AODiyu35kqP&_rs_=1#lrd=0xda633a36d6890ad:0xbc43853714712366,1";
 
 export const CONTENT: Record<'fr' | 'ar', ContentData> = {
   fr: {
@@ -147,9 +147,30 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
       title: "Avis de nos Patients",
       subtitle: "Votre santé et votre satisfaction sont notre priorité.",
       items: [
-        { id: "1", name: "Hassan E.", rating: 5, text: "Excellent kiné. Il se déplace à domicile à Maarif, très ponctuel. Les factures sont bien faites pour la mutuelle.", date: "Il y a 1 semaine" },
-        { id: "2", name: "Sara L.", rating: 5, text: "J'ai soigné ma hernie discale au centre Chnider. Équipe très compétente et à l'écoute.", date: "Il y a 3 semaines" },
-        { id: "3", name: "Mohamed T.", rating: 5, text: "Très bon contact pour la rééducation de mon père après son AVC. Merci.", date: "Il y a 2 jours" }
+        {
+          id: "1",
+          name: "anass elhadi",
+          rating: 5,
+          text: "Hamza is an excellent kiné therapist who is attentive, listens carefully, and helps you understand the source of your pain and the process to alleviate it.",
+          date: "Il y a 1 an",
+          avatarUrl: "https://lh3.googleusercontent.com/a-/ALV-UjWkU0OQ466MTbpRLla7GUp_-PyXcTM4vP2KvuKTbqR3A4GkCunu=w45-h45-p-rp-mo-br100"
+        },
+        {
+          id: "2",
+          name: "Anass Chbani",
+          rating: 5,
+          text: "Une personne jeune, attentive, avec un bon sens de l'écoute et surtout humaine et compétente dans son domaine.",
+          date: "Il y a 2 mois",
+          avatarUrl: "https://lh3.googleusercontent.com/a/ACg8ocIPd_drm6wdDVmy-fok4sGa6SqEi5J2uKMryW8ghJFLQeq79g=w45-h45-p-rp-mo-br100"
+        },
+        {
+          id: "3",
+          name: "oumaima ouafik",
+          rating: 5,
+          text: "Merci pour la qualité des soins et les bons conseils, un kinésithérapeute au top !",
+          date: "Il y a 2 semaines",
+          avatarUrl: "https://lh3.googleusercontent.com/a/ACg8ocKtt9QSk4w4-n0KO4q6D3-ChmVk8idJhNzurELPdIWGDMmGeQ=w45-h45-p-rp-mo-br100"
+        }
       ]
     },
     about: {

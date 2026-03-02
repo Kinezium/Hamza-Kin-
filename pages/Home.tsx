@@ -20,6 +20,13 @@ const getConditionIcon = (iconName?: string, size = 20) => {
   }
 };
 
+const getInitials = (name: string) => {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (!parts.length) return 'U';
+  if (parts.length === 1) return parts[0].slice(0, 1).toUpperCase();
+  return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
+};
+
 interface HomeProps {
   lang: Language;
 }
@@ -225,7 +232,22 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                 </div>
                 <p className="text-slate-700 mb-6 italic">"{review.text}"</p>
                 <div className="flex justify-between items-center border-t pt-4 gap-4">
-                  <span className="font-bold text-slate-900">{review.name}</span>
+                  <div className="flex items-center gap-3 min-w-0">
+                    {review.avatarUrl ? (
+                      <img
+                        src={review.avatarUrl}
+                        alt={review.name}
+                        className="w-11 h-11 rounded-full object-cover border border-slate-200 shrink-0"
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : (
+                      <div className="w-11 h-11 rounded-full bg-medical-100 text-medical-700 border border-medical-200 flex items-center justify-center font-bold text-sm shrink-0">
+                        {getInitials(review.name)}
+                      </div>
+                    )}
+                    <span className="font-bold text-slate-900 truncate">{review.name}</span>
+                  </div>
                   <span className="text-xs text-slate-400 whitespace-nowrap">{review.date}</span>
                 </div>
               </div>
