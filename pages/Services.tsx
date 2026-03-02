@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import { CONTENT } from '../constants';
 import SEOHead from '../components/SEOHead';
@@ -10,6 +11,7 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ lang }) => {
   const t = CONTENT[lang];
+  const prefix = lang === 'ar' ? '/ar' : '';
 
   const getIcon = (name: string) => {
     switch(name) {
@@ -25,7 +27,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
   return (
     <>
       <SEOHead 
-        title={t.seo.servicesTitle} 
+        title={lang === 'fr' ? 'Services Kinésithérapie Casablanca | Rééducation, Respiratoire, Sport & Domicile' : 'خدمات الترويض الطبي بالدار البيضاء | إعادة التأهيل والتنفس والترويض المنزلي'} 
         description={t.seo.servicesDesc} 
         keywords={lang === 'fr' ? 'kiné orthopédique, kiné fonctionnelle, kiné respiratoire, hijama médicale, kiné à domicile, kiné sport, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné bébé, kiné Casablanca' : 'الترويض, الترويض الطبي, علاج العظام, علاج العضلات, علاج التنفس, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم'}
       />
@@ -34,6 +36,25 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">{t.services.title}</h1>
           <p className="text-xl text-medical-100 max-w-2xl mx-auto">{t.services.subtitle}</p>
+          <p className="text-medical-50 mt-4 max-w-3xl mx-auto">
+            {lang === 'fr' ? (
+              <>
+                Besoin d’un traitement pour <strong>sciatique</strong>, <strong>douleurs lombaires</strong> ou
+                {' '}<strong>rééducation post-opératoire</strong> ? Consultez aussi nos
+                {' '}<Link to={`${prefix}/pathologies`} className="underline font-semibold">pathologies traitées</Link>
+                {' '}et prenez rendez-vous via la page
+                {' '}<Link to={`${prefix}/contact`} className="underline font-semibold">contact</Link>.
+              </>
+            ) : (
+              <>
+                إذا كنتم بحاجة إلى علاج <strong>عرق النسا</strong> أو <strong>آلام الظهر</strong>
+                {' '}أو <strong>التأهيل بعد الجراحة</strong>، اطلعوا أيضاً على
+                {' '}<Link to={`${prefix}/pathologies`} className="underline font-semibold">الأمراض المعالجة</Link>
+                {' '}واحجزوا عبر صفحة
+                {' '}<Link to={`${prefix}/contact`} className="underline font-semibold">الاتصال</Link>.
+              </>
+            )}
+          </p>
         </div>
       </div>
 

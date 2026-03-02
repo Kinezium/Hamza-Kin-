@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
 import { Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame } from 'lucide-react';
@@ -170,18 +171,36 @@ const POSTS: BlogPost[] = [
 
 const Blog: React.FC<{ lang: Language }> = ({ lang }) => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const prefix = lang === 'ar' ? '/ar' : '';
 
   return (
     <>
       <SEOHead 
-        title={lang === 'fr' ? 'Blog Santé & Kinésithérapie | Casablanca' : 'مدونة الصحة والترويض الطبي | الدار البيضاء'}
-        description={lang === 'fr' ? 'Découvrez des articles sur les maladies, les traitements et le rôle de la kinésithérapie à Casablanca.' : 'مقالات حول الأمراض والعلاج ودور الترويض الطبي في الدار البيضاء.'}
-        keywords={lang === 'fr' ? 'blog kiné, blog santé, sciatique, hernie discale, kinésithérapie, Casablanca' : 'مدونة الترويض الطبي, مدونة الصحة, عرق النسا, انزلاق غضروفي, الترويض الطبي, الدار البيضاء'}
+        title={lang === 'fr' ? 'Blog Kinésithérapie Casablanca | Sciatique, Hernie Discale, Rééducation' : 'مدونة الترويض الطبي بالدار البيضاء | عرق النسا والانزلاق الغضروفي وإعادة التأهيل'}
+        description={lang === 'fr' ? 'Articles santé sur la sciatique, la hernie discale, les douleurs articulaires et le rôle du kinésithérapeute à Casablanca.' : 'مقالات صحية حول عرق النسا والانزلاق الغضروفي وآلام المفاصل ودور المروض الطبي في الدار البيضاء.'}
+        keywords={lang === 'fr' ? 'blog kiné Casablanca, sciatique, hernie discale, lombalgie, kinésithérapie, rééducation fonctionnelle' : 'مدونة الترويض الطبي بالدار البيضاء, عرق النسا, الانزلاق الغضروفي, آلام الظهر, إعادة التأهيل'}
       />
       <div className="container mx-auto px-4 py-20">
         <h1 className="text-4xl font-bold text-center mb-12">
           {lang === 'fr' ? 'Blog Santé & Kinésithérapie' : 'مدونة الصحة والترويض الطبي'}
         </h1>
+        <p className="text-center text-slate-700 max-w-3xl mx-auto mb-10">
+          {lang === 'fr' ? (
+            <>
+              Retrouvez des conseils sur la <strong>sciatique</strong>, la <strong>hernie discale</strong>, les douleurs du dos et la
+              {' '}<strong>rééducation</strong>. Consultez aussi nos
+              {' '}<Link to={`${prefix}/pathologies`} className="text-medical-700 font-semibold hover:underline">pathologies traitées</Link>
+              {' '}et nos <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">services de kiné à Casablanca</Link>.
+            </>
+          ) : (
+            <>
+              مقالات ونصائح حول <strong>عرق النسا</strong> و<strong>الانزلاق الغضروفي</strong> وآلام الظهر و<strong>إعادة التأهيل</strong>.
+              يمكنكم أيضاً الاطلاع على
+              {' '}<Link to={`${prefix}/pathologies`} className="text-medical-700 font-semibold hover:underline">الأمراض المعالجة</Link>
+              {' '}و<Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">خدمات الترويض الطبي بالدار البيضاء</Link>.
+            </>
+          )}
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {POSTS.map(post => (
             <div key={post.id} className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 cursor-pointer hover:shadow-xl transition" onClick={() => setSelectedPost(post)}>

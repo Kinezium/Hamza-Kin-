@@ -1,5 +1,5 @@
 import React from 'react';
-import { ADDRESS, PHONE_NUMBER } from '../constants';
+import { PHONE_NUMBER, SOCIAL_LINKS } from '../constants';
 
 const SchemaMarkup: React.FC = () => {
   const schemaData = {
@@ -55,7 +55,11 @@ const SchemaMarkup: React.FC = () => {
       "@type": "City",
       "name": "Casablanca"
     },
-    "sameAs": [],
+    "sameAs": [
+      SOCIAL_LINKS.instagram,
+      SOCIAL_LINKS.facebook,
+      SOCIAL_LINKS.linkedin
+    ],
     "paymentAccepted": "Cash, Mutuelle (CNSS, CNOPS, Assurances)",
     "keywords": "kiné Casablanca, kinésithérapie Sbata, hijama médicale, rééducation fonctionnelle, الترويض الطبي, الحجامة الطبية, مركز اشنيدر"
   };

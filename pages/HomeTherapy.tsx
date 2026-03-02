@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import { CONTENT, PHONE_NUMBER } from '../constants';
 import SEOHead from '../components/SEOHead';
@@ -10,12 +11,12 @@ interface HomeTherapyProps {
 
 const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
   const t = CONTENT[lang].homeTherapy;
-  const seo = CONTENT[lang].seo;
+   const prefix = lang === 'ar' ? '/ar' : '';
 
   return (
     <>
          <SEOHead 
-            title={`Kiné à Domicile Casablanca | ${seo.homeTitle}`} 
+            title={lang === 'fr' ? 'Kiné à Domicile Casablanca | Rééducation Fonctionnelle, Dos, Neurologie' : 'ترويض منزلي بالدار البيضاء | إعادة التأهيل وآلام الظهر والأعصاب'} 
             description={t.description} 
             keywords={lang === 'fr' ? 'kiné à domicile, kiné Casablanca, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire, kiné bébé, kiné sport, kiné orthopédique, kiné fonctionnelle' : 'الترويض المنزلي, الترويض الطبي, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات, علاج التنفس, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم'}
          />
@@ -26,6 +27,21 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
             <p className="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
                {t.description}
             </p>
+                  <p className="text-slate-700 max-w-3xl mb-8">
+                     {lang === 'fr' ? (
+                        <>
+                           Service de <strong>kinésithérapie à domicile à Casablanca</strong> pour la <strong>sciatique</strong>, la <strong>rééducation post-opératoire</strong>
+                           {' '}et les douleurs articulaires. Voir aussi nos <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">services</Link>
+                           {' '}et <Link to={`${prefix}/pathologies`} className="text-medical-700 font-semibold hover:underline">pathologies</Link>.
+                        </>
+                     ) : (
+                        <>
+                           خدمة <strong>الترويض المنزلي بالدار البيضاء</strong> لعلاج <strong>عرق النسا</strong> و<strong>التأهيل بعد العمليات</strong> وآلام المفاصل.
+                           يمكنكم أيضاً الاطلاع على <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">الخدمات</Link>
+                           {' '}و<Link to={`${prefix}/pathologies`} className="text-medical-700 font-semibold hover:underline">الأمراض المعالجة</Link>.
+                        </>
+                     )}
+                  </p>
             <a 
               href={`tel:${PHONE_NUMBER}`} 
               className="inline-flex items-center gap-2 bg-medical-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-medical-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1"

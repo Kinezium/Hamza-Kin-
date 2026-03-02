@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import { CONTENT, PHONE_NUMBER, MAP_EMBED_URL, WHATSAPP_NUMBER } from '../constants';
 import SEOHead from '../components/SEOHead';
@@ -10,19 +11,36 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ lang }) => {
   const t = CONTENT[lang].contact;
-  const seo = CONTENT[lang].seo;
+   const prefix = lang === 'ar' ? '/ar' : '';
 
   return (
     <>
          <SEOHead 
-            title={seo.contactTitle} 
-            description={seo.contactDesc} 
+            title={lang === 'fr' ? 'Contact Kiné Casablanca | Centre Chnider Sbata, Cabinet & Domicile' : 'اتصل بمركز الترويض الطبي بالدار البيضاء | مركز اشنيدر'} 
+            description={CONTENT[lang].seo.contactDesc} 
             keywords={lang === 'fr' ? 'contact kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire, kiné bébé' : 'اتصال الترويض الطبي, الترويض, الترويض الطبي, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
          />
       
       <div className="bg-gray-50 min-h-screen py-16">
         <div className="container mx-auto px-4">
            <h1 className="text-4xl font-bold text-center text-slate-900 mb-12">{t.title}</h1>
+                <p className="text-center text-slate-700 max-w-3xl mx-auto mb-10">
+                   {lang === 'fr' ? (
+                      <>
+                         Contactez votre <strong>kinésithérapeute à Casablanca</strong> pour une consultation au cabinet ou en
+                         {' '}<strong>kiné à domicile</strong>. Avant votre visite, consultez nos
+                         {' '}<Link to={`${prefix}/pathologies`} className="text-medical-700 font-semibold hover:underline">pathologies</Link>
+                         {' '}et <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">services</Link>.
+                      </>
+                   ) : (
+                      <>
+                         تواصلوا مع <strong>مروض طبي بالدار البيضاء</strong> لحجز موعد في العيادة أو
+                         {' '}<strong>الترويض المنزلي</strong>. قبل الزيارة يمكنكم الاطلاع على
+                         {' '}<Link to={`${prefix}/pathologies`} className="text-medical-700 font-semibold hover:underline">الأمراض المعالجة</Link>
+                         {' '}و<Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">الخدمات</Link>.
+                      </>
+                   )}
+                </p>
 
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
               {/* Info Card */}

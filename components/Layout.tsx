@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Phone, Globe, Facebook, Instagram } from 'lucide-react';
+import { Menu, X, Phone, Globe, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, PHONE_NUMBER } from '../constants';
+import { CONTENT, PHONE_NUMBER, SOCIAL_LINKS } from '../constants';
 import SchemaMarkup from './SchemaMarkup';
 
 interface LayoutProps {
@@ -162,7 +162,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <p className="text-slate-300 font-bold text-lg" dir="ltr">{PHONE_NUMBER}</p>
               <div className="mt-4 flex justify-center md:justify-start rtl:md:justify-end gap-4">
                 <a 
-                  href="https://facebook.com" 
+                  href={SOCIAL_LINKS.facebook}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition text-white" 
@@ -171,13 +171,22 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                   <Facebook size={20} />
                 </a>
                 <a 
-                  href="https://instagram.com" 
+                  href={SOCIAL_LINKS.instagram}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="bg-slate-800 p-2 rounded-full hover:bg-pink-600 transition text-white" 
                   aria-label="Instagram"
                 >
                   <Instagram size={20} />
+                </a>
+                <a
+                  href={SOCIAL_LINKS.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-slate-800 p-2 rounded-full hover:bg-sky-700 transition text-white"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
                 </a>
               </div>
             </div>

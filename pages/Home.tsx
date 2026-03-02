@@ -57,17 +57,6 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
         description={t.seo.homeDesc} 
         keywords={lang === 'fr' ? 'kiné autour de moi, kinésithérapie à Casablanca, centre de kinésithérapie à Sbata, rééducation fonctionnelle Casablanca, traitement sciatique Casablanca, douleurs lombaires Casablanca, kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné bébé, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire' : 'الترويض, الترويض الطبي, ألم الظهر, ألم السياتيك, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
       />
-      {/* Bloc SEO local visible pour Google */}
-      <section style={{position:'absolute',left:'-9999px',height:'1px',width:'1px',overflow:'hidden'}} aria-hidden="true">
-        <h2>Kiné autour de moi</h2>
-        <h2>Kinésithérapie à Casablanca</h2>
-        <h2>Centre de kinésithérapie à Sbata</h2>
-        <h2>Rééducation fonctionnelle Casablanca</h2>
-        <h2>Traitement sciatique Casablanca</h2>
-        <h2>Douleurs lombaires Casablanca</h2>
-        <h2>Centre de kinésithérapie local à Casablanca</h2>
-        <h2>Cabinet de kinésithérapie à Sbata</h2>
-      </section>
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-medical-50 to-white pt-12 pb-20 overflow-hidden">
@@ -115,6 +104,30 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-slate-100 py-8">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <p className="text-slate-700 leading-relaxed text-center">
+            {lang === 'fr' ? (
+              <>
+                Vous cherchez un <strong>kiné à Casablanca</strong> pour la <strong>sciatique</strong>, la <strong>hernie discale</strong>, la
+                {' '}<strong>rééducation fonctionnelle</strong> ou un <strong>kiné à domicile</strong> ? Consultez nos
+                {' '}<Link to={`${prefix}/pathologies`} className="text-medical-700 font-semibold hover:underline">pathologies traitées</Link>,
+                {' '}nos <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">services de kinésithérapie</Link>
+                {' '}et notre offre <Link to={`${prefix}/a-domicile`} className="text-medical-700 font-semibold hover:underline">à domicile à Casablanca</Link>.
+              </>
+            ) : (
+              <>
+                إذا كنتم تبحثون عن <strong>مروض طبي بالدار البيضاء</strong> لعلاج <strong>عرق النسا</strong> و<strong>الانزلاق الغضروفي</strong>
+                {' '}أو <strong>الترويض المنزلي</strong>، اطلعوا على
+                {' '}<Link to={`${prefix}/pathologies`} className="text-medical-700 font-semibold hover:underline">الأمراض المعالجة</Link>
+                {' '}و<Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">خدمات الترويض الطبي</Link>
+                {' '}و<Link to={`${prefix}/a-domicile`} className="text-medical-700 font-semibold hover:underline">خدمة الترويض المنزلي</Link>.
+              </>
+            )}
+          </p>
         </div>
       </section>
 
@@ -333,7 +346,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                   <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-bold">🛡️ {lang === 'fr' ? 'Sécurité maximale' : 'أمان أقصى'}</span>
                 </div>
                 <a
-                  href="https://lgcp-vitrine.clinaxis.ma"
+                  href="https://clinaxis.ma"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-sm"

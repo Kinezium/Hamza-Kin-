@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import { CONTENT, PHONE_NUMBER } from '../constants';
 import SEOHead from '../components/SEOHead';
@@ -24,6 +25,7 @@ const getConditionIcon = (iconName?: string) => {
 
 const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
   const t = CONTENT[lang];
+  const prefix = lang === 'ar' ? '/ar' : '';
 
   return (
     <>
@@ -37,6 +39,21 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">{t.conditions.title}</h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">{t.conditions.subtitle}</p>
+          <p className="text-slate-700 max-w-3xl mx-auto mt-4">
+            {lang === 'fr' ? (
+              <>
+                Nous traitons les cas de <strong>hernie discale</strong>, <strong>sciatique</strong>, <strong>arthrose</strong> et douleurs chroniques.
+                Découvrez nos <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">services de kinésithérapie</Link>
+                {' '}et l’option <Link to={`${prefix}/a-domicile`} className="text-medical-700 font-semibold hover:underline">kiné à domicile à Casablanca</Link>.
+              </>
+            ) : (
+              <>
+                نعالج حالات <strong>الانزلاق الغضروفي</strong> و<strong>عرق النسا</strong> و<strong>خشونة المفاصل</strong> والآلام المزمنة.
+                تعرفوا على <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">خدمات الترويض الطبي</Link>
+                {' '}وخيار <Link to={`${prefix}/a-domicile`} className="text-medical-700 font-semibold hover:underline">الترويض المنزلي بالدار البيضاء</Link>.
+              </>
+            )}
+          </p>
         </div>
       </div>
 

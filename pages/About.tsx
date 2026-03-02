@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import { CONTENT } from '../constants';
 import SEOHead from '../components/SEOHead';
@@ -10,11 +11,12 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ lang }) => {
   const t = CONTENT[lang].about;
+  const prefix = lang === 'ar' ? '/ar' : '';
   
   return (
     <>
       <SEOHead 
-        title={`À Propos | ${CONTENT[lang].seo.homeTitle}`} 
+        title={lang === 'fr' ? 'À Propos Centre Chnider | Kinésithérapie Casablanca, Cabinet & Domicile' : 'عن مركز اشنيدر | الترويض الطبي بالدار البيضاء عيادة ومنزل'} 
         description={t.mission} 
         keywords={lang === 'fr' ? 'centre kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire, kiné bébé' : 'مركز الترويض الطبي, الترويض, الترويض الطبي, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
       />
@@ -22,6 +24,23 @@ const About: React.FC<AboutProps> = ({ lang }) => {
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
            <h1 className="text-4xl font-bold text-slate-900 mb-8 text-center">{t.title}</h1>
+           <p className="text-center text-slate-700 max-w-3xl mx-auto mb-8">
+             {lang === 'fr' ? (
+               <>
+                 Centre de <strong>kinésithérapie à Casablanca</strong> spécialisé en <strong>rééducation fonctionnelle</strong>,
+                 {' '}<strong>kiné respiratoire</strong> et <strong>kiné à domicile</strong>. Voir nos
+                 {' '}<Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">services</Link>
+                 {' '}et <Link to={`${prefix}/contact`} className="text-medical-700 font-semibold hover:underline">prendre rendez-vous</Link>.
+               </>
+             ) : (
+               <>
+                 مركز <strong>الترويض الطبي بالدار البيضاء</strong> متخصص في <strong>إعادة التأهيل الوظيفي</strong>
+                 {' '}و<strong>الترويض التنفسي</strong> و<strong>الترويض المنزلي</strong>.
+                 اطلعوا على <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">الخدمات</Link>
+                 {' '}و<Link to={`${prefix}/contact`} className="text-medical-700 font-semibold hover:underline">حجز موعد</Link>.
+               </>
+             )}
+           </p>
            
            <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl mb-12 border-t-8 border-medical-500">
              {t.content.map((paragraph, idx) => (
@@ -95,6 +114,14 @@ const About: React.FC<AboutProps> = ({ lang }) => {
                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">📅 {lang === 'fr' ? 'Gestion RDV' : 'تدبير المواعيد'}</span>
                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold">📊 {lang === 'fr' ? 'Dossiers patients' : 'ملفات المرضى'}</span>
                  </div>
+                 <a
+                   href="https://clinaxis.ma"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 mt-4 text-blue-700 font-bold hover:underline"
+                 >
+                   {lang === 'fr' ? 'En savoir plus sur CLINAXIS' : 'المزيد حول CLINAXIS'}
+                 </a>
                </div>
              </div>
            </div>
