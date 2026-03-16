@@ -3,7 +3,7 @@ import { useCountUp } from '../components/useCountUp';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, MapPin, Bus, Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, WHATSAPP_NUMBER, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
+import { CONTENT, WHATSAPP_NUMBER, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
 import SEOHead from '../components/SEOHead';
 
 const getConditionIcon = (iconName?: string, size = 20) => {
@@ -35,7 +35,6 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
   const t = CONTENT[lang];
   const featuredReviews = t.reviews.items.slice(0, 3);
   const prefix = lang === 'ar' ? '/ar' : '';
-  const logoUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon';
   const [benefitIndex, setBenefitIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const serviceZones = lang === 'fr' ? SERVICE_ZONES_FR : SERVICE_ZONES_AR;
@@ -334,8 +333,8 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-gradient-to-r from-slate-50 to-blue-50 p-8 md:p-10 rounded-3xl border border-blue-100 shadow-lg">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shrink-0 shadow-md">
-                <img src={logoUrl} alt="CLINAXIS logo" className="w-14 h-14 object-contain" loading="lazy" />
+              <div className="w-20 h-20 flex items-center justify-center shrink-0">
+                <img src={LOGO_SYMBOL_WHITE_URL} alt="CLINAXIS logo" className="w-16 h-16 object-contain drop-shadow-md" loading="lazy" />
               </div>
               <div className="text-center md:text-start rtl:md:text-right">
                 <h2 className="text-2xl font-bold text-slate-900 mb-3">

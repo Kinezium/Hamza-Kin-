@@ -8,6 +8,7 @@ import HomeTherapy from './pages/HomeTherapy';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import Gallery from './pages/Gallery';
 import StickyCTA from './components/StickyCTA';
 import { Language } from './types';
 
@@ -86,11 +87,13 @@ const App: React.FC = () => {
           <Route path="/a-propos" element={<About lang={lang} />} />
           <Route path="/contact" element={<Contact lang={lang} />} />
           <Route path="/blog" element={<Blog lang={lang} />} />
+          <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
           {/* Legacy French slugs redirects */}
           <Route path="/conditions" element={<Navigate to="/pathologies" replace />} />
           <Route path="/home-therapy" element={<Navigate to="/a-domicile" replace />} />
           <Route path="/about" element={<Navigate to="/a-propos" replace />} />
+          <Route path="/gallery" element={<Navigate to="/gallerie" replace />} />
 
           {/* Arabic routes /ar */}
           <Route path="/ar" element={<Home lang="ar" />} />
@@ -100,11 +103,13 @@ const App: React.FC = () => {
           <Route path="/ar/a-propos" element={<About lang="ar" />} />
           <Route path="/ar/contact" element={<Contact lang="ar" />} />
           <Route path="/ar/blog" element={<Blog lang="ar" />} />
+          <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 
           {/* Legacy Arabic slugs redirects */}
           <Route path="/ar/conditions" element={<Navigate to="/ar/pathologies" replace />} />
           <Route path="/ar/home-therapy" element={<Navigate to="/ar/a-domicile" replace />} />
           <Route path="/ar/about" element={<Navigate to="/ar/a-propos" replace />} />
+          <Route path="/ar/gallery" element={<Navigate to="/ar/gallerie" replace />} />
         </Routes>
       </Layout>
       <StickyCTA lang={lang} />

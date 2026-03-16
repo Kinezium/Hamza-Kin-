@@ -39,6 +39,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/gallerie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/gallerie" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/gallerie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/gallerie" />
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/a-propos</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/a-propos" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/a-propos" />
@@ -102,6 +111,15 @@
     <lastmod>2026-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/gallerie</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/gallerie" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/gallerie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/gallerie" />
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kinesitherapie.clinaxis.ma/ar/a-propos</loc>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, PHONE_NUMBER, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
+import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, LOGO_SYMBOL_WHITE_URL, PHONE_NUMBER, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Check, Home, Phone } from 'lucide-react';
 
@@ -14,7 +14,6 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
    const prefix = lang === 'ar' ? '/ar' : '';
    const neighborhoods = lang === 'fr' ? CASABLANCA_NEIGHBORHOODS_FR : CASABLANCA_NEIGHBORHOODS_AR;
    const serviceZones = lang === 'fr' ? SERVICE_ZONES_FR : SERVICE_ZONES_AR;
-   const logoUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon';
 
   return (
     <>
@@ -31,7 +30,7 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
                {t.description}
             </p>
                   <div className="mb-8 flex flex-col items-center gap-2">
-                     <img src={logoUrl} alt="Centre Chnider logo" className="w-20 h-20 object-contain rounded-xl bg-white shadow p-2" loading="lazy" />
+                     <img src={LOGO_SYMBOL_WHITE_URL} alt="Centre Chnider logo" className="w-20 h-20 object-contain drop-shadow-md" loading="lazy" />
                      <p className="text-sm text-slate-600 font-medium">
                         {lang === 'fr' ? 'Centre Chnider | Kinésithérapie & Hijama Médicale' : 'مركز شنيدر | الترويض الطبي والحجامة الطبية'}
                      </p>

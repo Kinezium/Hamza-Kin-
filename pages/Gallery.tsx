@@ -1,0 +1,73 @@
+import React from 'react';
+import { Language } from '../types';
+import SEOHead from '../components/SEOHead';
+import { LOGO_SYMBOL_WHITE_URL } from '../constants';
+
+interface GalleryProps {
+  lang: Language;
+}
+
+const galleryImages = [
+  {
+    src: 'https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it',
+    altFr: 'Séance de kinésithérapie au Centre Chnider',
+    altAr: 'جلسة ترويض طبي في مركز شنيدر'
+  },
+  {
+    src: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
+    altFr: 'Espace de soins et rééducation',
+    altAr: 'فضاء العلاج وإعادة التأهيل'
+  },
+  {
+    src: LOGO_SYMBOL_WHITE_URL,
+    altFr: 'Symbole du Centre Chnider',
+    altAr: 'رمز مركز شنيدر'
+  }
+];
+
+const Gallery: React.FC<GalleryProps> = ({ lang }) => {
+  return (
+    <>
+      <SEOHead
+        title={lang === 'fr' ? 'Galerie | Centre Chnider Kinésithérapie Casablanca' : 'المعرض | مركز شنيدر للترويض الطبي بالدار البيضاء'}
+        description={lang === 'fr' ? 'Découvrez la galerie du Centre Chnider: cabinet, matériel, séances de kinésithérapie et suivi à Casablanca.' : 'اكتشفوا معرض مركز شنيدر: العيادة، المعدات، وجلسات الترويض الطبي بالدار البيضاء.'}
+        keywords={lang === 'fr' ? 'galerie kiné Casablanca, centre kinésithérapie Sbata, photos cabinet kiné' : 'معرض الترويض الطبي, صور مركز شنيدر, عيادة الترويض الدار البيضاء'}
+      />
+
+      <section className="bg-medical-50 py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            {lang === 'fr' ? 'Galerie' : 'المعرض'}
+          </h1>
+          <p className="max-w-3xl mx-auto text-slate-600 text-lg">
+            {lang === 'fr'
+              ? 'Un aperçu de notre cabinet, notre matériel et notre approche de prise en charge au Centre Chnider.'
+              : 'لمحة عن العيادة والمعدات وطريقة الاشتغال داخل مركز شنيدر.'}
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryImages.map((image, index) => (
+              <figure
+                key={`${image.src}-${index}`}
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm"
+              >
+                <img
+                  src={image.src}
+                  alt={lang === 'fr' ? image.altFr : image.altAr}
+                  className="w-full h-72 object-cover"
+                  loading="lazy"
+                />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Gallery;

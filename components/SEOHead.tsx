@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { SOCIAL_LINKS } from '../constants';
+import { LATEST_FAVICON_URL, SOCIAL_LINKS } from '../constants';
 
 interface SEOHeadProps {
   title: string;
@@ -10,7 +10,7 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
   useEffect(() => {
     const baseUrl = 'https://kinesitherapie.clinaxis.ma';
-    const faviconUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEigj8XWkjIHDhU_eDuTmABTqmOwqr451I3oMKCJZPNuNpTNdFBNLoomOIgmXlRVbmolopyq_CBSImH_4d-0XXNBAe_0gY52T3vB-kBR0Znjuc_v_eWz9WmF7lRyMD_Sq-7Pjflh8CEhuj-jfhzK1coRASEC9yj6_GGwDyjXrzROgBsvf5Fm1MOUmoHn';
+    const faviconUrl = LATEST_FAVICON_URL;
     const pathname = window.location.pathname || '/';
     const isArabicPath = pathname === '/ar' || pathname.startsWith('/ar/');
     const frPath = isArabicPath ? (pathname.replace(/^\/ar(?=\/|$)/, '') || '/') : pathname;
@@ -95,6 +95,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       'pathologies': 'Pathologies',
       'services': 'Services',
       'a-domicile': 'À Domicile',
+      'gallerie': 'Galerie',
       'blog': 'Blog',
       'a-propos': 'À Propos',
       'contact': 'Contact'
@@ -105,6 +106,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       'pathologies': 'الأمراض المعالجة',
       'services': 'خدماتنا',
       'a-domicile': 'ترويض منزلي',
+      'gallerie': 'المعرض',
       'blog': 'مدونة',
       'a-propos': 'عن المركز',
       'contact': 'اتصل بنا'

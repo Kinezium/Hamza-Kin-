@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CONTENT } from '../constants';
+import { CONTENT, LOGO_SYMBOL_WHITE_URL } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Building2, Users } from 'lucide-react';
 
@@ -12,7 +12,6 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ lang }) => {
   const t = CONTENT[lang].about;
   const prefix = lang === 'ar' ? '/ar' : '';
-  const logoUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon';
   
   return (
     <>
@@ -98,8 +97,8 @@ const About: React.FC<AboutProps> = ({ lang }) => {
            {/* CLINAXIS LGCP Section */}
            <div className="mt-10 bg-gradient-to-r from-slate-50 to-blue-50 p-8 rounded-2xl border border-blue-100 shadow-sm">
              <div className="flex flex-col md:flex-row items-center gap-6">
-               <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">
-                 <img src={logoUrl} alt="CLINAXIS logo" className="w-12 h-12 object-contain" loading="lazy" />
+               <div className="w-16 h-16 flex items-center justify-center shrink-0">
+                 <img src={LOGO_SYMBOL_WHITE_URL} alt="CLINAXIS logo" className="w-14 h-14 object-contain drop-shadow-md" loading="lazy" />
                </div>
                <div>
                  <h3 className="text-xl font-bold text-slate-900 mb-2">

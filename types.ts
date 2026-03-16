@@ -6,6 +6,7 @@ export interface ContentData {
     services: string;
     conditions: string;
     homeTherapy: string;
+    gallery: string;
     about: string;
     contact: string;
     bookNow: string;

@@ -11,6 +11,9 @@ export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/company/centre-kine-chnider/"
 };
 
+export const LOGO_SYMBOL_WHITE_URL = "https://blogger.googleusercontent.com/img/a/AVvXsEjsWuKuX19KnqVNPYNlFK8n6uZOvLh2T3BNGhxpK-Bwsej15kkdBHfand2jK-m1exW0e2RyBr0fhmXk34rTw17EXVPHlTGoDD5-IiFVdZVDdmNJZ5qwGeUdU5ZMo17y1cWzZxqBKNliSuNAT96ZlPBrQrHeY_l7VyNOGO0MtXkVRQcDaWKNT3g-afKR";
+export const LATEST_FAVICON_URL = "https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon";
+
 export const CASABLANCA_NEIGHBORHOODS_FR = [
   "Aïn Chock",
   "Sbata",
@@ -93,6 +96,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
       services: "Services",
       conditions: "Pathologies",
       homeTherapy: "À Domicile",
+      gallery: "Galerie",
       about: "Le Centre",
       contact: "Contact",
       bookNow: "Prendre RDV",
@@ -290,6 +294,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
       services: "خدماتنا",
       conditions: "الأمراض المعالجة",
       homeTherapy: "ترويض منزلي",
+      gallery: "المعرض",
       about: "عن المركز",
       contact: "اتصل بنا",
       bookNow: "حجز موعد",

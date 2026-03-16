@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, Globe, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, PHONE_NUMBER, SOCIAL_LINKS } from '../constants';
+import { CONTENT, LOGO_SYMBOL_WHITE_URL, PHONE_NUMBER, SOCIAL_LINKS } from '../constants';
 import SchemaMarkup from './SchemaMarkup';
 
 interface LayoutProps {
@@ -16,7 +16,6 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
   const t = CONTENT[lang].nav;
   const location = useLocation();
   const navigate = useNavigate();
-  const logoUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon';
 
   const toggleLang = () => {
     const currentPath = location.pathname;
@@ -66,9 +65,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to={homePath} className="flex items-center gap-2" onClick={closeMenu}>
-               <div className="w-10 h-10 bg-medical-600 rounded-full flex items-center justify-center">
-                 <img src={logoUrl} alt="Logo Centre Chnider" className="w-8 h-8 object-contain" loading="lazy" />
-               </div>
+               <img src={LOGO_SYMBOL_WHITE_URL} alt="Logo Centre Chnider" className="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
                <div className="leading-tight">
                  <h1 className="text-xl font-bold text-gray-900 tracking-tight">{lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}</h1>
                  <p className="text-xs text-medical-600 font-medium">{lang === 'ar' ? 'الترويض الطبي و الحجامة الطبية' : 'Kinésithérapie & Hijama Médicale'}</p>
@@ -81,6 +78,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <NavLink to={`${prefix}/pathologies`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.conditions}</NavLink>
               <NavLink to={`${prefix}/services`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.services}</NavLink>
               <NavLink to={`${prefix}/a-domicile`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.homeTherapy}</NavLink>
+              <NavLink to={`${prefix}/gallerie`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.gallery}</NavLink>
               <NavLink to={`${prefix}/blog`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{lang === 'fr' ? 'Blog' : 'مدونة'}</NavLink>
               <NavLink to={`${prefix}/a-propos`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.about}</NavLink>
               <NavLink to={`${prefix}/contact`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.contact}</NavLink>
@@ -118,6 +116,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <Link to={`${prefix}/pathologies`} onClick={closeMenu} className={linkClass(`${prefix}/pathologies`)}>{t.conditions}</Link>
               <Link to={`${prefix}/services`} onClick={closeMenu} className={linkClass(`${prefix}/services`)}>{t.services}</Link>
               <Link to={`${prefix}/a-domicile`} onClick={closeMenu} className={linkClass(`${prefix}/a-domicile`)}>{t.homeTherapy}</Link>
+              <Link to={`${prefix}/gallerie`} onClick={closeMenu} className={linkClass(`${prefix}/gallerie`)}>{t.gallery}</Link>
               <Link to={`${prefix}/blog`} onClick={closeMenu} className={linkClass(`${prefix}/blog`)}>{lang === 'fr' ? 'Blog' : 'مدونة'}</Link>
               <Link to={`${prefix}/a-propos`} onClick={closeMenu} className={linkClass(`${prefix}/a-propos`)}>{t.about}</Link>
               <Link to={`${prefix}/contact`} onClick={closeMenu} className={linkClass(`${prefix}/contact`)}>{t.contact}</Link>
@@ -143,9 +142,9 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             <div>
               <h3 className="text-xl font-bold mb-4 text-medical-400">{lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}</h3>
               <img
-                src={logoUrl}
+                src={LOGO_SYMBOL_WHITE_URL}
                 alt="Logo Centre Chnider"
-                className="w-16 h-16 object-contain mx-auto md:mx-0 rtl:md:mx-0 mb-3 rounded-lg bg-slate-800 p-1"
+                className="w-16 h-16 object-contain drop-shadow-md mx-auto md:mx-0 rtl:md:mx-0 mb-3"
                 loading="lazy"
               />
               <p className="text-slate-400 mb-4 text-sm leading-relaxed">
@@ -160,6 +159,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                 <li><Link to={`${prefix}/pathologies`} className="hover:text-white">{t.conditions}</Link></li>
                 <li><Link to={`${prefix}/services`} className="hover:text-white">{t.services}</Link></li>
                 <li><Link to={`${prefix}/a-domicile`} className="hover:text-white">{t.homeTherapy}</Link></li>
+                <li><Link to={`${prefix}/gallerie`} className="hover:text-white">{t.gallery}</Link></li>
                 <li><Link to={`${prefix}/blog`} className="hover:text-white">{lang === 'fr' ? 'Blog' : 'مدونة'}</Link></li>
               </ul>
             </div>
