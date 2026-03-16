@@ -11,6 +11,81 @@ export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/company/centre-kine-chnider/"
 };
 
+export const CASABLANCA_NEIGHBORHOODS_FR = [
+  "Aïn Chock",
+  "Sbata",
+  "Sidi Othmane",
+  "Maarif",
+  "Bourgogne",
+  "Gauthier",
+  "Racine",
+  "Mers Sultan",
+  "Derb Sultan",
+  "Belvedere",
+  "Roches Noires",
+  "Hay Hassani",
+  "Sidi Maarouf",
+  "Californie",
+  "Oasis",
+  "Anfa",
+  "Lissasfa",
+  "Bernoussi",
+  "Sidi Bernoussi",
+  "Ain Sebaa"
+];
+
+export const CASABLANCA_NEIGHBORHOODS_AR = [
+  "عين الشق",
+  "سباتة",
+  "سيدي عثمان",
+  "المعاريف",
+  "بوركون",
+  "غوتييه",
+  "راسين",
+  "مرس السلطان",
+  "درب السلطان",
+  "بلفيدير",
+  "روش نوار",
+  "الحي الحسني",
+  "سيدي معروف",
+  "كاليفورنيا",
+  "الواحة",
+  "أنفا",
+  "ليساسفة",
+  "البرنوصي",
+  "سيدي البرنوصي",
+  "عين السبع"
+];
+
+export const SERVICE_ZONES_FR = [
+  "Casablanca Centre",
+  "Aïn Chock",
+  "Sbata",
+  "Maarif",
+  "Hay Hassani",
+  "Sidi Maarouf",
+  "Sidi Othmane",
+  "Anfa",
+  "Californie",
+  "Oasis",
+  "Ain Sebaa",
+  "Bernoussi"
+];
+
+export const SERVICE_ZONES_AR = [
+  "وسط الدار البيضاء",
+  "عين الشق",
+  "سباتة",
+  "المعاريف",
+  "الحي الحسني",
+  "سيدي معروف",
+  "سيدي عثمان",
+  "أنفا",
+  "كاليفورنيا",
+  "عين السبع",
+  "البرنوصي"
+];
+
 export const CONTENT: Record<'fr' | 'ar', ContentData> = {
   fr: {
     nav: {
@@ -24,7 +99,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     hero: {
       title: "Centre Chnider de Kinésithérapie à Casablanca",
-      subtitle: "Expertise en rééducation fonctionnelle, dos, sport et neurologie. Soins au cabinet (Sbata) et à domicile sur tout Casablanca. Agréé Mutuelles.",
+      subtitle: "Expertise en rééducation fonctionnelle, dos, sport et neurologie. Soins au cabinet (Sbata) et à domicile sur tout Casablanca: Aïn Chock, Californie, Oasis, Maarif, Sidi Othmane, Hay Hassani, Anfa et plus.",
       ctaCall: "0665 64 67 54",
       ctaWhatsapp: "WhatsApp",
       ctaBook: "Prendre Rendez-vous",
@@ -39,7 +114,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     conditions: {
       title: "Pathologies Traitées",
-      subtitle: "Une prise en charge complète pour soulager vos douleurs et traiter vos problèmes de santé.",
+      subtitle: "Une prise en charge complète pour soulager vos douleurs et traiter vos problèmes de santé. Tarifs à partir de 200 DH selon le bilan.",
       items: [
         {
           id: "sciatica",
@@ -131,18 +206,20 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
         {
           id: "home",
           title: "Kiné à Domicile (Tout Casa)",
-          description: "Déplacement sur tout Casablanca avec matériel complet.",
+          description: "Déplacement sur Casablanca avec matériel mobile complet, sans frais supplémentaire selon la zone.",
           iconName: "Home"
         }
       ]
     },
     homeTherapy: {
       title: "Kinésithérapie à Domicile Casablanca",
-      description: "Profitez de soins professionnels chez vous. Nous couvrons toute la ville de Casablanca pour les patients ne pouvant pas se déplacer.",
+      description: "Profitez de soins professionnels chez vous. Nous couvrons les principaux quartiers de Casablanca (Aïn Chock, Sbata, Californie, Oasis, Maarif, Sidi Othmane, Hay Hassani, Anfa...) pour les patients ne pouvant pas se déplacer.",
       benefits: [
-        "Zone d'intervention : Toute Casablanca",
+        "Zones couvertes: Aïn Chock, Sbata, Californie, Oasis, Sidi Othmane, Maarif, Hay Hassani, Anfa et plus",
         "Facture & Feuilles de soins (Remboursement Mutuelle)",
-        "Matériel complet (Electro, Ultrasons, etc.)",
+        "Matériel mobile complet (Electro, Ultrasons, Renforcement, Mobilisation)",
+        "Aucun frais supplémentaire pour le déplacement dans nos zones couvertes",
+        "Bilan innovant CLINAXIS SUIVI (dossier digitalisé, rapport à la demande)",
         "Gain de temps et confort absolu",
         "Suivi post-opératoire rigoureux"
       ],
@@ -182,7 +259,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
       title: "À Propos du Centre Chnider",
       content: [
         "Le Centre Chnider de Kinésithérapie est votre référence à Casablanca pour la rééducation physique et le bien-être.",
-        "Situé à Sbata, nous accueillons nos patients dans un cadre moderne, mais nous excellons également dans le service à domicile à travers toute la ville.",
+        "Situé à Sbata, nous accueillons nos patients dans un cadre moderne, mais nous excellons également dans le service à domicile à travers Casablanca: Aïn Chock, Californie, Oasis, Maarif, Sidi Othmane, Hay Hassani, Sidi Maarouf, Anfa et quartiers voisins.",
         "Nous facilitons vos démarches administratives : Factures, feuilles de soins pour CNSS, CNOPS et assurances privées sont fournies systématiquement."
       ],
       mission: "Notre objectif : Un rétablissement rapide, sans douleur, avec un accompagnement administratif complet."
@@ -198,13 +275,13 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     seo: {
       homeTitle: "Kiné Casablanca | Centre Chnider - Cabinet & Domicile (Agréé Mutuelle)",
-      homeDesc: "Centre Chnider: Kinésithérapeute expert à Casablanca. Soins cabinet & domicile (Tout Casa). Facture & Mutuelle (CNSS/CNOPS). Dos, Sport, Neuro, Respiratoire.",
+      homeDesc: "Centre Chnider: kiné Casablanca, kiné Casa, kiné Sbata, kiné Aïn Chock et kiné autour de moi. Soins cabinet & domicile. Tarif à partir de 200 DH selon le bilan.",
       servicesTitle: "Services Kiné Casablanca : Rééducation, Respiratoire, Sport & Hijama",
-      servicesDesc: "Soins complets : Kiné respiratoire bébé, rééducation AVC, traumatologie sport, Hijama médicale. Déplacement à domicile sur tout Casablanca.",
+      servicesDesc: "Soins complets : Kiné respiratoire bébé, rééducation AVC, traumatologie sport, Hijama médicale. Déplacement à domicile sur Casablanca (Aïn Chock, Sbata, Californie, Oasis, Maarif, Hay Hassani...).",
       conditionsTitle: "Traitement Hernie Discale, Sciatique & Arthrose | Kiné Casablanca",
-      conditionsDesc: "Spécialiste dos et articulations : Sciatique, hernie discale sans opération, paralysie faciale, entorses. Prenez rendez-vous au Centre Chnider.",
+      conditionsDesc: "Spécialiste dos et articulations : Sciatique, hernie discale sans opération, paralysie faciale, entorses. Tarifs à partir de 200 DH selon la pathologie.",
       contactTitle: "Contact Kiné Casablanca | Rdv Cabinet ou Domicile - 0665646754",
-      contactDesc: "Appelez le 0665646754 pour un kiné à Casablanca. Cabinet à Sbata ou à domicile partout à Casa. Feuilles de soins et factures fournies."
+      contactDesc: "Appelez le 0665646754 pour un kiné à Casablanca. Cabinet à Sbata ou domicile zones Aïn Chock, Californie, Oasis, Maarif, Sidi Othmane, Hay Hassani."
     }
   },
   ar: {
@@ -219,7 +296,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     hero: {
       title: "مركز شنيدر للترويض الطبي والعلاج الفيزيائي بالدار البيضاء",
-      subtitle: "خبراء في علاج آلام الظهر، المفاصل، وترويض الأطفال. خدماتنا متوفرة في العيادة (سباتة) وفي منزلكم بجميع أنحاء الدار البيضاء.",
+      subtitle: "خبراء في علاج آلام الظهر، المفاصل، وترويض الأطفال. خدماتنا متوفرة في العيادة (سباتة) وفي المنزل بمناطق الدار البيضاء: عين الشق، المعاريف، سيدي عثمان، الحي الحسني، أنفا وغيرها.",
       ctaCall: "0665 64 67 54",
       ctaWhatsapp: "واتساب",
       ctaBook: "حجز موعد",
@@ -234,7 +311,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     conditions: {
       title: "ماذا نعالج؟",
-      subtitle: "علاجات متخصصة لتخفيف الألم واستعادة الحركة لجميع الأعمار.",
+      subtitle: "علاجات متخصصة لتخفيف الألم واستعادة الحركة لجميع الأعمار. الأسعار تبدأ من 200 درهم حسب التقييم.",
       items: [
         {
           id: "sciatica",
@@ -326,18 +403,20 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
         {
           id: "home",
           title: "ترويض منزلي (كل الدار البيضاء)",
-          description: "نصل إليكم في أي حي بالدار البيضاء مع المعدات.",
+          description: "نصل إليكم في أحياء الدار البيضاء بمعدات متنقلة كاملة وبدون مصاريف إضافية داخل المناطق المغطاة.",
           iconName: "Home"
         }
       ]
     },
     homeTherapy: {
       title: "مروض طبي في المنزل بالدار البيضاء",
-      description: "خدمة الترويض الطبي المنزلي تغطي جميع أحياء الدار البيضاء. نأتي إليكم لتوفير عناء التنقل.",
+      description: "خدمة الترويض الطبي المنزلي تغطي أهم أحياء الدار البيضاء مثل عين الشق وسباتة والمعاريف وسيدي عثمان والحي الحسني وأنفا. نأتي إليكم لتوفير عناء التنقل.",
       benefits: [
-        "نغطي جميع مناطق الدار البيضاء",
+        "المناطق المغطاة: عين الشق، سباتة، سيدي عثمان، المعاريف، الحي الحسني، أنفا وغيرها",
         "توفير الفاتورة وملف التعاضدية (CNSS/CNOPS)",
-        "معدات طبية متكاملة في منزلكم",
+        "معدات متنقلة متكاملة (Electro, Ultrasons, تمارين تقوية, Mobilisation)",
+        "بدون أي مصاريف إضافية للتنقل داخل المناطق المغطاة",
+        "تقييم ذكي عبر CLINAXIS SUIVI (ملف رقمي، تقرير عند الطلب)",
         "مواعيد مرنة تناسبكم",
         "عناية خاصة لكبار السن وما بعد العمليات"
       ],
@@ -356,7 +435,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
       title: "عن مركز شنيدر",
       content: [
         "مركز شنيدر للترويض الطبي هو وجهتكم الموثوقة في الدار البيضاء للعلاج الفيزيائي.",
-        "نستقبلكم في عيادتنا بسباتة، كما نوفر خدمة الترويض المنزلي المتنقلة في جميع أنحاء الدار البيضاء.",
+        "نستقبلكم في عيادتنا بسباتة، كما نوفر خدمة الترويض المنزلي في مناطق الدار البيضاء: عين الشق، المعاريف، سيدي عثمان، الحي الحسني، سيدي معروف، أنفا والأحياء المجاورة.",
         "نحرص على حقوقكم في التعويض الطبي: نسلمكم الفواتير وورقة العلاج الخاصة بـ CNSS و CNOPS والتأمين."
       ],
       mission: "مهمتنا: شفاء سريع، راحة تامة، وتسهيل إجراءاتكم الإدارية."
@@ -372,13 +451,13 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     seo: {
       homeTitle: "مروض طبي الدار البيضاء | مركز شنيدر - بالعيادة أو المنزل (وثائق التعويض)",
-      homeDesc: "مركز شنيدر للترويض الطبي بالدار البيضاء. علاج السياتيك، الظهر، وترويض الأطفال. خدمة منزلية في كل كازا. نقبل ملفات التعويض CNSS/CNOPS. اتصل 0665646754.",
+      homeDesc: "مركز شنيدر للترويض الطبي بالدار البيضاء: مروض طبي كازا، سباتة، عين الشق، مروض قريب مني. الأسعار تبدأ من 200 درهم حسب الحالة.",
       servicesTitle: "خدمات الترويض الطبي: ترويض تنفسي، حجامة، وإصابات الملاعب",
-      servicesDesc: "علاج متكامل: ترويض الرضع، تأهيل بعد الجلطة، إصابات الرياضيين، وحجامة طبية. خدمة الترويض المنزلي بجميع أحياء الدار البيضاء.",
+      servicesDesc: "علاج متكامل: ترويض الرضع، تأهيل بعد الجلطة، إصابات الرياضيين، وحجامة طبية. خدمة منزلية بمناطق الدار البيضاء: عين الشق، سباتة، المعاريف، الحي الحسني...",
       conditionsTitle: "علاج الانزلاق الغضروفي، السياتيك والمفاصل | الدار البيضاء",
-      conditionsDesc: "علاج ديسك الظهر، عرق النسا، شلل الوجه، والتهاب المفاصل. مركز شنيدر يضمن لكم العلاج والوثائق الإدارية (Mutuelle).",
+      conditionsDesc: "علاج ديسك الظهر، عرق النسا، شلل الوجه، والتهاب المفاصل. الأسعار تبدأ من 200 درهم حسب التقييم.",
       contactTitle: "رقم مروض طبي الدار البيضاء | 0665646754 - منزلي أو بالمركز",
-      contactDesc: "للحجز اتصل بـ 0665646754. مروض طبي في الدار البيضاء (سباتة أو منزلي). نوفر الفاتورة وأوراق التعاضدية."
+      contactDesc: "للحجز اتصل بـ 0665646754. مروض طبي في الدار البيضاء (سباتة أو منزلي بمناطق عين الشق، المعاريف، سيدي عثمان، الحي الحسني)."
     }
   }
 };

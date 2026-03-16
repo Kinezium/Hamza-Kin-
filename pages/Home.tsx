@@ -3,7 +3,7 @@ import { useCountUp } from '../components/useCountUp';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, MapPin, Bus, Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, WHATSAPP_NUMBER, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL } from '../constants';
+import { CONTENT, WHATSAPP_NUMBER, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
 import SEOHead from '../components/SEOHead';
 
 const getConditionIcon = (iconName?: string, size = 20) => {
@@ -35,8 +35,10 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
   const t = CONTENT[lang];
   const featuredReviews = t.reviews.items.slice(0, 3);
   const prefix = lang === 'ar' ? '/ar' : '';
+  const logoUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon';
   const [benefitIndex, setBenefitIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const serviceZones = lang === 'fr' ? SERVICE_ZONES_FR : SERVICE_ZONES_AR;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,7 +57,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
       <SEOHead 
         title={t.seo.homeTitle} 
         description={t.seo.homeDesc} 
-        keywords={lang === 'fr' ? 'kiné autour de moi, kinésithérapie à Casablanca, centre de kinésithérapie à Sbata, rééducation fonctionnelle Casablanca, traitement sciatique Casablanca, douleurs lombaires Casablanca, kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné bébé, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire' : 'الترويض, الترويض الطبي, ألم الظهر, ألم السياتيك, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
+        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kinésithérapie à Casablanca, centre de kinésithérapie à Sbata, rééducation fonctionnelle Casablanca, traitement sciatique Casablanca, douleurs lombaires Casablanca, kiné à domicile, sidi othmane, maarif, hay hassani, anfa' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, الترويض الطبي, علاج الظهر, علاج المفاصل, الترويض المنزلي'}
       />
       
       {/* Hero Section */}
@@ -127,6 +129,11 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                 {' '}و<Link to={`${prefix}/a-domicile`} className="text-medical-700 font-semibold hover:underline">خدمة الترويض المنزلي</Link>.
               </>
             )}
+          </p>
+          <p className="text-slate-600 text-sm text-center mt-4">
+            {lang === 'fr'
+              ? `Zones couvertes a domicile: ${serviceZones.join(', ')}.`
+              : `مناطق التغطية المنزلية: ${serviceZones.join('، ')}.`}
           </p>
         </div>
       </section>
@@ -328,7 +335,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
           <div className="max-w-4xl mx-auto bg-gradient-to-r from-slate-50 to-blue-50 p-8 md:p-10 rounded-3xl border border-blue-100 shadow-lg">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shrink-0 shadow-md">
-                CX
+                <img src={logoUrl} alt="CLINAXIS logo" className="w-14 h-14 object-contain" loading="lazy" />
               </div>
               <div className="text-center md:text-start rtl:md:text-right">
                 <h2 className="text-2xl font-bold text-slate-900 mb-3">

@@ -12,13 +12,14 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ lang }) => {
   const t = CONTENT[lang].about;
   const prefix = lang === 'ar' ? '/ar' : '';
+  const logoUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon';
   
   return (
     <>
       <SEOHead 
         title={lang === 'fr' ? 'À Propos Centre Chnider | Kinésithérapie Casablanca, Cabinet & Domicile' : 'عن مركز اشنيدر | الترويض الطبي بالدار البيضاء عيادة ومنزل'} 
         description={t.mission} 
-        keywords={lang === 'fr' ? 'centre kiné Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné Sbata, kiné sport, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire, kiné bébé' : 'مركز الترويض الطبي, الترويض, الترويض الطبي, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
+        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, centre kiné Casablanca, kiné à domicile, kiné mutuelle, kiné CNSS, kiné CNOPS' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, مركز الترويض الطبي, الترويض المنزلي'}
       />
       
       <div className="container mx-auto px-4 py-20">
@@ -98,7 +99,7 @@ const About: React.FC<AboutProps> = ({ lang }) => {
            <div className="mt-10 bg-gradient-to-r from-slate-50 to-blue-50 p-8 rounded-2xl border border-blue-100 shadow-sm">
              <div className="flex flex-col md:flex-row items-center gap-6">
                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0">
-                 CX
+                 <img src={logoUrl} alt="CLINAXIS logo" className="w-12 h-12 object-contain" loading="lazy" />
                </div>
                <div>
                  <h3 className="text-xl font-bold text-slate-900 mb-2">

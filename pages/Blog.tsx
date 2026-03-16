@@ -178,7 +178,7 @@ const Blog: React.FC<{ lang: Language }> = ({ lang }) => {
       <SEOHead 
         title={lang === 'fr' ? 'Blog Kinésithérapie Casablanca | Sciatique, Hernie Discale, Rééducation' : 'مدونة الترويض الطبي بالدار البيضاء | عرق النسا والانزلاق الغضروفي وإعادة التأهيل'}
         description={lang === 'fr' ? 'Articles santé sur la sciatique, la hernie discale, les douleurs articulaires et le rôle du kinésithérapeute à Casablanca.' : 'مقالات صحية حول عرق النسا والانزلاق الغضروفي وآلام المفاصل ودور المروض الطبي في الدار البيضاء.'}
-        keywords={lang === 'fr' ? 'blog kiné Casablanca, sciatique, hernie discale, lombalgie, kinésithérapie, rééducation fonctionnelle' : 'مدونة الترويض الطبي بالدار البيضاء, عرق النسا, الانزلاق الغضروفي, آلام الظهر, إعادة التأهيل'}
+        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, blog kiné Casablanca, sciatique, hernie discale, lombalgie, kinésithérapie' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, مدونة الترويض الطبي, عرق النسا, الانزلاق الغضروفي'}
       />
       <div className="container mx-auto px-4 py-20">
         <h1 className="text-4xl font-bold text-center mb-12">

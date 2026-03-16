@@ -32,7 +32,7 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
       <SEOHead 
         title={t.seo.conditionsTitle} 
         description={t.seo.conditionsDesc} 
-        keywords={lang === 'fr' ? 'hernie discale, sciatique, arthrose, paralysie faciale, AVC, rhumatologie, lombalgie, cervicalgie, traumatologie sport, kiné dos, kiné articulations, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné Casablanca' : 'الترويض, الترويض الطبي, ألم الظهر, ألم السياتيك, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات'}
+        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, hernie discale, sciatique, arthrose, paralysie faciale, AVC, rhumatologie, lombalgie, cervicalgie, traumatologie sport' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, علاج الانزلاق الغضروفي, عرق النسا, علاج المفاصل, علاج الأعصاب'}
       />
       
       <div className="bg-medical-50 py-12">
@@ -53,6 +53,11 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
                 {' '}وخيار <Link to={`${prefix}/a-domicile`} className="text-medical-700 font-semibold hover:underline">الترويض المنزلي بالدار البيضاء</Link>.
               </>
             )}
+          </p>
+          <p className="text-medical-800 bg-medical-100 border border-medical-200 rounded-lg px-4 py-3 max-w-3xl mx-auto mt-5 font-semibold">
+            {lang === 'fr'
+              ? 'Tarifs de prise en charge a partir de 200 DH selon la pathologie et le bilan initial.'
+              : 'الأسعار تبدأ من 200 درهم حسب نوع الحالة والتقييم الأولي.'}
           </p>
         </div>
       </div>

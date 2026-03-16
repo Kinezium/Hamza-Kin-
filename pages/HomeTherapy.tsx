@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CONTENT, PHONE_NUMBER } from '../constants';
+import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, PHONE_NUMBER, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Check, Home, Phone } from 'lucide-react';
 
@@ -12,13 +12,16 @@ interface HomeTherapyProps {
 const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
   const t = CONTENT[lang].homeTherapy;
    const prefix = lang === 'ar' ? '/ar' : '';
+   const neighborhoods = lang === 'fr' ? CASABLANCA_NEIGHBORHOODS_FR : CASABLANCA_NEIGHBORHOODS_AR;
+   const serviceZones = lang === 'fr' ? SERVICE_ZONES_FR : SERVICE_ZONES_AR;
+   const logoUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon';
 
   return (
     <>
          <SEOHead 
             title={lang === 'fr' ? 'Kiné à Domicile Casablanca | Rééducation Fonctionnelle, Dos, Neurologie' : 'ترويض منزلي بالدار البيضاء | إعادة التأهيل وآلام الظهر والأعصاب'} 
             description={t.description} 
-            keywords={lang === 'fr' ? 'kiné à domicile, kiné Casablanca, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné respiratoire, kiné bébé, kiné sport, kiné orthopédique, kiné fonctionnelle' : 'الترويض المنزلي, الترويض الطبي, علاج الظهر, علاج المفاصل, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الركبة, علاج الوجه, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج العظام, علاج العضلات, علاج التنفس, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم'}
+            keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kiné à domicile, rééducation à domicile, kiné mutuelle, kiné CNSS, kiné CNOPS, sidi othmane, maarif, hay hassani, anfa' : 'الترويض المنزلي, مروض طبي قريب مني, مروض الدار البيضاء, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, علاج الظهر, علاج المفاصل'}
          />
       
       <div className="relative bg-medical-50 py-20">
@@ -27,6 +30,12 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
             <p className="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
                {t.description}
             </p>
+                  <div className="mb-8 flex flex-col items-center gap-2">
+                     <img src={logoUrl} alt="Centre Chnider logo" className="w-20 h-20 object-contain rounded-xl bg-white shadow p-2" loading="lazy" />
+                     <p className="text-sm text-slate-600 font-medium">
+                        {lang === 'fr' ? 'Centre Chnider | Kinésithérapie & Hijama Médicale' : 'مركز شنيدر | الترويض الطبي والحجامة الطبية'}
+                     </p>
+                  </div>
                   <p className="text-slate-700 max-w-3xl mb-8">
                      {lang === 'fr' ? (
                         <>
@@ -85,12 +94,61 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
                
                <div className="mt-10 p-6 bg-yellow-50 rounded-xl border border-yellow-200">
                   <p className="text-yellow-800">
-                     <strong>{lang === 'fr' ? 'Zones desservies :' : 'المناطق المغطاة:'}</strong> Casablanca, Sbata, Salmia, Sidi Othmane, etc.
+                               <strong>{lang === 'fr' ? 'Tarif & zones :' : 'السعر والمناطق:'}</strong>{' '}
+                               {lang === 'fr'
+                                  ? 'Nos séances à domicile sont à partir de 200 DH selon le bilan, sans frais supplémentaire dans nos zones couvertes.'
+                                  : 'جلساتنا المنزلية تبدأ من 200 درهم حسب التقييم، بدون مصاريف تنقل إضافية داخل المناطق المغطاة.'}
                   </p>
                </div>
             </div>
          </div>
       </div>
+
+         <div className="container mx-auto px-4 pb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+               <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                     {lang === 'fr' ? 'Nos avantages à domicile' : 'مزايا الخدمة المنزلية'}
+                  </h3>
+                  <ul className="space-y-3 text-slate-700">
+                     <li>• {lang === 'fr' ? 'Matériel mobile complet: électrothérapie, ultrasons, matériel de renforcement et de mobilisation.' : 'معدات متنقلة كاملة: علاج كهربائي، موجات فوق صوتية، وتمارين تقوية وتحريك.'}</li>
+                     <li>• {lang === 'fr' ? 'Aucun frais supplémentaire de déplacement dans les zones couvertes.' : 'بدون مصاريف إضافية للتنقل داخل المناطق المغطاة.'}</li>
+                     <li>• {lang === 'fr' ? 'Bilan innovant CLINAXIS SUIVI: dossier digitalisé et rapport à la demande.' : 'تقييم مبتكر عبر CLINAXIS SUIVI: ملف رقمي وتقرير عند الطلب.'}</li>
+                  </ul>
+               </div>
+
+               <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                     {lang === 'fr' ? 'Zones où nous intervenons' : 'المناطق التي نخدمها'}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                     {serviceZones.map((zone) => (
+                        <span key={zone} className="px-3 py-1 rounded-full bg-medical-50 text-medical-700 text-sm font-semibold border border-medical-100">
+                           {zone}
+                        </span>
+                     ))}
+                  </div>
+               </div>
+            </div>
+
+            <div className="mt-8 bg-slate-50 border border-slate-200 rounded-2xl p-6">
+               <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  {lang === 'fr' ? 'Liste des quartiers de Casablanca' : 'لائحة أحياء الدار البيضاء'}
+               </h3>
+               <p className="text-slate-600 mb-4">
+                  {lang === 'fr'
+                     ? 'Nous couvrons une large partie de Casablanca pour les séances à domicile:'
+                     : 'نغطي عدداً واسعاً من أحياء الدار البيضاء للجلسات المنزلية:'}
+               </p>
+               <div className="flex flex-wrap gap-2">
+                  {neighborhoods.map((neighborhood) => (
+                     <span key={neighborhood} className="px-3 py-1 rounded-full bg-white text-slate-700 text-sm border border-slate-200">
+                        {neighborhood}
+                     </span>
+                  ))}
+               </div>
+            </div>
+         </div>
     </>
   );
 };

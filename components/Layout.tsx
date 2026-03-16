@@ -16,6 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
   const t = CONTENT[lang].nav;
   const location = useLocation();
   const navigate = useNavigate();
+  const logoUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon';
 
   const toggleLang = () => {
     const currentPath = location.pathname;
@@ -66,7 +67,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             {/* Logo */}
             <Link to={homePath} className="flex items-center gap-2" onClick={closeMenu}>
                <div className="w-10 h-10 bg-medical-600 rounded-full flex items-center justify-center">
-                 <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjsWuKuX19KnqVNPYNlFK8n6uZOvLh2T3BNGhxpK-Bwsej15kkdBHfand2jK-m1exW0e2RyBr0fhmXk34rTw17EXVPHlTGoDD5-IiFVdZVDdmNJZ5qwGeUdU5ZMo17y1cWzZxqBKNliSuNAT96ZlPBrQrHeY_l7VyNOGO0MtXkVRQcDaWKNT3g-afKR" alt="Logo Centre Chnider" style={{width:'32px',height:'32px',objectFit:'contain'}} loading="lazy" />
+                 <img src={logoUrl} alt="Logo Centre Chnider" className="w-8 h-8 object-contain" loading="lazy" />
                </div>
                <div className="leading-tight">
                  <h1 className="text-xl font-bold text-gray-900 tracking-tight">{lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}</h1>
@@ -141,6 +142,12 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-start rtl:md:text-right">
             <div>
               <h3 className="text-xl font-bold mb-4 text-medical-400">{lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}</h3>
+              <img
+                src={logoUrl}
+                alt="Logo Centre Chnider"
+                className="w-16 h-16 object-contain mx-auto md:mx-0 rtl:md:mx-0 mb-3 rounded-lg bg-slate-800 p-1"
+                loading="lazy"
+              />
               <p className="text-slate-400 mb-4 text-sm leading-relaxed">
                 {lang === 'fr' 
                   ? "Votre partenaire santé pour la rééducation physique et le bien-être à Casablanca." 
@@ -192,7 +199,15 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             </div>
           </div>
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-500 text-sm">
-            © {new Date().getFullYear()} {lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}. {lang === 'ar' ? 'جميع الحقوق محفوظة' : 'Tous droits réservés'}.
+            <p>
+              © {new Date().getFullYear()} {lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}. {lang === 'ar' ? 'جميع الحقوق محفوظة' : 'Tous droits réservés'}.
+            </p>
+            <p className="mt-2 text-slate-400">
+              {lang === 'fr' ? 'Site créé par ' : 'الموقع تم تطويره بواسطة '}
+              <a href="https://clinaxis.ma" target="_blank" rel="noopener noreferrer" className="font-semibold text-medical-400 hover:text-medical-300">
+                CLINAXIS.MA
+              </a>
+            </p>
           </div>
         </div>
       </footer>

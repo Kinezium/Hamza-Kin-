@@ -29,7 +29,7 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
       <SEOHead 
         title={lang === 'fr' ? 'Services Kinésithérapie Casablanca | Rééducation, Respiratoire, Sport & Domicile' : 'خدمات الترويض الطبي بالدار البيضاء | إعادة التأهيل والتنفس والترويض المنزلي'} 
         description={t.seo.servicesDesc} 
-        keywords={lang === 'fr' ? 'kiné orthopédique, kiné fonctionnelle, kiné respiratoire, hijama médicale, kiné à domicile, kiné sport, kiné mutuelle, kiné CNSS, kiné CNOPS, kiné hernie discale, kiné sciatique, kiné dos, kiné lombalgie, kiné AVC, kiné paralysie, kiné rhumatologie, kiné bébé, kiné Casablanca' : 'الترويض, الترويض الطبي, علاج العظام, علاج العضلات, علاج التنفس, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم, علاج الأطفال, علاج التنفس, علاج الأعصاب, علاج الوجه, علاج الركبة, علاج المفاصل, علاج الحجامة, علاج الإصابات الرياضية, علاج ما بعد العمليات, علاج الروماتيزم'}
+        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kiné orthopédique, kiné fonctionnelle, kiné respiratoire, hijama médicale, kiné à domicile, sidi othmane, maarif, hay hassani' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, خدمات الترويض الطبي, ترويض منزلي, علاج العظام, علاج التنفس'}
       />
       
       <div className="bg-medical-700 text-white py-16">
@@ -54,6 +54,11 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
                 {' '}<Link to={`${prefix}/contact`} className="underline font-semibold">الاتصال</Link>.
               </>
             )}
+          </p>
+          <p className="text-sm text-medical-100 mt-3 max-w-3xl mx-auto">
+            {lang === 'fr'
+              ? 'Intervention au cabinet (Sbata) et a domicile: Aïn Chock, Californie, Oasis, Maarif, Sidi Othmane, Hay Hassani, Anfa et quartiers proches.'
+              : 'الخدمة بالعيادة (سباتة) والمنزل في: عين الشق، المعاريف، سيدي عثمان، الحي الحسني، أنفا والأحياء القريبة.'}
           </p>
         </div>
       </div>

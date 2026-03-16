@@ -6,7 +6,7 @@ const SchemaMarkup: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Centre Chnider - Kinésithérapie & Hijama Médicale | مركز اشنيدر - الترويض الطبي و الحجامة الطبية",
-    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon",
     "telephone": PHONE_NUMBER,
     "address": {
       "@type": "PostalAddress",
@@ -22,7 +22,7 @@ const SchemaMarkup: React.FC = () => {
       "longitude": -7.5636178
     },
     "url": "https://kinesitherapie.clinaxis.ma", 
-    "priceRange": "$$",
+    "priceRange": "Starting at 200 MAD",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -51,17 +51,24 @@ const SchemaMarkup: React.FC = () => {
       { "@type": "MedicalTherapy", "name": "Traitement Arthrose & Douleurs Articulaires" },
       { "@type": "MedicalTherapy", "name": "Rééducation Post-Opératoire" }
     ],
-    "areaServed": {
-      "@type": "City",
-      "name": "Casablanca"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "Casablanca" },
+      { "@type": "City", "name": "Aïn Chock" },
+      { "@type": "City", "name": "Sbata" },
+      { "@type": "City", "name": "Sidi Othmane" },
+      { "@type": "City", "name": "Maarif" },
+      { "@type": "City", "name": "Hay Hassani" },
+      { "@type": "City", "name": "Californie" },
+      { "@type": "City", "name": "Oasis" },
+      { "@type": "City", "name": "Anfa" }
+    ],
     "sameAs": [
       SOCIAL_LINKS.instagram,
       SOCIAL_LINKS.facebook,
       SOCIAL_LINKS.linkedin
     ],
     "paymentAccepted": "Cash, Mutuelle (CNSS, CNOPS, Assurances)",
-    "keywords": "kiné Casablanca, kinésithérapie Sbata, hijama médicale, rééducation fonctionnelle, الترويض الطبي, الحجامة الطبية, مركز اشنيدر"
+    "keywords": "kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kinésithérapie Sbata, hijama médicale, rééducation fonctionnelle, الترويض الطبي, الحجامة الطبية, مركز اشنيدر"
   };
 
   return (

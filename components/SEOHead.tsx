@@ -10,6 +10,7 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
   useEffect(() => {
     const baseUrl = 'https://kinesitherapie.clinaxis.ma';
+    const faviconUrl = 'https://blogger.googleusercontent.com/img/a/AVvXsEigj8XWkjIHDhU_eDuTmABTqmOwqr451I3oMKCJZPNuNpTNdFBNLoomOIgmXlRVbmolopyq_CBSImH_4d-0XXNBAe_0gY52T3vB-kBR0Znjuc_v_eWz9WmF7lRyMD_Sq-7Pjflh8CEhuj-jfhzK1coRASEC9yj6_GGwDyjXrzROgBsvf5Fm1MOUmoHn';
     const pathname = window.location.pathname || '/';
     const isArabicPath = pathname === '/ar' || pathname.startsWith('/ar/');
     const frPath = isArabicPath ? (pathname.replace(/^\/ar(?=\/|$)/, '') || '/') : pathname;
@@ -43,8 +44,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       favicon.setAttribute('rel', 'icon');
       document.head.appendChild(favicon);
     }
-    favicon.setAttribute('type', 'image/x-icon');
-    favicon.setAttribute('href', '/favicon.ico');
+    favicon.setAttribute('type', 'image/png');
+    favicon.setAttribute('href', faviconUrl);
 
     let shortcutIcon = document.querySelector('link[rel="shortcut icon"]');
     if (!shortcutIcon) {
@@ -52,8 +53,16 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       shortcutIcon.setAttribute('rel', 'shortcut icon');
       document.head.appendChild(shortcutIcon);
     }
-    shortcutIcon.setAttribute('type', 'image/x-icon');
-    shortcutIcon.setAttribute('href', '/favicon.ico');
+    shortcutIcon.setAttribute('type', 'image/png');
+    shortcutIcon.setAttribute('href', faviconUrl);
+
+    let appleTouchIcon = document.querySelector('link[rel="apple-touch-icon"]');
+    if (!appleTouchIcon) {
+      appleTouchIcon = document.createElement('link');
+      appleTouchIcon.setAttribute('rel', 'apple-touch-icon');
+      document.head.appendChild(appleTouchIcon);
+    }
+    appleTouchIcon.setAttribute('href', faviconUrl);
 
     // Add canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -129,7 +138,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
     let breadcrumbScript = document.querySelector('script[type="application/ld+json"][data-schema="breadcrumb"]');
     if (!breadcrumbScript) {
       breadcrumbScript = document.createElement('script');
-      breadcrumbScript.type = 'application/ld+json';
+      breadcrumbScript.setAttribute('type', 'application/ld+json');
       breadcrumbScript.setAttribute('data-schema', 'breadcrumb');
       document.head.appendChild(breadcrumbScript);
     }
