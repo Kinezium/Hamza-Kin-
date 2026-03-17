@@ -137,7 +137,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     conditions: {
       title: "Pathologies Traitées",
-      subtitle: "Une prise en charge complète pour soulager vos douleurs et traiter vos problèmes de santé. Tarifs à partir de 200 DH selon le bilan.",
+      subtitle: "Une prise en charge complète pour soulager vos douleurs et traiter vos problèmes de santé.",
       items: [
         {
           id: "sciatica",
@@ -298,11 +298,11 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     seo: {
       homeTitle: "Kiné Casablanca | Centre Chnider - Cabinet & Domicile (Agréé Mutuelle)",
-      homeDesc: "Centre Chnider: kiné Casablanca, kiné Casa, kiné Sbata, kiné Aïn Chock et kiné autour de moi. Soins cabinet & domicile. Tarif à partir de 200 DH selon le bilan.",
+      homeDesc: "Centre Chnider: kiné Casablanca, kiné Casa, kiné Sbata, kiné Aïn Chock et kiné autour de moi. Soins cabinet & domicile. Tarif à domicile à partir de 200 DH selon le bilan.",
       servicesTitle: "Services Kiné Casablanca : Rééducation, Respiratoire, Sport & Hijama",
       servicesDesc: "Soins complets : Kiné respiratoire bébé, rééducation AVC, traumatologie sport, Hijama médicale. Déplacement à domicile sur Casablanca (Aïn Chock, Sbata, Californie, Oasis, Maarif, Hay Hassani...).",
       conditionsTitle: "Traitement Hernie Discale, Sciatique & Arthrose | Kiné Casablanca",
-      conditionsDesc: "Spécialiste dos et articulations : Sciatique, hernie discale sans opération, paralysie faciale, entorses. Tarifs à partir de 200 DH selon la pathologie.",
+      conditionsDesc: "Spécialiste dos et articulations : Sciatique, hernie discale sans opération, paralysie faciale, entorses.",
       contactTitle: "Contact Kiné Casablanca | Rdv Cabinet ou Domicile - 0665646754",
       contactDesc: "Appelez le 0665646754 pour un kiné à Casablanca. Cabinet à Sbata ou domicile zones Aïn Chock, Californie, Oasis, Maarif, Sidi Othmane, Hay Hassani."
     }
@@ -335,7 +335,7 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     conditions: {
       title: "ماذا نعالج؟",
-      subtitle: "علاجات متخصصة لتخفيف الألم واستعادة الحركة لجميع الأعمار. الأسعار تبدأ من 200 درهم حسب التقييم.",
+      subtitle: "علاجات متخصصة لتخفيف الألم واستعادة الحركة لجميع الأعمار.",
       items: [
         {
           id: "sciatica",
@@ -496,11 +496,11 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
     },
     seo: {
       homeTitle: "مروض طبي الدار البيضاء | مركز شنيدر - بالعيادة أو المنزل (وثائق التعويض)",
-      homeDesc: "مركز شنيدر للترويض الطبي بالدار البيضاء: مروض طبي كازا، سباتة، عين الشق، مروض قريب مني. الأسعار تبدأ من 200 درهم حسب الحالة.",
+      homeDesc: "مركز شنيدر للترويض الطبي بالدار البيضاء: مروض طبي كازا، سباتة، عين الشق، مروض قريب مني. سعر الترويض المنزلي يبدأ من 200 درهم حسب التقييم.",
       servicesTitle: "خدمات الترويض الطبي: ترويض تنفسي، حجامة، وإصابات الملاعب",
       servicesDesc: "علاج متكامل: ترويض الرضع، تأهيل بعد الجلطة، إصابات الرياضيين، وحجامة طبية. خدمة منزلية بمناطق الدار البيضاء: عين الشق، سباتة، المعاريف، الحي الحسني...",
       conditionsTitle: "علاج الانزلاق الغضروفي، السياتيك والمفاصل | الدار البيضاء",
-      conditionsDesc: "علاج ديسك الظهر، عرق النسا، شلل الوجه، والتهاب المفاصل. الأسعار تبدأ من 200 درهم حسب التقييم.",
+      conditionsDesc: "علاج ديسك الظهر، عرق النسا، شلل الوجه، والتهاب المفاصل.",
       contactTitle: "رقم مروض طبي الدار البيضاء | 0665646754 - منزلي أو بالمركز",
       contactDesc: "للحجز اتصل بـ 0665646754. مروض طبي في الدار البيضاء (سباتة أو منزلي بمناطق عين الشق، المعاريف، سيدي عثمان، الحي الحسني)."
     }

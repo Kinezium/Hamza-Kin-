@@ -56,8 +56,8 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
           </p>
           <p className="text-medical-800 bg-medical-100 border border-medical-200 rounded-lg px-4 py-3 max-w-3xl mx-auto mt-5 font-semibold">
             {lang === 'fr'
-              ? 'Tarifs de prise en charge a partir de 200 DH selon la pathologie et le bilan initial.'
-              : 'الأسعار تبدأ من 200 درهم حسب نوع الحالة والتقييم الأولي.'}
+              ? 'Tarif à domicile à partir de 200 DH selon le bilan initial.'
+              : 'سعر الترويض المنزلي يبدأ من 200 درهم حسب التقييم الأولي.'}
           </p>
         </div>
       </div>
