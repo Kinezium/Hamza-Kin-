@@ -90,8 +90,8 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
               {t.hero.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`tel:${PHONE_NUMBER}`} className="inline-flex justify-center items-center px-6 py-4 bg-medical-600 text-white font-bold rounded-xl shadow-lg hover:bg-medical-700 transition transform hover:-translate-y-1">
-                {t.hero.ctaCall}
+              <a href={`tel:${PHONE_NUMBER}`} dir="ltr" className="inline-flex justify-center items-center px-6 py-4 bg-medical-600 text-white font-bold rounded-xl shadow-lg hover:bg-medical-700 transition transform hover:-translate-y-1">
+                <bdi>{PHONE_NUMBER}</bdi>
               </a>
               <a href={getWhatsAppBookingLink(lang, 'Accueil')} target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center px-6 py-4 bg-green-500 text-white font-bold rounded-xl shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1">
                 {t.hero.ctaWhatsapp}
