@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
-import { LOGO_SYMBOL_WHITE_URL } from '../constants';
 
 interface GalleryProps {
   lang: Language;
 }
 
+// Gallery images – add new URLs here when provided by the client.
+// Note: gallery images must NOT appear in the home slideshow.
 const galleryImages = [
   {
     src: 'https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it',
@@ -17,15 +19,11 @@ const galleryImages = [
     src: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
     altFr: 'Espace de soins et rééducation',
     altAr: 'فضاء العلاج وإعادة التأهيل'
-  },
-  {
-    src: LOGO_SYMBOL_WHITE_URL,
-    altFr: 'Symbole du Centre Chnider',
-    altAr: 'رمز مركز شنيدر'
   }
 ];
 
 const Gallery: React.FC<GalleryProps> = ({ lang }) => {
+  const prefix = lang === 'ar' ? '/ar' : '';
   return (
     <>
       <SEOHead
@@ -64,6 +62,32 @@ const Gallery: React.FC<GalleryProps> = ({ lang }) => {
               </figure>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Internal backlinks */}
+      <section className="bg-medical-50 border-t border-medical-100 py-10">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-slate-700 mb-4 text-lg">
+            {lang === 'fr' ? (
+              <>Découvrez nos{' '}
+                <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">services de kinésithérapie</Link>
+                {' '}et notre{' '}
+                <Link to={`${prefix}/a-propos`} className="text-medical-700 font-semibold hover:underline">équipe</Link>.
+              </>
+            ) : (
+              <>اكتشفوا{' '}
+                <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">خدمات الترويض الطبي</Link>
+                {' '}و<Link to={`${prefix}/a-propos`} className="text-medical-700 font-semibold hover:underline">فريقنا</Link>.
+              </>
+            )}
+          </p>
+          <Link
+            to={`${prefix}/contact`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-medical-600 text-white font-bold rounded-xl hover:bg-medical-700 transition shadow-sm"
+          >
+            {lang === 'fr' ? 'Prendre RDV →' : '← حجز موعد'}
+          </Link>
         </div>
       </section>
     </>

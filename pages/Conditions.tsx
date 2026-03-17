@@ -107,6 +107,33 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
           ))}
         </div>
       </div>
+
+      {/* Internal backlinks */}
+      <section className="bg-medical-50 border-t border-medical-100 py-10">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-slate-700 mb-4 text-lg">
+            {lang === 'fr' ? (
+              <>Intéressé(e) par nos{' '}
+                <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">services de kinésithérapie</Link>
+                {' '}ou notre offre{' '}
+                <Link to={`${prefix}/a-domicile`} className="text-medical-700 font-semibold hover:underline">kiné à domicile à Casablanca</Link> ?
+              </>
+            ) : (
+              <>هل تودون الاطلاع على{' '}
+                <Link to={`${prefix}/services`} className="text-medical-700 font-semibold hover:underline">خدمات الترويض</Link>
+                {' '}أو{' '}
+                <Link to={`${prefix}/a-domicile`} className="text-medical-700 font-semibold hover:underline">خدمة الترويض المنزلي</Link>؟
+              </>
+            )}
+          </p>
+          <Link
+            to={`${prefix}/contact`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-medical-600 text-white font-bold rounded-xl hover:bg-medical-700 transition shadow-sm"
+          >
+            {lang === 'fr' ? 'Prendre RDV →' : '← حجز موعد'}
+          </Link>
+        </div>
+      </section>
     </>
   );
 };

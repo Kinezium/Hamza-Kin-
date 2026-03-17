@@ -13,6 +13,15 @@ export const SOCIAL_LINKS = {
 
 export const LOGO_SYMBOL_WHITE_URL = "https://blogger.googleusercontent.com/img/a/AVvXsEjsWuKuX19KnqVNPYNlFK8n6uZOvLh2T3BNGhxpK-Bwsej15kkdBHfand2jK-m1exW0e2RyBr0fhmXk34rTw17EXVPHlTGoDD5-IiFVdZVDdmNJZ5qwGeUdU5ZMo17y1cWzZxqBKNliSuNAT96ZlPBrQrHeY_l7VyNOGO0MtXkVRQcDaWKNT3g-afKR";
 export const LATEST_FAVICON_URL = "https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon";
+// Colored symbol – same asset used for the favicon
+export const LOGO_COLORED_URL = LATEST_FAVICON_URL;
+// Full logo with text – update this URL when the asset is available
+export const LOGO_TEXT_URL = "";
+// Slideshow images shown in the home hero (1:1). Add new URLs here when provided.
+export const HERO_SLIDESHOW_IMAGES = [
+  "https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it",
+  "https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF"
+];
 
 export const CASABLANCA_NEIGHBORHOODS_FR = [
   "Aïn Chock",
@@ -431,9 +440,30 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
       title: "شهادات المرضى",
       subtitle: "ثقتكم هي سر نجاحنا.",
       items: [
-        { id: "1", name: "حسن ع.", rating: 5, text: "مروض ممتاز. يأتي للمنزل في المعاريف في الوقت المحدد. الفواتير مقبولة لدى التعاضدية.", date: "منذ أسبوع" },
-        { id: "2", name: "سارة ل.", rating: 5, text: "عالجات الانزلاق الغضروفي في مركز شنيدر بدون جراحة. شكراً للطاقم.", date: "منذ 3 أسابيع" },
-        { id: "3", name: "محمد ت.", rating: 5, text: "تعامل راقي ومهنية عالية في ترويض الوالد بعد الجلطة.", date: "منذ يومين" }
+        {
+          id: "1",
+          name: "anass elhadi",
+          rating: 5,
+          text: "Hamza is an excellent kiné therapist who is attentive, listens carefully, and helps you understand the source of your pain and the process to alleviate it.",
+          date: "Il y a 1 an",
+          avatarUrl: "https://lh3.googleusercontent.com/a-/ALV-UjWkU0OQ466MTbpRLla7GUp_-PyXcTM4vP2KvuKTbqR3A4GkCunu=w45-h45-p-rp-mo-br100"
+        },
+        {
+          id: "2",
+          name: "Anass Chbani",
+          rating: 5,
+          text: "Une personne jeune, attentive, avec un bon sens de l'écoute et surtout humaine et compétente dans son domaine.",
+          date: "Il y a 2 mois",
+          avatarUrl: "https://lh3.googleusercontent.com/a/ACg8ocIPd_drm6wdDVmy-fok4sGa6SqEi5J2uKMryW8ghJFLQeq79g=w45-h45-p-rp-mo-br100"
+        },
+        {
+          id: "3",
+          name: "oumaima ouafik",
+          rating: 5,
+          text: "Merci pour la qualité des soins et les bons conseils, un kinésithérapeute au top !",
+          date: "Il y a 2 semaines",
+          avatarUrl: "https://lh3.googleusercontent.com/a/ACg8ocKtt9QSk4w4-n0KO4q6D3-ChmVk8idJhNzurELPdIWGDMmGeQ=w45-h45-p-rp-mo-br100"
+        }
       ]
     },
     about: {

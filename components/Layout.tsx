@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, Globe, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, LOGO_SYMBOL_WHITE_URL, PHONE_NUMBER, SOCIAL_LINKS } from '../constants';
+import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL, PHONE_NUMBER, SOCIAL_LINKS } from '../constants';
 import SchemaMarkup from './SchemaMarkup';
 
 interface LayoutProps {
@@ -65,7 +65,11 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to={homePath} className="flex items-center gap-2" onClick={closeMenu}>
-               <img src={LOGO_SYMBOL_WHITE_URL} alt="Logo Centre Chnider" className="w-10 h-10 object-contain drop-shadow-md" loading="lazy" />
+               {LOGO_TEXT_URL ? (
+                 <img src={LOGO_TEXT_URL} alt="Logo Centre Chnider" className="h-10 w-auto object-contain" loading="lazy" />
+               ) : (
+                 <img src={LOGO_COLORED_URL} alt="Logo Centre Chnider" className="w-10 h-10 object-contain" loading="lazy" />
+               )}
                <div className="leading-tight">
                  <h1 className="text-xl font-bold text-gray-900 tracking-tight">{lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}</h1>
                  <p className="text-xs text-medical-600 font-medium">{lang === 'ar' ? 'الترويض الطبي و الحجامة الطبية' : 'Kinésithérapie & Hijama Médicale'}</p>

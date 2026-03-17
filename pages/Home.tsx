@@ -3,7 +3,7 @@ import { useCountUp } from '../components/useCountUp';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, MapPin, Bus, Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, WHATSAPP_NUMBER, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
+import { CONTENT, WHATSAPP_NUMBER, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR, HERO_SLIDESHOW_IMAGES } from '../constants';
 import SEOHead from '../components/SEOHead';
 
 const getConditionIcon = (iconName?: string, size = 20) => {
@@ -37,6 +37,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
   const [benefitIndex, setBenefitIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [slideIndex, setSlideIndex] = useState(0);
   const serviceZones = lang === 'fr' ? SERVICE_ZONES_FR : SERVICE_ZONES_AR;
 
   useEffect(() => {
@@ -50,6 +51,14 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
 
     return () => clearInterval(interval);
   }, [t.hero.benefits.length, lang]); // Reset when language changes
+
+  useEffect(() => {
+    if (HERO_SLIDESHOW_IMAGES.length <= 1) return;
+    const timer = setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % HERO_SLIDESHOW_IMAGES.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
   
   return (
     <>
@@ -90,19 +99,34 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
             </div>
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-              <img 
-                src="https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it" 
-                alt="Physical Therapy Session" 
-                className="w-full h-auto object-cover" 
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square">
+              {HERO_SLIDESHOW_IMAGES.map((src, i) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={lang === 'ar' ? `مركز شنيدر للترويض الطبي ${i + 1}` : `Centre Chnider Kinésithérapie ${i + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === slideIndex ? 'opacity-100' : 'opacity-0'}`}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                />
+              ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6 z-10">
                  <div className="text-white">
                    <p className="font-bold text-xl">Centre Chnider</p>
                    <p className="text-sm opacity-90">Sbata, Casablanca</p>
                  </div>
               </div>
+              {HERO_SLIDESHOW_IMAGES.length > 1 && (
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+                  {HERO_SLIDESHOW_IMAGES.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setSlideIndex(i)}
+                      className={`h-2 rounded-full transition-all duration-300 ${i === slideIndex ? 'bg-white w-6' : 'bg-white/60 w-2'}`}
+                      aria-label={`Slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
