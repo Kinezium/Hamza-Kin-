@@ -11,8 +11,9 @@ export const getWhatsAppBookingLink = (lang: 'fr' | 'ar', source?: string): stri
     : baseMessage;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(withSource)}`;
 };
-export const ADDRESS = "500 Boulevard Mecdad Laherizi, Sbata – Casablanca, Morocco";
+export const ADDRESS = "500 Bd. Mekdad Lahrizi, Sbata, Casablanca, MAROC";
 export const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.414193762785!2d-7.563617799999999!3d33.5426133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda633a36d6890ad%3A0xbc43853714712366!2zQ2VudHJlIGRlIGtpbsOpc2l0aMOpcmFwaWUgQ0hOSURFUiAtINin2YTYqtix2YjZiti2INin2YTYt9io2Yo!5e0!3m2!1sen!2sma!4v1770853502303!5m2!1sen!2sma"; 
+export const GOOGLE_MAPS_CENTER_URL = "https://www.google.com/maps/place/Centre+de+kin%C3%A9sith%C3%A9rapie+CHNIDER+-+%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B6+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A/@33.5426133,-7.5636178,17z";
 export const GOOGLE_REVIEWS_URL = "https://www.google.com/search?hl=en-MA&gl=ma&q=Centre+de+kin%C3%A9sith%C3%A9rapie+CHNIDER+-+%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B6+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A,+500+Bd+Mekdad+Lahrizi,+Casablanca&ludocid=13565832974182720358&lsig=AB86z5XXNPd09IjW1AODiyu35kqP&_rs_=1#lrd=0xda633a36d6890ad:0xbc43853714712366,1";
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/centre_kinesitherapie_chnider",

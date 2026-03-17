@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, Globe, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL, PHONE_NUMBER, SOCIAL_LINKS, getWhatsAppBookingLink } from '../constants';
+import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL, PHONE_NUMBER, SOCIAL_LINKS, getWhatsAppBookingLink, GOOGLE_MAPS_CENTER_URL, ADDRESS } from '../constants';
 import SchemaMarkup from './SchemaMarkup';
 
 interface LayoutProps {
@@ -52,7 +52,9 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
       {/* Top Bar */}
       <div className="bg-medical-700 text-white text-sm py-2 px-4 hidden sm:block">
         <div className="container mx-auto flex justify-between items-center">
-          <span>{lang === 'fr' ? '📍 500 Boulevard Mecdad Laherizi, Sbata – Casablanca' : '📍 500 شارع مقداد الحريزي، سباتة – الدار البيضاء'}</span>
+          <a href={GOOGLE_MAPS_CENTER_URL} target="_blank" rel="noopener noreferrer" className="hover:underline">
+            📍 {ADDRESS}
+          </a>
           <a href={`tel:${PHONE_NUMBER}`} className="hover:underline font-bold flex items-center gap-1" dir="ltr">
             <Phone size={14} /> <span dir="ltr">{PHONE_NUMBER}</span>
           </a>
@@ -169,7 +171,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             </div>
             <div>
               <h3 className="text-lg font-bold mb-4">{t.contact}</h3>
-              <p className="text-slate-300 mb-2">{CONTENT[lang].contact.address}</p>
+              <a href={GOOGLE_MAPS_CENTER_URL} target="_blank" rel="noopener noreferrer" className="text-slate-300 mb-2 hover:text-white hover:underline inline-block">{CONTENT[lang].contact.address}</a>
               <p className="text-slate-300 font-bold text-lg" dir="ltr">{PHONE_NUMBER}</p>
               <div className="mt-4 flex justify-center md:justify-start rtl:md:justify-end gap-4">
                 <a 

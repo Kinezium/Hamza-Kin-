@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CONTENT, PHONE_NUMBER, MAP_EMBED_URL, getWhatsAppBookingLink } from '../constants';
+import { CONTENT, PHONE_NUMBER, MAP_EMBED_URL, getWhatsAppBookingLink, GOOGLE_MAPS_CENTER_URL } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
@@ -56,7 +56,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                        </div>
                        <div>
                           <h3 className="font-bold text-gray-900">{t.addressLabel}</h3>
-                          <p className="text-gray-600">{t.address}</p>
+                          <a href={GOOGLE_MAPS_CENTER_URL} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-medical-700 hover:underline">{t.address}</a>
                        </div>
                     </div>
 
