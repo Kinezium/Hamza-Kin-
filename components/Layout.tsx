@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, Globe, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL, PHONE_NUMBER, SOCIAL_LINKS } from '../constants';
+import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL, PHONE_NUMBER, SOCIAL_LINKS, getWhatsAppBookingLink } from '../constants';
 import SchemaMarkup from './SchemaMarkup';
 
 interface LayoutProps {
@@ -92,9 +92,9 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                 <span>{lang === 'fr' ? 'العربية' : 'Français'}</span>
               </button>
 
-              <Link to={`${prefix}/contact`} className="bg-medical-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-medical-700 transition shadow-sm">
+              <a href={getWhatsAppBookingLink(lang, 'Navbar')} target="_blank" rel="noopener noreferrer" className="bg-medical-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-medical-700 transition shadow-sm">
                 {t.bookNow}
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -125,9 +125,9 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <Link to={`${prefix}/a-propos`} onClick={closeMenu} className={linkClass(`${prefix}/a-propos`)}>{t.about}</Link>
               <Link to={`${prefix}/contact`} onClick={closeMenu} className={linkClass(`${prefix}/contact`)}>{t.contact}</Link>
               <div className="pt-4 pb-2">
-                <Link to={`${prefix}/contact`} onClick={closeMenu} className="block w-full text-center bg-medical-600 text-white px-4 py-3 rounded-lg font-bold">
+                <a href={getWhatsAppBookingLink(lang, 'Menu mobile')} target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block w-full text-center bg-medical-600 text-white px-4 py-3 rounded-lg font-bold">
                   {t.bookNow}
-                </Link>
+                </a>
               </div>
             </div>
           </div>

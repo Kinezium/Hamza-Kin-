@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CONTENT, PHONE_NUMBER } from '../constants';
+import { CONTENT, getWhatsAppBookingLink } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Activity, AlertCircle, Zap, Bone, Dumbbell, Stethoscope, Brain, Baby, Flame, ArrowUpDown } from 'lucide-react';
 
@@ -99,7 +99,7 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
                  <span className="text-sm text-gray-400">
                     {lang === 'fr' ? 'Consultation recommandée' : 'ينصح بالاستشارة'}
                  </span>
-                 <a href={`tel:${PHONE_NUMBER}`} className="text-medical-600 font-bold hover:underline">
+                  <a href={getWhatsAppBookingLink(lang, `Pathologie: ${item.title}`)} target="_blank" rel="noopener noreferrer" className="text-medical-600 font-bold hover:underline">
                     {lang === 'fr' ? 'Réserver →' : 'حجز ←'}
                  </a>
               </div>
@@ -126,12 +126,14 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
               </>
             )}
           </p>
-          <Link
-            to={`${prefix}/contact`}
+          <a
+            href={getWhatsAppBookingLink(lang, 'Page pathologies')}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-medical-600 text-white font-bold rounded-xl hover:bg-medical-700 transition shadow-sm"
           >
             {lang === 'fr' ? 'Prendre RDV →' : '← حجز موعد'}
-          </Link>
+          </a>
         </div>
       </section>
     </>

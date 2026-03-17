@@ -3,7 +3,7 @@ import { useCountUp } from '../components/useCountUp';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, MapPin, Bus, Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, WHATSAPP_NUMBER, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR, HERO_SLIDESHOW_IMAGES } from '../constants';
+import { CONTENT, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR, HERO_SLIDESHOW_IMAGES, getWhatsAppBookingLink } from '../constants';
 import SEOHead from '../components/SEOHead';
 
 const getConditionIcon = (iconName?: string, size = 20) => {
@@ -93,7 +93,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
               <a href={`tel:${PHONE_NUMBER}`} className="inline-flex justify-center items-center px-6 py-4 bg-medical-600 text-white font-bold rounded-xl shadow-lg hover:bg-medical-700 transition transform hover:-translate-y-1">
                 {t.hero.ctaCall}
               </a>
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} className="inline-flex justify-center items-center px-6 py-4 bg-green-500 text-white font-bold rounded-xl shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1">
+              <a href={getWhatsAppBookingLink(lang, 'Accueil')} target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center px-6 py-4 bg-green-500 text-white font-bold rounded-xl shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1">
                 {t.hero.ctaWhatsapp}
               </a>
             </div>
@@ -333,9 +333,9 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                    </div>
                  </div>
 
-                 <Link to={`${prefix}/contact`} className="mt-8 inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-lg text-center hover:bg-slate-800 transition">
+                 <a href={getWhatsAppBookingLink(lang, 'Carte localisation')} target="_blank" rel="noopener noreferrer" className="mt-8 inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-lg text-center hover:bg-slate-800 transition">
                    {t.contact.title}
-                 </Link>
+                 </a>
               </div>
               <div className="md:w-1/2 h-80 md:h-auto bg-gray-200">
                 <iframe 

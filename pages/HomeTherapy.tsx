@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, LOGO_SYMBOL_WHITE_URL, PHONE_NUMBER, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
+import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR, getWhatsAppBookingLink } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Check, Home, Phone } from 'lucide-react';
 
@@ -51,7 +51,9 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
                      )}
                   </p>
             <a 
-              href={`tel:${PHONE_NUMBER}`} 
+                     href={getWhatsAppBookingLink(lang, 'Kine domicile')} 
+                     target="_blank"
+                     rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-medical-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-medical-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
                <Phone size={24} /> {t.cta}

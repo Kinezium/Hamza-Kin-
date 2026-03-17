@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CONTENT, PHONE_NUMBER, MAP_EMBED_URL, WHATSAPP_NUMBER } from '../constants';
+import { CONTENT, PHONE_NUMBER, MAP_EMBED_URL, getWhatsAppBookingLink } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
@@ -87,8 +87,10 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
 
                  <div className="p-8 bg-gray-50 border-t border-gray-100 text-center">
                     <a 
-                      href={`https://wa.me/${WHATSAPP_NUMBER}`} 
+                                 href={getWhatsAppBookingLink(lang, 'Contact')} 
                       className="inline-flex items-center justify-center gap-2 w-full py-4 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
                     >
                        <MessageCircle size={24} /> {lang === 'fr' ? 'Contactez-nous sur WhatsApp' : 'تواصل معنا عبر واتساب'}
                     </a>

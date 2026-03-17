@@ -4,6 +4,7 @@ import { Language } from '../../types';
 import SEOHead from '../../components/SEOHead';
 import { ArrowLeft, Clock, User } from 'lucide-react';
 import { BLOG_TOPIC_IMAGES } from './blogImages';
+import { getWhatsAppBookingLink } from '../../constants';
 
 interface ArticleProps {
   lang: Language;
@@ -100,7 +101,7 @@ export const createArticle = (data: ArticleData) => {
                     : 'فريقنا من المعالجين الفيزيائيين المتخصصين جاهز لمساعدتك. اتصل بنا الآن للحصول على استشارة.'}
                 </p>
                 <a 
-                  href={`https://wa.me/212665646754`}
+                  href={getWhatsAppBookingLink(lang, title)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition"

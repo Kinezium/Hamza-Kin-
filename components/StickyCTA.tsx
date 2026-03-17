@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, MessageCircle, Calendar } from 'lucide-react';
-import { PHONE_NUMBER, WHATSAPP_NUMBER } from '../constants';
+import { PHONE_NUMBER, getWhatsAppBookingLink } from '../constants';
 import { Language } from '../types';
 
 interface StickyCTAProps {
@@ -21,7 +21,7 @@ const StickyCTA: React.FC<StickyCTAProps> = ({ lang }) => {
       </a>
 
       <a 
-        href={`https://wa.me/${WHATSAPP_NUMBER}`}
+        href={getWhatsAppBookingLink(lang, 'CTA mobile')}
         target="_blank"
         rel="noopener noreferrer"
         className="flex flex-col items-center text-gray-700 hover:text-green-600"
@@ -33,7 +33,7 @@ const StickyCTA: React.FC<StickyCTAProps> = ({ lang }) => {
       </a>
 
       <a 
-        href={`https://wa.me/${WHATSAPP_NUMBER}`}
+        href={getWhatsAppBookingLink(lang, 'RDV mobile')}
         target="_blank"
         rel="noopener noreferrer"
         className="flex flex-col items-center text-gray-700 hover:text-green-600"

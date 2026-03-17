@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
 import { Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame } from 'lucide-react';
+import { getWhatsAppBookingLink } from '../constants';
 import { BLOG_TOPIC_IMAGES } from './Blog/blogImages';
 
 interface BlogPost {
@@ -232,7 +233,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
                 : 'اتصل بفريقنا للحصول على استشارة شخصية.'}
             </p>
             <a
-              href={`https://wa.me/212665646754`}
+              href={getWhatsAppBookingLink(lang, 'Blog')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition"

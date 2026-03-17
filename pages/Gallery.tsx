@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
+import { getWhatsAppBookingLink } from '../constants';
 import SEOHead from '../components/SEOHead';
 
 interface GalleryProps {
@@ -82,12 +83,14 @@ const Gallery: React.FC<GalleryProps> = ({ lang }) => {
               </>
             )}
           </p>
-          <Link
-            to={`${prefix}/contact`}
+          <a
+            href={getWhatsAppBookingLink(lang, 'Page galerie')}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-medical-600 text-white font-bold rounded-xl hover:bg-medical-700 transition shadow-sm"
           >
             {lang === 'fr' ? 'Prendre RDV →' : '← حجز موعد'}
-          </Link>
+          </a>
         </div>
       </section>
     </>
