@@ -1,28 +1,28 @@
-import { createArticle } from './ArticleTemplate';
+﻿import { createArticle } from './ArticleTemplate';
 import { Baby } from 'lucide-react';
 
 const article7 = createArticle({
-  slug: 'pediatric-physiotherapy',
-  titleFr: 'Physiothérapie Pédiatrique: Développement Normal',
-  titleAr: 'الترويض الطبي للأطفال: النمو الطبيعي',
-  descriptionFr: 'Développement psychomoteur de l\'enfant. Quand consulter un kiné pédiatrique. Exercices et jeux de rééducation.',
-  descriptionAr: 'النمو النفسحركي للطفل. متى تستشير مروضاً متخصصاً للأطفال. تمارين وألعاب تأهيلية.',
-  keywordsFr: 'kiné enfant, retard développement, bébé, motricité fine, motricité globale',
-  keywordsAr: 'مروض أطفال, تأخر النمو, طفل, مهارات حركية',
+  slug: 'kine-pediatrique',
+  titleFr: 'PhysiothÃ©rapie PÃ©diatrique: DÃ©veloppement Normal',
+  titleAr: 'Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ Ù„Ù„Ø£Ø·ÙØ§Ù„: Ø§Ù„Ù†Ù…Ùˆ Ø§Ù„Ø·Ø¨ÙŠØ¹ÙŠ',
+  descriptionFr: 'DÃ©veloppement psychomoteur de l\'enfant. Quand consulter un kinÃ© pÃ©diatrique. Exercices et jeux de rÃ©Ã©ducation.',
+  descriptionAr: 'Ø§Ù„Ù†Ù…Ùˆ Ø§Ù„Ù†ÙØ³Ø­Ø±ÙƒÙŠ Ù„Ù„Ø·ÙÙ„. Ù…ØªÙ‰ ØªØ³ØªØ´ÙŠØ± Ù…Ø±ÙˆØ¶Ø§Ù‹ Ù…ØªØ®ØµØµØ§Ù‹ Ù„Ù„Ø£Ø·ÙØ§Ù„. ØªÙ…Ø§Ø±ÙŠÙ† ÙˆØ£Ù„Ø¹Ø§Ø¨ ØªØ£Ù‡ÙŠÙ„ÙŠØ©.',
+  keywordsFr: 'kinÃ© enfant, retard dÃ©veloppement, bÃ©bÃ©, motricitÃ© fine, motricitÃ© globale',
+  keywordsAr: 'Ù…Ø±ÙˆØ¶ Ø£Ø·ÙØ§Ù„, ØªØ£Ø®Ø± Ø§Ù„Ù†Ù…Ùˆ, Ø·ÙÙ„, Ù…Ù‡Ø§Ø±Ø§Øª Ø­Ø±ÙƒÙŠØ©',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '6 min de lecture',
-  readTimeAr: '6 دقائق قراءة',
+  readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
   contentFr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">Physiothérapie Pédiatrique</h2>
-        <p>Le développement psychomoteur de l'enfant est crucial. Identifiez tôt les retards de développement pour une intervention précoce.</p>
+        <h2 className="text-2xl font-bold mb-4">PhysiothÃ©rapie PÃ©diatrique</h2>
+        <p>Le dÃ©veloppement psychomoteur de l'enfant est crucial. Identifiez tÃ´t les retards de dÃ©veloppement pour une intervention prÃ©coce.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Jalons du Développement Normal</h2>
+        <h2 className="text-2xl font-bold mb-4">Jalons du DÃ©veloppement Normal</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>3 mois:</strong> Contrôle de la tête</li>
+          <li><strong>3 mois:</strong> ContrÃ´le de la tÃªte</li>
           <li><strong>6 mois:</strong> Assis sans appui</li>
           <li><strong>9 mois:</strong> Rampage ou crawling</li>
           <li><strong>12 mois:</strong> Marche avec appui</li>
@@ -33,97 +33,100 @@ const article7 = createArticle({
       <section>
         <h2 className="text-2xl font-bold mb-4">Signes d'Alerte</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Retard dans les étapes de développement</li>
-          <li>Asymétrie postulaire ou du mouvement</li>
-          <li>Tonacité musculaire anormale (trop raide ou trop mou)</li>
-          <li>Difficulté de coordination</li>
+          <li>Retard dans les Ã©tapes de dÃ©veloppement</li>
+          <li>AsymÃ©trie postulaire ou du mouvement</li>
+          <li>TonacitÃ© musculaire anormale (trop raide ou trop mou)</li>
+          <li>DifficultÃ© de coordination</li>
           <li>Positionnement anormal persistant</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Conditions Traitées</h2>
+        <h2 className="text-2xl font-bold mb-4">Conditions TraitÃ©es</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Infirmité motrice cérébrale (IMC)</li>
+          <li>InfirmitÃ© motrice cÃ©rÃ©brale (IMC)</li>
           <li>Spina bifida et malformations</li>
-          <li>Torticolis congénital</li>
-          <li>Plagiocéphalie (asymétrie du crâne)</li>
-          <li>Retard développement psychomotor</li>
+          <li>Torticolis congÃ©nital</li>
+          <li>PlagiocÃ©phalie (asymÃ©trie du crÃ¢ne)</li>
+          <li>Retard dÃ©veloppement psychomotor</li>
           <li>Dysplasie de hanche</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Approche Thérapeutique</h2>
+        <h2 className="text-2xl font-bold mb-4">Approche ThÃ©rapeutique</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li><strong>Jeu Thérapeutique:</strong> Rendre l'exercice amusant</li>
-          <li><strong>Mobilisation Douce:</strong> Améliorer la mobilité</li>
+          <li><strong>Jeu ThÃ©rapeutique:</strong> Rendre l'exercice amusant</li>
+          <li><strong>Mobilisation Douce:</strong> AmÃ©liorer la mobilitÃ©</li>
           <li><strong>Renforcement Musculaire:</strong> Via les jeux</li>
-          <li><strong>Éducation Parentale:</strong> Exercices à domicile</li>
+          <li><strong>Ã‰ducation Parentale:</strong> Exercices Ã  domicile</li>
         </ol>
       </section>
       <section className="bg-pink-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">👶 Conseil Important</h3>
-        <p>L'intervention précoce peut changer la trajectoire de développement. Si vous notez un retard, consultez nos pédiatres kiné.</p>
+        <h3 className="text-xl font-bold mb-3">ðŸ‘¶ Conseil Important</h3>
+        <p>L'intervention prÃ©coce peut changer la trajectoire de dÃ©veloppement. Si vous notez un retard, consultez nos pÃ©diatres kinÃ©.</p>
       </section>
     </div>
   ),
   contentAr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">الترويض الطبي للأطفال</h2>
-        <p>النمو النفسحركي للطفل حاسم. تحديد تأخر النمو مبكراً للتدخل المبكر.</p>
+        <h2 className="text-2xl font-bold mb-4">Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ Ù„Ù„Ø£Ø·ÙØ§Ù„</h2>
+        <p>Ø§Ù„Ù†Ù…Ùˆ Ø§Ù„Ù†ÙØ³Ø­Ø±ÙƒÙŠ Ù„Ù„Ø·ÙÙ„ Ø­Ø§Ø³Ù…. ØªØ­Ø¯ÙŠØ¯ ØªØ£Ø®Ø± Ø§Ù„Ù†Ù…Ùˆ Ù…Ø¨ÙƒØ±Ø§Ù‹ Ù„Ù„ØªØ¯Ø®Ù„ Ø§Ù„Ù…Ø¨ÙƒØ±.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">معالم النمو الطبيعية</h2>
+        <h2 className="text-2xl font-bold mb-4">Ù…Ø¹Ø§Ù„Ù… Ø§Ù„Ù†Ù…Ùˆ Ø§Ù„Ø·Ø¨ÙŠØ¹ÙŠØ©</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>3 أشهر:</strong> التحكم بالرأس</li>
-          <li><strong>6 أشهر:</strong> الجلوس بدون دعم</li>
-          <li><strong>9 أشهر:</strong> الزحف</li>
-          <li><strong>12 شهراً:</strong> المشي بدعم</li>
-          <li><strong>24 شهراً:</strong> مشي مستقل مستقر</li>
-          <li><strong>3 سنوات:</strong> الركض والقفز والتسلق</li>
+          <li><strong>3 Ø£Ø´Ù‡Ø±:</strong> Ø§Ù„ØªØ­ÙƒÙ… Ø¨Ø§Ù„Ø±Ø£Ø³</li>
+          <li><strong>6 Ø£Ø´Ù‡Ø±:</strong> Ø§Ù„Ø¬Ù„ÙˆØ³ Ø¨Ø¯ÙˆÙ† Ø¯Ø¹Ù…</li>
+          <li><strong>9 Ø£Ø´Ù‡Ø±:</strong> Ø§Ù„Ø²Ø­Ù</li>
+          <li><strong>12 Ø´Ù‡Ø±Ø§Ù‹:</strong> Ø§Ù„Ù…Ø´ÙŠ Ø¨Ø¯Ø¹Ù…</li>
+          <li><strong>24 Ø´Ù‡Ø±Ø§Ù‹:</strong> Ù…Ø´ÙŠ Ù…Ø³ØªÙ‚Ù„ Ù…Ø³ØªÙ‚Ø±</li>
+          <li><strong>3 Ø³Ù†ÙˆØ§Øª:</strong> Ø§Ù„Ø±ÙƒØ¶ ÙˆØ§Ù„Ù‚ÙØ² ÙˆØ§Ù„ØªØ³Ù„Ù‚</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">علامات التحذير</h2>
+        <h2 className="text-2xl font-bold mb-4">Ø¹Ù„Ø§Ù…Ø§Øª Ø§Ù„ØªØ­Ø°ÙŠØ±</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>تأخر في مراحل النمو</li>
-          <li>عدم تماثل الوضعية أو الحركة</li>
-          <li>توتر عضلي غير طبيعي (صلب أو مرتخي جداً)</li>
-          <li>صعوبة في التنسيق</li>
-          <li>وضعية غير طبيعية مستمرة</li>
+          <li>ØªØ£Ø®Ø± ÙÙŠ Ù…Ø±Ø§Ø­Ù„ Ø§Ù„Ù†Ù…Ùˆ</li>
+          <li>Ø¹Ø¯Ù… ØªÙ…Ø§Ø«Ù„ Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© Ø£Ùˆ Ø§Ù„Ø­Ø±ÙƒØ©</li>
+          <li>ØªÙˆØªØ± Ø¹Ø¶Ù„ÙŠ ØºÙŠØ± Ø·Ø¨ÙŠØ¹ÙŠ (ØµÙ„Ø¨ Ø£Ùˆ Ù…Ø±ØªØ®ÙŠ Ø¬Ø¯Ø§Ù‹)</li>
+          <li>ØµØ¹ÙˆØ¨Ø© ÙÙŠ Ø§Ù„ØªÙ†Ø³ÙŠÙ‚</li>
+          <li>ÙˆØ¶Ø¹ÙŠØ© ØºÙŠØ± Ø·Ø¨ÙŠØ¹ÙŠØ© Ù…Ø³ØªÙ…Ø±Ø©</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">الحالات المعالجة</h2>
+        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ø­Ø§Ù„Ø§Øª Ø§Ù„Ù…Ø¹Ø§Ù„Ø¬Ø©</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>الشلل الدماغي</li>
-          <li>القيلة السحائية والتشوهات</li>
-          <li>تشنج الرقبة الخلقي</li>
-          <li>عدم تماثل الرأس</li>
-          <li>تأخر النمو النفسحركي</li>
-          <li>خلل تطور الورك</li>
+          <li>Ø§Ù„Ø´Ù„Ù„ Ø§Ù„Ø¯Ù…Ø§ØºÙŠ</li>
+          <li>Ø§Ù„Ù‚ÙŠÙ„Ø© Ø§Ù„Ø³Ø­Ø§Ø¦ÙŠØ© ÙˆØ§Ù„ØªØ´ÙˆÙ‡Ø§Øª</li>
+          <li>ØªØ´Ù†Ø¬ Ø§Ù„Ø±Ù‚Ø¨Ø© Ø§Ù„Ø®Ù„Ù‚ÙŠ</li>
+          <li>Ø¹Ø¯Ù… ØªÙ…Ø§Ø«Ù„ Ø§Ù„Ø±Ø£Ø³</li>
+          <li>ØªØ£Ø®Ø± Ø§Ù„Ù†Ù…Ùˆ Ø§Ù„Ù†ÙØ³Ø­Ø±ÙƒÙŠ</li>
+          <li>Ø®Ù„Ù„ ØªØ·ÙˆØ± Ø§Ù„ÙˆØ±Ùƒ</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">النهج العلاجي</h2>
+        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ù†Ù‡Ø¬ Ø§Ù„Ø¹Ù„Ø§Ø¬ÙŠ</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li><strong>اللعب العلاجي:</strong> جعل التمرين ممتعاً</li>
-          <li><strong>تحريك لطيف:</strong> تحسين الحركة</li>
-          <li><strong>تقوية عضلية:</strong> عبر الألعاب</li>
-          <li><strong>تعليم الآباء:</strong> تمارين منزلية</li>
+          <li><strong>Ø§Ù„Ù„Ø¹Ø¨ Ø§Ù„Ø¹Ù„Ø§Ø¬ÙŠ:</strong> Ø¬Ø¹Ù„ Ø§Ù„ØªÙ…Ø±ÙŠÙ† Ù…Ù…ØªØ¹Ø§Ù‹</li>
+          <li><strong>ØªØ­Ø±ÙŠÙƒ Ù„Ø·ÙŠÙ:</strong> ØªØ­Ø³ÙŠÙ† Ø§Ù„Ø­Ø±ÙƒØ©</li>
+          <li><strong>ØªÙ‚ÙˆÙŠØ© Ø¹Ø¶Ù„ÙŠØ©:</strong> Ø¹Ø¨Ø± Ø§Ù„Ø£Ù„Ø¹Ø§Ø¨</li>
+          <li><strong>ØªØ¹Ù„ÙŠÙ… Ø§Ù„Ø¢Ø¨Ø§Ø¡:</strong> ØªÙ…Ø§Ø±ÙŠÙ† Ù…Ù†Ø²Ù„ÙŠØ©</li>
         </ol>
       </section>
       <section className="bg-pink-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">👶 نصيحة مهمة</h3>
-        <p>التدخل المبكر يمكن أن يغير مسار النمو. إذا لاحظت تأخراً، استشر متخصصينا في الترويض الطبي للأطفال.</p>
+        <h3 className="text-xl font-bold mb-3">ðŸ‘¶ Ù†ØµÙŠØ­Ø© Ù…Ù‡Ù…Ø©</h3>
+        <p>Ø§Ù„ØªØ¯Ø®Ù„ Ø§Ù„Ù…Ø¨ÙƒØ± ÙŠÙ…ÙƒÙ† Ø£Ù† ÙŠØºÙŠØ± Ù…Ø³Ø§Ø± Ø§Ù„Ù†Ù…Ùˆ. Ø¥Ø°Ø§ Ù„Ø§Ø­Ø¸Øª ØªØ£Ø®Ø±Ø§Ù‹ØŒ Ø§Ø³ØªØ´Ø± Ù…ØªØ®ØµØµÙŠÙ†Ø§ ÙÙŠ Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ Ù„Ù„Ø£Ø·ÙØ§Ù„.</p>
       </section>
     </div>
   ),
   relatedArticles: [
-    { slug: 'sports-recovery', titleFr: 'Récupération Sportive', titleAr: 'استرجاع رياضي', icon: <Baby size={20} /> },
-    { slug: 'post-stroke', titleFr: 'Réadaptation Post-AVC', titleAr: 'إعادة تأهيل ما بعد الجلطة', icon: <Baby size={20} /> },
-    { slug: 'posture-ergonomics', titleFr: 'Posture & Ergonomie', titleAr: 'الوضعية والإرجونوميا', icon: <Baby size={20} /> },
+    { slug: 'recuperation-sportive-prevention-blessures', titleFr: 'RÃ©cupÃ©ration Sportive', titleAr: 'Ø§Ø³ØªØ±Ø¬Ø§Ø¹ Ø±ÙŠØ§Ø¶ÙŠ', icon: <Baby size={20} /> },
+    { slug: 'readaptation-post-avc', titleFr: 'RÃ©adaptation Post-AVC', titleAr: 'Ø¥Ø¹Ø§Ø¯Ø© ØªØ£Ù‡ÙŠÙ„ Ù…Ø§ Ø¨Ø¹Ø¯ Ø§Ù„Ø¬Ù„Ø·Ø©', icon: <Baby size={20} /> },
+    { slug: 'posture-ergonomie', titleFr: 'Posture & Ergonomie', titleAr: 'Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© ÙˆØ§Ù„Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§', icon: <Baby size={20} /> },
   ]
 });
 
 export default article7;
+
+
+

@@ -1,149 +1,152 @@
-import { createArticle } from './ArticleTemplate';
+﻿import { createArticle } from './ArticleTemplate';
 import { Dumbbell } from 'lucide-react';
 
 const article3 = createArticle({
-  slug: 'sports-injuries',
-  titleFr: 'Traumatologie du Sport: Récupération Rapide',
-  titleAr: 'الإصابات الرياضية: التعافي السريع',
-  descriptionFr: 'Entorses, tendinites, déchirures musculaires. Apprenez comment récupérer rapidement après une blessure sportive avec la kinésithérapie.',
-  descriptionAr: 'علاج الالتواءات والتهاب الأوتار والتمزقات العضلية. تعرف على كيفية التعافي السريع من الإصابة الرياضية.',
-  keywordsFr: 'blessure sport, entorse, tendinite, trauma sport, kiné sport, rééducation',
-  keywordsAr: 'إصابة رياضية, التواء, التهاب وتر, تأهيل رياضي',
+  slug: 'traumatologie-sport',
+  titleFr: 'Traumatologie du Sport: RÃ©cupÃ©ration Rapide',
+  titleAr: 'Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ©: Ø§Ù„ØªØ¹Ø§ÙÙŠ Ø§Ù„Ø³Ø±ÙŠØ¹',
+  descriptionFr: 'Entorses, tendinites, dÃ©chirures musculaires. Apprenez comment rÃ©cupÃ©rer rapidement aprÃ¨s une blessure sportive avec la kinÃ©sithÃ©rapie.',
+  descriptionAr: 'Ø¹Ù„Ø§Ø¬ Ø§Ù„Ø§Ù„ØªÙˆØ§Ø¡Ø§Øª ÙˆØ§Ù„ØªÙ‡Ø§Ø¨ Ø§Ù„Ø£ÙˆØªØ§Ø± ÙˆØ§Ù„ØªÙ…Ø²Ù‚Ø§Øª Ø§Ù„Ø¹Ø¶Ù„ÙŠØ©. ØªØ¹Ø±Ù Ø¹Ù„Ù‰ ÙƒÙŠÙÙŠØ© Ø§Ù„ØªØ¹Ø§ÙÙŠ Ø§Ù„Ø³Ø±ÙŠØ¹ Ù…Ù† Ø§Ù„Ø¥ØµØ§Ø¨Ø© Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ©.',
+  keywordsFr: 'blessure sport, entorse, tendinite, trauma sport, kinÃ© sport, rÃ©Ã©ducation',
+  keywordsAr: 'Ø¥ØµØ§Ø¨Ø© Ø±ÙŠØ§Ø¶ÙŠØ©, Ø§Ù„ØªÙˆØ§Ø¡, Ø§Ù„ØªÙ‡Ø§Ø¨ ÙˆØªØ±, ØªØ£Ù‡ÙŠÙ„ Ø±ÙŠØ§Ø¶ÙŠ',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '7 min de lecture',
-  readTimeAr: '7 دقائق قراءة',
+  readTimeAr: '7 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
   contentFr: (
     <div className="space-y-6">
       <section>
         <h2 className="text-2xl font-bold mb-4">Les Blessures Sportives</h2>
-        <p>Les blessures sportives sont courantes chez les athlètes et les amateurs de sport à Casablanca. Elles incluent les entorses, les tendinites, les déchirures musculaires et les fractures de fatigue. Une rééducation appropriée est essentielle pour retourner au sport en toute sécurité.</p>
+        <p>Les blessures sportives sont courantes chez les athlÃ¨tes et les amateurs de sport Ã  Casablanca. Elles incluent les entorses, les tendinites, les dÃ©chirures musculaires et les fractures de fatigue. Une rÃ©Ã©ducation appropriÃ©e est essentielle pour retourner au sport en toute sÃ©curitÃ©.</p>
       </section>
       <section>
         <h2 className="text-2xl font-bold mb-4">Types de Blessures Courants</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>Entorses:</strong> Étirement ou déchirure des ligaments</li>
+          <li><strong>Entorses:</strong> Ã‰tirement ou dÃ©chirure des ligaments</li>
           <li><strong>Tendinites:</strong> Inflammation des tendons</li>
-          <li><strong>Déchirures Musculaires:</strong> Rupture des fibres musculaires</li>
+          <li><strong>DÃ©chirures Musculaires:</strong> Rupture des fibres musculaires</li>
           <li><strong>Fractures de Fatigue:</strong> Petites fissures des os</li>
           <li><strong>Syndrome de sur-utilisation:</strong> Surmenage chronique</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Protocole RICE Immédiat</h2>
+        <h2 className="text-2xl font-bold mb-4">Protocole RICE ImmÃ©diat</h2>
         <p>Dans les 48-72 heures suivant la blessure:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li><strong>Rest (Repos):</strong> Immobilisation et arrêt de l'activité</li>
-          <li><strong>Ice (Glaçage):</strong> 15 minutes toutes les 2-3 heures</li>
-          <li><strong>Compression:</strong> Bande élastique pour réduire le gonflement</li>
-          <li><strong>Elevation:</strong> Surélévation pour drainer le liquide</li>
+          <li><strong>Rest (Repos):</strong> Immobilisation et arrÃªt de l'activitÃ©</li>
+          <li><strong>Ice (GlaÃ§age):</strong> 15 minutes toutes les 2-3 heures</li>
+          <li><strong>Compression:</strong> Bande Ã©lastique pour rÃ©duire le gonflement</li>
+          <li><strong>Elevation:</strong> SurÃ©lÃ©vation pour drainer le liquide</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Phases de Rééducation</h2>
+        <h2 className="text-2xl font-bold mb-4">Phases de RÃ©Ã©ducation</h2>
         <div className="space-y-4">
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold mb-2">Phase 1: Protection (Jours 1-3)</h3>
-            <p>Repos complet, glaçage, compression. Début des exercices isométriques doux.</p>
+            <p>Repos complet, glaÃ§age, compression. DÃ©but des exercices isomÃ©triques doux.</p>
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold mb-2">Phase 2: Mobilisation (Jours 4-10)</h3>
-            <p>Exercices de mobilité passive, puis active. Début du renforcement léger.</p>
+            <p>Exercices de mobilitÃ© passive, puis active. DÃ©but du renforcement lÃ©ger.</p>
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold mb-2">Phase 3: Renforcement (Semaines 2-4)</h3>
-            <p>Renforcement progressif et récupération proprioceptive.</p>
+            <p>Renforcement progressif et rÃ©cupÃ©ration proprioceptive.</p>
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold mb-2">Phase 4: Retour au Sport (Semaines 4-6)</h3>
-            <p>Entraînement fonctionnel et sport-spécifique.</p>
+            <p>EntraÃ®nement fonctionnel et sport-spÃ©cifique.</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Prévention des Rechutes</h2>
+        <h2 className="text-2xl font-bold mb-4">PrÃ©vention des Rechutes</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Échauffement complet avant l'activité</li>
-          <li>Exercices de force et flexibilité réguliers</li>
-          <li>Progression graduelle de l'intensité</li>
-          <li>Récupération adéquate entre les séances</li>
+          <li>Ã‰chauffement complet avant l'activitÃ©</li>
+          <li>Exercices de force et flexibilitÃ© rÃ©guliers</li>
+          <li>Progression graduelle de l'intensitÃ©</li>
+          <li>RÃ©cupÃ©ration adÃ©quate entre les sÃ©ances</li>
           <li>Suivi des signaux d'alerte de votre corps</li>
         </ul>
       </section>
       <section className="bg-orange-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">⚠️ Points Importants</h3>
-        <p>Ne retournez pas au sport trop tôt. Une rééducation complète peut prendre 4-6 semaines. À Centre Chnider, nos kinésithérapeutes spécialisés suivent votre progression.</p>
+        <h3 className="text-xl font-bold mb-3">âš ï¸ Points Importants</h3>
+        <p>Ne retournez pas au sport trop tÃ´t. Une rÃ©Ã©ducation complÃ¨te peut prendre 4-6 semaines. Ã€ Centre Chnider, nos kinÃ©sithÃ©rapeutes spÃ©cialisÃ©s suivent votre progression.</p>
       </section>
     </div>
   ),
   contentAr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">الإصابات الرياضية</h2>
-        <p>الإصابات الرياضية شائعة جداً بين الرياضيين وهواة الرياضة بالدار البيضاء. تشمل الالتواءات والتهاب الأوتار والتمزقات العضلية وكسور الإجهاد. إعادة التأهيل الصحيحة ضرورية للعودة الآمنة إلى الرياضة.</p>
+        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ©</h2>
+        <p>Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ© Ø´Ø§Ø¦Ø¹Ø© Ø¬Ø¯Ø§Ù‹ Ø¨ÙŠÙ† Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠÙŠÙ† ÙˆÙ‡ÙˆØ§Ø© Ø§Ù„Ø±ÙŠØ§Ø¶Ø© Ø¨Ø§Ù„Ø¯Ø§Ø± Ø§Ù„Ø¨ÙŠØ¶Ø§Ø¡. ØªØ´Ù…Ù„ Ø§Ù„Ø§Ù„ØªÙˆØ§Ø¡Ø§Øª ÙˆØ§Ù„ØªÙ‡Ø§Ø¨ Ø§Ù„Ø£ÙˆØªØ§Ø± ÙˆØ§Ù„ØªÙ…Ø²Ù‚Ø§Øª Ø§Ù„Ø¹Ø¶Ù„ÙŠØ© ÙˆÙƒØ³ÙˆØ± Ø§Ù„Ø¥Ø¬Ù‡Ø§Ø¯. Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ Ø§Ù„ØµØ­ÙŠØ­Ø© Ø¶Ø±ÙˆØ±ÙŠØ© Ù„Ù„Ø¹ÙˆØ¯Ø© Ø§Ù„Ø¢Ù…Ù†Ø© Ø¥Ù„Ù‰ Ø§Ù„Ø±ÙŠØ§Ø¶Ø©.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">أنواع الإصابات الشائعة</h2>
+        <h2 className="text-2xl font-bold mb-4">Ø£Ù†ÙˆØ§Ø¹ Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø§Ù„Ø´Ø§Ø¦Ø¹Ø©</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>الالتواءات:</strong> تمدد أو تمزق الأربطة</li>
-          <li><strong>التهاب الأوتار:</strong> التهاب الأوتار</li>
-          <li><strong>التمزقات العضلية:</strong> تمزق ألياف العضل</li>
-          <li><strong>كسور الإجهاد:</strong> شقوق صغيرة في العظام</li>
-          <li><strong>متلازمة الإفراط في الاستخدام:</strong> الإجهاد المزمن</li>
+          <li><strong>Ø§Ù„Ø§Ù„ØªÙˆØ§Ø¡Ø§Øª:</strong> ØªÙ…Ø¯Ø¯ Ø£Ùˆ ØªÙ…Ø²Ù‚ Ø§Ù„Ø£Ø±Ø¨Ø·Ø©</li>
+          <li><strong>Ø§Ù„ØªÙ‡Ø§Ø¨ Ø§Ù„Ø£ÙˆØªØ§Ø±:</strong> Ø§Ù„ØªÙ‡Ø§Ø¨ Ø§Ù„Ø£ÙˆØªØ§Ø±</li>
+          <li><strong>Ø§Ù„ØªÙ…Ø²Ù‚Ø§Øª Ø§Ù„Ø¹Ø¶Ù„ÙŠØ©:</strong> ØªÙ…Ø²Ù‚ Ø£Ù„ÙŠØ§Ù Ø§Ù„Ø¹Ø¶Ù„</li>
+          <li><strong>ÙƒØ³ÙˆØ± Ø§Ù„Ø¥Ø¬Ù‡Ø§Ø¯:</strong> Ø´Ù‚ÙˆÙ‚ ØµØºÙŠØ±Ø© ÙÙŠ Ø§Ù„Ø¹Ø¸Ø§Ù…</li>
+          <li><strong>Ù…ØªÙ„Ø§Ø²Ù…Ø© Ø§Ù„Ø¥ÙØ±Ø§Ø· ÙÙŠ Ø§Ù„Ø§Ø³ØªØ®Ø¯Ø§Ù…:</strong> Ø§Ù„Ø¥Ø¬Ù‡Ø§Ø¯ Ø§Ù„Ù…Ø²Ù…Ù†</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">بروتوكول RICE الفوري</h2>
-        <p>في أول 48-72 ساعة بعد الإصابة:</p>
+        <h2 className="text-2xl font-bold mb-4">Ø¨Ø±ÙˆØªÙˆÙƒÙˆÙ„ RICE Ø§Ù„ÙÙˆØ±ÙŠ</h2>
+        <p>ÙÙŠ Ø£ÙˆÙ„ 48-72 Ø³Ø§Ø¹Ø© Ø¨Ø¹Ø¯ Ø§Ù„Ø¥ØµØ§Ø¨Ø©:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li><strong>الراحة:</strong> إيقاف النشاط</li>
-          <li><strong>الثلج:</strong> 15 دقيقة كل 2-3 ساعات</li>
-          <li><strong>الضغط:</strong> شريط مرن لتقليل التورم</li>
-          <li><strong>الرفع:</strong> رفع المنطقة المصابة</li>
+          <li><strong>Ø§Ù„Ø±Ø§Ø­Ø©:</strong> Ø¥ÙŠÙ‚Ø§Ù Ø§Ù„Ù†Ø´Ø§Ø·</li>
+          <li><strong>Ø§Ù„Ø«Ù„Ø¬:</strong> 15 Ø¯Ù‚ÙŠÙ‚Ø© ÙƒÙ„ 2-3 Ø³Ø§Ø¹Ø§Øª</li>
+          <li><strong>Ø§Ù„Ø¶ØºØ·:</strong> Ø´Ø±ÙŠØ· Ù…Ø±Ù† Ù„ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„ØªÙˆØ±Ù…</li>
+          <li><strong>Ø§Ù„Ø±ÙØ¹:</strong> Ø±ÙØ¹ Ø§Ù„Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…ØµØ§Ø¨Ø©</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">مراحل إعادة التأهيل</h2>
+        <h2 className="text-2xl font-bold mb-4">Ù…Ø±Ø§Ø­Ù„ Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„</h2>
         <div className="space-y-4">
           <div className="border-r-4 border-medical-600 pr-4">
-            <h3 className="font-bold mb-2">المرحلة 1: الحماية (اليوم 1-3)</h3>
-            <p>راحة كاملة، ثلج، ضغط. بدء تمارين ثابتة خفيفة.</p>
+            <h3 className="font-bold mb-2">Ø§Ù„Ù…Ø±Ø­Ù„Ø© 1: Ø§Ù„Ø­Ù…Ø§ÙŠØ© (Ø§Ù„ÙŠÙˆÙ… 1-3)</h3>
+            <p>Ø±Ø§Ø­Ø© ÙƒØ§Ù…Ù„Ø©ØŒ Ø«Ù„Ø¬ØŒ Ø¶ØºØ·. Ø¨Ø¯Ø¡ ØªÙ…Ø§Ø±ÙŠÙ† Ø«Ø§Ø¨ØªØ© Ø®ÙÙŠÙØ©.</p>
           </div>
           <div className="border-r-4 border-medical-600 pr-4">
-            <h3 className="font-bold mb-2">المرحلة 2: الحركة (اليوم 4-10)</h3>
-            <p>تمارين حركية سلبية، ثم إيجابية. بدء التقوية الخفيفة.</p>
+            <h3 className="font-bold mb-2">Ø§Ù„Ù…Ø±Ø­Ù„Ø© 2: Ø§Ù„Ø­Ø±ÙƒØ© (Ø§Ù„ÙŠÙˆÙ… 4-10)</h3>
+            <p>ØªÙ…Ø§Ø±ÙŠÙ† Ø­Ø±ÙƒÙŠØ© Ø³Ù„Ø¨ÙŠØ©ØŒ Ø«Ù… Ø¥ÙŠØ¬Ø§Ø¨ÙŠØ©. Ø¨Ø¯Ø¡ Ø§Ù„ØªÙ‚ÙˆÙŠØ© Ø§Ù„Ø®ÙÙŠÙØ©.</p>
           </div>
           <div className="border-r-4 border-medical-600 pr-4">
-            <h3 className="font-bold mb-2">المرحلة 3: التقوية (أسبوع 2-4)</h3>
-            <p>تقوية تدريجية واستعادة الحس.</p>
+            <h3 className="font-bold mb-2">Ø§Ù„Ù…Ø±Ø­Ù„Ø© 3: Ø§Ù„ØªÙ‚ÙˆÙŠØ© (Ø£Ø³Ø¨ÙˆØ¹ 2-4)</h3>
+            <p>ØªÙ‚ÙˆÙŠØ© ØªØ¯Ø±ÙŠØ¬ÙŠØ© ÙˆØ§Ø³ØªØ¹Ø§Ø¯Ø© Ø§Ù„Ø­Ø³.</p>
           </div>
           <div className="border-r-4 border-medical-600 pr-4">
-            <h3 className="font-bold mb-2">المرحلة 4: العودة للرياضة (أسبوع 4-6)</h3>
-            <p>تدريب وظيفي وخاص بالرياضة.</p>
+            <h3 className="font-bold mb-2">Ø§Ù„Ù…Ø±Ø­Ù„Ø© 4: Ø§Ù„Ø¹ÙˆØ¯Ø© Ù„Ù„Ø±ÙŠØ§Ø¶Ø© (Ø£Ø³Ø¨ÙˆØ¹ 4-6)</h3>
+            <p>ØªØ¯Ø±ÙŠØ¨ ÙˆØ¸ÙŠÙÙŠ ÙˆØ®Ø§Øµ Ø¨Ø§Ù„Ø±ÙŠØ§Ø¶Ø©.</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">منع الانتكاسات</h2>
+        <h2 className="text-2xl font-bold mb-4">Ù…Ù†Ø¹ Ø§Ù„Ø§Ù†ØªÙƒØ§Ø³Ø§Øª</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>إحماء شامل قبل النشاط</li>
-          <li>تمارين قوة ومرونة منتظمة</li>
-          <li>زيادة تدريجية للشدة</li>
-          <li>استرجاع كافٍ بين الجلسات</li>
-          <li>الاستماع لإشارات جسدك</li>
+          <li>Ø¥Ø­Ù…Ø§Ø¡ Ø´Ø§Ù…Ù„ Ù‚Ø¨Ù„ Ø§Ù„Ù†Ø´Ø§Ø·</li>
+          <li>ØªÙ…Ø§Ø±ÙŠÙ† Ù‚ÙˆØ© ÙˆÙ…Ø±ÙˆÙ†Ø© Ù…Ù†ØªØ¸Ù…Ø©</li>
+          <li>Ø²ÙŠØ§Ø¯Ø© ØªØ¯Ø±ÙŠØ¬ÙŠØ© Ù„Ù„Ø´Ø¯Ø©</li>
+          <li>Ø§Ø³ØªØ±Ø¬Ø§Ø¹ ÙƒØ§ÙÙ Ø¨ÙŠÙ† Ø§Ù„Ø¬Ù„Ø³Ø§Øª</li>
+          <li>Ø§Ù„Ø§Ø³ØªÙ…Ø§Ø¹ Ù„Ø¥Ø´Ø§Ø±Ø§Øª Ø¬Ø³Ø¯Ùƒ</li>
         </ul>
       </section>
       <section className="bg-orange-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">⚠️ نقاط مهمة</h3>
-        <p>لا تعد إلى الرياضة مبكراً. إعادة التأهيل الكاملة قد تستغرق 4-6 أسابيع. في مركز اشنيدر، متخصصونا يراقبون تقدمك.</p>
+        <h3 className="text-xl font-bold mb-3">âš ï¸ Ù†Ù‚Ø§Ø· Ù…Ù‡Ù…Ø©</h3>
+        <p>Ù„Ø§ ØªØ¹Ø¯ Ø¥Ù„Ù‰ Ø§Ù„Ø±ÙŠØ§Ø¶Ø© Ù…Ø¨ÙƒØ±Ø§Ù‹. Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ Ø§Ù„ÙƒØ§Ù…Ù„Ø© Ù‚Ø¯ ØªØ³ØªØºØ±Ù‚ 4-6 Ø£Ø³Ø§Ø¨ÙŠØ¹. ÙÙŠ Ù…Ø±ÙƒØ² Ø§Ø´Ù†ÙŠØ¯Ø±ØŒ Ù…ØªØ®ØµØµÙˆÙ†Ø§ ÙŠØ±Ø§Ù‚Ø¨ÙˆÙ† ØªÙ‚Ø¯Ù…Ùƒ.</p>
       </section>
     </div>
   ),
   relatedArticles: [
-    { slug: 'shoulder-pain', titleFr: 'Douleurs aux Épaules', titleAr: 'ألم الكتفين', icon: <Dumbbell size={20} /> },
-    { slug: 'knee-osteoarthritis', titleFr: 'Arthrose du Genou', titleAr: 'خشونة الركبة', icon: <Dumbbell size={20} /> },
-    { slug: 'sports-recovery', titleFr: 'Récupération Sportive', titleAr: 'استرجاع رياضي', icon: <Dumbbell size={20} /> },
+    { slug: 'douleurs-epaules-capsulite', titleFr: 'Douleurs aux Ã‰paules', titleAr: 'Ø£Ù„Ù… Ø§Ù„ÙƒØªÙÙŠÙ†', icon: <Dumbbell size={20} /> },
+    { slug: 'arthrose-genou', titleFr: 'Arthrose du Genou', titleAr: 'Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ø±ÙƒØ¨Ø©', icon: <Dumbbell size={20} /> },
+    { slug: 'recuperation-sportive-prevention-blessures', titleFr: 'RÃ©cupÃ©ration Sportive', titleAr: 'Ø§Ø³ØªØ±Ø¬Ø§Ø¹ Ø±ÙŠØ§Ø¶ÙŠ', icon: <Dumbbell size={20} /> },
   ]
 });
 
 export default article3;
+
+
+

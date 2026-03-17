@@ -1,34 +1,34 @@
-import { createArticle } from './ArticleTemplate';
+﻿import { createArticle } from './ArticleTemplate';
 import { Stethoscope } from 'lucide-react';
 
 const article9 = createArticle({
-  slug: 'posture-ergonomics',
-  titleFr: 'Posture & Ergonomie: Prévention des Douleurs',
-  titleAr: 'الوضعية والإرجونوميا: منع الآلام',
+  slug: 'posture-ergonomie',
+  titleFr: 'Posture & Ergonomie: PrÃ©vention des Douleurs',
+  titleAr: 'Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© ÙˆØ§Ù„Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§: Ù…Ù†Ø¹ Ø§Ù„Ø¢Ù„Ø§Ù…',
   descriptionFr: 'Importance de la posture. Ergonomie de travail. Exercices de correction posturale.',
-  descriptionAr: 'أهمية الوضعية. إرجونوميا العمل. تمارين تصحيح الوضعية.',
-  keywordsFr: 'posture, ergonomie, mal de dos, prévention, travail bureau',
-  keywordsAr: 'وضعية, إرجونوميا, ألم الظهر, وقاية, عمل',
+  descriptionAr: 'Ø£Ù‡Ù…ÙŠØ© Ø§Ù„ÙˆØ¶Ø¹ÙŠØ©. Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§ Ø§Ù„Ø¹Ù…Ù„. ØªÙ…Ø§Ø±ÙŠÙ† ØªØµØ­ÙŠØ­ Ø§Ù„ÙˆØ¶Ø¹ÙŠØ©.',
+  keywordsFr: 'posture, ergonomie, mal de dos, prÃ©vention, travail bureau',
+  keywordsAr: 'ÙˆØ¶Ø¹ÙŠØ©, Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§, Ø£Ù„Ù… Ø§Ù„Ø¸Ù‡Ø±, ÙˆÙ‚Ø§ÙŠØ©, Ø¹Ù…Ù„',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '5 min de lecture',
-  readTimeAr: '5 دقائق قراءة',
+  readTimeAr: '5 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
   contentFr: (
     <div className="space-y-6">
       <section>
         <h2 className="text-2xl font-bold mb-4">L'Importance de la Posture</h2>
-        <p>Une bonne posture n'est pas qu'une question d'apparence. Elle prévient 70% des douleurs musculosquelettiques et améliore votre santé globale.</p>
+        <p>Une bonne posture n'est pas qu'une question d'apparence. Elle prÃ©vient 70% des douleurs musculosquelettiques et amÃ©liore votre santÃ© globale.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Conséquences d'une Mauvaise Posture</h2>
+        <h2 className="text-2xl font-bold mb-4">ConsÃ©quences d'une Mauvaise Posture</h2>
         <ul className="list-disc pl-6 space-y-2">
           <li>Douleurs lombaires chroniques</li>
-          <li>Tensions cervicales et céphalées</li>
+          <li>Tensions cervicales et cÃ©phalÃ©es</li>
           <li>Muscles faibles (core, dos)</li>
           <li>Compressions nerveuses</li>
-          <li>Diminution de la mobilité</li>
-          <li>Problèmes digestifs</li>
-          <li>Réduction de la confiance en soi</li>
+          <li>Diminution de la mobilitÃ©</li>
+          <li>ProblÃ¨mes digestifs</li>
+          <li>RÃ©duction de la confiance en soi</li>
         </ul>
       </section>
       <section>
@@ -40,114 +40,117 @@ const article9 = createArticle({
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold">Bureau</h3>
-            <p>Hauteur au niveau des coudes, distance à écran 50-70cm</p>
+            <p>Hauteur au niveau des coudes, distance Ã  Ã©cran 50-70cm</p>
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
-            <h3 className="font-bold">Écran</h3>
-            <p>Légèrement sous la hauteur des yeux, incliné à 20 degrés</p>
+            <h3 className="font-bold">Ã‰cran</h3>
+            <p>LÃ©gÃ¨rement sous la hauteur des yeux, inclinÃ© Ã  20 degrÃ©s</p>
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold">Clavier/Souris</h3>
-            <p>À la hauteur des coudes, souris proche du corps</p>
+            <p>Ã€ la hauteur des coudes, souris proche du corps</p>
           </div>
         </div>
       </section>
       <section>
         <h2 className="text-2xl font-bold mb-4">Exercices Posturaux Quotidiens</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>Étirements du psoas:</strong> 30 sec x 3 fois</li>
+          <li><strong>Ã‰tirements du psoas:</strong> 30 sec x 3 fois</li>
           <li><strong>Gainage ventral:</strong> 30 sec x 3 fois</li>
-          <li><strong>Rétraction du menton:</strong> 15 rép x 3 séries</li>
-          <li><strong>Scapular squeeze:</strong> 15 rép x 3 séries</li>
-          <li><strong>Back extension:</strong> 15 rép x 3 séries</li>
+          <li><strong>RÃ©traction du menton:</strong> 15 rÃ©p x 3 sÃ©ries</li>
+          <li><strong>Scapular squeeze:</strong> 15 rÃ©p x 3 sÃ©ries</li>
+          <li><strong>Back extension:</strong> 15 rÃ©p x 3 sÃ©ries</li>
         </ul>
       </section>
       <section>
         <h2 className="text-2xl font-bold mb-4">Habitudes Saines</h2>
         <ul className="list-disc pl-6 space-y-2">
           <li>Pause active toutes les heures</li>
-          <li>Marche de 5 minutes entre les réunions</li>
-          <li>Étirements au travail</li>
+          <li>Marche de 5 minutes entre les rÃ©unions</li>
+          <li>Ã‰tirements au travail</li>
           <li>Sports ou yoga 2-3 fois/semaine</li>
           <li>Dormir 7-8 heures par nuit</li>
         </ul>
       </section>
       <section className="bg-yellow-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">⚠️ Prévention</h3>
-        <p>Il est beaucoup plus facile de prévenir les problèmes posturaux que de les traiter. Commencez dès maintenant!</p>
+        <h3 className="text-xl font-bold mb-3">âš ï¸ PrÃ©vention</h3>
+        <p>Il est beaucoup plus facile de prÃ©venir les problÃ¨mes posturaux que de les traiter. Commencez dÃ¨s maintenant!</p>
       </section>
     </div>
   ),
   contentAr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">أهمية الوضعية</h2>
-        <p>الوضعية الجيدة ليست عن الظهور فقط. تمنع 70% من آلام العضلات والعظام وتحسن صحتك العامة.</p>
+        <h2 className="text-2xl font-bold mb-4">Ø£Ù‡Ù…ÙŠØ© Ø§Ù„ÙˆØ¶Ø¹ÙŠØ©</h2>
+        <p>Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© Ø§Ù„Ø¬ÙŠØ¯Ø© Ù„ÙŠØ³Øª Ø¹Ù† Ø§Ù„Ø¸Ù‡ÙˆØ± ÙÙ‚Ø·. ØªÙ…Ù†Ø¹ 70% Ù…Ù† Ø¢Ù„Ø§Ù… Ø§Ù„Ø¹Ø¶Ù„Ø§Øª ÙˆØ§Ù„Ø¹Ø¸Ø§Ù… ÙˆØªØ­Ø³Ù† ØµØ­ØªÙƒ Ø§Ù„Ø¹Ø§Ù…Ø©.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">عواقب الوضعية السيئة</h2>
+        <h2 className="text-2xl font-bold mb-4">Ø¹ÙˆØ§Ù‚Ø¨ Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© Ø§Ù„Ø³ÙŠØ¦Ø©</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>آلام أسفل الظهر المزمنة</li>
-          <li>اجهادات عنقية وصداع</li>
-          <li>ضعف العضلات (جذع، ظهر)</li>
-          <li>ضغط الأعصاب</li>
-          <li>انخفاض الحركة</li>
-          <li>مشاكل الجهاز الهضمي</li>
-          <li>انخفاض الثقة بالنفس</li>
+          <li>Ø¢Ù„Ø§Ù… Ø£Ø³ÙÙ„ Ø§Ù„Ø¸Ù‡Ø± Ø§Ù„Ù…Ø²Ù…Ù†Ø©</li>
+          <li>Ø§Ø¬Ù‡Ø§Ø¯Ø§Øª Ø¹Ù†Ù‚ÙŠØ© ÙˆØµØ¯Ø§Ø¹</li>
+          <li>Ø¶Ø¹Ù Ø§Ù„Ø¹Ø¶Ù„Ø§Øª (Ø¬Ø°Ø¹ØŒ Ø¸Ù‡Ø±)</li>
+          <li>Ø¶ØºØ· Ø§Ù„Ø£Ø¹ØµØ§Ø¨</li>
+          <li>Ø§Ù†Ø®ÙØ§Ø¶ Ø§Ù„Ø­Ø±ÙƒØ©</li>
+          <li>Ù…Ø´Ø§ÙƒÙ„ Ø§Ù„Ø¬Ù‡Ø§Ø² Ø§Ù„Ù‡Ø¶Ù…ÙŠ</li>
+          <li>Ø§Ù†Ø®ÙØ§Ø¶ Ø§Ù„Ø«Ù‚Ø© Ø¨Ø§Ù„Ù†ÙØ³</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">إرجونوميا المكتب</h2>
+        <h2 className="text-2xl font-bold mb-4">Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§ Ø§Ù„Ù…ÙƒØªØ¨</h2>
         <div className="space-y-4 mt-4">
           <div className="border-r-4 border-medical-600 pr-4">
-            <h3 className="font-bold">الكرسي</h3>
-            <p>قابل للتعديل، دعم قطني، حامل قدم</p>
+            <h3 className="font-bold">Ø§Ù„ÙƒØ±Ø³ÙŠ</h3>
+            <p>Ù‚Ø§Ø¨Ù„ Ù„Ù„ØªØ¹Ø¯ÙŠÙ„ØŒ Ø¯Ø¹Ù… Ù‚Ø·Ù†ÙŠØŒ Ø­Ø§Ù…Ù„ Ù‚Ø¯Ù…</p>
           </div>
           <div className="border-r-4 border-medical-600 pr-4">
-            <h3 className="font-bold">المكتب</h3>
-            <p>ارتفاع مستوى المرفقين، مسافة الشاشة 50-70 سم</p>
+            <h3 className="font-bold">Ø§Ù„Ù…ÙƒØªØ¨</h3>
+            <p>Ø§Ø±ØªÙØ§Ø¹ Ù…Ø³ØªÙˆÙ‰ Ø§Ù„Ù…Ø±ÙÙ‚ÙŠÙ†ØŒ Ù…Ø³Ø§ÙØ© Ø§Ù„Ø´Ø§Ø´Ø© 50-70 Ø³Ù…</p>
           </div>
           <div className="border-r-4 border-medical-600 pr-4">
-            <h3 className="font-bold">الشاشة</h3>
-            <p>أقل قليلاً من مستوى العين، مائلة 20 درجة</p>
+            <h3 className="font-bold">Ø§Ù„Ø´Ø§Ø´Ø©</h3>
+            <p>Ø£Ù‚Ù„ Ù‚Ù„ÙŠÙ„Ø§Ù‹ Ù…Ù† Ù…Ø³ØªÙˆÙ‰ Ø§Ù„Ø¹ÙŠÙ†ØŒ Ù…Ø§Ø¦Ù„Ø© 20 Ø¯Ø±Ø¬Ø©</p>
           </div>
           <div className="border-r-4 border-medical-600 pr-4">
-            <h3 className="font-bold">لوحة المفاتيح/الماوس</h3>
-            <p>على مستوى المرفقين، الماوس قريب من الجسم</p>
+            <h3 className="font-bold">Ù„ÙˆØ­Ø© Ø§Ù„Ù…ÙØ§ØªÙŠØ­/Ø§Ù„Ù…Ø§ÙˆØ³</h3>
+            <p>Ø¹Ù„Ù‰ Ù…Ø³ØªÙˆÙ‰ Ø§Ù„Ù…Ø±ÙÙ‚ÙŠÙ†ØŒ Ø§Ù„Ù…Ø§ÙˆØ³ Ù‚Ø±ÙŠØ¨ Ù…Ù† Ø§Ù„Ø¬Ø³Ù…</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">تمارين وضعية يومية</h2>
+        <h2 className="text-2xl font-bold mb-4">ØªÙ…Ø§Ø±ÙŠÙ† ÙˆØ¶Ø¹ÙŠØ© ÙŠÙˆÙ…ÙŠØ©</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>تمديدات الكمثرية:</strong> 30 ثانية × 3 مرات</li>
-          <li><strong>تقوية البطن:</strong> 30 ثانية × 3 مرات</li>
-          <li><strong>سحب الذقن للخلف:</strong> 15 تكرار × 3 مجموعات</li>
-          <li><strong>ضغط الأكتاف:</strong> 15 تكرار × 3 مجموعات</li>
-          <li><strong>تمديد الظهر:</strong> 15 تكرار × 3 مجموعات</li>
+          <li><strong>ØªÙ…Ø¯ÙŠØ¯Ø§Øª Ø§Ù„ÙƒÙ…Ø«Ø±ÙŠØ©:</strong> 30 Ø«Ø§Ù†ÙŠØ© Ã— 3 Ù…Ø±Ø§Øª</li>
+          <li><strong>ØªÙ‚ÙˆÙŠØ© Ø§Ù„Ø¨Ø·Ù†:</strong> 30 Ø«Ø§Ù†ÙŠØ© Ã— 3 Ù…Ø±Ø§Øª</li>
+          <li><strong>Ø³Ø­Ø¨ Ø§Ù„Ø°Ù‚Ù† Ù„Ù„Ø®Ù„Ù:</strong> 15 ØªÙƒØ±Ø§Ø± Ã— 3 Ù…Ø¬Ù…ÙˆØ¹Ø§Øª</li>
+          <li><strong>Ø¶ØºØ· Ø§Ù„Ø£ÙƒØªØ§Ù:</strong> 15 ØªÙƒØ±Ø§Ø± Ã— 3 Ù…Ø¬Ù…ÙˆØ¹Ø§Øª</li>
+          <li><strong>ØªÙ…Ø¯ÙŠØ¯ Ø§Ù„Ø¸Ù‡Ø±:</strong> 15 ØªÙƒØ±Ø§Ø± Ã— 3 Ù…Ø¬Ù…ÙˆØ¹Ø§Øª</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">عادات صحية</h2>
+        <h2 className="text-2xl font-bold mb-4">Ø¹Ø§Ø¯Ø§Øª ØµØ­ÙŠØ©</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>فترة نشطة كل ساعة</li>
-          <li>مشي 5 دقائق بين الاجتماعات</li>
-          <li>تمديدات في العمل</li>
-          <li>رياضة أو يوغا 2-3 مرات/أسبوع</li>
-          <li>نم 7-8 ساعات في الليل</li>
+          <li>ÙØªØ±Ø© Ù†Ø´Ø·Ø© ÙƒÙ„ Ø³Ø§Ø¹Ø©</li>
+          <li>Ù…Ø´ÙŠ 5 Ø¯Ù‚Ø§Ø¦Ù‚ Ø¨ÙŠÙ† Ø§Ù„Ø§Ø¬ØªÙ…Ø§Ø¹Ø§Øª</li>
+          <li>ØªÙ…Ø¯ÙŠØ¯Ø§Øª ÙÙŠ Ø§Ù„Ø¹Ù…Ù„</li>
+          <li>Ø±ÙŠØ§Ø¶Ø© Ø£Ùˆ ÙŠÙˆØºØ§ 2-3 Ù…Ø±Ø§Øª/Ø£Ø³Ø¨ÙˆØ¹</li>
+          <li>Ù†Ù… 7-8 Ø³Ø§Ø¹Ø§Øª ÙÙŠ Ø§Ù„Ù„ÙŠÙ„</li>
         </ul>
       </section>
       <section className="bg-yellow-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">⚠️ وقاية</h3>
-        <p>من الأسهل بكثير منع مشاكل الوضعية من معالجتها. ابدأ الآن!</p>
+        <h3 className="text-xl font-bold mb-3">âš ï¸ ÙˆÙ‚Ø§ÙŠØ©</h3>
+        <p>Ù…Ù† Ø§Ù„Ø£Ø³Ù‡Ù„ Ø¨ÙƒØ«ÙŠØ± Ù…Ù†Ø¹ Ù…Ø´Ø§ÙƒÙ„ Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© Ù…Ù† Ù…Ø¹Ø§Ù„Ø¬ØªÙ‡Ø§. Ø§Ø¨Ø¯Ø£ Ø§Ù„Ø¢Ù†!</p>
       </section>
     </div>
   ),
   relatedArticles: [
-    { slug: 'back-pain', titleFr: 'Lombalgie & Cervicalgie', titleAr: 'آلام الظهر والرقبة', icon: <Stethoscope size={20} /> },
-    { slug: 'migraines-headaches', titleFr: 'Migraines & Céphalées', titleAr: 'الصداع والشقيقة', icon: <Stethoscope size={20} /> },
-    { slug: 'sports-recovery', titleFr: 'Récupération Sportive', titleAr: 'استرجاع رياضي', icon: <Stethoscope size={20} /> },
+    { slug: 'lombalgie-cervicalgie', titleFr: 'Lombalgie & Cervicalgie', titleAr: 'Ø¢Ù„Ø§Ù… Ø§Ù„Ø¸Ù‡Ø± ÙˆØ§Ù„Ø±Ù‚Ø¨Ø©', icon: <Stethoscope size={20} /> },
+    { slug: 'migraines-cephalees', titleFr: 'Migraines & CÃ©phalÃ©es', titleAr: 'Ø§Ù„ØµØ¯Ø§Ø¹ ÙˆØ§Ù„Ø´Ù‚ÙŠÙ‚Ø©', icon: <Stethoscope size={20} /> },
+    { slug: 'recuperation-sportive-prevention-blessures', titleFr: 'RÃ©cupÃ©ration Sportive', titleAr: 'Ø§Ø³ØªØ±Ø¬Ø§Ø¹ Ø±ÙŠØ§Ø¶ÙŠ', icon: <Stethoscope size={20} /> },
   ]
 });
 
 export default article9;
+
+
+

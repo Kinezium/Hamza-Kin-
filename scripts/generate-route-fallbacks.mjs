@@ -1,4 +1,4 @@
-import { mkdir, copyFile } from 'node:fs/promises';
+﻿import { mkdir, copyFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const distDir = path.resolve('dist');
@@ -12,16 +12,16 @@ const routes = [
   'a-propos',
   'contact',
   'blog',
-  'blog/sciatica-herniated-disc',
-  'blog/back-pain',
-  'blog/sports-injuries',
-  'blog/knee-osteoarthritis',
-  'blog/shoulder-pain',
-  'blog/migraines-headaches',
-  'blog/pediatric-physiotherapy',
-  'blog/post-stroke',
-  'blog/posture-ergonomics',
-  'blog/sports-recovery',
+  'blog/sciatique-hernie-discale',
+  'blog/lombalgie-cervicalgie',
+  'blog/traumatologie-sport',
+  'blog/arthrose-genou',
+  'blog/douleurs-epaules-capsulite',
+  'blog/migraines-cephalees',
+  'blog/kine-pediatrique',
+  'blog/readaptation-post-avc',
+  'blog/posture-ergonomie',
+  'blog/recuperation-sportive-prevention-blessures',
   'gallerie',
   'ar',
   'ar/pathologies',
@@ -30,16 +30,16 @@ const routes = [
   'ar/a-propos',
   'ar/contact',
   'ar/blog',
-  'ar/blog/sciatica-herniated-disc',
-  'ar/blog/back-pain',
-  'ar/blog/sports-injuries',
-  'ar/blog/knee-osteoarthritis',
-  'ar/blog/shoulder-pain',
-  'ar/blog/migraines-headaches',
-  'ar/blog/pediatric-physiotherapy',
-  'ar/blog/post-stroke',
-  'ar/blog/posture-ergonomics',
-  'ar/blog/sports-recovery',
+  'ar/blog/sciatique-hernie-discale',
+  'ar/blog/lombalgie-cervicalgie',
+  'ar/blog/traumatologie-sport',
+  'ar/blog/arthrose-genou',
+  'ar/blog/douleurs-epaules-capsulite',
+  'ar/blog/migraines-cephalees',
+  'ar/blog/kine-pediatrique',
+  'ar/blog/readaptation-post-avc',
+  'ar/blog/posture-ergonomie',
+  'ar/blog/recuperation-sportive-prevention-blessures',
   'ar/gallerie'
 ];
 
@@ -68,3 +68,6 @@ run().catch((error) => {
   console.error(error);
   process.exit(1);
 });
+
+
+

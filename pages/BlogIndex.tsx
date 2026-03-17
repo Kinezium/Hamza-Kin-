@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
@@ -27,140 +27,140 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
   
   const posts: BlogPost[] = [
     {
-      slug: 'sciatica-herniated-disc',
+      slug: 'sciatique-hernie-discale',
       titleFr: 'La Sciatique & Hernie Discale',
-      titleAr: 'عرق النسا والانزلاق الغضروفي',
+      titleAr: 'Ø¹Ø±Ù‚ Ø§Ù„Ù†Ø³Ø§ ÙˆØ§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚ Ø§Ù„ØºØ¶Ø±ÙˆÙÙŠ',
       descFr: 'Guide complet sur le traitement de la sciatique et hernie discale',
-      descAr: 'دليل شامل لعلاج عرق النسا والانزلاق الغضروفي',
+      descAr: 'Ø¯Ù„ÙŠÙ„ Ø´Ø§Ù…Ù„ Ù„Ø¹Ù„Ø§Ø¬ Ø¹Ø±Ù‚ Ø§Ù„Ù†Ø³Ø§ ÙˆØ§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚ Ø§Ù„ØºØ¶Ø±ÙˆÙÙŠ',
       icon: <Zap size={28} />,
-      image: BLOG_TOPIC_IMAGES['sciatica-herniated-disc'],
+      image: BLOG_TOPIC_IMAGES['sciatique-hernie-discale'],
       readTimeFr: '5 min',
-      readTimeAr: '5 دقائق'
+      readTimeAr: '5 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'back-pain',
+      slug: 'lombalgie-cervicalgie',
       titleFr: 'Lombalgie & Cervicalgie',
-      titleAr: 'آلام الظهر والرقبة',
+      titleAr: 'Ø¢Ù„Ø§Ù… Ø§Ù„Ø¸Ù‡Ø± ÙˆØ§Ù„Ø±Ù‚Ø¨Ø©',
       descFr: 'Solutions efficaces pour soulager vos douleurs de dos et cou',
-      descAr: 'حلول فعالة لتخفيف آلام الظهر والرقبة',
+      descAr: 'Ø­Ù„ÙˆÙ„ ÙØ¹Ø§Ù„Ø© Ù„ØªØ®ÙÙŠÙ Ø¢Ù„Ø§Ù… Ø§Ù„Ø¸Ù‡Ø± ÙˆØ§Ù„Ø±Ù‚Ø¨Ø©',
       icon: <ArrowUpDown size={28} />,
-      image: BLOG_TOPIC_IMAGES['back-pain'],
+      image: BLOG_TOPIC_IMAGES['lombalgie-cervicalgie'],
       readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
+      readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'sports-injuries',
+      slug: 'traumatologie-sport',
       titleFr: 'Traumatologie du Sport',
-      titleAr: 'الإصابات الرياضية',
-      descFr: 'Récupération rapide après les blessures sportives',
-      descAr: 'التعافي السريع من الإصابات الرياضية',
+      titleAr: 'Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ©',
+      descFr: 'RÃ©cupÃ©ration rapide aprÃ¨s les blessures sportives',
+      descAr: 'Ø§Ù„ØªØ¹Ø§ÙÙŠ Ø§Ù„Ø³Ø±ÙŠØ¹ Ù…Ù† Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ©',
       icon: <Dumbbell size={28} />,
-      image: BLOG_TOPIC_IMAGES['sports-injuries'],
+      image: BLOG_TOPIC_IMAGES['traumatologie-sport'],
       readTimeFr: '7 min',
-      readTimeAr: '7 دقائق'
+      readTimeAr: '7 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'knee-osteoarthritis',
+      slug: 'arthrose-genou',
       titleFr: 'Arthrose du Genou',
-      titleAr: 'خشونة الركبة',
-      descFr: 'Vie sans douleur malgré l\'arthrose',
-      descAr: 'الحياة بدون ألم رغم خشونة المفاصل',
+      titleAr: 'Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ø±ÙƒØ¨Ø©',
+      descFr: 'Vie sans douleur malgrÃ© l\'arthrose',
+      descAr: 'Ø§Ù„Ø­ÙŠØ§Ø© Ø¨Ø¯ÙˆÙ† Ø£Ù„Ù… Ø±ØºÙ… Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ù…ÙØ§ØµÙ„',
       icon: <Bone size={28} />,
-      image: BLOG_TOPIC_IMAGES['knee-osteoarthritis'],
+      image: BLOG_TOPIC_IMAGES['arthrose-genou'],
       readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
+      readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'shoulder-pain',
-      titleFr: 'Douleurs aux Épaules',
-      titleAr: 'ألم الكتفين',
-      descFr: 'Traitement de la capsulite et douleurs d\'épaule',
-      descAr: 'علاج تجمد الكتف وألم الأكتاف',
+      slug: 'douleurs-epaules-capsulite',
+      titleFr: 'Douleurs aux Ã‰paules',
+      titleAr: 'Ø£Ù„Ù… Ø§Ù„ÙƒØªÙÙŠÙ†',
+      descFr: 'Traitement de la capsulite et douleurs d\'Ã©paule',
+      descAr: 'Ø¹Ù„Ø§Ø¬ ØªØ¬Ù…Ø¯ Ø§Ù„ÙƒØªÙ ÙˆØ£Ù„Ù… Ø§Ù„Ø£ÙƒØªØ§Ù',
       icon: <Stethoscope size={28} />,
-      image: BLOG_TOPIC_IMAGES['shoulder-pain'],
+      image: BLOG_TOPIC_IMAGES['douleurs-epaules-capsulite'],
       readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
+      readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'migraines-headaches',
-      titleFr: 'Migraines & Céphalées',
-      titleAr: 'الصداع والشقيقة',
-      descFr: 'Soulagement naturel des migraines et céphalées de tension',
-      descAr: 'تخفيف طبيعي من الصداع والشقيقة',
+      slug: 'migraines-cephalees',
+      titleFr: 'Migraines & CÃ©phalÃ©es',
+      titleAr: 'Ø§Ù„ØµØ¯Ø§Ø¹ ÙˆØ§Ù„Ø´Ù‚ÙŠÙ‚Ø©',
+      descFr: 'Soulagement naturel des migraines et cÃ©phalÃ©es de tension',
+      descAr: 'ØªØ®ÙÙŠÙ Ø·Ø¨ÙŠØ¹ÙŠ Ù…Ù† Ø§Ù„ØµØ¯Ø§Ø¹ ÙˆØ§Ù„Ø´Ù‚ÙŠÙ‚Ø©',
       icon: <Brain size={28} />,
-      image: BLOG_TOPIC_IMAGES['migraines-headaches'],
+      image: BLOG_TOPIC_IMAGES['migraines-cephalees'],
       readTimeFr: '5 min',
-      readTimeAr: '5 دقائق'
+      readTimeAr: '5 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'pediatric-physiotherapy',
-      titleFr: 'Physiothérapie Pédiatrique',
-      titleAr: 'الترويض الطبي للأطفال',
-      descFr: 'Développement normal de l\'enfant et rééducation pédiatrique',
-      descAr: 'النمو الطبيعي للطفل والترويض الطبي',
+      slug: 'kine-pediatrique',
+      titleFr: 'PhysiothÃ©rapie PÃ©diatrique',
+      titleAr: 'Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ Ù„Ù„Ø£Ø·ÙØ§Ù„',
+      descFr: 'DÃ©veloppement normal de l\'enfant et rÃ©Ã©ducation pÃ©diatrique',
+      descAr: 'Ø§Ù„Ù†Ù…Ùˆ Ø§Ù„Ø·Ø¨ÙŠØ¹ÙŠ Ù„Ù„Ø·ÙÙ„ ÙˆØ§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ',
       icon: <Baby size={28} />,
-      image: BLOG_TOPIC_IMAGES['pediatric-physiotherapy'],
+      image: BLOG_TOPIC_IMAGES['kine-pediatrique'],
       readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
+      readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'post-stroke',
-      titleFr: 'Réadaptation Post-AVC',
-      titleAr: 'إعادة التأهيل ما بعد الجلطة',
-      descFr: 'Reprendre votre vie après un AVC',
-      descAr: 'استعادة الحياة بعد السكتة الدماغية',
+      slug: 'readaptation-post-avc',
+      titleFr: 'RÃ©adaptation Post-AVC',
+      titleAr: 'Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ Ù…Ø§ Ø¨Ø¹Ø¯ Ø§Ù„Ø¬Ù„Ø·Ø©',
+      descFr: 'Reprendre votre vie aprÃ¨s un AVC',
+      descAr: 'Ø§Ø³ØªØ¹Ø§Ø¯Ø© Ø§Ù„Ø­ÙŠØ§Ø© Ø¨Ø¹Ø¯ Ø§Ù„Ø³ÙƒØªØ© Ø§Ù„Ø¯Ù…Ø§ØºÙŠØ©',
       icon: <Flame size={28} />,
-      image: BLOG_TOPIC_IMAGES['post-stroke'],
+      image: BLOG_TOPIC_IMAGES['readaptation-post-avc'],
       readTimeFr: '7 min',
-      readTimeAr: '7 دقائق'
+      readTimeAr: '7 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'posture-ergonomics',
+      slug: 'posture-ergonomie',
       titleFr: 'Posture & Ergonomie',
-      titleAr: 'الوضعية والإرجونوميا',
-      descFr: 'Prévention des douleurs par une bonne posture',
-      descAr: 'منع الآلام من خلال وضعية صحيحة',
+      titleAr: 'Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© ÙˆØ§Ù„Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§',
+      descFr: 'PrÃ©vention des douleurs par une bonne posture',
+      descAr: 'Ù…Ù†Ø¹ Ø§Ù„Ø¢Ù„Ø§Ù… Ù…Ù† Ø®Ù„Ø§Ù„ ÙˆØ¶Ø¹ÙŠØ© ØµØ­ÙŠØ­Ø©',
       icon: <Stethoscope size={28} />,
-      image: BLOG_TOPIC_IMAGES['posture-ergonomics'],
+      image: BLOG_TOPIC_IMAGES['posture-ergonomie'],
       readTimeFr: '5 min',
-      readTimeAr: '5 دقائق'
+      readTimeAr: '5 Ø¯Ù‚Ø§Ø¦Ù‚'
     },
     {
-      slug: 'sports-recovery',
-      titleFr: 'Récupération Sportive',
-      titleAr: 'الاستشفاء الرياضي',
-      descFr: 'Optimisation de la récupération et prévention des blessures',
-      descAr: 'تحسين الاستشفاء ومنع الإصابات',
+      slug: 'recuperation-sportive-prevention-blessures',
+      titleFr: 'RÃ©cupÃ©ration Sportive',
+      titleAr: 'Ø§Ù„Ø§Ø³ØªØ´ÙØ§Ø¡ Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠ',
+      descFr: 'Optimisation de la rÃ©cupÃ©ration et prÃ©vention des blessures',
+      descAr: 'ØªØ­Ø³ÙŠÙ† Ø§Ù„Ø§Ø³ØªØ´ÙØ§Ø¡ ÙˆÙ…Ù†Ø¹ Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª',
       icon: <Dumbbell size={28} />,
-      image: BLOG_TOPIC_IMAGES['sports-recovery'],
+      image: BLOG_TOPIC_IMAGES['recuperation-sportive-prevention-blessures'],
       readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
+      readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚'
     }
   ];
 
   const t = lang === 'fr' ? {
-    title: 'Blog Kinésithérapie',
-    description: 'Découvrez nos articles sur les pathologies, conseils et solutions de traitement',
+    title: 'Blog KinÃ©sithÃ©rapie',
+    description: 'DÃ©couvrez nos articles sur les pathologies, conseils et solutions de traitement',
     articles: 'Tous les Articles',
     readMore: 'Lire l\'article'
   } : {
-    title: 'مدونة الترويض الطبي',
-    description: 'اكتشف مقالاتنا عن الأمراض والنصائح وحلول العلاج',
-    articles: 'جميع المقالات',
-    readMore: 'اقرأ المقال'
+    title: 'Ù…Ø¯ÙˆÙ†Ø© Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ',
+    description: 'Ø§ÙƒØªØ´Ù Ù…Ù‚Ø§Ù„Ø§ØªÙ†Ø§ Ø¹Ù† Ø§Ù„Ø£Ù…Ø±Ø§Ø¶ ÙˆØ§Ù„Ù†ØµØ§Ø¦Ø­ ÙˆØ­Ù„ÙˆÙ„ Ø§Ù„Ø¹Ù„Ø§Ø¬',
+    articles: 'Ø¬Ù…ÙŠØ¹ Ø§Ù„Ù…Ù‚Ø§Ù„Ø§Øª',
+    readMore: 'Ø§Ù‚Ø±Ø£ Ø§Ù„Ù…Ù‚Ø§Ù„'
   };
 
   return (
     <>
       <SEOHead 
-        title={lang === 'fr' ? 'Blog Kinésithérapie | Centre Chnider' : 'مدونة الترويض الطبي | مركز اشنيدر'} 
+        title={lang === 'fr' ? 'Blog KinÃ©sithÃ©rapie | Centre Chnider' : 'Ù…Ø¯ÙˆÙ†Ø© Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ | Ù…Ø±ÙƒØ² Ø§Ø´Ù†ÙŠØ¯Ø±'} 
         description={lang === 'fr' 
-          ? 'Articles sur les pathologies, conseils de prévention, solutions de traitement et exercices recommandés par nos experts.'
-          : 'مقالات عن الأمراض والنصائح والحلول والتمارين الموصى بها من قبل خبرائنا.'
+          ? 'Articles sur les pathologies, conseils de prÃ©vention, solutions de traitement et exercices recommandÃ©s par nos experts.'
+          : 'Ù…Ù‚Ø§Ù„Ø§Øª Ø¹Ù† Ø§Ù„Ø£Ù…Ø±Ø§Ø¶ ÙˆØ§Ù„Ù†ØµØ§Ø¦Ø­ ÙˆØ§Ù„Ø­Ù„ÙˆÙ„ ÙˆØ§Ù„ØªÙ…Ø§Ø±ÙŠÙ† Ø§Ù„Ù…ÙˆØµÙ‰ Ø¨Ù‡Ø§ Ù…Ù† Ù‚Ø¨Ù„ Ø®Ø¨Ø±Ø§Ø¦Ù†Ø§.'
         }
         keywords={lang === 'fr'
-          ? 'blog kiné, articles kinésithérapie, conseils santé, pathologies, traitement'
-          : 'مدونة ترويض طبي, مقالات صحية, أمراض, علاجات'
+          ? 'blog kinÃ©, articles kinÃ©sithÃ©rapie, conseils santÃ©, pathologies, traitement'
+          : 'Ù…Ø¯ÙˆÙ†Ø© ØªØ±ÙˆÙŠØ¶ Ø·Ø¨ÙŠ, Ù…Ù‚Ø§Ù„Ø§Øª ØµØ­ÙŠØ©, Ø£Ù…Ø±Ø§Ø¶, Ø¹Ù„Ø§Ø¬Ø§Øª'
         }
       />
 
@@ -211,7 +211,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
                         {lang === 'fr' ? post.readTimeFr : post.readTimeAr}
                       </span>
                       <span className="text-medical-600 font-semibold hover:text-medical-700 transition">
-                        {t.readMore} →
+                        {t.readMore} â†’
                       </span>
                     </div>
                   </div>
@@ -225,12 +225,12 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
         <div className="bg-medical-700 text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">
-              {lang === 'fr' ? 'Vous avez une question?' : 'لديك استفسار؟'}
+              {lang === 'fr' ? 'Vous avez une question?' : 'Ù„Ø¯ÙŠÙƒ Ø§Ø³ØªÙØ³Ø§Ø±ØŸ'}
             </h2>
             <p className="text-medical-100 mb-8">
               {lang === 'fr'
-                ? 'Contactez notre équipe pour une consultation personalisée.'
-                : 'اتصل بفريقنا للحصول على استشارة شخصية.'}
+                ? 'Contactez notre Ã©quipe pour une consultation personalisÃ©e.'
+                : 'Ø§ØªØµÙ„ Ø¨ÙØ±ÙŠÙ‚Ù†Ø§ Ù„Ù„Ø­ØµÙˆÙ„ Ø¹Ù„Ù‰ Ø§Ø³ØªØ´Ø§Ø±Ø© Ø´Ø®ØµÙŠØ©.'}
             </p>
             <a
               href={getWhatsAppBookingLink(lang, 'Blog')}
@@ -238,7 +238,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition"
             >
-              {lang === 'fr' ? 'Contactez-nous sur WhatsApp' : 'تواصل معنا عبر واتساب'}
+              {lang === 'fr' ? 'Contactez-nous sur WhatsApp' : 'ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§ Ø¹Ø¨Ø± ÙˆØ§ØªØ³Ø§Ø¨'}
             </a>
           </div>
         </div>
@@ -248,3 +248,6 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
 };
 
 export default BlogIndex;
+
+
+
