@@ -164,6 +164,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/convention</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/convention" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/convention" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/convention" />
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- Arabic Pages -->
   <url>
@@ -327,6 +336,15 @@
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/convention</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/convention" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/convention" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/convention" />
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
 

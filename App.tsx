@@ -8,6 +8,7 @@ import HomeTherapy from './pages/HomeTherapy';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import BlogIndex from './pages/BlogIndex';
+import Convention from './pages/Convention';
 import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
 import StickyCTA from './components/StickyCTA';
@@ -99,6 +100,7 @@ const App: React.FC = () => {
           <Route path="/a-domicile" element={<HomeTherapy lang={lang} />} />
           <Route path="/a-propos" element={<About lang={lang} />} />
           <Route path="/contact" element={<Contact lang={lang} />} />
+          <Route path="/convention" element={<Convention lang={lang} />} />
           <Route path="/blog" element={<BlogIndex lang={lang} />} />
           <Route path="/blog/sciatique-hernie-discale" element={<SciaticaArticle lang={lang} />} />
           <Route path="/blog/lombalgie-cervicalgie" element={<BackPainArticle lang={lang} />} />
@@ -125,6 +127,7 @@ const App: React.FC = () => {
           <Route path="/ar/a-domicile" element={<HomeTherapy lang="ar" />} />
           <Route path="/ar/a-propos" element={<About lang="ar" />} />
           <Route path="/ar/contact" element={<Contact lang="ar" />} />
+          <Route path="/ar/convention" element={<Convention lang="ar" />} />
           <Route path="/ar/blog" element={<BlogIndex lang="ar" />} />
           <Route path="/ar/blog/sciatique-hernie-discale" element={<SciaticaArticle lang="ar" />} />
           <Route path="/ar/blog/lombalgie-cervicalgie" element={<BackPainArticle lang="ar" />} />
