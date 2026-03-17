@@ -53,14 +53,14 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
       <div className="bg-medical-700 text-white text-sm py-2 px-4 hidden sm:block">
         <div className="container mx-auto flex justify-between items-center">
           <span>{lang === 'fr' ? '📍 500 Boulevard Mecdad Laherizi, Sbata – Casablanca' : '📍 500 شارع مقداد الحريزي، سباتة – الدار البيضاء'}</span>
-          <a href={`tel:${PHONE_NUMBER}`} className="hover:underline font-bold flex items-center gap-1">
-            <Phone size={14} /> {PHONE_NUMBER}
+          <a href={`tel:${PHONE_NUMBER}`} className="hover:underline font-bold flex items-center gap-1" dir="ltr">
+            <Phone size={14} /> <span dir="ltr">{PHONE_NUMBER}</span>
           </a>
         </div>
       </div>
 
       {/* Navbar */}
-      <nav className="bg-white shadow-md sticky top-0 z-50">
+      <nav className="bg-white shadow-lg sticky top-0 z-50 border-b-4 border-medical-600">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}

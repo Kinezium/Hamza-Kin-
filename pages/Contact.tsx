@@ -66,8 +66,8 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                        </div>
                        <div>
                           <h3 className="font-bold text-gray-900">{t.phoneLabel}</h3>
-                          <p className="text-gray-600 font-mono text-lg">{t.phone}</p>
-                          <a href={`tel:${PHONE_NUMBER}`} className="text-sm text-medical-600 font-bold hover:underline mt-1 block">
+                          <p className="text-gray-600 font-mono text-lg" dir="ltr">{t.phone}</p>
+                          <a href={`tel:${PHONE_NUMBER}`} className="text-sm text-medical-600 font-bold hover:underline mt-1 block" dir="ltr">
                              {lang === 'fr' ? 'Appeler maintenant' : 'اتصل الآن'}
                           </a>
                        </div>

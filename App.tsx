@@ -7,10 +7,22 @@ import Services from './pages/Services';
 import HomeTherapy from './pages/HomeTherapy';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Blog from './pages/Blog';
+import BlogIndex from './pages/BlogIndex';
 import Gallery from './pages/Gallery';
 import StickyCTA from './components/StickyCTA';
 import { Language } from './types';
+
+// Blog Article Imports
+import SciaticaArticle from './pages/Blog/SciaticaArticle';
+import BackPainArticle from './pages/Blog/BackPainArticle';
+import SportsInjuriesArticle from './pages/Blog/SportsInjuriesArticle';
+import KneeOsteoarthritisArticle from './pages/Blog/KneeOsteoarthritisArticle';
+import ShoulderPainArticle from './pages/Blog/ShoulderPainArticle';
+import MigrainesArticle from './pages/Blog/MigrainesArticle';
+import PediatricArticle from './pages/Blog/PediatricArticle';
+import PostStrokeArticle from './pages/Blog/PostStrokeArticle';
+import PostureErgonomicsArticle from './pages/Blog/PostureErgonomicsArticle';
+import SportsRecoveryArticle from './pages/Blog/SportsRecoveryArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -86,7 +98,17 @@ const App: React.FC = () => {
           <Route path="/a-domicile" element={<HomeTherapy lang={lang} />} />
           <Route path="/a-propos" element={<About lang={lang} />} />
           <Route path="/contact" element={<Contact lang={lang} />} />
-          <Route path="/blog" element={<Blog lang={lang} />} />
+          <Route path="/blog" element={<BlogIndex lang={lang} />} />
+          <Route path="/blog/sciatica-herniated-disc" element={<SciaticaArticle lang={lang} />} />
+          <Route path="/blog/back-pain" element={<BackPainArticle lang={lang} />} />
+          <Route path="/blog/sports-injuries" element={<SportsInjuriesArticle lang={lang} />} />
+          <Route path="/blog/knee-osteoarthritis" element={<KneeOsteoarthritisArticle lang={lang} />} />
+          <Route path="/blog/shoulder-pain" element={<ShoulderPainArticle lang={lang} />} />
+          <Route path="/blog/migraines-headaches" element={<MigrainesArticle lang={lang} />} />
+          <Route path="/blog/pediatric-physiotherapy" element={<PediatricArticle lang={lang} />} />
+          <Route path="/blog/post-stroke" element={<PostStrokeArticle lang={lang} />} />
+          <Route path="/blog/posture-ergonomics" element={<PostureErgonomicsArticle lang={lang} />} />
+          <Route path="/blog/sports-recovery" element={<SportsRecoveryArticle lang={lang} />} />
           <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
           {/* Legacy French slugs redirects */}
@@ -102,7 +124,17 @@ const App: React.FC = () => {
           <Route path="/ar/a-domicile" element={<HomeTherapy lang="ar" />} />
           <Route path="/ar/a-propos" element={<About lang="ar" />} />
           <Route path="/ar/contact" element={<Contact lang="ar" />} />
-          <Route path="/ar/blog" element={<Blog lang="ar" />} />
+          <Route path="/ar/blog" element={<BlogIndex lang="ar" />} />
+          <Route path="/ar/blog/sciatica-herniated-disc" element={<SciaticaArticle lang="ar" />} />
+          <Route path="/ar/blog/back-pain" element={<BackPainArticle lang="ar" />} />
+          <Route path="/ar/blog/sports-injuries" element={<SportsInjuriesArticle lang="ar" />} />
+          <Route path="/ar/blog/knee-osteoarthritis" element={<KneeOsteoarthritisArticle lang="ar" />} />
+          <Route path="/ar/blog/shoulder-pain" element={<ShoulderPainArticle lang="ar" />} />
+          <Route path="/ar/blog/migraines-headaches" element={<MigrainesArticle lang="ar" />} />
+          <Route path="/ar/blog/pediatric-physiotherapy" element={<PediatricArticle lang="ar" />} />
+          <Route path="/ar/blog/post-stroke" element={<PostStrokeArticle lang="ar" />} />
+          <Route path="/ar/blog/posture-ergonomics" element={<PostureErgonomicsArticle lang="ar" />} />
+          <Route path="/ar/blog/sports-recovery" element={<SportsRecoveryArticle lang="ar" />} />
           <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 
           {/* Legacy Arabic slugs redirects */}
