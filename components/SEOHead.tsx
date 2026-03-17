@@ -64,6 +64,15 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
     }
     appleTouchIcon.setAttribute('href', faviconUrl);
 
+    // Keep browser chrome color aligned with site brand
+    let themeColor = document.querySelector('meta[name="theme-color"]');
+    if (!themeColor) {
+      themeColor = document.createElement('meta');
+      themeColor.setAttribute('name', 'theme-color');
+      document.head.appendChild(themeColor);
+    }
+    themeColor.setAttribute('content', '#0369a1');
+
     // Add canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {

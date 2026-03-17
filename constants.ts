@@ -2,6 +2,15 @@ import { ContentData } from './types';
 
 export const PHONE_NUMBER = "0665646754";
 export const WHATSAPP_NUMBER = "212665646754"; // Format for API
+export const getWhatsAppBookingLink = (lang: 'fr' | 'ar', source?: string): string => {
+  const baseMessage = lang === 'fr'
+    ? 'Bonjour Centre Chnider, je souhaite reserver un rendez-vous.'
+    : 'السلام عليكم مركز شنيدر، أريد حجز موعد.';
+  const withSource = source
+    ? `${baseMessage} ${lang === 'fr' ? `Page: ${source}` : `الصفحة: ${source}`}`
+    : baseMessage;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(withSource)}`;
+};
 export const ADDRESS = "500 Boulevard Mecdad Laherizi, Sbata – Casablanca, Morocco";
 export const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.414193762785!2d-7.563617799999999!3d33.5426133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda633a36d6890ad%3A0xbc43853714712366!2zQ2VudHJlIGRlIGtpbsOpc2l0aMOpcmFwaWUgQ0hOSURFUiAtINin2YTYqtix2YjZiti2INin2YTYt9io2Yo!5e0!3m2!1sen!2sma!4v1770853502303!5m2!1sen!2sma"; 
 export const GOOGLE_REVIEWS_URL = "https://www.google.com/search?hl=en-MA&gl=ma&q=Centre+de+kin%C3%A9sith%C3%A9rapie+CHNIDER+-+%D8%A7%D9%84%D8%AA%D8%B1%D9%88%D9%8A%D8%B6+%D8%A7%D9%84%D8%B7%D8%A8%D9%8A,+500+Bd+Mekdad+Lahrizi,+Casablanca&ludocid=13565832974182720358&lsig=AB86z5XXNPd09IjW1AODiyu35kqP&_rs_=1#lrd=0xda633a36d6890ad:0xbc43853714712366,1";
@@ -12,11 +21,11 @@ export const SOCIAL_LINKS = {
 };
 
 export const LOGO_SYMBOL_WHITE_URL = "https://blogger.googleusercontent.com/img/a/AVvXsEjsWuKuX19KnqVNPYNlFK8n6uZOvLh2T3BNGhxpK-Bwsej15kkdBHfand2jK-m1exW0e2RyBr0fhmXk34rTw17EXVPHlTGoDD5-IiFVdZVDdmNJZ5qwGeUdU5ZMo17y1cWzZxqBKNliSuNAT96ZlPBrQrHeY_l7VyNOGO0MtXkVRQcDaWKNT3g-afKR";
-export const LATEST_FAVICON_URL = "https://blogger.googleusercontent.com/img/a/AVvXsEiNrUhwSb5xPfjJ3_ubV_svu9y7RJV_e9N3kcnjFYsV20vuwqkyYyk1-Qk1AuddLIM5PvkCqpwY17-dGGEZSR8EZ7jYhRF4XXqfLNO0gdxLHMI99XB24_OwsAtyfZQdOBkcAE9TMzXwSmtsWvClgHeYWXGJvx8CBIe3y1jMecJqs-b1wpvB6ssHqXon";
+export const LATEST_FAVICON_URL = "https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF";
 // Colored symbol – same asset used for the favicon
 export const LOGO_COLORED_URL = LATEST_FAVICON_URL;
-// Full logo with text – update this URL when the asset is available
-export const LOGO_TEXT_URL = "";
+// Full logo image used in navbar
+export const LOGO_TEXT_URL = LATEST_FAVICON_URL;
 // Slideshow images shown in the home hero (1:1). Add new URLs here when provided.
 export const HERO_SLIDESHOW_IMAGES = [
   "https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it",

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
 import { Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame } from 'lucide-react';
+import { BLOG_TOPIC_IMAGES } from './Blog/blogImages';
 
 interface BlogPost {
   slug: string;
@@ -11,6 +12,7 @@ interface BlogPost {
   descFr: string;
   descAr: string;
   icon: React.ReactNode;
+  image: string;
   readTimeFr: string;
   readTimeAr: string;
 }
@@ -30,6 +32,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Guide complet sur le traitement de la sciatique et hernie discale',
       descAr: 'دليل شامل لعلاج عرق النسا والانزلاق الغضروفي',
       icon: <Zap size={28} />,
+      image: BLOG_TOPIC_IMAGES['sciatica-herniated-disc'],
       readTimeFr: '5 min',
       readTimeAr: '5 دقائق'
     },
@@ -40,6 +43,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Solutions efficaces pour soulager vos douleurs de dos et cou',
       descAr: 'حلول فعالة لتخفيف آلام الظهر والرقبة',
       icon: <ArrowUpDown size={28} />,
+      image: BLOG_TOPIC_IMAGES['back-pain'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     },
@@ -50,6 +54,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Récupération rapide après les blessures sportives',
       descAr: 'التعافي السريع من الإصابات الرياضية',
       icon: <Dumbbell size={28} />,
+      image: BLOG_TOPIC_IMAGES['sports-injuries'],
       readTimeFr: '7 min',
       readTimeAr: '7 دقائق'
     },
@@ -60,6 +65,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Vie sans douleur malgré l\'arthrose',
       descAr: 'الحياة بدون ألم رغم خشونة المفاصل',
       icon: <Bone size={28} />,
+      image: BLOG_TOPIC_IMAGES['knee-osteoarthritis'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     },
@@ -70,6 +76,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Traitement de la capsulite et douleurs d\'épaule',
       descAr: 'علاج تجمد الكتف وألم الأكتاف',
       icon: <Stethoscope size={28} />,
+      image: BLOG_TOPIC_IMAGES['shoulder-pain'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     },
@@ -80,6 +87,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Soulagement naturel des migraines et céphalées de tension',
       descAr: 'تخفيف طبيعي من الصداع والشقيقة',
       icon: <Brain size={28} />,
+      image: BLOG_TOPIC_IMAGES['migraines-headaches'],
       readTimeFr: '5 min',
       readTimeAr: '5 دقائق'
     },
@@ -90,6 +98,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Développement normal de l\'enfant et rééducation pédiatrique',
       descAr: 'النمو الطبيعي للطفل والترويض الطبي',
       icon: <Baby size={28} />,
+      image: BLOG_TOPIC_IMAGES['pediatric-physiotherapy'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     },
@@ -100,6 +109,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Reprendre votre vie après un AVC',
       descAr: 'استعادة الحياة بعد السكتة الدماغية',
       icon: <Flame size={28} />,
+      image: BLOG_TOPIC_IMAGES['post-stroke'],
       readTimeFr: '7 min',
       readTimeAr: '7 دقائق'
     },
@@ -110,6 +120,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Prévention des douleurs par une bonne posture',
       descAr: 'منع الآلام من خلال وضعية صحيحة',
       icon: <Stethoscope size={28} />,
+      image: BLOG_TOPIC_IMAGES['posture-ergonomics'],
       readTimeFr: '5 min',
       readTimeAr: '5 دقائق'
     },
@@ -120,6 +131,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Optimisation de la récupération et prévention des blessures',
       descAr: 'تحسين الاستشفاء ومنع الإصابات',
       icon: <Dumbbell size={28} />,
+      image: BLOG_TOPIC_IMAGES['sports-recovery'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     }
@@ -173,9 +185,17 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
                   to={`${prefix}/blog/${post.slug}`}
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition transform duration-300"
                 >
-                  <div className="bg-gradient-to-r from-medical-500 to-medical-600 p-6 flex items-center justify-center h-40">
-                    <div className="text-white">
+                  <div className="relative h-40">
+                    <img
+                      src={post.image}
+                      alt={lang === 'fr' ? post.titleFr : post.titleAr}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
+                      <div className="text-white">
                       {post.icon}
+                      </div>
                     </div>
                   </div>
                   <div className="p-6">

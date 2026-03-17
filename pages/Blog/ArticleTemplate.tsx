@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../../types';
 import SEOHead from '../../components/SEOHead';
-import { ArrowLeft, Clock, User, Share2 } from 'lucide-react';
+import { ArrowLeft, Clock, User } from 'lucide-react';
+import { BLOG_TOPIC_IMAGES } from './blogImages';
 
 interface ArticleProps {
   lang: Language;
@@ -47,7 +48,7 @@ export const createArticle = (data: ArticleData) => {
     const title = lang === 'fr' ? data.titleFr : data.titleAr;
     const description = lang === 'fr' ? data.descriptionFr : data.descriptionAr;
     const keywords = lang === 'fr' ? data.keywordsFr : data.keywordsAr;
-    const image = lang === 'fr' ? data.imageFr : data.imageAr;
+    const image = BLOG_TOPIC_IMAGES[data.slug] || (lang === 'fr' ? data.imageFr : data.imageAr);
     const content = lang === 'fr' ? data.contentFr : data.contentAr;
 
     return (
@@ -78,7 +79,7 @@ export const createArticle = (data: ArticleData) => {
 
           {/* Article Image */}
           <div className="w-full h-64 md:h-96 bg-gray-200 mt-8">
-            <img src={image} alt={title} className="w-full h-full object-cover" />
+            <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
           </div>
 
           {/* Article Content */}
