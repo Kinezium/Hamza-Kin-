@@ -20,6 +20,16 @@ const galleryImages = [
     src: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
     altFr: 'Espace de soins et rééducation',
     altAr: 'فضاء العلاج وإعادة التأهيل'
+  },
+  {
+    src: 'https://blogger.googleusercontent.com/img/a/AVvXsEgPpgnG8yWOLLpQ_YltbQjM6nuv3OcIRtxwl3KCf43F37Be2mYy3YtVddmnKWGS0VZ_5FwB2zhz2s8DevbEq_06S0HcQweW3nsmc4l1M1W3rOZfnAUWzUODt5aSwFYqqEIsun5_BWB4DR_dU7wOku3fk-8bRYnakekIqpk8jS_hqJRz5wsrq_Ro9hKn',
+    altFr: 'Séance de rééducation au centre',
+    altAr: 'جلسة إعادة تأهيل داخل المركز'
+  },
+  {
+    src: 'https://blogger.googleusercontent.com/img/a/AVvXsEiiOaAMnYdBDfw0riF-Zn7jkkp7_4dkSiAVy2x5oSePlVcH6ptw0XK5Z8C0JZHa_XIW-rtbve5oGtNrqmGM_gAbdnTYvzsgYDDwT8avZ5-98Dky1djCGEUMhgmoB8_xaS43W8X22IkwwOymaRoqJ-_cvU2XLFEnbUQ9pujMwUBiNSzejHijYx_Cm4eY',
+    altFr: 'Équipement de kinésithérapie',
+    altAr: 'معدات الترويض الطبي'
   }
 ];
 
