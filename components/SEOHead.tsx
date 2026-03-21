@@ -11,6 +11,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
   useEffect(() => {
     const baseUrl = 'https://kinesitherapie.clinaxis.ma';
     const faviconUrl = LATEST_FAVICON_URL;
+    const fullUrl = new URL(window.location.pathname || '/', baseUrl).toString();
     const pathname = window.location.pathname || '/';
     const isArabicPath = pathname === '/ar' || pathname.startsWith('/ar/');
     const frPath = isArabicPath ? (pathname.replace(/^\/ar(?=\/|$)/, '') || '/') : pathname;
@@ -36,6 +37,22 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       }
       metaKeywords.setAttribute('content', keywords);
     }
+
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.setAttribute('name', 'robots');
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+
+    let googleBotMeta = document.querySelector('meta[name="googlebot"]');
+    if (!googleBotMeta) {
+      googleBotMeta = document.createElement('meta');
+      googleBotMeta.setAttribute('name', 'googlebot');
+      document.head.appendChild(googleBotMeta);
+    }
+    googleBotMeta.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
     // Add favicon
     let favicon = document.querySelector('link[rel="icon"]');
@@ -80,7 +97,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', new URL(pathname, baseUrl).toString());
+    canonical.setAttribute('href', fullUrl);
 
     // Add dynamic hreflang alternates
     const ensureAlternateLink = (hreflang: string, href: string) => {
@@ -168,7 +185,15 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       ogUrl.setAttribute('property', 'og:url');
       document.head.appendChild(ogUrl);
     }
-    ogUrl.setAttribute('content', new URL(pathname, baseUrl).toString());
+    ogUrl.setAttribute('content', fullUrl);
+
+    let ogSiteName = document.querySelector('meta[property="og:site_name"]');
+    if (!ogSiteName) {
+      ogSiteName = document.createElement('meta');
+      ogSiteName.setAttribute('property', 'og:site_name');
+      document.head.appendChild(ogSiteName);
+    }
+    ogSiteName.setAttribute('content', 'Centre Chnider');
 
     let ogTitle = document.querySelector('meta[property="og:title"]');
     if (!ogTitle) {
@@ -209,6 +234,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       document.head.appendChild(twitterDescription);
     }
     twitterDescription.setAttribute('content', description);
+
+    let twitterCard = document.querySelector('meta[name="twitter:card"]');
+    if (!twitterCard) {
+      twitterCard = document.createElement('meta');
+      twitterCard.setAttribute('name', 'twitter:card');
+      document.head.appendChild(twitterCard);
+    }
+    twitterCard.setAttribute('content', 'summary_large_image');
 
     let twitterDomain = document.querySelector('meta[name="twitter:domain"]');
     if (!twitterDomain) {
@@ -258,6 +291,26 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       relMe.setAttribute('href', url);
       relMe.setAttribute('data-rel-me', 'true');
       document.head.appendChild(relMe);
+    });
+
+    let webPageScript = document.querySelector('script[type="application/ld+json"][data-schema="webpage"]');
+    if (!webPageScript) {
+      webPageScript = document.createElement('script');
+      webPageScript.setAttribute('type', 'application/ld+json');
+      webPageScript.setAttribute('data-schema', 'webpage');
+      document.head.appendChild(webPageScript);
+    }
+    webPageScript.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: title,
+      description,
+      url: fullUrl,
+      inLanguage: isArabicPath ? 'ar-MA' : 'fr-MA',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${baseUrl}/#website`
+      }
     });
   }, [title, description, keywords]);
   return null;
