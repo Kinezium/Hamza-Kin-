@@ -10,7 +10,7 @@ const SchemaMarkup: React.FC = () => {
       {
         '@type': 'WebSite',
         '@id': `${baseUrl}/#website`,
-        name: 'Centre Chnider',
+        name: 'Centre CHNIDER',
         alternateName: 'مركز اشنيدر',
         url: baseUrl,
         inLanguage: ['fr-MA', 'ar-MA']
@@ -18,7 +18,7 @@ const SchemaMarkup: React.FC = () => {
       {
         '@type': 'Organization',
         '@id': `${baseUrl}/#organization`,
-        name: 'Centre Chnider',
+        name: 'Centre CHNIDER',
         url: baseUrl,
         logo: {
           '@type': 'ImageObject',
@@ -33,15 +33,15 @@ const SchemaMarkup: React.FC = () => {
       {
         '@type': 'MedicalBusiness',
         '@id': `${baseUrl}/#medicalbusiness`,
-        name: 'Centre Chnider - Kinésithérapie & Hijama Médicale | مركز اشنيدر - الترويض الطبي و الحجامة الطبية',
+        name: 'Centre CHNIDER - Kinésithérapie & Hijama Médicale | مركز اشنيدر - الترويض الطبي و الحجامة الطبية',
         image: LATEST_FAVICON_URL,
         telephone: PHONE_NUMBER,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '500 Boulevard Mecdad Laherizi, Sbata',
+          streetAddress: '500 Boulevard Mekdad Lahrizi, Sbata',
           addressLocality: 'Casablanca',
           addressRegion: 'Casablanca-Settat',
-          postalCode: '20000',
+          postalCode: '20073',
           addressCountry: 'MA'
         },
         geo: {
@@ -54,14 +54,14 @@ const SchemaMarkup: React.FC = () => {
           {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Wednesday', 'Friday'],
-            opens: '09:00',
+            opens: '09:30',
             closes: '19:00',
             description: 'Kinésithérapeute Femme - Patientes'
           },
           {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Tuesday', 'Thursday', 'Saturday'],
-            opens: '09:00',
+            opens: '09:30',
             closes: '19:00',
             description: 'Kinésithérapeute Homme - Patients'
           }
@@ -95,7 +95,7 @@ const SchemaMarkup: React.FC = () => {
           SOCIAL_LINKS.linkedin
         ],
         paymentAccepted: 'Cash, Mutuelle (CNSS, CNOPS, Assurances)',
-        keywords: 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kinésithérapie Sbata, hijama médicale, rééducation fonctionnelle, الترويض الطبي, الحجامة الطبية, مركز اشنيدر'
+        keywords: 'kiné ain chock, kiné à domicile, kine a domicile, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kinésithérapie Sbata, hijama médicale, rééducation fonctionnelle, kiné avc, الترويض الطبي, الترويض الطبي, الترويض الطبي في المنزل, الحجامة الطبية, مركز اشنيدر'
       },
       {
         '@type': 'ItemList',

@@ -34,6 +34,61 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
   const homePath = prefix || '/';
 
+  const siteLinks = [
+    { to: `${prefix}/`, label: lang === 'fr' ? 'Accueil' : 'الرئيسية' },
+    { to: `${prefix}/pathologies`, label: t.conditions },
+    { to: `${prefix}/services`, label: t.services },
+    { to: `${prefix}/a-domicile`, label: t.homeTherapy },
+    { to: `${prefix}/gallerie`, label: t.gallery },
+    { to: `${prefix}/blog`, label: lang === 'fr' ? 'Blog' : 'مدونة' },
+    { to: `${prefix}/a-propos`, label: t.about },
+    { to: `${prefix}/contact`, label: t.contact },
+    { to: `${prefix}/convention`, label: lang === 'fr' ? 'Convention' : 'الاتفاقيات' }
+  ];
+
+  const blogLinks = [
+    {
+      to: `${prefix}/blog/sciatique-hernie-discale`,
+      label: lang === 'fr' ? 'Sciatique & hernie discale' : 'عرق النسا والانزلاق الغضروفي'
+    },
+    {
+      to: `${prefix}/blog/lombalgie-cervicalgie`,
+      label: lang === 'fr' ? 'Lombalgie & cervicalgie' : 'آلام أسفل الظهر والرقبة'
+    },
+    {
+      to: `${prefix}/blog/traumatologie-sport`,
+      label: lang === 'fr' ? 'Traumatologie du sport' : 'إصابات الرياضة'
+    },
+    {
+      to: `${prefix}/blog/arthrose-genou`,
+      label: lang === 'fr' ? 'Arthrose du genou' : 'خشونة الركبة'
+    },
+    {
+      to: `${prefix}/blog/douleurs-epaules-capsulite`,
+      label: lang === 'fr' ? 'Douleur d epaule & capsulite' : 'آلام الكتف والتهاب المحفظة'
+    },
+    {
+      to: `${prefix}/blog/migraines-cephalees`,
+      label: lang === 'fr' ? 'Migraines & cephalees' : 'الصداع والشقيقة'
+    },
+    {
+      to: `${prefix}/blog/kine-pediatrique`,
+      label: lang === 'fr' ? 'Kinesitherapie pediatrique' : 'العلاج الطبيعي للأطفال'
+    },
+    {
+      to: `${prefix}/blog/readaptation-post-avc`,
+      label: lang === 'fr' ? 'Readaptation post AVC' : 'التأهيل بعد السكتة الدماغية'
+    },
+    {
+      to: `${prefix}/blog/posture-ergonomie`,
+      label: lang === 'fr' ? 'Posture & ergonomie' : 'الوضعية وبيئة العمل'
+    },
+    {
+      to: `${prefix}/blog/recuperation-sportive-prevention-blessures`,
+      label: lang === 'fr' ? 'Recuperation sportive' : 'الاستشفاء الرياضي'
+    }
+  ];
+
   const closeMenu = () => setIsMenuOpen(false);
 
   const isActive = (path: string) => location.pathname === path;
@@ -204,6 +259,39 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               </div>
             </div>
           </div>
+
+          <div className="border-t border-slate-800 mt-8 pt-8">
+            <h3 className="text-lg font-bold text-white mb-5 text-center md:text-start rtl:md:text-right">
+              {lang === 'fr' ? 'Plan du site complet (liens internes)' : 'خريطة الموقع الكاملة (روابط داخلية)'}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <p className="text-sm uppercase tracking-wider text-slate-400 mb-3">
+                  {lang === 'fr' ? 'Pages principales' : 'الصفحات الرئيسية'}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                  {siteLinks.map((item) => (
+                    <Link key={item.to} to={item.to} className="text-slate-300 hover:text-white text-sm">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-sm uppercase tracking-wider text-slate-400 mb-3">
+                  {lang === 'fr' ? 'Articles du blog' : 'مقالات المدونة'}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                  {blogLinks.map((item) => (
+                    <Link key={item.to} to={item.to} className="text-slate-300 hover:text-white text-sm">
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-500 text-sm">
             <p>
               © {new Date().getFullYear()} {lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}. {lang === 'ar' ? 'جميع الحقوق محفوظة' : 'Tous droits réservés'}.
