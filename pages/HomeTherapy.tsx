@@ -15,6 +15,15 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
    const neighborhoods = lang === 'fr' ? CASABLANCA_NEIGHBORHOODS_FR : CASABLANCA_NEIGHBORHOODS_AR;
    const serviceZones = lang === 'fr' ? SERVICE_ZONES_FR : SERVICE_ZONES_AR;
 
+   const relatedLinks = [
+      { to: `${prefix}/services`, label: lang === 'fr' ? 'Services de kinésithérapie' : 'خدمات الترويض الطبي' },
+      { to: `${prefix}/pathologies`, label: lang === 'fr' ? 'Pathologies traitées' : 'الأمراض المعالجة' },
+      { to: `${prefix}/blog/readaptation-post-avc`, label: lang === 'fr' ? 'Article: réadaptation post AVC' : 'مقال: التأهيل بعد السكتة الدماغية' },
+      { to: `${prefix}/blog/lombalgie-cervicalgie`, label: lang === 'fr' ? 'Article: lombalgie et cervicalgie' : 'مقال: آلام الظهر والرقبة' },
+      { to: `${prefix}/blog/arthrose-genou`, label: lang === 'fr' ? 'Article: arthrose du genou' : 'مقال: خشونة الركبة' },
+      { to: `${prefix}/contact`, label: lang === 'fr' ? 'Contact et rendez-vous' : 'الاتصال وحجز الموعد' }
+   ];
+
   return (
     <>
          <SEOHead 
@@ -146,6 +155,23 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
                      <span key={neighborhood} className="px-3 py-1 rounded-full bg-white text-slate-700 text-sm border border-slate-200">
                         {neighborhood}
                      </span>
+                  ))}
+               </div>
+            </div>
+
+            <div className="mt-8 bg-medical-50 border border-medical-100 rounded-2xl p-6">
+               <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  {lang === 'fr' ? 'Liens utiles pour votre prise en charge' : 'روابط مفيدة لمسار العلاج'}
+               </h3>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {relatedLinks.map((item) => (
+                     <Link
+                        key={item.to}
+                        to={item.to}
+                        className="bg-white border border-medical-100 rounded-xl px-4 py-3 text-medical-700 font-semibold hover:bg-medical-100 transition"
+                     >
+                        {item.label}
+                     </Link>
                   ))}
                </div>
             </div>

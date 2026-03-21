@@ -27,6 +27,41 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
   const t = CONTENT[lang];
   const prefix = lang === 'ar' ? '/ar' : '';
 
+  const relatedLinks = [
+    {
+      to: `${prefix}/services`,
+      label: lang === 'fr' ? 'Services de kinésithérapie' : 'خدمات الترويض الطبي'
+    },
+    {
+      to: `${prefix}/a-domicile`,
+      label: lang === 'fr' ? 'Kiné à domicile' : 'الترويض المنزلي'
+    },
+    {
+      to: `${prefix}/blog/sciatique-hernie-discale`,
+      label: lang === 'fr' ? 'Article: sciatique et hernie discale' : 'مقال: عرق النسا والانزلاق الغضروفي'
+    },
+    {
+      to: `${prefix}/blog/lombalgie-cervicalgie`,
+      label: lang === 'fr' ? 'Article: lombalgie et cervicalgie' : 'مقال: آلام الظهر والرقبة'
+    },
+    {
+      to: `${prefix}/blog/douleurs-epaules-capsulite`,
+      label: lang === 'fr' ? 'Article: douleurs d epaule' : 'مقال: آلام الكتف'
+    },
+    {
+      to: `${prefix}/blog/readaptation-post-avc`,
+      label: lang === 'fr' ? 'Article: réadaptation post AVC' : 'مقال: التأهيل بعد السكتة الدماغية'
+    },
+    {
+      to: `${prefix}/blog/arthrose-genou`,
+      label: lang === 'fr' ? 'Article: arthrose du genou' : 'مقال: خشونة الركبة'
+    },
+    {
+      to: `${prefix}/contact`,
+      label: lang === 'fr' ? 'Contact et rendez-vous' : 'الاتصال وحجز الموعد'
+    }
+  ];
+
   return (
     <>
       <SEOHead 
@@ -134,6 +169,18 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
           >
             {lang === 'fr' ? 'Prendre RDV →' : '← حجز موعد'}
           </a>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-3 text-start">
+            {relatedLinks.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="bg-white border border-medical-100 rounded-xl px-4 py-3 text-medical-700 font-semibold hover:bg-medical-100 transition"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>

@@ -13,6 +13,15 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
   const t = CONTENT[lang].contact;
    const prefix = lang === 'ar' ? '/ar' : '';
 
+   const relatedLinks = [
+      { to: `${prefix}/services`, label: lang === 'fr' ? 'Services de kinésithérapie' : 'خدمات الترويض الطبي' },
+      { to: `${prefix}/pathologies`, label: lang === 'fr' ? 'Pathologies traitées' : 'الأمراض المعالجة' },
+      { to: `${prefix}/a-domicile`, label: lang === 'fr' ? 'Kiné à domicile' : 'الترويض المنزلي' },
+      { to: `${prefix}/convention`, label: lang === 'fr' ? 'Convention assurances' : 'اتفاقيات التأمين' },
+      { to: `${prefix}/blog`, label: lang === 'fr' ? 'Blog santé' : 'مدونة صحية' },
+      { to: `${prefix}/blog/sciatique-hernie-discale`, label: lang === 'fr' ? 'Article: sciatique et hernie discale' : 'مقال: عرق النسا والانزلاق الغضروفي' }
+   ];
+
   return (
     <>
          <SEOHead 
@@ -110,6 +119,23 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                 ></iframe>
               </div>
            </div>
+
+                <section className="max-w-6xl mx-auto mt-10 bg-medical-50 border border-medical-100 rounded-2xl p-6">
+                   <h2 className="text-2xl font-bold text-slate-900 mb-3 text-center">
+                      {lang === 'fr' ? 'Pages utiles avant votre consultation' : 'صفحات مفيدة قبل الاستشارة'}
+                   </h2>
+                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {relatedLinks.map((item) => (
+                         <Link
+                            key={item.to}
+                            to={item.to}
+                            className="bg-white border border-medical-100 rounded-xl px-4 py-3 text-medical-700 font-semibold hover:bg-medical-100 transition"
+                         >
+                            {item.label}
+                         </Link>
+                      ))}
+                   </div>
+                </section>
         </div>
       </div>
     </>

@@ -13,6 +13,33 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
   const t = CONTENT[lang];
   const prefix = lang === 'ar' ? '/ar' : '';
 
+  const relatedLinks = [
+    {
+      to: `${prefix}/pathologies`,
+      label: lang === 'fr' ? 'Pathologies traitées' : 'الأمراض المعالجة'
+    },
+    {
+      to: `${prefix}/a-domicile`,
+      label: lang === 'fr' ? 'Kiné à domicile' : 'الترويض المنزلي'
+    },
+    {
+      to: `${prefix}/blog/lombalgie-cervicalgie`,
+      label: lang === 'fr' ? 'Article: lombalgie et cervicalgie' : 'مقال: آلام الظهر والرقبة'
+    },
+    {
+      to: `${prefix}/blog/sciatique-hernie-discale`,
+      label: lang === 'fr' ? 'Article: sciatique et hernie discale' : 'مقال: عرق النسا والانزلاق الغضروفي'
+    },
+    {
+      to: `${prefix}/blog/arthrose-genou`,
+      label: lang === 'fr' ? 'Article: arthrose du genou' : 'مقال: خشونة الركبة'
+    },
+    {
+      to: `${prefix}/contact`,
+      label: lang === 'fr' ? 'Contact et rendez-vous' : 'الاتصال وحجز الموعد'
+    }
+  ];
+
   const getIcon = (name: string) => {
     switch(name) {
       case 'Bone': return <Bone size={40} />;
@@ -119,6 +146,28 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
               </div>
             ))}
          </div>
+
+         <section className="mt-16 rounded-2xl border border-medical-100 bg-medical-50 p-8">
+           <h2 className="text-2xl font-bold text-slate-900 text-center mb-3">
+             {lang === 'fr' ? 'Pages et articles utiles' : 'صفحات ومقالات مفيدة'}
+           </h2>
+           <p className="text-slate-700 text-center max-w-3xl mx-auto mb-6">
+             {lang === 'fr'
+               ? 'Accédez rapidement aux contenus liés à nos services pour renforcer votre parcours de soins.'
+               : 'يمكنكم الوصول بسرعة إلى الصفحات والمقالات المرتبطة بخدماتنا.'}
+           </p>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+             {relatedLinks.map((item) => (
+               <Link
+                 key={item.to}
+                 to={item.to}
+                 className="bg-white border border-medical-100 rounded-xl px-4 py-3 text-medical-700 font-semibold hover:bg-medical-100 transition"
+               >
+                 {item.label}
+               </Link>
+             ))}
+           </div>
+         </section>
       </div>
     </>
   );
