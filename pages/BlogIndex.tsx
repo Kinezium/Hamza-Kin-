@@ -206,7 +206,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
                     <p className="text-gray-600 mb-4">{lang === 'fr' ? post.descFr : post.descAr}</p>
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-500">{lang === 'fr' ? post.readTimeFr : post.readTimeAr}</span>
-                      <span className="text-medical-600 font-semibold hover:text-medical-700 transition">{t.readMore} -></span>
+                      <span className="text-medical-600 font-semibold hover:text-medical-700 transition">{t.readMore} {'->'}</span>
                     </div>
                   </div>
                 </Link>
