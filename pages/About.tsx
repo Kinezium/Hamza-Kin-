@@ -4,6 +4,7 @@ import { Language } from '../types';
 import { CONTENT, LOGO_SYMBOL_WHITE_URL } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Building2, Users } from 'lucide-react';
+import { getManagedSeo, useAdminConfig } from '../src/adminConfig';
 
 interface AboutProps {
   lang: Language;
@@ -11,14 +12,20 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ lang }) => {
   const t = CONTENT[lang].about;
+  const config = useAdminConfig();
+  const seo = getManagedSeo(config, 'about', lang, {
+    title: lang === 'fr' ? 'A Propos Centre Chnider | Kinesitherapie Casablanca, Cabinet & Domicile' : 'عن مركز اشنيدر | الترويض الطبي بالدار البيضاء عيادة ومنزل',
+    description: t.mission,
+    keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, centre kine Casablanca, kine a domicile, kine mutuelle, kine CNSS, kine CNOPS' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, مركز الترويض الطبي, الترويض المنزلي'
+  });
   const prefix = lang === 'ar' ? '/ar' : '';
   
   return (
     <>
       <SEOHead 
-        title={lang === 'fr' ? 'À Propos Centre Chnider | Kinésithérapie Casablanca, Cabinet & Domicile' : 'عن مركز اشنيدر | الترويض الطبي بالدار البيضاء عيادة ومنزل'} 
-        description={t.mission} 
-        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, centre kiné Casablanca, kiné à domicile, kiné mutuelle, kiné CNSS, kiné CNOPS' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, مركز الترويض الطبي, الترويض المنزلي'}
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
       />
       
       <div className="container mx-auto px-4 py-20">

@@ -4,6 +4,7 @@ import { Language } from '../types';
 import { CONTENT } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Bone, Activity, Wind, CircleDot, Home } from 'lucide-react';
+import { getManagedSeo, useAdminConfig } from '../src/adminConfig';
 
 interface ServicesProps {
   lang: Language;
@@ -11,6 +12,12 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ lang }) => {
   const t = CONTENT[lang];
+  const config = useAdminConfig();
+  const seo = getManagedSeo(config, 'services', lang, {
+    title: lang === 'fr' ? 'Services Kinesitherapie Casablanca | Reeducation, Respiratoire, Sport & Domicile' : 'خدمات الترويض الطبي بالدار البيضاء | إعادة التأهيل والتنفس والترويض المنزلي',
+    description: t.seo.servicesDesc,
+    keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, kine orthopedique, kine fonctionnelle, kine respiratoire, hijama medicale, kine a domicile, sidi othmane, maarif, hay hassani' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, خدمات الترويض الطبي, ترويض منزلي, علاج العظام, علاج التنفس'
+  });
   const prefix = lang === 'ar' ? '/ar' : '';
 
   const relatedLinks = [
@@ -54,9 +61,9 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
   return (
     <>
       <SEOHead 
-        title={lang === 'fr' ? 'Services Kinésithérapie Casablanca | Rééducation, Respiratoire, Sport & Domicile' : 'خدمات الترويض الطبي بالدار البيضاء | إعادة التأهيل والتنفس والترويض المنزلي'} 
-        description={t.seo.servicesDesc} 
-        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kiné orthopédique, kiné fonctionnelle, kiné respiratoire, hijama médicale, kiné à domicile, sidi othmane, maarif, hay hassani' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, خدمات الترويض الطبي, ترويض منزلي, علاج العظام, علاج التنفس'}
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
       />
       
       <div className="bg-medical-700 text-white py-16">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
-import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
+import { getManagedSeo, makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 
 interface GalleryProps {
   lang: Language;
@@ -11,12 +11,17 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({ lang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
   const config = useAdminConfig();
+  const seo = getManagedSeo(config, 'gallery', lang, {
+    title: lang === 'fr' ? 'Galerie | Centre Chnider Kinesitherapie Casablanca' : 'المعرض | مركز شنيدر للترويض الطبي بالدار البيضاء',
+    description: lang === 'fr' ? 'Decouvrez la galerie du Centre Chnider: cabinet, materiel, seances de kinesitherapie et suivi a Casablanca.' : 'اكتشفوا معرض مركز شنيدر: العيادة، المعدات، وجلسات الترويض الطبي بالدار البيضاء.',
+    keywords: lang === 'fr' ? 'galerie kine Casablanca, centre kinesitherapie Sbata, photos cabinet kine' : 'معرض الترويض الطبي, صور مركز شنيدر, عيادة الترويض الدار البيضاء'
+  });
   return (
     <>
       <SEOHead
-        title={lang === 'fr' ? 'Galerie | Centre Chnider Kinésithérapie Casablanca' : 'المعرض | مركز شنيدر للترويض الطبي بالدار البيضاء'}
-        description={lang === 'fr' ? 'Découvrez la galerie du Centre Chnider: cabinet, matériel, séances de kinésithérapie et suivi à Casablanca.' : 'اكتشفوا معرض مركز شنيدر: العيادة، المعدات، وجلسات الترويض الطبي بالدار البيضاء.'}
-        keywords={lang === 'fr' ? 'galerie kiné Casablanca, centre kinésithérapie Sbata, photos cabinet kiné' : 'معرض الترويض الطبي, صور مركز شنيدر, عيادة الترويض الدار البيضاء'}
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
       />
 
       <section className="bg-medical-50 py-16">

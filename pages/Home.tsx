@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, MapPin, Bus, Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity } from 'lucide-react';
 import { Language } from '../types';
 import { CONTENT, GOOGLE_REVIEWS_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
-import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
+import { getManagedSeo, makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 import SEOHead from '../components/SEOHead';
 
 const getConditionIcon = (iconName?: string, size = 20) => {
@@ -35,6 +35,11 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ lang }) => {
   const t = CONTENT[lang];
   const config = useAdminConfig();
+  const seo = getManagedSeo(config, 'home', lang, {
+    title: t.seo.homeTitle,
+    description: t.seo.homeDesc,
+    keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, kinesitherapie a Casablanca, centre de kinesitherapie a Sbata, reeducation fonctionnelle Casablanca, traitement sciatique Casablanca, douleurs lombaires Casablanca, kine a domicile, sidi othmane, maarif, hay hassani, anfa' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, الترويض الطبي, علاج الظهر, علاج المفاصل, الترويض المنزلي'
+  });
   const featuredReviews = t.reviews.items.slice(0, 3);
   const prefix = lang === 'ar' ? '/ar' : '';
   const [benefitIndex, setBenefitIndex] = useState(0);
@@ -65,9 +70,9 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
   return (
     <>
       <SEOHead 
-        title={t.seo.homeTitle} 
-        description={t.seo.homeDesc} 
-        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kinésithérapie à Casablanca, centre de kinésithérapie à Sbata, rééducation fonctionnelle Casablanca, traitement sciatique Casablanca, douleurs lombaires Casablanca, kiné à domicile, sidi othmane, maarif, hay hassani, anfa' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, الترويض الطبي, علاج الظهر, علاج المفاصل, الترويض المنزلي'}
+        title={seo.title} 
+        description={seo.description} 
+        keywords={seo.keywords}
       />
       
       {/* Hero Section */}

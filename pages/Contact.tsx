@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import { CONTENT } from '../constants';
-import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
+import { getManagedSeo, makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 import SEOHead from '../components/SEOHead';
 import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
@@ -13,6 +13,11 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({ lang }) => {
   const t = CONTENT[lang].contact;
    const config = useAdminConfig();
+   const seo = getManagedSeo(config, 'contact', lang, {
+      title: lang === 'fr' ? 'Contact Kine Casablanca | Centre Chnider Sbata, Cabinet & Domicile' : 'اتصل بمركز الترويض الطبي بالدار البيضاء | مركز اشنيدر',
+      description: CONTENT[lang].seo.contactDesc,
+      keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, contact kine Casablanca, kine a domicile, kine mutuelle, kine CNSS, kine CNOPS, sidi othmane, maarif, hay hassani' : 'اتصال مروض طبي, مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني'
+   });
    const prefix = lang === 'ar' ? '/ar' : '';
 
    const relatedLinks = [
@@ -27,9 +32,9 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
   return (
     <>
          <SEOHead 
-            title={lang === 'fr' ? 'Contact Kiné Casablanca | Centre Chnider Sbata, Cabinet & Domicile' : 'اتصل بمركز الترويض الطبي بالدار البيضاء | مركز اشنيدر'} 
-            description={CONTENT[lang].seo.contactDesc} 
-            keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, contact kiné Casablanca, kiné à domicile, kiné mutuelle, kiné CNSS, kiné CNOPS, sidi othmane, maarif, hay hassani' : 'اتصال مروض طبي, مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني'}
+            title={seo.title}
+            description={seo.description}
+            keywords={seo.keywords}
          />
       
       <div className="bg-gray-50 min-h-screen py-16">

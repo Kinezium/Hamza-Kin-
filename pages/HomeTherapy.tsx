@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR, getWhatsAppBookingLink } from '../constants';
+import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Check, Home, Phone } from 'lucide-react';
+import { getManagedSeo, makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 
 interface HomeTherapyProps {
   lang: Language;
@@ -11,6 +12,12 @@ interface HomeTherapyProps {
 
 const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
   const t = CONTENT[lang].homeTherapy;
+   const config = useAdminConfig();
+   const seo = getManagedSeo(config, 'homeTherapy', lang, {
+      title: lang === 'fr' ? 'Kine a Domicile Casablanca | Reeducation Fonctionnelle, Dos, Neurologie' : 'ترويض منزلي بالدار البيضاء | إعادة التأهيل وآلام الظهر والأعصاب',
+      description: t.description,
+      keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, kine a domicile, reeducation a domicile, kine mutuelle, kine CNSS, kine CNOPS, sidi othmane, maarif, hay hassani, anfa' : 'الترويض المنزلي, مروض طبي قريب مني, مروض الدار البيضاء, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, علاج الظهر, علاج المفاصل'
+   });
    const prefix = lang === 'ar' ? '/ar' : '';
    const neighborhoods = lang === 'fr' ? CASABLANCA_NEIGHBORHOODS_FR : CASABLANCA_NEIGHBORHOODS_AR;
    const serviceZones = lang === 'fr' ? SERVICE_ZONES_FR : SERVICE_ZONES_AR;
@@ -27,9 +34,9 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
   return (
     <>
          <SEOHead 
-            title={lang === 'fr' ? 'Kiné à Domicile Casablanca | Rééducation Fonctionnelle, Dos, Neurologie' : 'ترويض منزلي بالدار البيضاء | إعادة التأهيل وآلام الظهر والأعصاب'} 
-            description={t.description} 
-            keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kiné à domicile, rééducation à domicile, kiné mutuelle, kiné CNSS, kiné CNOPS, sidi othmane, maarif, hay hassani, anfa' : 'الترويض المنزلي, مروض طبي قريب مني, مروض الدار البيضاء, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, علاج الظهر, علاج المفاصل'}
+            title={seo.title}
+            description={seo.description}
+            keywords={seo.keywords}
          />
       
       <div className="relative bg-medical-50 py-20">
@@ -60,7 +67,7 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
                      )}
                   </p>
             <a 
-                     href={getWhatsAppBookingLink(lang, 'Kine domicile')} 
+                     href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Kine domicile')} 
                      target="_blank"
                      rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-medical-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-medical-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1"

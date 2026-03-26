@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
 import { Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame } from 'lucide-react';
-import { makeWhatsAppLink, useAdminConfig, useManagedBlogImages } from '../src/adminConfig';
+import { getManagedSeo, makeWhatsAppLink, useAdminConfig, useManagedBlogImages } from '../src/adminConfig';
 
 interface BlogPost {
   slug: string;
@@ -25,6 +25,11 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
   const config = useAdminConfig();
   const managedImages = useManagedBlogImages();
+  const seo = getManagedSeo(config, 'blog', lang, {
+    title: lang === 'fr' ? 'Blog Kinesitherapie | Centre Chnider' : 'مدونة الترويض الطبي | مركز اشنيدر',
+    description: lang === 'fr' ? 'Articles sur les pathologies, conseils de prevention, solutions de traitement et exercices recommandes par nos experts.' : 'مقالات عن الأمراض والنصائح والحلول والتمارين الموصى بها من قبل خبرائنا.',
+    keywords: lang === 'fr' ? 'blog kine, articles kinesitherapie, conseils sante, pathologies, traitement' : 'مدونة ترويض طبي, مقالات صحية, أمراض, علاجات'
+  });
 
   const posts: BlogPost[] = [
     {
@@ -176,13 +181,9 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
   return (
     <>
       <SEOHead
-        title={lang === 'fr' ? 'Blog Kinésithérapie | Centre Chnider' : 'مدونة الترويض الطبي | مركز اشنيدر'}
-        description={lang === 'fr'
-          ? 'Articles sur les pathologies, conseils de prévention, solutions de traitement et exercices recommandés par nos experts.'
-          : 'مقالات عن الأمراض والنصائح والحلول والتمارين الموصى بها من قبل خبرائنا.'}
-        keywords={lang === 'fr'
-          ? 'blog kiné, articles kinésithérapie, conseils santé, pathologies, traitement'
-          : 'مدونة ترويض طبي, مقالات صحية, أمراض, علاجات'}
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
       />
 
       <div className={lang === 'ar' ? 'font-arabic rtl' : 'ltr'} dir={lang === 'ar' ? 'rtl' : 'ltr'}>

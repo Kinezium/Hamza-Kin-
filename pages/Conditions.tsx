@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CONTENT, getWhatsAppBookingLink } from '../constants';
+import { CONTENT } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Activity, AlertCircle, Zap, Bone, Dumbbell, Stethoscope, Brain, Baby, Flame, ArrowUpDown } from 'lucide-react';
+import { getManagedSeo, makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 
 interface ConditionsProps {
   lang: Language;
@@ -25,6 +26,12 @@ const getConditionIcon = (iconName?: string) => {
 
 const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
   const t = CONTENT[lang];
+  const config = useAdminConfig();
+  const seo = getManagedSeo(config, 'conditions', lang, {
+    title: t.seo.conditionsTitle,
+    description: t.seo.conditionsDesc,
+    keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, hernie discale, sciatique, arthrose, paralysie faciale, AVC, rhumatologie, lombalgie, cervicalgie, traumatologie sport' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, علاج الانزلاق الغضروفي, عرق النسا, علاج المفاصل, علاج الأعصاب'
+  });
   const prefix = lang === 'ar' ? '/ar' : '';
 
   const relatedLinks = [
@@ -65,9 +72,9 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
   return (
     <>
       <SEOHead 
-        title={t.seo.conditionsTitle} 
-        description={t.seo.conditionsDesc} 
-        keywords={lang === 'fr' ? 'kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, hernie discale, sciatique, arthrose, paralysie faciale, AVC, rhumatologie, lombalgie, cervicalgie, traumatologie sport' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, علاج الانزلاق الغضروفي, عرق النسا, علاج المفاصل, علاج الأعصاب'}
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
       />
       
       <div className="bg-medical-50 py-12">
@@ -134,7 +141,7 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
                  <span className="text-sm text-gray-400">
                     {lang === 'fr' ? 'Consultation recommandée' : 'ينصح بالاستشارة'}
                  </span>
-                  <a href={getWhatsAppBookingLink(lang, `Pathologie: ${item.title}`)} target="_blank" rel="noopener noreferrer" className="text-medical-600 font-bold hover:underline">
+                  <a href={makeWhatsAppLink(lang, config.contact.whatsappNumber, `Pathologie: ${item.title}`)} target="_blank" rel="noopener noreferrer" className="text-medical-600 font-bold hover:underline">
                     {lang === 'fr' ? 'Réserver →' : 'حجز ←'}
                  </a>
               </div>
@@ -162,7 +169,7 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
             )}
           </p>
           <a
-            href={getWhatsAppBookingLink(lang, 'Page pathologies')}
+            href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Page pathologies')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-medical-600 text-white font-bold rounded-xl hover:bg-medical-700 transition shadow-sm"

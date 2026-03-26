@@ -10,6 +10,7 @@ import {
 import SEOHead from '../components/SEOHead';
 import { Language } from '../types';
 import { Building2, CheckCircle2, FileText, MapPin, MessageCircle, Phone, ShieldCheck } from 'lucide-react';
+import { getManagedSeo, useAdminConfig } from '../src/adminConfig';
 
 interface ConventionProps {
   lang: Language;
@@ -17,6 +18,7 @@ interface ConventionProps {
 
 const Convention: React.FC<ConventionProps> = ({ lang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
+  const config = useAdminConfig();
   const content = lang === 'fr'
     ? {
         title: 'Convention assurance et mutuelle avec Centre Chnider',
@@ -126,11 +128,16 @@ const Convention: React.FC<ConventionProps> = ({ lang }) => {
   const whatsappMessage = lang === 'fr'
     ? 'Bonjour Centre Chnider, nous souhaitons échanger au sujet d\'une convention avec votre centre de kinesitherapie.'
     : 'السلام عليكم مركز شنيدر، نرغب في مناقشة اتفاقية شراكة مع مركزكم للترويض الطبي.';
-  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappHref = `https://wa.me/${config.contact.whatsappNumber || WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+  const seo = getManagedSeo(config, 'convention', lang, {
+    title: content.title,
+    description: content.description,
+    keywords: content.keywords
+  });
 
   return (
     <>
-      <SEOHead title={content.title} description={content.description} keywords={content.keywords} />
+      <SEOHead title={seo.title} description={seo.description} keywords={seo.keywords} />
 
       <div className="bg-[radial-gradient(circle_at_top_left,_rgba(14,116,144,0.18),_transparent_35%),linear-gradient(135deg,#eff6ff_0%,#ffffff_45%,#ecfeff_100%)]">
         <div className="container mx-auto px-4 py-16 md:py-24">
@@ -158,7 +165,7 @@ const Convention: React.FC<ConventionProps> = ({ lang }) => {
                     {content.primaryCta}
                   </a>
                   <a
-                    href={GOOGLE_MAPS_CENTER_URL}
+                    href={config.contact.mapsLink || GOOGLE_MAPS_CENTER_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-6 py-3 font-bold text-sky-900 transition hover:border-sky-300 hover:bg-sky-50"
@@ -198,13 +205,13 @@ const Convention: React.FC<ConventionProps> = ({ lang }) => {
                   <div className="rounded-2xl bg-sky-950 p-5 text-white">
                     <p className="text-sm uppercase tracking-[0.18em] text-sky-200">{content.contactTitle}</p>
                     <div className="mt-4 space-y-3 text-sm">
-                      <a href={`tel:${PHONE_NUMBER}`} className="flex items-center gap-3 rounded-xl bg-white/10 px-4 py-3 hover:bg-white/15">
+                      <a href={`tel:${config.contact.phone || PHONE_NUMBER}`} className="flex items-center gap-3 rounded-xl bg-white/10 px-4 py-3 hover:bg-white/15">
                         <Phone size={17} />
-                        <span dir="ltr">{PHONE_NUMBER}</span>
+                        <span dir="ltr">{config.contact.phone || PHONE_NUMBER}</span>
                       </a>
-                      <a href={GOOGLE_MAPS_CENTER_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 rounded-xl bg-white/10 px-4 py-3 hover:bg-white/15">
+                      <a href={config.contact.mapsLink || GOOGLE_MAPS_CENTER_URL} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 rounded-xl bg-white/10 px-4 py-3 hover:bg-white/15">
                         <MapPin size={17} className="mt-0.5 shrink-0" />
-                        <span>{ADDRESS}</span>
+                        <span>{config.contact.address || ADDRESS}</span>
                       </a>
                     </div>
                   </div>
