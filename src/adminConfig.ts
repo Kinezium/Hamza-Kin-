@@ -12,6 +12,8 @@ import { BLOG_TOPIC_IMAGES } from '../pages/Blog/blogImages';
 
 const STORAGE_KEY = 'ltm-admin-config-v1';
 const UPDATE_EVENT = 'ltm-admin-config-updated';
+const TOKEN_KEY = 'ltm-admin-token';
+const API_BASE = ((import.meta as any).env?.VITE_ADMIN_API_URL || '').toString().replace(/\/$/, '');
 
 export interface AdminCredentials {
   username: string;
@@ -47,6 +49,23 @@ export interface CustomBlogPost {
   createdAt: string;
 }
 
+export interface SeoLocaleConfig {
+  title: string;
+  description: string;
+  keywords: string;
+  internalLinks: string;
+}
+
+export interface SeoPageConfig {
+  fr: SeoLocaleConfig;
+  ar: SeoLocaleConfig;
+}
+
+export interface SeoConfig {
+  syncFrToAr: boolean;
+  pages: Record<string, SeoPageConfig>;
+}
+
 export interface AdminSiteConfig {
   credentials: AdminCredentials;
   contact: {
@@ -72,8 +91,15 @@ export interface AdminSiteConfig {
     galleryImages: GalleryImageItem[];
     blogImages: Record<string, string>;
   };
+  seo: SeoConfig;
   pageLinks: CustomPageLink[];
   customBlogPosts: CustomBlogPost[];
+}
+
+export interface SeoFallback {
+  title: string;
+  description: string;
+  keywords: string;
 }
 
 const defaultGalleryImages: GalleryImageItem[] = [
@@ -98,6 +124,135 @@ const defaultGalleryImages: GalleryImageItem[] = [
     altAr: 'معدات الترويض الطبي'
   }
 ];
+
+const defaultSeoPages: Record<string, SeoPageConfig> = {
+  home: {
+    fr: {
+      title: 'Kine Casablanca | Centre Chnider - Cabinet & Domicile',
+      description: 'Kinesitherapie a Casablanca: dos, sport, neurologie, domicile et cabinet.',
+      keywords: 'kine casablanca, kinesitherapie casa, sciatique, reeducation',
+      internalLinks: '/services,/pathologies,/a-domicile,/contact,/blog'
+    },
+    ar: {
+      title: 'مركز الترويض الطبي بالدار البيضاء | مركز شنيدر',
+      description: 'الترويض الطبي بالدار البيضاء داخل العيادة والمنزل.',
+      keywords: 'الترويض الطبي, الدار البيضاء, عرق النسا, إعادة التأهيل',
+      internalLinks: '/ar/services,/ar/pathologies,/ar/a-domicile,/ar/contact,/ar/blog'
+    }
+  },
+  services: {
+    fr: {
+      title: 'Services Kinesitherapie Casablanca',
+      description: 'Reeducation, kine respiratoire, sport et domicile a Casablanca.',
+      keywords: 'services kine, kine domicile, kine respiratoire, traumato sport',
+      internalLinks: '/pathologies,/contact,/blog/lombalgie-cervicalgie'
+    },
+    ar: {
+      title: 'خدمات الترويض الطبي بالدار البيضاء',
+      description: 'خدمات إعادة التأهيل والعلاج التنفسي والعلاج المنزلي.',
+      keywords: 'خدمات الترويض, علاج منزلي, علاج تنفسي',
+      internalLinks: '/ar/pathologies,/ar/contact,/ar/blog/lombalgie-cervicalgie'
+    }
+  },
+  conditions: {
+    fr: {
+      title: 'Pathologies traitees | Centre Chnider',
+      description: 'Sciatique, hernie discale, arthrose, douleurs du dos et neurologie.',
+      keywords: 'sciatique, hernie discale, arthrose genou, douleur dos',
+      internalLinks: '/services,/a-domicile,/contact,/blog/sciatique-hernie-discale'
+    },
+    ar: {
+      title: 'الأمراض المعالجة | مركز شنيدر',
+      description: 'علاج عرق النسا والانزلاق الغضروفي وآلام المفاصل والظهر.',
+      keywords: 'عرق النسا, الانزلاق الغضروفي, خشونة الركبة',
+      internalLinks: '/ar/services,/ar/a-domicile,/ar/contact,/ar/blog/sciatique-hernie-discale'
+    }
+  },
+  homeTherapy: {
+    fr: {
+      title: 'Kine a domicile Casablanca',
+      description: 'Seances de kinesitherapie a domicile sur Casablanca et quartiers proches.',
+      keywords: 'kine domicile casablanca, reeducation domicile, sbata',
+      internalLinks: '/services,/pathologies,/contact'
+    },
+    ar: {
+      title: 'الترويض المنزلي بالدار البيضاء',
+      description: 'جلسات ترويض منزلي في الدار البيضاء والأحياء القريبة.',
+      keywords: 'ترويض منزلي, الدار البيضاء, إعادة التأهيل في المنزل',
+      internalLinks: '/ar/services,/ar/pathologies,/ar/contact'
+    }
+  },
+  about: {
+    fr: {
+      title: 'A propos du Centre Chnider',
+      description: 'Centre de kinesitherapie a Casablanca et service a domicile.',
+      keywords: 'centre kine casablanca, a propos, equipe kine',
+      internalLinks: '/services,/contact,/blog'
+    },
+    ar: {
+      title: 'عن مركز شنيدر',
+      description: 'مركز الترويض الطبي بالدار البيضاء وخدمة منزلية.',
+      keywords: 'مركز ترويض, فريق طبي, الدار البيضاء',
+      internalLinks: '/ar/services,/ar/contact,/ar/blog'
+    }
+  },
+  contact: {
+    fr: {
+      title: 'Contact Kine Casablanca | Centre Chnider',
+      description: 'Prenez rendez-vous au cabinet ou a domicile a Casablanca.',
+      keywords: 'contact kine casablanca, rendez-vous, telephone kine',
+      internalLinks: '/services,/pathologies,/a-domicile,/blog'
+    },
+    ar: {
+      title: 'اتصل بمركز شنيدر للترويض الطبي',
+      description: 'احجز موعدك في العيادة أو في المنزل بالدار البيضاء.',
+      keywords: 'اتصال مروض طبي, حجز موعد, الترويض الطبي',
+      internalLinks: '/ar/services,/ar/pathologies,/ar/a-domicile,/ar/blog'
+    }
+  },
+  gallery: {
+    fr: {
+      title: 'Galerie | Centre Chnider',
+      description: 'Photos du cabinet et des espaces de prise en charge.',
+      keywords: 'galerie kine, photos cabinet, centre chnider',
+      internalLinks: '/services,/a-propos,/contact'
+    },
+    ar: {
+      title: 'المعرض | مركز شنيدر',
+      description: 'صور العيادة ومساحات التكفل العلاجي.',
+      keywords: 'معرض, صور العيادة, مركز شنيدر',
+      internalLinks: '/ar/services,/ar/a-propos,/ar/contact'
+    }
+  },
+  blog: {
+    fr: {
+      title: 'Blog Kinesitherapie | Centre Chnider',
+      description: 'Articles sante, prevention et conseils de kinesitherapie.',
+      keywords: 'blog kine, conseils sante, articles physiotherapie',
+      internalLinks: '/pathologies,/services,/contact'
+    },
+    ar: {
+      title: 'مدونة الترويض الطبي | مركز شنيدر',
+      description: 'مقالات صحية ونصائح علاجية في الترويض الطبي.',
+      keywords: 'مدونة, نصائح صحية, الترويض الطبي',
+      internalLinks: '/ar/pathologies,/ar/services,/ar/contact'
+    }
+  },
+  convention: {
+    fr: {
+      title: 'Convention assurance et mutuelle | Centre Chnider',
+      description: 'Page dediee aux conventions avec assurances et mutuelles.',
+      keywords: 'convention assurance, mutuelle, partenariat medical',
+      internalLinks: '/contact,/services,/a-propos'
+    },
+    ar: {
+      title: 'اتفاقيات التأمين والتعاضديات | مركز شنيدر',
+      description: 'صفحة مخصصة لاتفاقيات التأمين والتعاضديات مع المركز.',
+      keywords: 'اتفاقية, تأمين, تعاضدية, شراكة',
+      internalLinks: '/ar/contact,/ar/services,/ar/a-propos'
+    }
+  }
+};
 
 export const DEFAULT_ADMIN_CONFIG: AdminSiteConfig = {
   credentials: {
@@ -126,6 +281,10 @@ export const DEFAULT_ADMIN_CONFIG: AdminSiteConfig = {
     heroImages: HERO_SLIDESHOW_IMAGES,
     galleryImages: defaultGalleryImages,
     blogImages: BLOG_TOPIC_IMAGES
+  },
+  seo: {
+    syncFrToAr: true,
+    pages: defaultSeoPages
   },
   pageLinks: [
     { id: 'home', labelFr: 'Accueil', labelAr: 'الرئيسية', pathFr: '/', pathAr: '/ar' },
@@ -178,6 +337,13 @@ const mergeConfig = (partial: Partial<AdminSiteConfig>): AdminSiteConfig => {
         ...(partial.media?.blogImages || {})
       }
     },
+    seo: {
+      syncFrToAr: partial.seo?.syncFrToAr ?? DEFAULT_ADMIN_CONFIG.seo.syncFrToAr,
+      pages: {
+        ...DEFAULT_ADMIN_CONFIG.seo.pages,
+        ...(partial.seo?.pages || {})
+      }
+    },
     pageLinks: partial.pageLinks?.length ? partial.pageLinks : DEFAULT_ADMIN_CONFIG.pageLinks,
     customBlogPosts: partial.customBlogPosts || []
   };
@@ -195,6 +361,110 @@ export const saveAdminConfig = (config: AdminSiteConfig): void => {
   window.dispatchEvent(new CustomEvent(UPDATE_EVENT));
 };
 
+const getToken = () => {
+  if (typeof window === 'undefined') return '';
+  return window.localStorage.getItem(TOKEN_KEY) || '';
+};
+
+const setToken = (token: string) => {
+  if (typeof window === 'undefined') return;
+  if (token) {
+    window.localStorage.setItem(TOKEN_KEY, token);
+    return;
+  }
+  window.localStorage.removeItem(TOKEN_KEY);
+};
+
+export const hasApiBackend = (): boolean => Boolean(API_BASE);
+
+export const clearAdminAuth = () => {
+  setToken('');
+  if (typeof window !== 'undefined') {
+    window.sessionStorage.removeItem('ltm-admin-auth');
+  }
+};
+
+const requestApi = async (path: string, init: RequestInit = {}) => {
+  const headers = new Headers(init.headers || {});
+  const token = getToken();
+  if (token) headers.set('Authorization', `Bearer ${token}`);
+  if (!(init.body instanceof FormData)) headers.set('Content-Type', 'application/json');
+  const response = await fetch(`${API_BASE}${path}`, { ...init, headers });
+  if (!response.ok) {
+    const message = await response.text();
+    throw new Error(message || `API error: ${response.status}`);
+  }
+  return response;
+};
+
+export const loginAdmin = async (username: string, password: string): Promise<boolean> => {
+  if (!hasApiBackend()) {
+    const current = readAdminConfig();
+    const ok = username === current.credentials.username && password === current.credentials.password;
+    if (ok) {
+      window.sessionStorage.setItem('ltm-admin-auth', 'ok');
+    }
+    return ok;
+  }
+
+  const response = await requestApi('/api/auth/login', {
+    method: 'POST',
+    body: JSON.stringify({ username, password })
+  });
+  const data = await response.json();
+  if (data?.token) {
+    setToken(data.token);
+    window.sessionStorage.setItem('ltm-admin-auth', 'ok');
+    return true;
+  }
+  return false;
+};
+
+export const loadAdminConfig = async (): Promise<AdminSiteConfig> => {
+  if (!hasApiBackend()) {
+    return readAdminConfig();
+  }
+  const response = await requestApi('/api/config', { method: 'GET' });
+  const data = await response.json();
+  const config = mergeConfig(data || {});
+  saveAdminConfig(config);
+  return config;
+};
+
+export const persistAdminConfig = async (config: AdminSiteConfig): Promise<void> => {
+  if (!hasApiBackend()) {
+    saveAdminConfig(config);
+    return;
+  }
+  await requestApi('/api/config', {
+    method: 'PUT',
+    body: JSON.stringify(config)
+  });
+  saveAdminConfig(config);
+};
+
+const fileToDataUrl = (file: File): Promise<string> => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.onload = () => resolve(reader.result?.toString() || '');
+  reader.onerror = () => reject(new Error('Impossible de lire le fichier.'));
+  reader.readAsDataURL(file);
+});
+
+export const uploadAdminImage = async (file: File): Promise<string> => {
+  if (!hasApiBackend()) {
+    return fileToDataUrl(file);
+  }
+
+  const body = new FormData();
+  body.append('file', file);
+  const response = await requestApi('/api/upload', { method: 'POST', body });
+  const data = await response.json();
+  if (!data?.url) {
+    throw new Error('Upload invalide: URL manquante.');
+  }
+  return data.url;
+};
+
 export const useAdminConfig = () => {
   const [config, setConfig] = useState<AdminSiteConfig>(readAdminConfig());
 
@@ -209,11 +479,6 @@ export const useAdminConfig = () => {
   }, []);
 
   return config;
-};
-
-export const useAdminTheme = () => {
-  const config = useAdminConfig();
-  return config.theme;
 };
 
 export const applyAdminTheme = (theme: AdminSiteConfig['theme']) => {
@@ -241,6 +506,22 @@ export const useManagedBlogImages = () => {
     ...BLOG_TOPIC_IMAGES,
     ...config.media.blogImages
   }), [config.media.blogImages]);
+};
+
+export const getManagedSeo = (
+  config: AdminSiteConfig,
+  pageKey: string,
+  lang: 'fr' | 'ar',
+  fallback: SeoFallback
+) => {
+  const page = config.seo.pages[pageKey];
+  const locale = lang === 'fr' ? page?.fr : page?.ar;
+  return {
+    title: locale?.title?.trim() || fallback.title,
+    description: locale?.description?.trim() || fallback.description,
+    keywords: locale?.keywords?.trim() || fallback.keywords,
+    internalLinks: locale?.internalLinks?.trim() || ''
+  };
 };
 
 export const slugify = (value: string): string => {
