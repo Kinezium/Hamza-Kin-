@@ -6,6 +6,7 @@ const indexFile = path.join(distDir, 'index.html');
 const staticFiles = ['robots.txt', 'robot.txt', 'sitemap.xml', 'sitemaps.xml'];
 
 const routes = [
+  'LTM',
   'pathologies',
   'services',
   'a-domicile',
