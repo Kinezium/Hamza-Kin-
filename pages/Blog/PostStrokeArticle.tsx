@@ -3,16 +3,16 @@ import { Stethoscope } from 'lucide-react';
 
 const article8 = createArticle({
   slug: 'readaptation-post-avc',
-  titleFr: 'RÃ©adaptation Post-AVC: Reprendre la Vie',
-  titleAr: 'Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ Ù…Ø§ Ø¨Ø¹Ø¯ Ø§Ù„Ø¬Ù„Ø·Ø©: Ø§Ø³ØªØ¹Ø§Ø¯Ø© Ø§Ù„Ø­ÙŠØ§Ø©',
-  descriptionFr: 'RÃ©Ã©ducation aprÃ¨s AVC. Exercices et techniques pour rÃ©cupÃ©rer mobilitÃ© et indÃ©pendance.',
-  descriptionAr: 'Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ Ø¨Ø¹Ø¯ Ø§Ù„Ø¬Ù„Ø·Ø©. ØªÙ…Ø§Ø±ÙŠÙ† ÙˆØªÙ‚Ù†ÙŠØ§Øª Ù„Ø§Ø³ØªØ¹Ø§Ø¯Ø© Ø§Ù„Ø­Ø±ÙƒØ© ÙˆØ§Ù„Ø§Ø³ØªÙ‚Ù„Ø§Ù„ÙŠØ©.',
-  keywordsFr: 'AVC, accident vasculaire, rÃ©Ã©ducation AVC, kinÃ© AVC, rÃ©cupÃ©ration aprÃ¨s AVC',
-  keywordsAr: 'Ø¬Ù„Ø·Ø©, Ø³ÙƒØªØ© Ø¯Ù…Ø§ØºÙŠØ©, Ø¥Ø¹Ø§Ø¯Ø© ØªØ£Ù‡ÙŠÙ„, Ø§Ø³ØªØ¹Ø§Ø¯Ø© Ø§Ù„Ø­Ø±ÙƒØ©',
+  titleFr: 'Réadaptation Post-AVC: Reprendre la Vie',
+  titleAr: 'إعادة ا�تأ�!�`� �&ا بعد ا�ج�طة: استعادة ا�ح�`اة',
+  descriptionFr: 'Rééducation après AVC. Exercices et techniques pour récupérer mobilité et indépendance.',
+  descriptionAr: 'إعادة ا�تأ�!�`� بعد ا�ج�طة. ت�&ار�`�  ��ت�� �`ات �استعادة ا�حرْة ��ا�است��ا��`ة.',
+  keywordsFr: 'AVC, accident vasculaire, rééducation AVC, kiné AVC, récupération après AVC',
+  keywordsAr: 'ج�طة, سْتة د�&اغ�`ة, إعادة تأ�!�`�, استعادة ا�حرْة',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '7 min de lecture',
-  readTimeAr: '7 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
+  readTimeAr: '7 د�ائ� �راءة',
   contentFr: (
     <div className="space-y-6">
       <section>
@@ -22,39 +22,39 @@ const article8 = createArticle({
       <section>
         <h2 className="text-2xl font-bold mb-4">SÃ©quelles Possibles de l'AVC</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>ParÃ©sie ou paralysie d'un cÃ´tÃ© du corps</li>
-          <li>Troubles de l'Ã©quilibre et de la coordination</li>
-          <li>SpasticitÃ© (augmentation du tonus musculaire)</li>
-          <li>ProblÃ¨mes de parole ou de dÃ©glutition</li>
+          <li>Parésie ou paralysie d'un cÃ´tÃ© du corps</li>
+          <li>Troubles de l'équilibre et de la coordination</li>
+          <li>Spasticité (augmentation du tonus musculaire)</li>
+          <li>Problèmes de parole ou de déglutition</li>
           <li>Perte de sensation</li>
-          <li>Troubles cognitifs ou Ã©motionnels</li>
+          <li>Troubles cognitifs ou émotionnels</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">FenÃªtre de RÃ©cupÃ©ration</h2>
+        <h2 className="text-2xl font-bold mb-4">Fenêtre de Récupération</h2>
         <div className="space-y-3">
           <div className="border-l-4 border-green-500 pl-4">
-            <h3 className="font-bold">Phase AiguÃ« (0-3 mois)</h3>
-            <p>RÃ©cupÃ©ration spontanÃ©e et plastique cÃ©rÃ©brale maximale. DÃ©but immÃ©diat de la rÃ©Ã©ducation.</p>
+            <h3 className="font-bold">Phase Aiguë (0-3 mois)</h3>
+            <p>Récupération spontanée et plastique cérébrale maximale. Début immédiat de la rééducation.</p>
           </div>
           <div className="border-l-4 border-blue-500 pl-4">
-            <h3 className="font-bold">Phase SubaiguÃ« (3-6 mois)</h3>
-            <p>AmÃ©lioration significative possible. IntensitÃ© de rÃ©Ã©ducation Ã©levÃ©e.</p>
+            <h3 className="font-bold">Phase Subaiguë (3-6 mois)</h3>
+            <p>Amélioration significative possible. Intensité de rééducation élevée.</p>
           </div>
           <div className="border-l-4 border-purple-500 pl-4">
             <h3 className="font-bold">Phase Chronique (6+ mois)</h3>
-            <p>RÃ©cupÃ©ration plus lente mais toujours possible. Maintenance et prÃ©vention.</p>
+            <p>Récupération plus lente mais toujours possible. Maintenance et prévention.</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Approche ThÃ©rapeutique IntÃ©grÃ©e</h2>
+        <h2 className="text-2xl font-bold mb-4">Approche Thérapeutique Intégrée</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li><strong>Ã‰valuation ComplÃ¨te:</strong> Force, mobilitÃ©, Ã©quilibre</li>
-          <li><strong>ThÃ©rapie Neuromusculaire:</strong> Concepts Bobath, Perfetti</li>
-          <li><strong>RÃ©Ã©ducation de la Marche:</strong> Traitement gait-specific</li>
-          <li><strong>Normalisation du Tonus:</strong> Gestion de la spasticitÃ©</li>
-          <li><strong>EntraÃ®nement de l'Ã‰quilibre:</strong> PrÃ©vention des chutes</li>
+          <li><strong>�0valuation Complète:</strong> Force, mobilité, équilibre</li>
+          <li><strong>Thérapie Neuromusculaire:</strong> Concepts Bobath, Perfetti</li>
+          <li><strong>Rééducation de la Marche:</strong> Traitement gait-specific</li>
+          <li><strong>Normalisation du Tonus:</strong> Gestion de la spasticité</li>
+          <li><strong>Entraînement de l'Ã‰quilibre:</strong> PrÃ©vention des chutes</li>
           <li><strong>RÃ©adaptation Fonctionnelle:</strong> ADL (activitÃ©s quotidiennes)</li>
         </ol>
       </section>
@@ -62,76 +62,76 @@ const article8 = createArticle({
         <h2 className="text-2xl font-bold mb-4">Exercices Simples Ã  Domicile</h2>
         <ul className="list-disc pl-6 space-y-2">
           <li>Exercices d'amplitude passive et active</li>
-          <li>Renforcement progressif du cÃ´tÃ© affectÃ©</li>
-          <li>Marche avec support si nÃ©cessaire</li>
-          <li>Assis-debout assistÃ©</li>
+          <li>Renforcement progressif du côté affecté</li>
+          <li>Marche avec support si nécessaire</li>
+          <li>Assis-debout assisté</li>
           <li>Exercices d'Ã©quilibre assis</li>
         </ul>
       </section>
       <section className="bg-green-50 p-6 rounded-lg">
         <h3 className="text-xl font-bold mb-3">ðŸŽ¯ Objectif</h3>
-        <p>RÃ©cupÃ©rer l'indÃ©pendance fonctionnelle et la qualitÃ© de vie. Chaque patient progresse diffÃ©remment. La persÃ©vÃ©rance est clÃ©.</p>
+        <p>RÃ©cupÃ©rer l'indépendance fonctionnelle et la qualité de vie. Chaque patient progresse différemment. La persévérance est clé.</p>
       </section>
     </div>
   ),
   contentAr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ Ù…Ø§ Ø¨Ø¹Ø¯ Ø§Ù„Ø¬Ù„Ø·Ø©</h2>
-        <p>Ø¨Ø¹Ø¯ Ø§Ù„Ø³ÙƒØªØ© Ø§Ù„Ø¯Ù…Ø§ØºÙŠØ©ØŒ Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ Ø§Ù„Ù…Ø¨ÙƒØ±Ø© Ø­Ø§Ø³Ù…Ø© Ù„ØªØ¹Ø¸ÙŠÙ… Ø§Ù„ØªØ¹Ø§ÙÙŠ. Ø§Ù„Ù…Ø±ÙˆÙ†Ø© Ø§Ù„Ø¹ØµØ¨ÙŠØ© ØªØ³Ù…Ø­ Ø¨Ø¥Ø¹Ø§Ø¯Ø© ØªØ£Ù‡ÙŠÙ„ Ù…Ù„Ø­ÙˆØ¸Ø©.</p>
+        <h2 className="text-2xl font-bold mb-4">إعادة ا�تأ�!�`� �&ا بعد ا�ج�طة</h2>
+        <p>بعد ا�سْتة ا�د�&اغ�`ة�R إعادة ا�تأ�!�`� ا��&بْرة حاس�&ة �تعظ�`�& ا�تعاف�`. ا��&ر��� ة ا�عصب�`ة تس�&ح بإعادة تأ�!�`� �&�ح��ظة.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ø¢Ø«Ø§Ø± Ø§Ù„Ù…Ø­ØªÙ…Ù„Ø© Ù„Ù„Ø¬Ù„Ø·Ø©</h2>
+        <h2 className="text-2xl font-bold mb-4">ا�آثار ا��&حت�&�ة ��ج�طة</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Ø¶Ø¹Ù Ø£Ùˆ Ø´Ù„Ù„ Ù…Ù† Ø¬Ø§Ù†Ø¨ ÙˆØ§Ø­Ø¯</li>
-          <li>Ø§Ø¶Ø·Ø±Ø§Ø¨Ø§Øª Ø§Ù„ØªÙˆØ§Ø²Ù† ÙˆØ§Ù„ØªÙ†Ø³ÙŠÙ‚</li>
-          <li>ØªØ´Ù†Ø¬ (Ø²ÙŠØ§Ø¯Ø© ØªÙˆØªØ± Ø§Ù„Ø¹Ø¶Ù„Ø§Øª)</li>
-          <li>Ù…Ø´Ø§ÙƒÙ„ Ø§Ù„ÙƒÙ„Ø§Ù… Ø£Ùˆ Ø§Ù„Ø¨Ù„Ø¹</li>
-          <li>ÙÙ‚Ø¯Ø§Ù† Ø§Ù„Ø¥Ø­Ø³Ø§Ø³</li>
-          <li>Ù…Ø´Ø§ÙƒÙ„ Ø¥Ø¯Ø±Ø§ÙƒÙŠØ© Ø£Ùˆ Ø¹Ø§Ø·ÙÙŠØ©</li>
+          <li>ضعف أ�� ش�� �&�  جا� ب ��احد</li>
+          <li>اضطرابات ا�ت��از�  ��ا�ت� س�`�</li>
+          <li>تش� ج (ز�`ادة ت��تر ا�عض�ات)</li>
+          <li>�&شاْ� ا�ْ�ا�& أ�� ا�ب�ع</li>
+          <li>ف�دا�  ا�إحساس</li>
+          <li>�&شاْ� إدراْ�`ة أ�� عاطف�`ة</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ù†Ø§ÙØ°Ø© Ø§Ù„Ø´ÙØ§Ø¡</h2>
+        <h2 className="text-2xl font-bold mb-4">� افذة ا�شفاء</h2>
         <div className="space-y-3">
           <div className="border-r-4 border-green-500 pr-4">
-            <h3 className="font-bold">Ø§Ù„Ù…Ø±Ø­Ù„Ø© Ø§Ù„Ø­Ø§Ø¯Ø© (0-3 Ø£Ø´Ù‡Ø±)</h3>
-            <p>ØªØ¹Ø§ÙÙ ØªÙ„Ù‚Ø§Ø¦ÙŠ ÙˆØ£Ù‚ØµÙ‰ Ù…Ø±ÙˆÙ†Ø© Ø¹ØµØ¨ÙŠØ©. Ø¨Ø¯Ø¡ Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ ÙÙˆØ±Ø§Ù‹.</p>
+            <h3 className="font-bold">ا��&رح�ة ا�حادة (0-3 أش�!ر)</h3>
+            <p>تعافٍ ت��ائ�` ��أ�ص�0 �&ر��� ة عصب�`ة. بدء إعادة ا�تأ�!�`� ف��را�9.</p>
           </div>
           <div className="border-r-4 border-blue-500 pr-4">
-            <h3 className="font-bold">Ø§Ù„Ù…Ø±Ø­Ù„Ø© ÙÙˆÙ‚ Ø§Ù„Ø­Ø§Ø¯Ø© (3-6 Ø£Ø´Ù‡Ø±)</h3>
-            <p>ØªØ­Ø³Ù† ÙƒØ¨ÙŠØ± Ù…Ù…ÙƒÙ†. ÙƒØ«Ø§ÙØ© Ø¥Ø¹Ø§Ø¯Ø© Ø§Ù„ØªØ£Ù‡ÙŠÙ„ Ø¹Ø§Ù„ÙŠØ©.</p>
+            <h3 className="font-bold">ا��&رح�ة ف��� ا�حادة (3-6 أش�!ر)</h3>
+            <p>تحس�  ْب�`ر �&�&ْ� . ْثافة إعادة ا�تأ�!�`� عا��`ة.</p>
           </div>
           <div className="border-r-4 border-purple-500 pr-4">
-            <h3 className="font-bold">Ø§Ù„Ù…Ø±Ø­Ù„Ø© Ø§Ù„Ù…Ø²Ù…Ù†Ø© (6+ Ø£Ø´Ù‡Ø±)</h3>
-            <p>Ø§Ù„ØªØ¹Ø§ÙÙŠ Ø£Ø¨Ø·Ø£ ÙˆÙ„ÙƒÙ† Ù„Ø§ ÙŠØ²Ø§Ù„ Ù…Ù…ÙƒÙ†Ø§Ù‹. Ø§Ù„ØµÙŠØ§Ù†Ø© ÙˆØ§Ù„ÙˆÙ‚Ø§ÙŠØ©.</p>
+            <h3 className="font-bold">ا��&رح�ة ا��&ز�&� ة (6+ أش�!ر)</h3>
+            <p>ا�تعاف�` أبطأ ���ْ�  �ا �`زا� �&�&ْ� ا�9. ا�ص�`ا� ة ��ا����ا�`ة.</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ù†Ù‡Ø¬ Ø§Ù„Ø¹Ù„Ø§Ø¬ÙŠ Ø§Ù„Ù…ØªÙƒØ§Ù…Ù„</h2>
+        <h2 className="text-2xl font-bold mb-4">ا�� �!ج ا�ع�اج�` ا��&تْا�&�</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li><strong>Ø§Ù„ØªÙ‚ÙŠÙŠÙ… Ø§Ù„Ø´Ø§Ù…Ù„:</strong> Ø§Ù„Ù‚ÙˆØ©ØŒ Ø§Ù„Ø­Ø±ÙƒØ©ØŒ Ø§Ù„ØªÙˆØ§Ø²Ù†</li>
-          <li><strong>Ø§Ù„Ø¹Ù„Ø§Ø¬ Ø§Ù„Ø¹ØµØ¨ÙŠ Ø§Ù„Ø¹Ø¶Ù„ÙŠ:</strong> ØªÙ‚Ù†ÙŠØ§Øª Ù…ØªØ®ØµØµØ©</li>
-          <li><strong>Ø¥Ø¹Ø§Ø¯Ø© ØªØ£Ù‡ÙŠÙ„ Ø§Ù„Ù…Ø´ÙŠ:</strong> Ø¹Ù„Ø§Ø¬ Ø®Ø§Øµ Ø¨Ø§Ù„Ù…Ø´ÙŠ</li>
-          <li><strong>ØªØ·Ø¨ÙŠØ¹ Ø§Ù„ØªÙˆØªØ±:</strong> Ø¥Ø¯Ø§Ø±Ø© Ø§Ù„ØªØ´Ù†Ø¬</li>
-          <li><strong>ØªØ¯Ø±ÙŠØ¨ Ø§Ù„ØªÙˆØ§Ø²Ù†:</strong> Ù…Ù†Ø¹ Ø§Ù„Ø³Ù‚ÙˆØ·</li>
-          <li><strong>Ø¥Ø¹Ø§Ø¯Ø© ØªØ£Ù‡ÙŠÙ„ ÙˆØ¸ÙŠÙÙŠØ©:</strong> Ø£Ù†Ø´Ø·Ø© ÙŠÙˆÙ…ÙŠØ©</li>
+          <li><strong>ا�ت��`�`�& ا�شا�&�:</strong> ا����ة�R ا�حرْة�R ا�ت��از� </li>
+          <li><strong>ا�ع�اج ا�عصب�` ا�عض��`:</strong> ت�� �`ات �&تخصصة</li>
+          <li><strong>إعادة تأ�!�`� ا��&ش�`:</strong> ع�اج خاص با��&ش�`</li>
+          <li><strong>تطب�`ع ا�ت��تر:</strong> إدارة ا�تش� ج</li>
+          <li><strong>تدر�`ب ا�ت��از� :</strong> �&� ع ا�س���ط</li>
+          <li><strong>إعادة تأ�!�`� ��ظ�`ف�`ة:</strong> أ� شطة �`���&�`ة</li>
         </ol>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">ØªÙ…Ø§Ø±ÙŠÙ† Ø¨Ø³ÙŠØ·Ø© Ù…Ù†Ø²Ù„ÙŠØ©</h2>
+        <h2 className="text-2xl font-bold mb-4">ت�&ار�`�  بس�`طة �&� ز��`ة</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>ØªÙ…Ø§Ø±ÙŠÙ† Ø§Ù„Ù†Ø·Ø§Ù‚ Ø§Ù„Ø³Ù„Ø¨ÙŠ ÙˆØ§Ù„Ø¥ÙŠØ¬Ø§Ø¨ÙŠ</li>
-          <li>ØªÙ‚ÙˆÙŠØ© ØªØ¯Ø±ÙŠØ¬ÙŠ Ù„Ù„Ø¬Ø§Ù†Ø¨ Ø§Ù„Ù…ØµØ§Ø¨</li>
-          <li>Ø§Ù„Ù…Ø´ÙŠ Ù…Ø¹ Ø§Ù„Ø¯Ø¹Ù… Ø¥Ø°Ø§ Ù„Ø²Ù… Ø§Ù„Ø£Ù…Ø±</li>
-          <li>Ø§Ù„Ø¬Ù„ÙˆØ³ ÙˆØ§Ù„ÙˆÙ‚ÙˆÙ Ø¨Ù…Ø³Ø§Ø¹Ø¯Ø©</li>
-          <li>ØªÙ…Ø§Ø±ÙŠÙ† Ø§Ù„ØªÙˆØ§Ø²Ù† Ø§Ù„Ø¬Ø§Ù„Ø³Ø©</li>
+          <li>ت�&ار�`�  ا�� طا� ا�س�ب�` ��ا�إ�`جاب�`</li>
+          <li>ت����`ة تدر�`ج�` ��جا� ب ا��&صاب</li>
+          <li>ا��&ش�` �&ع ا�دع�& إذا �ز�& ا�أ�&ر</li>
+          <li>ا�ج���س ��ا������ف ب�&ساعدة</li>
+          <li>ت�&ار�`�  ا�ت��از�  ا�جا�سة</li>
         </ul>
       </section>
       <section className="bg-green-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">ðŸŽ¯ Ø§Ù„Ù‡Ø¯Ù</h3>
-        <p>Ø§Ø³ØªØ¹Ø§Ø¯Ø© Ø§Ù„Ø§Ø³ØªÙ‚Ù„Ø§Ù„ÙŠØ© Ø§Ù„ÙˆØ¸ÙŠÙÙŠØ© ÙˆØ¬ÙˆØ¯Ø© Ø§Ù„Ø­ÙŠØ§Ø©. ÙŠØªØ·ÙˆØ± ÙƒÙ„ Ù…Ø±ÙŠØ¶ Ø¨Ø´ÙƒÙ„ Ù…Ø®ØªÙ„Ù. Ø§Ù„Ø¥ØµØ±Ø§Ø± Ù‡Ùˆ Ø§Ù„Ù…ÙØªØ§Ø­.</p>
+        <h3 className="text-xl font-bold mb-3">�x}� ا��!دف</h3>
+        <p>استعادة ا�است��ا��`ة ا���ظ�`ف�`ة ��ج��دة ا�ح�`اة. �`تط��ر ْ� �&ر�`ض بشْ� �&خت�ف. ا�إصرار �!�� ا��&فتاح.</p>
       </section>
     </div>
   ),

@@ -6,34 +6,34 @@ import { Zap, Flame, Stethoscope, Brain, Baby, Dumbbell, Bone, ArrowUpDown } fro
 const article1 = createArticle({
   slug: 'sciatique-hernie-discale',
   titleFr: 'La Sciatique & Hernie Discale: Guide Complet',
-  titleAr: 'Ø¹Ø±Ù‚ Ø§Ù„Ù†Ø³Ø§ ÙˆØ§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚ Ø§Ù„ØºØ¶Ø±ÙˆÙÙŠ: Ø¯Ù„ÙŠÙ„ Ø´Ø§Ù…Ù„',
-  descriptionFr: 'DÃ©couvrez comment traiter la sciatique et la hernie discale avec la kinÃ©sithÃ©rapie. SymptÃ´mes, causes, traitements et exercices recommandÃ©s par nos experts Ã  Casablanca.',
-  descriptionAr: 'ØªØ¹Ø±Ù Ø¹Ù„Ù‰ ÙƒÙŠÙÙŠØ© Ø¹Ù„Ø§Ø¬ Ø¹Ø±Ù‚ Ø§Ù„Ù†Ø³Ø§ ÙˆØ§Ù„Ø§Ù†Ø²Ù„Ø§Ù‚ Ø§Ù„ØºØ¶Ø±ÙˆÙÙŠ Ø¨Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ. Ø§Ù„Ø£Ø¹Ø±Ø§Ø¶ ÙˆØ§Ù„Ø£Ø³Ø¨Ø§Ø¨ ÙˆØ§Ù„Ø¹Ù„Ø§Ø¬Ø§Øª ÙˆØ§Ù„ØªÙ…Ø§Ø±ÙŠÙ† Ø§Ù„Ù…ÙˆØµÙ‰ Ø¨Ù‡Ø§ Ù…Ù† Ù‚Ø¨Ù„ Ø®Ø¨Ø±Ø§Ø¦Ù†Ø§.',
-  keywordsFr: 'sciatique, hernie discale, kinÃ© casablanca, traitement sciatique, mal de dos, douleur jambe',
-  keywordsAr: 'Ø¹Ø±Ù‚ Ø§Ù„Ù†Ø³Ø§, Ø§Ù†Ø²Ù„Ø§Ù‚ ØºØ¶Ø±ÙˆÙÙŠ, Ù…Ø±ÙˆØ¶ Ø·Ø¨ÙŠ, Ø¹Ù„Ø§Ø¬ Ø¹Ø±Ù‚ Ø§Ù„Ù†Ø³Ø§, Ø£Ù„Ù… Ø§Ù„Ø¸Ù‡Ø±, Ø£Ù„Ù… Ø§Ù„Ø³Ø§Ù‚',
+  titleAr: 'عر� ا�� سا ��ا�ا� ز�ا� ا�غضر��ف�`: د��`� شا�&�',
+  descriptionFr: 'Découvrez comment traiter la sciatique et la hernie discale avec la kinésithérapie. Symptômes, causes, traitements et exercices recommandés par nos experts à Casablanca.',
+  descriptionAr: 'تعرف ع��0 ْ�`ف�`ة ع�اج عر� ا�� سا ��ا�ا� ز�ا� ا�غضر��ف�` با�تر���`ض ا�طب�`. ا�أعراض ��ا�أسباب ��ا�ع�اجات ��ا�ت�&ار�`�  ا��&��ص�0 ب�!ا �&�  �ب� خبرائ� ا.',
+  keywordsFr: 'sciatique, hernie discale, kiné casablanca, traitement sciatique, mal de dos, douleur jambe',
+  keywordsAr: 'عر� ا�� سا, ا� ز�ا� غضر��ف�`, �&ر��ض طب�`, ع�اج عر� ا�� سا, أ��& ا�ظ�!ر, أ��& ا�سا�',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '5 min de lecture',
-  readTimeAr: '5 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
+  readTimeAr: '5 د�ائ� �راءة',
   contentFr: (
     <div className="space-y-6">
       <section>
         <h2 className="text-2xl font-bold mb-4">Qu'est-ce que la sciatique?</h2>
-        <p>La sciatique est une douleur causÃ©e par l'irritation du nerf sciatique, le plus long nerf du corps humain. Elle irradie gÃ©nÃ©ralement du bas du dos jusqu'au pied, provoquant une douleur aiguÃ«, des fourmillements ou une sensation de brÃ»lure en bas de la jambe.</p>
+        <p>La sciatique est une douleur causée par l'irritation du nerf sciatique, le plus long nerf du corps humain. Elle irradie gÃ©nÃ©ralement du bas du dos jusqu'au pied, provoquant une douleur aiguë, des fourmillements ou une sensation de brûlure en bas de la jambe.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">SymptÃ´mes Courants</h2>
+        <h2 className="text-2xl font-bold mb-4">Symptômes Courants</h2>
         <ul className="list-disc pl-6 space-y-2">
           <li>Douleur vive dans la fesse et le long de la jambe</li>
-          <li>Sensation de dÃ©charge Ã©lectrique</li>
+          <li>Sensation de décharge électrique</li>
           <li>Engourdissement ou fourmillements</li>
-          <li>DifficultÃ© Ã  marcher ou Ã  se lever</li>
-          <li>Douleur accentuÃ©e en position assise prolongÃ©e</li>
+          <li>Difficulté à marcher ou à se lever</li>
+          <li>Douleur accentuée en position assise prolongée</li>
         </ul>
       </section>
       <section>
         <h2 className="text-2xl font-bold mb-4">Causes de la Sciatique</h2>
-        <p>La cause la plus frÃ©quente est une hernie discale comprimant le nerf sciatique. D'autres causes incluent :</p>
+        <p>La cause la plus fréquente est une hernie discale comprimant le nerf sciatique. D'autres causes incluent :</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
           <li>Arthrose et dÃ©gÃ©nÃ©rescence discale</li>
           <li>StÃ©nose spinale (rÃ©trÃ©cissement du canal rachidien)</li>
@@ -50,33 +50,33 @@ const article1 = createArticle({
           <li><strong>DÃ©compression VertÃ©brale:</strong> Exercices spÃ©cialisÃ©s de McKenzie</li>
           <li><strong>Ã‰lectrothÃ©rapie:</strong> Traitement antalgique pour rÃ©duire la douleur</li>
           <li><strong>Renforcement Musculaire:</strong> Exercices des stabilisateurs du dos</li>
-          <li><strong>Correction Posturale:</strong> Conseils d'ergonomie et prÃ©vention</li>
+          <li><strong>Correction Posturale:</strong> Conseils d'ergonomie et prévention</li>
         </ol>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Protocole de RÃ©Ã©ducation</h2>
+        <h2 className="text-2xl font-bold mb-4">Protocole de Rééducation</h2>
         <p>Un protocole typique comprend :</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>SÃ©ances 2-3 fois par semaine pendant 4-6 semaines</li>
-          <li>Ã‰tirements quotidiens du muscle piriforme</li>
+          <li>Séances 2-3 fois par semaine pendant 4-6 semaines</li>
+          <li>�0tirements quotidiens du muscle piriforme</li>
           <li>Marche quotidienne de 30 minutes</li>
           <li>Renforcement musculaire du core</li>
-          <li>Ã‰viter les mouvements qui aggravent la douleur</li>
+          <li>�0viter les mouvements qui aggravent la douleur</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">PrÃ©vention</h2>
-        <p>Pour prevenir les rÃ©cidives :</p>
+        <h2 className="text-2xl font-bold mb-4">Prévention</h2>
+        <p>Pour prevenir les récidives :</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
           <li>Maintenir une bonne posture au travail</li>
-          <li>Pratiquer une activitÃ© physique rÃ©guliÃ¨re</li>
-          <li>Ã‰viter de soulever des charges lourdes</li>
-          <li>Faire des Ã©tirements rÃ©guliers</li>
-          <li>Maintenir un poids santÃ©</li>
+          <li>Pratiquer une activité physique régulière</li>
+          <li>�0viter de soulever des charges lourdes</li>
+          <li>Faire des étirements réguliers</li>
+          <li>Maintenir un poids santé</li>
         </ul>
       </section>
       <section className="bg-blue-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">ðŸ’¡ Conseil Professionnel</h3>
+        <h3 className="text-xl font-bold mb-3">�x� Conseil Professionnel</h3>
         <p>Si vous souffrez d'une sciatique depuis plus de 2-3 semaines sans amÃ©lioration, consultez notre Ã©quipe de kinÃ©sithÃ©rapeutes Ã  Casablanca. Le traitement prÃ©coce prÃ©vient les complications.</p>
       </section>
     </div>
@@ -148,9 +148,9 @@ const article1 = createArticle({
     </div>
   ),
   relatedArticles: [
-    { slug: 'lombalgie-cervicalgie', titleFr: 'Lombalgie & Cervicalgie', titleAr: 'Ø¢Ù„Ø§Ù… Ø§Ù„Ø¸Ù‡Ø± ÙˆØ§Ù„Ø±Ù‚Ø¨Ø©', icon: <ArrowUpDown size={20} /> },
-    { slug: 'posture-ergonomie', titleFr: 'Posture & Ergonomie', titleAr: 'Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© ÙˆØ§Ù„Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§', icon: <Stethoscope size={20} /> },
-    { slug: 'traumatologie-sport', titleFr: 'Traumatologie du Sport', titleAr: 'Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ©', icon: <Dumbbell size={20} /> },
+    { slug: 'lombalgie-cervicalgie', titleFr: 'Lombalgie & Cervicalgie', titleAr: 'آ�ا�& ا�ظ�!ر ��ا�ر�بة', icon: <ArrowUpDown size={20} /> },
+    { slug: 'posture-ergonomie', titleFr: 'Posture & Ergonomie', titleAr: 'ا���ضع�`ة ��ا�إرج��� ���&�`ا', icon: <Stethoscope size={20} /> },
+    { slug: 'traumatologie-sport', titleFr: 'Traumatologie du Sport', titleAr: 'ا�إصابات ا�ر�`اض�`ة', icon: <Dumbbell size={20} /> },
   ]
 });
 

@@ -30,19 +30,19 @@ interface ArticleData {
 export const createArticle = (data: ArticleData) => {
   const Article: React.FC<ArticleProps> = ({ lang }) => {
     const t = lang === 'fr' ? {
-      publishedBy: 'PubliÃ© par Centre Chnider',
+      publishedBy: 'Publié par Centre Chnider',
       readTime: data.readTimeFr,
       relatedArticles: 'Articles Connexes',
       bookAppointment: 'Prendre RDV',
       shareArticle: 'Partager cet article',
       backToBlog: 'Retour au Blog'
     } : {
-      publishedBy: 'Ù†Ø´Ø± Ø¨ÙˆØ§Ø³Ø·Ø© Ù…Ø±ÙƒØ² Ø§Ø´Ù†ÙŠØ¯Ø±',
+      publishedBy: 'نشر بواسطة مركز اشنيدر',
       readTime: data.readTimeAr,
-      relatedArticles: 'Ù…Ù‚Ø§Ù„Ø§Øª Ø°Ø§Øª ØµÙ„Ø©',
-      bookAppointment: 'Ø­Ø¬Ø² Ù…ÙˆØ¹Ø¯',
-      shareArticle: 'Ù…Ø´Ø§Ø±ÙƒØ© Ø§Ù„Ù…Ù‚Ø§Ù„',
-      backToBlog: 'Ø§Ù„Ø¹ÙˆØ¯Ø© Ù„Ù„Ù…Ø¯ÙˆÙ†Ø©'
+      relatedArticles: 'مقالات ذات صلة',
+      bookAppointment: 'حجز موعد',
+      shareArticle: 'مشاركة المقال',
+      backToBlog: 'العودة للمدونة'
     };
 
     const prefix = lang === 'ar' ? '/ar' : '';
@@ -93,12 +93,12 @@ export const createArticle = (data: ArticleData) => {
               {/* Call to Action */}
               <div className="mt-12 p-8 bg-medical-50 rounded-xl border-l-4 border-medical-600">
                 <h3 className="text-2xl font-bold text-medical-900 mb-4">
-                  {lang === 'fr' ? 'Vous souffrez de ces symptÃ´mes ?' : 'Ù‡Ù„ ØªØ¹Ø§Ù†ÙŠ Ù…Ù† Ù‡Ø°Ù‡ Ø§Ù„Ø£Ø¹Ø±Ø§Ø¶ØŸ'}
+                  {lang === 'fr' ? 'Vous souffrez de ces symptômes ?' : 'هل تعاني من هذه الأعراض؟'}
                 </h3>
                 <p className="text-gray-700 mb-6">
                   {lang === 'fr' 
-                    ? 'Notre Ã©quipe de kinÃ©sithÃ©rapeutes expÃ©rimentÃ©s est prÃªte Ã  vous aider. Contactez-nous dÃ¨s maintenant pour une consultation.'
-                    : 'ÙØ±ÙŠÙ‚Ù†Ø§ Ù…Ù† Ø§Ù„Ù…Ø¹Ø§Ù„Ø¬ÙŠÙ† Ø§Ù„ÙÙŠØ²ÙŠØ§Ø¦ÙŠÙŠÙ† Ø§Ù„Ù…ØªØ®ØµØµÙŠÙ† Ø¬Ø§Ù‡Ø² Ù„Ù…Ø³Ø§Ø¹Ø¯ØªÙƒ. Ø§ØªØµÙ„ Ø¨Ù†Ø§ Ø§Ù„Ø¢Ù† Ù„Ù„Ø­ØµÙˆÙ„ Ø¹Ù„Ù‰ Ø§Ø³ØªØ´Ø§Ø±Ø©.'}
+                    ? 'Notre équipe de kinésithérapeutes expérimentés est prête à vous aider. Contactez-nous dès maintenant pour une consultation.'
+                    : 'فريقنا من المعالجين الفيزيائيين المتخصصين جاهز لمساعدتك. اتصل بنا الآن للحصول على استشارة.'}
                 </p>
                 <a 
                   href={getWhatsAppBookingLink(lang, title)}
@@ -106,7 +106,7 @@ export const createArticle = (data: ArticleData) => {
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition"
                 >
-                  {lang === 'fr' ? 'Contactez-nous sur WhatsApp' : 'ØªÙˆØ§ØµÙ„ Ù…Ø¹Ù†Ø§ Ø¹Ø¨Ø± ÙˆØ§ØªØ³Ø§Ø¨'}
+                  {lang === 'fr' ? 'Contactez-nous sur WhatsApp' : 'تواصل معنا عبر واتساب'}
                 </a>
               </div>
 

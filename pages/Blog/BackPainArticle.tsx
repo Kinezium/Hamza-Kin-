@@ -4,20 +4,20 @@ import { ArrowUpDown } from 'lucide-react';
 const article2 = createArticle({
   slug: 'lombalgie-cervicalgie',
   titleFr: 'Lombalgie & Cervicalgie: Solutions Efficaces',
-  titleAr: 'Ø¢Ù„Ø§Ù… Ø§Ù„Ø¸Ù‡Ø± ÙˆØ§Ù„Ø±Ù‚Ø¨Ø©: Ø­Ù„ÙˆÙ„ ÙØ¹Ø§Ù„Ø©',
-  descriptionFr: 'Guide complet sur les lombalgies et cervicalgies. DÃ©couvrez nos techniques de traitement Ã  Casablanca pour soulager votre dos et votre cou.',
-  descriptionAr: 'Ø¯Ù„ÙŠÙ„ Ø´Ø§Ù…Ù„ Ø¹Ù† Ø¢Ù„Ø§Ù… Ø§Ù„Ø¸Ù‡Ø± ÙˆØ§Ù„Ø±Ù‚Ø¨Ø©. Ø§ÙƒØªØ´Ù ØªÙ‚Ù†ÙŠØ§Øª Ø§Ù„Ø¹Ù„Ø§Ø¬ Ù„Ø¯ÙŠÙ†Ø§ ÙÙŠ Ø§Ù„Ø¯Ø§Ø± Ø§Ù„Ø¨ÙŠØ¶Ø§Ø¡ Ù„ØªØ®ÙÙŠÙ Ø¢Ù„Ø§Ù… Ø§Ù„Ø¸Ù‡Ø± ÙˆØ§Ù„Ø±Ù‚Ø¨Ø©.',
-  keywordsFr: 'lombalgie, cervicalgie, mal de dos, kinÃ© casablanca, traitement dos',
-  keywordsAr: 'Ø¢Ù„Ø§Ù… Ø£Ø³ÙÙ„ Ø§Ù„Ø¸Ù‡Ø±, Ø£Ù„Ù… Ø§Ù„Ø±Ù‚Ø¨Ø©, Ø¹Ù„Ø§Ø¬ Ø§Ù„Ø¸Ù‡Ø±, Ù…Ø±ÙˆØ¶ Ø·Ø¨ÙŠ',
+  titleAr: 'آ�ا�& ا�ظ�!ر ��ا�ر�بة: ح���� فعا�ة',
+  descriptionFr: 'Guide complet sur les lombalgies et cervicalgies. Découvrez nos techniques de traitement à Casablanca pour soulager votre dos et votre cou.',
+  descriptionAr: 'د��`� شا�&� ع�  آ�ا�& ا�ظ�!ر ��ا�ر�بة. اْتشف ت�� �`ات ا�ع�اج �د�`� ا ف�` ا�دار ا�ب�`ضاء �تخف�`ف آ�ا�& ا�ظ�!ر ��ا�ر�بة.',
+  keywordsFr: 'lombalgie, cervicalgie, mal de dos, kiné casablanca, traitement dos',
+  keywordsAr: 'آ�ا�& أسف� ا�ظ�!ر, أ��& ا�ر�بة, ع�اج ا�ظ�!ر, �&ر��ض طب�`',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '6 min de lecture',
-  readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
+  readTimeAr: '6 د�ائ� �راءة',
   contentFr: (
     <div className="space-y-6">
       <section>
         <h2 className="text-2xl font-bold mb-4">Lombalgie: Le Mal Moderne</h2>
-        <p>La lombologie reprÃ©sente 80% des douleurs de dos Ã  Casablanca. Elle est souvent causÃ©e par le stress, la sÃ©dentaritÃ© et le travail devant l'Ã©cran. La cervicalgie affecte Ã©galement une grande partie de la population active.</p>
+        <p>La lombologie reprÃ©sente 80% des douleurs de dos Ã  Casablanca. Elle est souvent causÃ©e par le stress, la sÃ©dentaritÃ© et le travail devant l'écran. La cervicalgie affecte également une grande partie de la population active.</p>
       </section>
       <section>
         <h2 className="text-2xl font-bold mb-4">Causes Principales</h2>
@@ -49,79 +49,79 @@ const article2 = createArticle({
           <li><strong>ThÃ©rapie Manuelle:</strong> Massage thÃ©rapeutique et mobilisation</li>
           <li><strong>Correction Posturale:</strong> AmÃ©lioration de l'ergonomie</li>
           <li><strong>Renforcement Musculaire:</strong> Stabilisation du core</li>
-          <li><strong>DehyatothÃ©rapie:</strong> Relaxation musculaire</li>
+          <li><strong>Dehyatothérapie:</strong> Relaxation musculaire</li>
         </ol>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Exercices Ã  Domicile</h2>
-        <p>Pour accÃ©lÃ©rer la rÃ©cupÃ©ration :</p>
+        <h2 className="text-2xl font-bold mb-4">Exercices à Domicile</h2>
+        <p>Pour accélérer la récupération :</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
           <li>Exercices de gainage 10 min/jour</li>
           <li>Pauses actives toutes les heures</li>
-          <li>Ã‰tirements cervicaux et lombaires</li>
+          <li>�0tirements cervicaux et lombaires</li>
           <li>Marche quotidienne 30 minutes</li>
           <li>Yoga ou pilates 2-3 fois/semaine</li>
         </ul>
       </section>
       <section className="bg-green-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">âœ… PrÃ©vention</h3>
-        <p>Ajustez votre poste de travail, prenez des pauses rÃ©guliÃ¨res et pratiquez une activitÃ© physique modÃ©rÃ©e. Une posture correcte peut prÃ©venir 70% des lombalgies.</p>
+        <h3 className="text-xl font-bold mb-3">�S& Prévention</h3>
+        <p>Ajustez votre poste de travail, prenez des pauses régulières et pratiquez une activité physique modérée. Une posture correcte peut prévenir 70% des lombalgies.</p>
       </section>
     </div>
   ),
   contentAr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ø¢Ù„Ø§Ù… Ø£Ø³ÙÙ„ Ø§Ù„Ø¸Ù‡Ø±: Ø§Ù„Ù…Ø±Ø¶ Ø§Ù„Ø­Ø¯ÙŠØ«</h2>
-        <p>ØªÙ…Ø«Ù„ Ø¢Ù„Ø§Ù… Ø£Ø³ÙÙ„ Ø§Ù„Ø¸Ù‡Ø± 80% Ù…Ù† Ø­Ø§Ù„Ø§Øª Ø£Ù„Ù… Ø§Ù„Ø¸Ù‡Ø± Ø¨Ø§Ù„Ø¯Ø§Ø± Ø§Ù„Ø¨ÙŠØ¶Ø§Ø¡. ØºØ§Ù„Ø¨Ø§Ù‹ Ù…Ø§ ØªÙƒÙˆÙ† Ù†Ø§Ø¬Ù…Ø© Ø¹Ù† Ø§Ù„Ø¥Ø¬Ù‡Ø§Ø¯ ÙˆØ§Ù„Ø®Ù…ÙˆÙ„ ÙˆÙ‚Ø¶Ø§Ø¡ Ø§Ù„ÙˆÙ‚Øª Ø£Ù…Ø§Ù… Ø§Ù„Ø´Ø§Ø´Ø©. ÙŠØ¤Ø«Ø± Ø£Ù„Ù… Ø§Ù„Ø±Ù‚Ø¨Ø© Ø£ÙŠØ¶Ø§Ù‹ Ø¹Ù„Ù‰ Ø¬Ø²Ø¡ ÙƒØ¨ÙŠØ± Ù…Ù† Ø§Ù„Ø³ÙƒØ§Ù† Ø§Ù„Ù†Ø´Ø·ÙŠÙ†.</p>
+        <h2 className="text-2xl font-bold mb-4">ا�آ�ا�& أسف� ا�ظ�!ر: ا��&رض ا�حد�`ث</h2>
+        <p>ت�&ث� آ�ا�& أسف� ا�ظ�!ر 80% �&�  حا�ات أ��& ا�ظ�!ر با�دار ا�ب�`ضاء. غا�با�9 �&ا تْ���  � اج�&ة ع�  ا�إج�!اد ��ا�خ�&��� ���ضاء ا����ت أ�&ا�& ا�شاشة. �`ؤثر أ��& ا�ر�بة أ�`ضا�9 ع��0 جزء ْب�`ر �&�  ا�سْا�  ا�� شط�`� .</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ø£Ø³Ø¨Ø§Ø¨ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©</h2>
+        <h2 className="text-2xl font-bold mb-4">ا�أسباب ا�رئ�`س�`ة</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© Ø§Ù„Ø®Ø§Ø·Ø¦Ø© ÙÙŠ Ø§Ù„Ø¹Ù…Ù„</li>
-          <li>Ø¹Ø¯Ù… Ù…Ù…Ø§Ø±Ø³Ø© Ø§Ù„Ù†Ø´Ø§Ø· Ø§Ù„Ø¨Ø¯Ù†ÙŠ Ø¨Ø§Ù†ØªØ¸Ø§Ù…</li>
-          <li>Ø§Ù„Ø¥Ø¬Ù‡Ø§Ø¯ ÙˆØ§Ù„ØªÙˆØªØ± Ø§Ù„Ø¹Ø¶Ù„ÙŠ</li>
-          <li>Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ù…ÙØ§ØµÙ„</li>
-          <li>Ø§Ù„ØªØ´Ù†Ø¬Ø§Øª Ø§Ù„Ø¹Ø¶Ù„ÙŠØ© Ø§Ù„Ù…Ø²Ù…Ù†Ø©</li>
-          <li>Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª ÙˆØ§Ù„Ø­ÙˆØ§Ø¯Ø«</li>
+          <li>ا���ضع�`ة ا�خاطئة ف�` ا�ع�&�</li>
+          <li>عد�& �&�&ارسة ا�� شاط ا�بد� �` با� تظا�&</li>
+          <li>ا�إج�!اد ��ا�ت��تر ا�عض��`</li>
+          <li>خش��� ة ا��&فاص�</li>
+          <li>ا�تش� جات ا�عض��`ة ا��&ز�&� ة</li>
+          <li>ا�إصابات ��ا�ح��ادث</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ø£Ø¹Ø±Ø§Ø¶ Ø§Ù„ØªÙŠ ÙŠØ¬Ø¨ Ø§Ù„ØªØ¹Ø±Ù Ø¹Ù„ÙŠÙ‡Ø§</h2>
+        <h2 className="text-2xl font-bold mb-4">ا�أعراض ا�ت�` �`جب ا�تعرف ع��`�!ا</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>ØªÙŠØ¨Ø³ ØµØ¨Ø§Ø­ÙŠ ÙÙŠ Ø§Ù„Ø¸Ù‡Ø± Ø£Ùˆ Ø§Ù„Ø±Ù‚Ø¨Ø©</li>
-          <li>Ø§Ù†Ø³Ø¯Ø§Ø¯ Ù…ÙØ§Ø¬Ø¦ (Ù„ÙˆÙ…Ø¨Ø§ØºÙˆ)</li>
-          <li>Ø£Ù„Ù… ÙŠÙ…ØªØ¯ Ù†Ø­Ùˆ Ø§Ù„ÙƒØªÙÙŠÙ†</li>
-          <li>ØªØ´Ù†Ø¬Ø§Øª Ø¹Ø¶Ù„ÙŠØ© ÙˆØ§Ø¶Ø­Ø©</li>
-          <li>Ø£Ù„Ù… ÙŠØªÙØ§Ù‚Ù… Ø¨Ø§Ù„ØªÙˆØªØ±</li>
-          <li>ØªØ­Ø¯ÙŠØ¯ Ø§Ù„Ø­Ø±ÙƒØ©</li>
+          <li>ت�`بس صباح�` ف�` ا�ظ�!ر أ�� ا�ر�بة</li>
+          <li>ا� سداد �&فاجئ (����&باغ��)</li>
+          <li>أ��& �`�&تد � ح�� ا�ْتف�`� </li>
+          <li>تش� جات عض��`ة ��اضحة</li>
+          <li>أ��& �`تفا��& با�ت��تر</li>
+          <li>تحد�`د ا�حرْة</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ù†Ù‡Ø¬Ù†Ø§ Ø§Ù„Ø¹Ù„Ø§Ø¬ÙŠ</h2>
-        <p>ÙÙŠ Ù…Ø±ÙƒØ² Ø§Ø´Ù†ÙŠØ¯Ø±ØŒ Ù†Ù‚Ø¯Ù… Ù†Ù‡Ø¬Ø§Ù‹ Ø´Ø§Ù…Ù„Ø§Ù‹:</p>
+        <h2 className="text-2xl font-bold mb-4">� �!ج� ا ا�ع�اج�`</h2>
+        <p>ف�` �&رْز اش� �`در�R � �د�& � �!جا�9 شا�&�ا�9:</p>
         <ol className="list-decimal pl-6 space-y-2 mt-3">
-          <li><strong>Ø§Ù„ØªÙ‚ÙŠÙŠÙ… Ø§Ù„ÙƒØ§Ù…Ù„:</strong> ØªØ´Ø®ÙŠØµ Ø¯Ù‚ÙŠÙ‚ Ù„Ù„Ø³Ø¨Ø¨</li>
-          <li><strong>Ø§Ù„Ø¹Ù„Ø§Ø¬ Ø§Ù„ÙŠØ¯ÙˆÙŠ:</strong> ØªØ¯Ù„ÙŠÙƒ Ø¹Ù„Ø§Ø¬ÙŠ ÙˆØªØ­Ø±ÙŠÙƒ</li>
-          <li><strong>ØªØµØ­ÙŠØ­ Ø§Ù„ÙˆØ¶Ø¹ÙŠØ©:</strong> ØªØ­Ø³ÙŠÙ† Ø§Ù„Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§</li>
-          <li><strong>ØªÙ‚ÙˆÙŠØ© Ø§Ù„Ø¹Ø¶Ù„Ø§Øª:</strong> ØªØ«Ø¨ÙŠØª Ø§Ù„Ø¬Ø°Ø¹</li>
-          <li><strong>Ø§Ù„Ø§Ø³ØªØ±Ø®Ø§Ø¡:</strong> ØªØ®ÙÙŠÙ Ø§Ù„ØªÙˆØªØ± Ø§Ù„Ø¹Ø¶Ù„ÙŠ</li>
+          <li><strong>ا�ت��`�`�& ا�ْا�&�:</strong> تشخ�`ص د��`� ��سبب</li>
+          <li><strong>ا�ع�اج ا��`د���`:</strong> تد��`ْ ع�اج�` ��تحر�`ْ</li>
+          <li><strong>تصح�`ح ا���ضع�`ة:</strong> تحس�`�  ا�إرج��� ���&�`ا</li>
+          <li><strong>ت����`ة ا�عض�ات:</strong> تثب�`ت ا�جذع</li>
+          <li><strong>ا�استرخاء:</strong> تخف�`ف ا�ت��تر ا�عض��`</li>
         </ol>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">ØªÙ…Ø§Ø±ÙŠÙ† Ù…Ù†Ø²Ù„ÙŠØ©</h2>
-        <p>Ù„ØªØ³Ø±ÙŠØ¹ Ø§Ù„ØªØ¹Ø§ÙÙŠ:</p>
+        <h2 className="text-2xl font-bold mb-4">ت�&ار�`�  �&� ز��`ة</h2>
+        <p>�تسر�`ع ا�تعاف�`:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li>ØªÙ…Ø§Ø±ÙŠÙ† ØªÙ‚ÙˆÙŠØ© Ø§Ù„Ø¬Ø°Ø¹ 10 Ø¯Ù‚Ø§Ø¦Ù‚/ÙŠÙˆÙ…</li>
-          <li>Ø§Ø³ØªØ±Ø§Ø­Ø§Øª Ù†Ø´Ø·Ø© ÙƒÙ„ Ø³Ø§Ø¹Ø©</li>
-          <li>ØªÙ…Ø¯ÙŠØ¯Ø§Øª Ù„Ù„Ø±Ù‚Ø¨Ø© ÙˆØ§Ù„Ø¸Ù‡Ø±</li>
-          <li>Ø§Ù„Ù…Ø´ÙŠ Ø§Ù„ÙŠÙˆÙ…ÙŠ 30 Ø¯Ù‚ÙŠÙ‚Ø©</li>
-          <li>Ø§Ù„ÙŠÙˆØºØ§ Ø£Ùˆ Ø¨ÙŠÙ„Ø§ØªÙŠØ³ 2-3 Ù…Ø±Ø§Øª/Ø£Ø³Ø¨ÙˆØ¹</li>
+          <li>ت�&ار�`�  ت����`ة ا�جذع 10 د�ائ�/�`���&</li>
+          <li>استراحات � شطة ْ� ساعة</li>
+          <li>ت�&د�`دات ��ر�بة ��ا�ظ�!ر</li>
+          <li>ا��&ش�` ا��`���&�` 30 د��`�ة</li>
+          <li>ا��`��غا أ�� ب�`�ات�`س 2-3 �&رات/أسب��ع</li>
         </ul>
       </section>
       <section className="bg-green-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">âœ… Ø§Ù„ÙˆÙ‚Ø§ÙŠØ©</h3>
-        <p>Ø§Ø¶Ø¨Ø· Ù…ÙƒØ§Ù† Ø¹Ù…Ù„ÙƒØŒ Ø®Ø° ÙØªØ±Ø§Øª Ø±Ø§Ø­Ø© Ù…Ù†ØªØ¸Ù…Ø© ÙˆØ¬Ø±Ø¨ Ù†Ø´Ø§Ø·Ø§Ù‹ Ø¨Ø¯Ù†ÙŠØ§Ù‹ Ù…Ø¹ØªØ¯Ù„Ø§Ù‹. Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© Ø§Ù„ØµØ­ÙŠØ­Ø© ÙŠÙ…ÙƒÙ† Ø£Ù† ØªÙ…Ù†Ø¹ 70% Ù…Ù† Ø¢Ù„Ø§Ù… Ø§Ù„Ø¸Ù‡Ø±.</p>
+        <h3 className="text-xl font-bold mb-3">�S& ا����ا�`ة</h3>
+        <p>اضبط �&ْا�  ع�&�ْ�R خذ فترات راحة �&� تظ�&ة ��جرب � شاطا�9 بد� �`ا�9 �&عتد�ا�9. ا���ضع�`ة ا�صح�`حة �`�&ْ�  أ�  ت�&� ع 70% �&�  آ�ا�& ا�ظ�!ر.</p>
       </section>
     </div>
   ),

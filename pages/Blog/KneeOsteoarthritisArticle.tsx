@@ -4,56 +4,56 @@ import { Bone } from 'lucide-react';
 const article4 = createArticle({
   slug: 'arthrose-genou',
   titleFr: 'Arthrose du Genou: Vie Sans Douleur',
-  titleAr: 'Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ø±ÙƒØ¨Ø©: Ø§Ù„Ø­ÙŠØ§Ø© Ø¨Ø¯ÙˆÙ† Ø£Ù„Ù…',
-  descriptionFr: 'Traitement de l\'arthrose du genou. Exercices et conseils pour rÃ©duire la douleur et amÃ©liorer la mobilitÃ©.',
-  descriptionAr: 'Ø¹Ù„Ø§Ø¬ Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ø±ÙƒØ¨Ø©. ØªÙ…Ø§Ø±ÙŠÙ† ÙˆÙ†ØµØ§Ø¦Ø­ Ù„ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„Ø£Ù„Ù… ÙˆØªØ­Ø³ÙŠÙ† Ø§Ù„Ø­Ø±ÙƒØ©.',
-  keywordsFr: 'arthrose genou, gonarthrose, kinÃ© genou, traitement arthrose',
-  keywordsAr: 'Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ø±ÙƒØ¨Ø©, Ø§Ù„ØªÙ‡Ø§Ø¨ Ø§Ù„Ù…ÙØµÙ„, Ø¹Ù„Ø§Ø¬ Ø§Ù„Ø±ÙƒØ¨Ø©',
+  titleAr: 'خش��� ة ا�رْبة: ا�ح�`اة بد���  أ��&',
+  descriptionFr: 'Traitement de l\'arthrose du genou. Exercices et conseils pour réduire la douleur et améliorer la mobilité.',
+  descriptionAr: 'ع�اج خش��� ة ا�رْبة. ت�&ار�`�  ��� صائح �ت���`� ا�أ��& ��تحس�`�  ا�حرْة.',
+  keywordsFr: 'arthrose genou, gonarthrose, kiné genou, traitement arthrose',
+  keywordsAr: 'خش��� ة ا�رْبة, ا�ت�!اب ا��&فص�, ع�اج ا�رْبة',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '6 min de lecture',
-  readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
+  readTimeAr: '6 د�ائ� �راءة',
   contentFr: (
     <div className="space-y-6">
       <section>
         <h2 className="text-2xl font-bold mb-4">Arthrose du Genou: Comprendre la Condition</h2>
-        <p>L'arthrose du genou est l'usure du cartilage articulaire. C'est une condition dÃ©gÃ©nÃ©rative qui affecte des millions de personnes. Mais avec la kinÃ©sithÃ©rapie appropriÃ©e, vous pouvez vivre sans douleur.</p>
+        <p>L'arthrose du genou est l'usure du cartilage articulaire. C'est une condition dégénérative qui affecte des millions de personnes. Mais avec la kinésithérapie appropriée, vous pouvez vivre sans douleur.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Signes et SymptÃ´mes</h2>
+        <h2 className="text-2xl font-bold mb-4">Signes et Symptômes</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Douleur articulaire Ã  la marche</li>
+          <li>Douleur articulaire à la marche</li>
           <li>Craquements et bruits articulaires</li>
-          <li>Raideur au rÃ©veil</li>
+          <li>Raideur au réveil</li>
           <li>Gonflement intermittent</li>
-          <li>Perte progressive de mobilitÃ©</li>
-          <li>InstabilitÃ© du genou</li>
+          <li>Perte progressive de mobilité</li>
+          <li>Instabilité du genou</li>
         </ul>
       </section>
       <section>
         <h2 className="text-2xl font-bold mb-4">Facteurs de Risque</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Vieillissement (aprÃ¨s 50 ans)</li>
+          <li>Vieillissement (après 50 ans)</li>
           <li>Surpoids (pression accrue)</li>
-          <li>AntÃ©cÃ©dents de blessure</li>
-          <li>Facteurs gÃ©nÃ©tiques</li>
-          <li>MÃ©tier exigeant du genou</li>
+          <li>Antécédents de blessure</li>
+          <li>Facteurs génétiques</li>
+          <li>Métier exigeant du genou</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Traitement KinÃ©sithÃ©rapique</h2>
+        <h2 className="text-2xl font-bold mb-4">Traitement Kinésithérapique</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li><strong>Mobilisation Articulaire:</strong> RÃ©duction du raidissement</li>
-          <li><strong>HydrothÃ©rapie:</strong> Exercices en piscine (dÃ©charge du poids)</li>
-          <li><strong>Renforcement Musculaire:</strong> Muscles pÃ©riarticulaires</li>
-          <li><strong>Ã‰quilibre et Proprioception:</strong> StabilitÃ©</li>
-          <li><strong>ThermothÃ©rapie:</strong> Chaleur pour relaxer</li>
+          <li><strong>Mobilisation Articulaire:</strong> Réduction du raidissement</li>
+          <li><strong>Hydrothérapie:</strong> Exercices en piscine (décharge du poids)</li>
+          <li><strong>Renforcement Musculaire:</strong> Muscles périarticulaires</li>
+          <li><strong>�0quilibre et Proprioception:</strong> Stabilité</li>
+          <li><strong>Thermothérapie:</strong> Chaleur pour relaxer</li>
         </ol>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Exercices RecommandÃ©s</h2>
+        <h2 className="text-2xl font-bold mb-4">Exercices Recommandés</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>VÃ©lo d'appartement 20-30 min/jour</li>
+          <li>Vélo d'appartement 20-30 min/jour</li>
           <li>Renforcement du quadriceps (isomÃ©trique)</li>
           <li>Ã‰tirements des ischio-jambiers</li>
           <li>Marche modÃ©rÃ©e quotidienne</li>
@@ -63,79 +63,79 @@ const article4 = createArticle({
       <section>
         <h2 className="text-2xl font-bold mb-4">PrÃ©vention de l'Aggravation</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Maintenir un poids idÃ©al</li>
-          <li>Exercice rÃ©gulier non-agressif</li>
-          <li>Chaussures adaptÃ©es et stables</li>
-          <li>Utilisation de cannes ou orthÃ¨ses si nÃ©cessaire</li>
-          <li>Suivi rÃ©gulier avec votre kinÃ©</li>
+          <li>Maintenir un poids idéal</li>
+          <li>Exercice régulier non-agressif</li>
+          <li>Chaussures adaptées et stables</li>
+          <li>Utilisation de cannes ou orthèses si nécessaire</li>
+          <li>Suivi régulier avec votre kiné</li>
         </ul>
       </section>
       <section className="bg-blue-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">ðŸ’¡ Conseil</h3>
-        <p>L'arthrose n'est pas une condamnation. Avec une rÃ©Ã©ducation rÃ©guliÃ¨re, la plupart des gens amÃ©liorent significativement leur mobilitÃ© et rÃ©duisent leur douleur.</p>
+        <h3 className="text-xl font-bold mb-3">�x� Conseil</h3>
+        <p>L'arthrose n'est pas une condamnation. Avec une rééducation régulière, la plupart des gens améliorent significativement leur mobilité et réduisent leur douleur.</p>
       </section>
     </div>
   ),
   contentAr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ø±ÙƒØ¨Ø©: ÙÙ‡Ù… Ø§Ù„Ø­Ø§Ù„Ø©</h2>
-        <p>Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ø±ÙƒØ¨Ø© Ù‡ÙŠ ØªØ¢ÙƒÙ„ Ø§Ù„ØºØ¶Ø±ÙˆÙ Ø§Ù„Ù…ÙØµÙ„ÙŠ. Ø¥Ù†Ù‡Ø§ Ø­Ø§Ù„Ø© ØªÙ†ÙƒØ³ÙŠØ© ØªØ¤Ø«Ø± Ø¹Ù„Ù‰ Ø§Ù„Ù…Ù„Ø§ÙŠÙŠÙ† Ù…Ù† Ø§Ù„Ù†Ø§Ø³. Ù„ÙƒÙ† Ù…Ø¹ Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ Ø§Ù„ØµØ­ÙŠØ­ØŒ ÙŠÙ…ÙƒÙ†Ùƒ Ø§Ù„Ø¹ÙŠØ´ Ø¨Ø¯ÙˆÙ† Ø£Ù„Ù….</p>
+        <h2 className="text-2xl font-bold mb-4">خش��� ة ا�رْبة: ف�!�& ا�حا�ة</h2>
+        <p>خش��� ة ا�رْبة �!�` تآْ� ا�غضر��ف ا��&فص��`. إ� �!ا حا�ة ت� ْس�`ة تؤثر ع��0 ا��&�ا�`�`�  �&�  ا�� اس. �ْ�  �&ع ا�تر���`ض ا�طب�` ا�صح�`ح�R �`�&ْ� ْ ا�ع�`ش بد���  أ��&.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ø¹Ù„Ø§Ù…Ø§Øª ÙˆØ§Ù„Ø£Ø¹Ø±Ø§Ø¶</h2>
+        <h2 className="text-2xl font-bold mb-4">ا�ع�ا�&ات ��ا�أعراض</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Ø£Ù„Ù… Ù…ÙØµÙ„ÙŠ Ø¹Ù†Ø¯ Ø§Ù„Ù…Ø´ÙŠ</li>
-          <li>Ø·Ù‚Ø·Ù‚Ø© ÙˆØ£ØµÙˆØ§Øª Ù…ÙØµÙ„ÙŠØ©</li>
-          <li>ØªÙŠØ¨Ø³ Ø¹Ù†Ø¯ Ø§Ù„Ø§Ø³ØªÙŠÙ‚Ø§Ø¸</li>
-          <li>ØªÙˆØ±Ù… Ù…ØªÙ‚Ø·Ø¹</li>
-          <li>ÙÙ‚Ø¯Ø§Ù† ØªØ¯Ø±ÙŠØ¬ÙŠ Ù„Ù„Ø­Ø±ÙƒØ©</li>
-          <li>Ø¹Ø¯Ù… Ø§Ø³ØªÙ‚Ø±Ø§Ø± Ø§Ù„Ø±ÙƒØ¨Ø©</li>
+          <li>أ��& �&فص��` ع� د ا��&ش�`</li>
+          <li>ط�ط�ة ��أص��ات �&فص��`ة</li>
+          <li>ت�`بس ع� د ا�است�`�اظ</li>
+          <li>ت��ر�& �&ت�طع</li>
+          <li>ف�دا�  تدر�`ج�` ��حرْة</li>
+          <li>عد�& است�رار ا�رْبة</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø¹ÙˆØ§Ù…Ù„ Ø§Ù„Ø®Ø·Ø±</h2>
+        <h2 className="text-2xl font-bold mb-4">ع��ا�&� ا�خطر</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Ø§Ù„ØªÙ‚Ø¯Ù… ÙÙŠ Ø§Ù„Ø³Ù† (Ø¨Ø¹Ø¯ Ø³Ù† 50)</li>
-          <li>Ø²ÙŠØ§Ø¯Ø© Ø§Ù„ÙˆØ²Ù† (Ø¶ØºØ· Ø£ÙƒØ¨Ø±)</li>
-          <li>Ø¥ØµØ§Ø¨Ø§Øª Ø³Ø§Ø¨Ù‚Ø©</li>
-          <li>Ø¹ÙˆØ§Ù…Ù„ ÙˆØ±Ø§Ø«ÙŠØ©</li>
-          <li>Ø¹Ù…Ù„ ÙŠØªØ·Ù„Ø¨ Ø§Ù„Ø±ÙƒØ¨Ø©</li>
+          <li>ا�ت�د�& ف�` ا�س�  (بعد س�  50)</li>
+          <li>ز�`ادة ا���ز�  (ضغط أْبر)</li>
+          <li>إصابات ساب�ة</li>
+          <li>ع��ا�&� ��راث�`ة</li>
+          <li>ع�&� �`تط�ب ا�رْبة</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ø¹Ù„Ø§Ø¬ Ø¨Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ</h2>
+        <h2 className="text-2xl font-bold mb-4">ا�ع�اج با�تر���`ض ا�طب�`</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li><strong>ØªØ­Ø±ÙŠÙƒ Ø§Ù„Ù…ÙØ§ØµÙ„:</strong> ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„ØªÙŠØ¨Ø³</li>
-          <li><strong>Ø§Ù„Ø¹Ù„Ø§Ø¬ Ø§Ù„Ù…Ø§Ø¦ÙŠ:</strong> ØªÙ…Ø§Ø±ÙŠÙ† ÙÙŠ Ø§Ù„Ù…Ø³Ø¨Ø­ (ØªÙ‚Ù„ÙŠÙ„ Ø§Ù„ÙˆØ²Ù†)</li>
-          <li><strong>ØªÙ‚ÙˆÙŠØ© Ø§Ù„Ø¹Ø¶Ù„Ø§Øª:</strong> Ø§Ù„Ø¹Ø¶Ù„Ø§Øª Ø§Ù„Ù…Ø­ÙŠØ·Ø© Ø¨Ø§Ù„Ù…ÙØµÙ„</li>
-          <li><strong>Ø§Ù„ØªÙˆØ§Ø²Ù† ÙˆØ§Ù„Ø­Ø³:</strong> Ø§Ù„Ø§Ø³ØªÙ‚Ø±Ø§Ø±</li>
-          <li><strong>Ø§Ù„Ø¹Ù„Ø§Ø¬ Ø§Ù„Ø­Ø±Ø§Ø±ÙŠ:</strong> Ø§Ù„Ø­Ø±Ø§Ø±Ø© Ù„Ù„Ø§Ø³ØªØ±Ø®Ø§Ø¡</li>
+          <li><strong>تحر�`ْ ا��&فاص�:</strong> ت���`� ا�ت�`بس</li>
+          <li><strong>ا�ع�اج ا��&ائ�`:</strong> ت�&ار�`�  ف�` ا��&سبح (ت���`� ا���ز� )</li>
+          <li><strong>ت����`ة ا�عض�ات:</strong> ا�عض�ات ا��&ح�`طة با��&فص�</li>
+          <li><strong>ا�ت��از�  ��ا�حس:</strong> ا�است�رار</li>
+          <li><strong>ا�ع�اج ا�حرار�`:</strong> ا�حرارة ��استرخاء</li>
         </ol>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„ØªÙ…Ø§Ø±ÙŠÙ† Ø§Ù„Ù…ÙˆØµÙ‰ Ø¨Ù‡Ø§</h2>
+        <h2 className="text-2xl font-bold mb-4">ا�ت�&ار�`�  ا��&��ص�0 ب�!ا</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Ø¯Ø±Ù‘Ø§Ø¬Ø© Ø«Ø§Ø¨ØªØ© 20-30 Ø¯Ù‚ÙŠÙ‚Ø©/ÙŠÙˆÙ…</li>
-          <li>ØªÙ‚ÙˆÙŠØ© Ø¹Ø¶Ù„Ø© Ø§Ù„ÙØ®Ø° (Ø«Ø§Ø¨ØªØ©)</li>
-          <li>ØªÙ…Ø¯ÙŠØ¯Ø§Øª Ø§Ù„Ø£ÙˆØªØ§Ø±</li>
-          <li>Ù…Ø´ÙŠ Ù…Ø¹ØªØ¯Ù„ ÙŠÙˆÙ…ÙŠ</li>
-          <li>ØªØ¬Ù†Ø¨ Ø§Ù„Ø³Ù„Ø§Ù„Ù… ÙˆØ§Ù„Ù‚Ø±ÙØµØ§Ø¡</li>
+          <li>در�اجة ثابتة 20-30 د��`�ة/�`���&</li>
+          <li>ت����`ة عض�ة ا�فخذ (ثابتة)</li>
+          <li>ت�&د�`دات ا�أ��تار</li>
+          <li>�&ش�` �&عتد� �`���&�`</li>
+          <li>تج� ب ا�س�ا��& ��ا��رفصاء</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ù…Ù†Ø¹ Ø§Ù„ØªÙØ§Ù‚Ù…</h2>
+        <h2 className="text-2xl font-bold mb-4">�&� ع ا�تفا��&</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Ø§Ù„Ø­ÙØ§Ø¸ Ø¹Ù„Ù‰ ÙˆØ²Ù† Ù…Ø«Ø§Ù„ÙŠ</li>
-          <li>ØªÙ…Ø±ÙŠÙ† Ù…Ù†ØªØ¸Ù… ØºÙŠØ± Ø¹Ù†ÙŠÙ</li>
-          <li>Ø£Ø­Ø°ÙŠØ© Ù…Ù†Ø§Ø³Ø¨Ø© ÙˆÙ…Ø³ØªÙ‚Ø±Ø©</li>
-          <li>Ø§Ø³ØªØ®Ø¯Ø§Ù… Ø§Ù„Ø¹ØµØ§ Ø£Ùˆ Ø§Ù„Ø¯Ø¹Ø§Ø¦Ù… Ø¥Ø°Ø§ Ù„Ø²Ù… Ø§Ù„Ø£Ù…Ø±</li>
-          <li>Ù…ØªØ§Ø¨Ø¹Ø© Ù…Ù†ØªØ¸Ù…Ø© Ù…Ø¹ Ø§Ù„Ù…Ø¹Ø§Ù„Ø¬</li>
+          <li>ا�حفاظ ع��0 ��ز�  �&ثا��`</li>
+          <li>ت�&ر�`�  �&� تظ�& غ�`ر ع� �`ف</li>
+          <li>أحذ�`ة �&� اسبة ���&ست�رة</li>
+          <li>استخدا�& ا�عصا أ�� ا�دعائ�& إذا �ز�& ا�أ�&ر</li>
+          <li>�&تابعة �&� تظ�&ة �&ع ا��&عا�ج</li>
         </ul>
       </section>
       <section className="bg-blue-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">ðŸ’¡ Ù†ØµÙŠØ­Ø©</h3>
-        <p>Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ù…ÙØ§ØµÙ„ Ù„ÙŠØ³Øª Ø­ÙƒÙ…Ø§Ù‹ Ù†Ù‡Ø§Ø¦ÙŠØ§Ù‹. Ù…Ø¹ Ø¥Ø¹Ø§Ø¯Ø© ØªØ£Ù‡ÙŠÙ„ Ù…Ù†ØªØ¸Ù…Ø©ØŒ ÙŠØ­Ø³Ù† Ù…Ø¹Ø¸Ù… Ø§Ù„Ù†Ø§Ø³ Ø­Ø±ÙƒØªÙ‡Ù… Ø¨Ø´ÙƒÙ„ ÙƒØ¨ÙŠØ± ÙˆÙŠÙ‚Ù„Ù„ÙˆÙ† Ø£Ù„Ù…Ù‡Ù….</p>
+        <h3 className="text-xl font-bold mb-3">�x� � ص�`حة</h3>
+        <p>خش��� ة ا��&فاص� ��`ست حْ�&ا�9 � �!ائ�`ا�9. �&ع إعادة تأ�!�`� �&� تظ�&ة�R �`حس�  �&عظ�& ا�� اس حرْت�!�& بشْ� ْب�`ر ���`������  أ��&�!�&.</p>
       </section>
     </div>
   ),

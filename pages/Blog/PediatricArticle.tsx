@@ -3,26 +3,26 @@ import { Baby } from 'lucide-react';
 
 const article7 = createArticle({
   slug: 'kine-pediatrique',
-  titleFr: 'PhysiothÃ©rapie PÃ©diatrique: DÃ©veloppement Normal',
-  titleAr: 'Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠ Ù„Ù„Ø£Ø·ÙØ§Ù„: Ø§Ù„Ù†Ù…Ùˆ Ø§Ù„Ø·Ø¨ÙŠØ¹ÙŠ',
-  descriptionFr: 'DÃ©veloppement psychomoteur de l\'enfant. Quand consulter un kinÃ© pÃ©diatrique. Exercices et jeux de rÃ©Ã©ducation.',
-  descriptionAr: 'Ø§Ù„Ù†Ù…Ùˆ Ø§Ù„Ù†ÙØ³Ø­Ø±ÙƒÙŠ Ù„Ù„Ø·ÙÙ„. Ù…ØªÙ‰ ØªØ³ØªØ´ÙŠØ± Ù…Ø±ÙˆØ¶Ø§Ù‹ Ù…ØªØ®ØµØµØ§Ù‹ Ù„Ù„Ø£Ø·ÙØ§Ù„. ØªÙ…Ø§Ø±ÙŠÙ† ÙˆØ£Ù„Ø¹Ø§Ø¨ ØªØ£Ù‡ÙŠÙ„ÙŠØ©.',
-  keywordsFr: 'kinÃ© enfant, retard dÃ©veloppement, bÃ©bÃ©, motricitÃ© fine, motricitÃ© globale',
-  keywordsAr: 'Ù…Ø±ÙˆØ¶ Ø£Ø·ÙØ§Ù„, ØªØ£Ø®Ø± Ø§Ù„Ù†Ù…Ùˆ, Ø·ÙÙ„, Ù…Ù‡Ø§Ø±Ø§Øª Ø­Ø±ÙƒÙŠØ©',
+  titleFr: 'Physiothérapie Pédiatrique: Développement Normal',
+  titleAr: 'ا�تر���`ض ا�طب�` ��أطفا�: ا�� �&�� ا�طب�`ع�`',
+  descriptionFr: 'Développement psychomoteur de l\'enfant. Quand consulter un kiné pédiatrique. Exercices et jeux de rééducation.',
+  descriptionAr: 'ا�� �&�� ا�� فسحرْ�` ��طف�. �&ت�0 تستش�`ر �&ر��ضا�9 �&تخصصا�9 ��أطفا�. ت�&ار�`�  ��أ�عاب تأ�!�`��`ة.',
+  keywordsFr: 'kiné enfant, retard développement, bébé, motricité fine, motricité globale',
+  keywordsAr: '�&ر��ض أطفا�, تأخر ا�� �&��, طف�, �&�!ارات حرْ�`ة',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '6 min de lecture',
-  readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
+  readTimeAr: '6 د�ائ� �راءة',
   contentFr: (
     <div className="space-y-6">
       <section>
         <h2 className="text-2xl font-bold mb-4">PhysiothÃ©rapie PÃ©diatrique</h2>
-        <p>Le dÃ©veloppement psychomoteur de l'enfant est crucial. Identifiez tÃ´t les retards de dÃ©veloppement pour une intervention prÃ©coce.</p>
+        <p>Le dÃ©veloppement psychomoteur de l'enfant est crucial. Identifiez tôt les retards de développement pour une intervention précoce.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Jalons du DÃ©veloppement Normal</h2>
+        <h2 className="text-2xl font-bold mb-4">Jalons du Développement Normal</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>3 mois:</strong> ContrÃ´le de la tÃªte</li>
+          <li><strong>3 mois:</strong> Contrôle de la tête</li>
           <li><strong>6 mois:</strong> Assis sans appui</li>
           <li><strong>9 mois:</strong> Rampage ou crawling</li>
           <li><strong>12 mois:</strong> Marche avec appui</li>
@@ -55,13 +55,13 @@ const article7 = createArticle({
         <h2 className="text-2xl font-bold mb-4">Approche ThÃ©rapeutique</h2>
         <ol className="list-decimal pl-6 space-y-2">
           <li><strong>Jeu ThÃ©rapeutique:</strong> Rendre l'exercice amusant</li>
-          <li><strong>Mobilisation Douce:</strong> AmÃ©liorer la mobilitÃ©</li>
+          <li><strong>Mobilisation Douce:</strong> Améliorer la mobilité</li>
           <li><strong>Renforcement Musculaire:</strong> Via les jeux</li>
-          <li><strong>Ã‰ducation Parentale:</strong> Exercices Ã  domicile</li>
+          <li><strong>�0ducation Parentale:</strong> Exercices à domicile</li>
         </ol>
       </section>
       <section className="bg-pink-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">ðŸ‘¶ Conseil Important</h3>
+        <h3 className="text-xl font-bold mb-3">�x� Conseil Important</h3>
         <p>L'intervention prÃ©coce peut changer la trajectoire de dÃ©veloppement. Si vous notez un retard, consultez nos pÃ©diatres kinÃ©.</p>
       </section>
     </div>
@@ -120,9 +120,9 @@ const article7 = createArticle({
     </div>
   ),
   relatedArticles: [
-    { slug: 'recuperation-sportive-prevention-blessures', titleFr: 'RÃ©cupÃ©ration Sportive', titleAr: 'Ø§Ø³ØªØ±Ø¬Ø§Ø¹ Ø±ÙŠØ§Ø¶ÙŠ', icon: <Baby size={20} /> },
-    { slug: 'readaptation-post-avc', titleFr: 'RÃ©adaptation Post-AVC', titleAr: 'Ø¥Ø¹Ø§Ø¯Ø© ØªØ£Ù‡ÙŠÙ„ Ù…Ø§ Ø¨Ø¹Ø¯ Ø§Ù„Ø¬Ù„Ø·Ø©', icon: <Baby size={20} /> },
-    { slug: 'posture-ergonomie', titleFr: 'Posture & Ergonomie', titleAr: 'Ø§Ù„ÙˆØ¶Ø¹ÙŠØ© ÙˆØ§Ù„Ø¥Ø±Ø¬ÙˆÙ†ÙˆÙ…ÙŠØ§', icon: <Baby size={20} /> },
+    { slug: 'recuperation-sportive-prevention-blessures', titleFr: 'Récupération Sportive', titleAr: 'استرجاع ر�`اض�`', icon: <Baby size={20} /> },
+    { slug: 'readaptation-post-avc', titleFr: 'Réadaptation Post-AVC', titleAr: 'إعادة تأ�!�`� �&ا بعد ا�ج�طة', icon: <Baby size={20} /> },
+    { slug: 'posture-ergonomie', titleFr: 'Posture & Ergonomie', titleAr: 'ا���ضع�`ة ��ا�إرج��� ���&�`ا', icon: <Baby size={20} /> },
   ]
 });
 

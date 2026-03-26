@@ -3,21 +3,21 @@ import { Stethoscope } from 'lucide-react';
 
 const article5 = createArticle({
   slug: 'douleurs-epaules-capsulite',
-  titleFr: 'Douleurs aux Ã‰paules & Capsulite: Solutions',
-  titleAr: 'Ø£Ù„Ù… Ø§Ù„ÙƒØªÙÙŠÙ† ÙˆØ§Ù„ØªÙ‡Ø§Ø¨ Ø§Ù„ÙƒÙŠØ³: Ø§Ù„Ø­Ù„ÙˆÙ„',
-  descriptionFr: 'Traitement de la capsulite rÃ©tractile et des douleurs d\'Ã©paule. Exercices et thÃ©rapies pour retrouver la mobilitÃ©.',
-  descriptionAr: 'Ø¹Ù„Ø§Ø¬ ØªØ¬Ù…Ø¯ Ø§Ù„ÙƒØªÙ ÙˆØ£Ù„Ù… Ø§Ù„Ø£ÙƒØªØ§Ù. ØªÙ…Ø§Ø±ÙŠÙ† ÙˆØ¹Ù„Ø§Ø¬Ø§Øª Ù„Ø§Ø³ØªØ¹Ø§Ø¯Ø© Ø§Ù„Ø­Ø±ÙƒØ©.',
-  keywordsFr: 'douleur Ã©paule, capsulite, Ã©paule gelÃ©e, kinÃ© Ã©paule, traitement Ã©paule',
-  keywordsAr: 'Ø£Ù„Ù… Ø§Ù„ÙƒØªÙ, ØªØ¬Ù…Ø¯ Ø§Ù„ÙƒØªÙ, Ø®Ù„Ø¹ Ø§Ù„ÙƒØªÙ, Ø¹Ù„Ø§Ø¬ Ø§Ù„ÙƒØªÙ',
+  titleFr: 'Douleurs aux �0paules & Capsulite: Solutions',
+  titleAr: 'أ��& ا�ْتف�`�  ��ا�ت�!اب ا�ْ�`س: ا�ح����',
+  descriptionFr: 'Traitement de la capsulite rétractile et des douleurs d\'épaule. Exercices et thérapies pour retrouver la mobilité.',
+  descriptionAr: 'ع�اج تج�&د ا�ْتف ��أ��& ا�أْتاف. ت�&ار�`�  ��ع�اجات �استعادة ا�حرْة.',
+  keywordsFr: 'douleur épaule, capsulite, épaule gelée, kiné épaule, traitement épaule',
+  keywordsAr: 'أ��& ا�ْتف, تج�&د ا�ْتف, خ�ع ا�ْتف, ع�اج ا�ْتف',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '6 min de lecture',
-  readTimeAr: '6 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
+  readTimeAr: '6 د�ائ� �راءة',
   contentFr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">Douleurs d'Ã‰paule: Une Condition FrÃ©quente</h2>
-        <p>Les douleurs d'Ã©paule affectent 40% de la population Ã  un moment de leur vie. La capsulite rÃ©tractile (Ã©paule gelÃ©e) est l'une des causes les plus frÃ©quentes et peut Ãªtre extrÃªmement invalidante.</p>
+        <h2 className="text-2xl font-bold mb-4">Douleurs d'�0paule: Une Condition Fréquente</h2>
+        <p>Les douleurs d'Ã©paule affectent 40% de la population Ã  un moment de leur vie. La capsulite rÃ©tractile (Ã©paule gelÃ©e) est l'une des causes les plus fréquentes et peut être extrêmement invalidante.</p>
       </section>
       <section>
         <h2 className="text-2xl font-bold mb-4">Types de Douleurs d'Ã‰paule</h2>
@@ -25,107 +25,107 @@ const article5 = createArticle({
           <li><strong>Tendinite de la Coiffe:</strong> Inflammation des tendons</li>
           <li><strong>Capsulite RÃ©tractile:</strong> Raidissement de la capsule articulaire</li>
           <li><strong>Conflit Sous-acromial:</strong> Compression des tendons</li>
-          <li><strong>Luxation d'Ã‰paule:</strong> Sortie du bras de son articulation</li>
+          <li><strong>Luxation d'�0paule:</strong> Sortie du bras de son articulation</li>
           <li><strong>Arthrose Acromioclaviculaire:</strong> Usure du cartilage</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Phases de la Capsulite RÃ©tractile</h2>
+        <h2 className="text-2xl font-bold mb-4">Phases de la Capsulite Rétractile</h2>
         <div className="space-y-3">
           <div className="border-l-4 border-red-500 pl-4">
             <h3 className="font-bold">Phase 1: Inflammatoire (2-3 mois)</h3>
-            <p>Douleur sans limitation majeure de la mobilitÃ©.</p>
+            <p>Douleur sans limitation majeure de la mobilité.</p>
           </div>
           <div className="border-l-4 border-orange-500 pl-4">
             <h3 className="font-bold">Phase 2: Raidissement (2-4 mois)</h3>
-            <p>Perte progressive de mobilitÃ© avec douleur.</p>
+            <p>Perte progressive de mobilité avec douleur.</p>
           </div>
           <div className="border-l-4 border-blue-500 pl-4">
-            <h3 className="font-bold">Phase 3: RÃ©solution (6-12 mois)</h3>
-            <p>AmÃ©lioration progressive de la mobilitÃ©.</p>
+            <h3 className="font-bold">Phase 3: Résolution (6-12 mois)</h3>
+            <p>Amélioration progressive de la mobilité.</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Approche ThÃ©rapeutique</h2>
+        <h2 className="text-2xl font-bold mb-4">Approche Thérapeutique</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li><strong>Phase 1:</strong> Repos, glace, Ã©tirements doux</li>
+          <li><strong>Phase 1:</strong> Repos, glace, étirements doux</li>
           <li><strong>Phase 2:</strong> Mobilisation progressive, renforcement</li>
-          <li><strong>Phase 3:</strong> Exercices complets de mobilitÃ©</li>
-          <li><strong>Toute la durÃ©e:</strong> Ã‰lectrothÃ©rapie antalgique</li>
+          <li><strong>Phase 3:</strong> Exercices complets de mobilité</li>
+          <li><strong>Toute la durée:</strong> �0lectrothérapie antalgique</li>
         </ol>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Exercices Ã  Domicile</h2>
+        <h2 className="text-2xl font-bold mb-4">Exercices à Domicile</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Pendulum exercises (bras dÃ©tendu)</li>
-          <li>Ã‰tirements du pendulum (boÃ®te serviette)</li>
-          <li>Rotations interne/externe Ã  coude pliÃ©</li>
-          <li>Ã‰lÃ©vation du bras (progression douce)</li>
-          <li>Renforcement de la coiffe (bande Ã©lastique)</li>
+          <li>Pendulum exercises (bras détendu)</li>
+          <li>�0tirements du pendulum (boîte serviette)</li>
+          <li>Rotations interne/externe à coude plié</li>
+          <li>�0lévation du bras (progression douce)</li>
+          <li>Renforcement de la coiffe (bande élastique)</li>
         </ul>
       </section>
       <section className="bg-purple-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">âš¡ Important</h3>
-        <p>La capsulite peut durer 12-18 mois sans traitement. Avec la kinÃ©sithÃ©rapie rÃ©guliÃ¨re, vous pouvez rÃ©duire ce temps de moitiÃ©.</p>
+        <h3 className="text-xl font-bold mb-3">�a� Important</h3>
+        <p>La capsulite peut durer 12-18 mois sans traitement. Avec la kinésithérapie régulière, vous pouvez réduire ce temps de moitié.</p>
       </section>
     </div>
   ),
   contentAr: (
     <div className="space-y-6">
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø£Ù„Ù… Ø§Ù„Ø£ÙƒØªØ§Ù: Ø­Ø§Ù„Ø© Ø´Ø§Ø¦Ø¹Ø©</h2>
-        <p>ÙŠØ¤Ø«Ø± Ø£Ù„Ù… Ø§Ù„ÙƒØªÙ Ø¹Ù„Ù‰ 40% Ù…Ù† Ø§Ù„Ø³ÙƒØ§Ù† ÙÙŠ ÙˆÙ‚Øª Ù…Ø§ Ù…Ù† Ø­ÙŠØ§ØªÙ‡Ù…. ØªØ¬Ù…Ø¯ Ø§Ù„ÙƒØªÙ Ù‡Ùˆ Ø£Ø­Ø¯ Ø§Ù„Ø£Ø³Ø¨Ø§Ø¨ Ø§Ù„Ø£ÙƒØ«Ø± Ø´ÙŠÙˆØ¹Ø§Ù‹ ÙˆÙŠÙ…ÙƒÙ† Ø£Ù† ÙŠÙƒÙˆÙ† Ù…Ø´Ù„Ø§Ù‹ Ø¬Ø¯Ø§Ù‹.</p>
+        <h2 className="text-2xl font-bold mb-4">أ��& ا�أْتاف: حا�ة شائعة</h2>
+        <p>�`ؤثر أ��& ا�ْتف ع��0 40% �&�  ا�سْا�  ف�` ���ت �&ا �&�  ح�`ات�!�&. تج�&د ا�ْتف �!�� أحد ا�أسباب ا�أْثر ش�`��عا�9 ���`�&ْ�  أ�  �`ْ���  �&ش�ا�9 جدا�9.</p>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø£Ù†ÙˆØ§Ø¹ Ø¢Ù„Ø§Ù… Ø§Ù„Ø£ÙƒØªØ§Ù</h2>
+        <h2 className="text-2xl font-bold mb-4">أ� ��اع آ�ا�& ا�أْتاف</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong>Ø§Ù„ØªÙ‡Ø§Ø¨ Ø£ÙˆØªØ§Ø± Ø§Ù„ÙƒÙØ©:</strong> Ø§Ù„ØªÙ‡Ø§Ø¨ Ø§Ù„Ø£ÙˆØªØ§Ø±</li>
-          <li><strong>ØªØ¬Ù…Ø¯ Ø§Ù„ÙƒØªÙ:</strong> ØªÙŠØ¨Ø³ ÙƒÙŠØ³ Ø§Ù„Ù…ÙØµÙ„</li>
-          <li><strong>Ø§Ù„ØµØ¯Ø§Ù… ØªØ­Øª Ø§Ù„Ø£Ø®Ø±Ù…ÙŠ:</strong> Ø¶ØºØ· Ø§Ù„Ø£ÙˆØªØ§Ø±</li>
-          <li><strong>Ø®Ù„Ø¹ Ø§Ù„ÙƒØªÙ:</strong> Ø®Ø±ÙˆØ¬ Ø§Ù„Ø¹Ø¶Ø¯ Ù…Ù† Ù…ÙØµÙ„Ù‡</li>
-          <li><strong>Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ù…ÙØµÙ„ Ø§Ù„ØªØ±Ù‚ÙˆÙŠ:</strong> ØªØ¢ÙƒÙ„ Ø§Ù„ØºØ¶Ø±ÙˆÙ</li>
+          <li><strong>ا�ت�!اب أ��تار ا�ْفة:</strong> ا�ت�!اب ا�أ��تار</li>
+          <li><strong>تج�&د ا�ْتف:</strong> ت�`بس ْ�`س ا��&فص�</li>
+          <li><strong>ا�صدا�& تحت ا�أخر�&�`:</strong> ضغط ا�أ��تار</li>
+          <li><strong>خ�ع ا�ْتف:</strong> خر��ج ا�عضد �&�  �&فص��!</li>
+          <li><strong>خش��� ة ا��&فص� ا�تر����`:</strong> تآْ� ا�غضر��ف</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ù…Ø±Ø§Ø­Ù„ ØªØ¬Ù…Ø¯ Ø§Ù„ÙƒØªÙ</h2>
+        <h2 className="text-2xl font-bold mb-4">�&راح� تج�&د ا�ْتف</h2>
         <div className="space-y-3">
           <div className="border-r-4 border-red-500 pr-4">
-            <h3 className="font-bold">Ø§Ù„Ù…Ø±Ø­Ù„Ø© 1: Ø§Ù„Ø§Ù„ØªÙ‡Ø§Ø¨ (2-3 Ø£Ø´Ù‡Ø±)</h3>
-            <p>Ø£Ù„Ù… Ø¨Ø¯ÙˆÙ† ØªØ­Ø¯ÙŠØ¯ ÙƒØ¨ÙŠØ± Ù„Ù„Ø­Ø±ÙƒØ©.</p>
+            <h3 className="font-bold">ا��&رح�ة 1: ا�ا�ت�!اب (2-3 أش�!ر)</h3>
+            <p>أ��& بد���  تحد�`د ْب�`ر ��حرْة.</p>
           </div>
           <div className="border-r-4 border-orange-500 pr-4">
-            <h3 className="font-bold">Ø§Ù„Ù…Ø±Ø­Ù„Ø© 2: Ø§Ù„ØªÙŠØ¨Ø³ (2-4 Ø£Ø´Ù‡Ø±)</h3>
-            <p>ÙÙ‚Ø¯Ø§Ù† ØªØ¯Ø±ÙŠØ¬ÙŠ Ù„Ù„Ø­Ø±ÙƒØ© Ù…Ø¹ Ø£Ù„Ù….</p>
+            <h3 className="font-bold">ا��&رح�ة 2: ا�ت�`بس (2-4 أش�!ر)</h3>
+            <p>ف�دا�  تدر�`ج�` ��حرْة �&ع أ��&.</p>
           </div>
           <div className="border-r-4 border-blue-500 pr-4">
-            <h3 className="font-bold">Ø§Ù„Ù…Ø±Ø­Ù„Ø© 3: Ø§Ù„ØªØ­Ø³Ù† (6-12 Ø´Ù‡Ø±)</h3>
-            <p>ØªØ­Ø³Ù† ØªØ¯Ø±ÙŠØ¬ÙŠ ÙÙŠ Ø§Ù„Ø­Ø±ÙƒØ©.</p>
+            <h3 className="font-bold">ا��&رح�ة 3: ا�تحس�  (6-12 ش�!ر)</h3>
+            <p>تحس�  تدر�`ج�` ف�` ا�حرْة.</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Ø§Ù„Ù†Ù‡Ø¬ Ø§Ù„Ø¹Ù„Ø§Ø¬ÙŠ</h2>
+        <h2 className="text-2xl font-bold mb-4">ا�� �!ج ا�ع�اج�`</h2>
         <ol className="list-decimal pl-6 space-y-2">
-          <li><strong>Ø§Ù„Ù…Ø±Ø­Ù„Ø© 1:</strong> Ø±Ø§Ø­Ø©ØŒ Ø«Ù„Ø¬ØŒ ØªÙ…Ø¯ÙŠØ¯Ø§Øª Ù„Ø·ÙŠÙØ©</li>
-          <li><strong>Ø§Ù„Ù…Ø±Ø­Ù„Ø© 2:</strong> Ø­Ø±ÙƒØ© ØªØ¯Ø±ÙŠØ¬ÙŠØ©ØŒ ØªÙ‚ÙˆÙŠØ©</li>
-          <li><strong>Ø§Ù„Ù…Ø±Ø­Ù„Ø© 3:</strong> ØªÙ…Ø§Ø±ÙŠÙ† Ø­Ø±ÙƒØ© ÙƒØ§Ù…Ù„Ø©</li>
-          <li><strong>Ø·ÙˆØ§Ù„ Ø§Ù„ÙØªØ±Ø©:</strong> Ø¹Ù„Ø§Ø¬ ÙƒÙ‡Ø±Ø¨Ø§Ø¦ÙŠ Ù…Ø³ÙƒÙ†</li>
+          <li><strong>ا��&رح�ة 1:</strong> راحة�R ث�ج�R ت�&د�`دات �ط�`فة</li>
+          <li><strong>ا��&رح�ة 2:</strong> حرْة تدر�`ج�`ة�R ت����`ة</li>
+          <li><strong>ا��&رح�ة 3:</strong> ت�&ار�`�  حرْة ْا�&�ة</li>
+          <li><strong>ط��ا� ا�فترة:</strong> ع�اج ْ�!ربائ�` �&سْ� </li>
         </ol>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">ØªÙ…Ø§Ø±ÙŠÙ† Ù…Ù†Ø²Ù„ÙŠØ©</h2>
+        <h2 className="text-2xl font-bold mb-4">ت�&ار�`�  �&� ز��`ة</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>ØªÙ…Ø§Ø±ÙŠÙ† Ø§Ù„Ø¨Ù†Ø¯ÙˆÙ„ (Ø°Ø±Ø§Ø¹ Ù…Ø±ØªØ®ÙŠØ©)</li>
-          <li>ØªÙ…Ø¯ÙŠØ¯Ø§Øª Ø§Ù„Ø¨Ù†Ø¯ÙˆÙ„ (Ù…Ø¹ Ø§Ù„Ù…Ù†Ø´ÙØ©)</li>
-          <li>Ø¯ÙˆØ±Ø§Ù† Ø¯Ø§Ø®Ù„ÙŠ/Ø®Ø§Ø±Ø¬ÙŠ ÙˆØ§Ù„ÙƒÙˆØ¹ Ù…Ø«Ù†ÙŠ</li>
-          <li>Ø±ÙØ¹ Ø§Ù„Ø°Ø±Ø§Ø¹ (ØªØ·ÙˆØ± Ù„Ø·ÙŠÙ)</li>
-          <li>ØªÙ‚ÙˆÙŠØ© Ø§Ù„ÙƒÙØ© (Ø´Ø±ÙŠØ· Ù…Ø±Ù†)</li>
+          <li>ت�&ار�`�  ا�ب� د��� (ذراع �&رتخ�`ة)</li>
+          <li>ت�&د�`دات ا�ب� د��� (�&ع ا��&� شفة)</li>
+          <li>د��را�  داخ��`/خارج�` ��ا�ْ��ع �&ث� �`</li>
+          <li>رفع ا�ذراع (تط��ر �ط�`ف)</li>
+          <li>ت����`ة ا�ْفة (شر�`ط �&ر� )</li>
         </ul>
       </section>
       <section className="bg-purple-50 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-3">âš¡ Ù…Ù‡Ù…</h3>
-        <p>ÙŠÙ…ÙƒÙ† Ø£Ù† ÙŠØ³ØªÙ…Ø± ØªØ¬Ù…Ø¯ Ø§Ù„ÙƒØªÙ 12-18 Ø´Ù‡Ø±Ø§Ù‹ Ø¨Ø¯ÙˆÙ† Ø¹Ù„Ø§Ø¬. Ù…Ø¹ Ø§Ù„ØªØ±ÙˆÙŠØ¶ Ø§Ù„Ø·Ø¨ÙŠØŒ ÙŠÙ…ÙƒÙ†Ùƒ ØªÙ‚Ù„ÙŠÙ„ Ù‡Ø°Ø§ Ø§Ù„ÙˆÙ‚Øª Ø¨Ù…Ù‚Ø¯Ø§Ø± Ø§Ù„Ù†ØµÙ.</p>
+        <h3 className="text-xl font-bold mb-3">�a� �&�!�&</h3>
+        <p>�`�&ْ�  أ�  �`ست�&ر تج�&د ا�ْتف 12-18 ش�!را�9 بد���  ع�اج. �&ع ا�تر���`ض ا�طب�`�R �`�&ْ� ْ ت���`� �!ذا ا����ت ب�&�دار ا�� صف.</p>
       </section>
     </div>
   ),

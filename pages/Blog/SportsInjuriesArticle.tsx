@@ -3,16 +3,16 @@ import { Dumbbell } from 'lucide-react';
 
 const article3 = createArticle({
   slug: 'traumatologie-sport',
-  titleFr: 'Traumatologie du Sport: RÃ©cupÃ©ration Rapide',
-  titleAr: 'Ø§Ù„Ø¥ØµØ§Ø¨Ø§Øª Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ©: Ø§Ù„ØªØ¹Ø§ÙÙŠ Ø§Ù„Ø³Ø±ÙŠØ¹',
-  descriptionFr: 'Entorses, tendinites, dÃ©chirures musculaires. Apprenez comment rÃ©cupÃ©rer rapidement aprÃ¨s une blessure sportive avec la kinÃ©sithÃ©rapie.',
-  descriptionAr: 'Ø¹Ù„Ø§Ø¬ Ø§Ù„Ø§Ù„ØªÙˆØ§Ø¡Ø§Øª ÙˆØ§Ù„ØªÙ‡Ø§Ø¨ Ø§Ù„Ø£ÙˆØªØ§Ø± ÙˆØ§Ù„ØªÙ…Ø²Ù‚Ø§Øª Ø§Ù„Ø¹Ø¶Ù„ÙŠØ©. ØªØ¹Ø±Ù Ø¹Ù„Ù‰ ÙƒÙŠÙÙŠØ© Ø§Ù„ØªØ¹Ø§ÙÙŠ Ø§Ù„Ø³Ø±ÙŠØ¹ Ù…Ù† Ø§Ù„Ø¥ØµØ§Ø¨Ø© Ø§Ù„Ø±ÙŠØ§Ø¶ÙŠØ©.',
-  keywordsFr: 'blessure sport, entorse, tendinite, trauma sport, kinÃ© sport, rÃ©Ã©ducation',
-  keywordsAr: 'Ø¥ØµØ§Ø¨Ø© Ø±ÙŠØ§Ø¶ÙŠØ©, Ø§Ù„ØªÙˆØ§Ø¡, Ø§Ù„ØªÙ‡Ø§Ø¨ ÙˆØªØ±, ØªØ£Ù‡ÙŠÙ„ Ø±ÙŠØ§Ø¶ÙŠ',
+  titleFr: 'Traumatologie du Sport: Récupération Rapide',
+  titleAr: 'ا�إصابات ا�ر�`اض�`ة: ا�تعاف�` ا�سر�`ع',
+  descriptionFr: 'Entorses, tendinites, déchirures musculaires. Apprenez comment récupérer rapidement après une blessure sportive avec la kinésithérapie.',
+  descriptionAr: 'ع�اج ا�ا�ت��اءات ��ا�ت�!اب ا�أ��تار ��ا�ت�&ز�ات ا�عض��`ة. تعرف ع��0 ْ�`ف�`ة ا�تعاف�` ا�سر�`ع �&�  ا�إصابة ا�ر�`اض�`ة.',
+  keywordsFr: 'blessure sport, entorse, tendinite, trauma sport, kiné sport, rééducation',
+  keywordsAr: 'إصابة ر�`اض�`ة, ا�ت��اء, ا�ت�!اب ��تر, تأ�!�`� ر�`اض�`',
   imageFr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   imageAr: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
   readTimeFr: '7 min de lecture',
-  readTimeAr: '7 Ø¯Ù‚Ø§Ø¦Ù‚ Ù‚Ø±Ø§Ø¡Ø©',
+  readTimeAr: '7 د�ائ� �راءة',
   contentFr: (
     <div className="space-y-6">
       <section>
@@ -33,40 +33,40 @@ const article3 = createArticle({
         <h2 className="text-2xl font-bold mb-4">Protocole RICE ImmÃ©diat</h2>
         <p>Dans les 48-72 heures suivant la blessure:</p>
         <ul className="list-disc pl-6 space-y-2 mt-3">
-          <li><strong>Rest (Repos):</strong> Immobilisation et arrÃªt de l'activitÃ©</li>
-          <li><strong>Ice (GlaÃ§age):</strong> 15 minutes toutes les 2-3 heures</li>
-          <li><strong>Compression:</strong> Bande Ã©lastique pour rÃ©duire le gonflement</li>
-          <li><strong>Elevation:</strong> SurÃ©lÃ©vation pour drainer le liquide</li>
+          <li><strong>Rest (Repos):</strong> Immobilisation et arrÃªt de l'activité</li>
+          <li><strong>Ice (Glaçage):</strong> 15 minutes toutes les 2-3 heures</li>
+          <li><strong>Compression:</strong> Bande élastique pour réduire le gonflement</li>
+          <li><strong>Elevation:</strong> Surélévation pour drainer le liquide</li>
         </ul>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">Phases de RÃ©Ã©ducation</h2>
+        <h2 className="text-2xl font-bold mb-4">Phases de Rééducation</h2>
         <div className="space-y-4">
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold mb-2">Phase 1: Protection (Jours 1-3)</h3>
-            <p>Repos complet, glaÃ§age, compression. DÃ©but des exercices isomÃ©triques doux.</p>
+            <p>Repos complet, glaçage, compression. Début des exercices isométriques doux.</p>
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold mb-2">Phase 2: Mobilisation (Jours 4-10)</h3>
-            <p>Exercices de mobilitÃ© passive, puis active. DÃ©but du renforcement lÃ©ger.</p>
+            <p>Exercices de mobilité passive, puis active. Début du renforcement léger.</p>
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold mb-2">Phase 3: Renforcement (Semaines 2-4)</h3>
-            <p>Renforcement progressif et rÃ©cupÃ©ration proprioceptive.</p>
+            <p>Renforcement progressif et récupération proprioceptive.</p>
           </div>
           <div className="border-l-4 border-medical-600 pl-4">
             <h3 className="font-bold mb-2">Phase 4: Retour au Sport (Semaines 4-6)</h3>
-            <p>EntraÃ®nement fonctionnel et sport-spÃ©cifique.</p>
+            <p>Entraînement fonctionnel et sport-spécifique.</p>
           </div>
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-bold mb-4">PrÃ©vention des Rechutes</h2>
+        <h2 className="text-2xl font-bold mb-4">Prévention des Rechutes</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Ã‰chauffement complet avant l'activitÃ©</li>
+          <li>�0chauffement complet avant l'activitÃ©</li>
           <li>Exercices de force et flexibilitÃ© rÃ©guliers</li>
-          <li>Progression graduelle de l'intensitÃ©</li>
-          <li>RÃ©cupÃ©ration adÃ©quate entre les sÃ©ances</li>
+          <li>Progression graduelle de l'intensité</li>
+          <li>Récupération adéquate entre les séances</li>
           <li>Suivi des signaux d'alerte de votre corps</li>
         </ul>
       </section>
@@ -140,9 +140,9 @@ const article3 = createArticle({
     </div>
   ),
   relatedArticles: [
-    { slug: 'douleurs-epaules-capsulite', titleFr: 'Douleurs aux Ã‰paules', titleAr: 'Ø£Ù„Ù… Ø§Ù„ÙƒØªÙÙŠÙ†', icon: <Dumbbell size={20} /> },
-    { slug: 'arthrose-genou', titleFr: 'Arthrose du Genou', titleAr: 'Ø®Ø´ÙˆÙ†Ø© Ø§Ù„Ø±ÙƒØ¨Ø©', icon: <Dumbbell size={20} /> },
-    { slug: 'recuperation-sportive-prevention-blessures', titleFr: 'RÃ©cupÃ©ration Sportive', titleAr: 'Ø§Ø³ØªØ±Ø¬Ø§Ø¹ Ø±ÙŠØ§Ø¶ÙŠ', icon: <Dumbbell size={20} /> },
+    { slug: 'douleurs-epaules-capsulite', titleFr: 'Douleurs aux �0paules', titleAr: 'أ��& ا�ْتف�`� ', icon: <Dumbbell size={20} /> },
+    { slug: 'arthrose-genou', titleFr: 'Arthrose du Genou', titleAr: 'خش��� ة ا�رْبة', icon: <Dumbbell size={20} /> },
+    { slug: 'recuperation-sportive-prevention-blessures', titleFr: 'Récupération Sportive', titleAr: 'استرجاع ر�`اض�`', icon: <Dumbbell size={20} /> },
   ]
 });
 
