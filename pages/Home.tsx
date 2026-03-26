@@ -3,7 +3,8 @@ import { useCountUp } from '../components/useCountUp';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, MapPin, Bus, Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, PHONE_NUMBER, MAP_EMBED_URL, GOOGLE_REVIEWS_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR, HERO_SLIDESHOW_IMAGES, getWhatsAppBookingLink } from '../constants';
+import { CONTENT, GOOGLE_REVIEWS_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
+import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 import SEOHead from '../components/SEOHead';
 
 const getConditionIcon = (iconName?: string, size = 20) => {
@@ -33,6 +34,7 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ lang }) => {
   const t = CONTENT[lang];
+  const config = useAdminConfig();
   const featuredReviews = t.reviews.items.slice(0, 3);
   const prefix = lang === 'ar' ? '/ar' : '';
   const [benefitIndex, setBenefitIndex] = useState(0);
@@ -53,12 +55,12 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
   }, [t.hero.benefits.length, lang]); // Reset when language changes
 
   useEffect(() => {
-    if (HERO_SLIDESHOW_IMAGES.length <= 1) return;
+    if (config.media.heroImages.length <= 1) return;
     const timer = setInterval(() => {
-      setSlideIndex((prev) => (prev + 1) % HERO_SLIDESHOW_IMAGES.length);
+      setSlideIndex((prev) => (prev + 1) % config.media.heroImages.length);
     }, 4500);
     return () => clearInterval(timer);
-  }, []);
+  }, [config.media.heroImages]);
   
   return (
     <>
@@ -90,17 +92,17 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
               {t.hero.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`tel:${PHONE_NUMBER}`} dir="ltr" className="inline-flex justify-center items-center px-6 py-4 bg-medical-600 text-white font-bold rounded-xl shadow-lg hover:bg-medical-700 transition transform hover:-translate-y-1">
-                <bdi>{PHONE_NUMBER}</bdi>
+              <a href={`tel:${config.contact.phone}`} dir="ltr" className="inline-flex justify-center items-center px-6 py-4 bg-medical-600 text-white font-bold rounded-xl shadow-lg hover:bg-medical-700 transition transform hover:-translate-y-1">
+                <bdi>{config.contact.phone}</bdi>
               </a>
-              <a href={getWhatsAppBookingLink(lang, 'Accueil')} target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center px-6 py-4 bg-green-500 text-white font-bold rounded-xl shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1">
+              <a href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Accueil')} target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center px-6 py-4 bg-green-500 text-white font-bold rounded-xl shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1">
                 {t.hero.ctaWhatsapp}
               </a>
             </div>
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square">
-              {HERO_SLIDESHOW_IMAGES.map((src, i) => (
+              {config.media.heroImages.map((src, i) => (
                 <img
                   key={src}
                   src={src}
@@ -115,9 +117,9 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                    <p className="text-sm opacity-90">Sbata, Casablanca</p>
                  </div>
               </div>
-              {HERO_SLIDESHOW_IMAGES.length > 1 && (
+              {config.media.heroImages.length > 1 && (
                 <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
-                  {HERO_SLIDESHOW_IMAGES.map((_, i) => (
+                  {config.media.heroImages.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setSlideIndex(i)}
@@ -333,13 +335,13 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                    </div>
                  </div>
 
-                 <a href={getWhatsAppBookingLink(lang, 'Carte localisation')} target="_blank" rel="noopener noreferrer" className="mt-8 inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-lg text-center hover:bg-slate-800 transition">
+                 <a href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Carte localisation')} target="_blank" rel="noopener noreferrer" className="mt-8 inline-block px-8 py-3 bg-slate-900 text-white font-bold rounded-lg text-center hover:bg-slate-800 transition">
                    {t.contact.title}
                  </a>
               </div>
               <div className="md:w-1/2 h-80 md:h-auto bg-gray-200">
                 <iframe 
-                  src={MAP_EMBED_URL}
+                  src={config.contact.mapEmbedUrl}
                   width="100%" 
                   height="100%" 
                   style={{border:0}} 

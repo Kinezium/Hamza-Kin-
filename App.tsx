@@ -13,6 +13,9 @@ import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
 import StickyCTA from './components/StickyCTA';
 import { Language } from './types';
+import AdminDashboard from './pages/AdminDashboard';
+import CustomArticle from './pages/Blog/CustomArticle';
+import { applyAdminTheme, useAdminConfig } from './src/adminConfig';
 
 // Blog Article Imports
 import SciaticaArticle from './pages/Blog/SciaticaArticle';
@@ -87,71 +90,90 @@ const App: React.FC = () => {
     document.documentElement.lang = lang;
   }, [lang]);
 
+  const config = useAdminConfig();
+
+  useEffect(() => {
+    applyAdminTheme(config.theme);
+  }, [config.theme]);
+
+  const AppContent: React.FC = () => {
+    return (
+      <>
+        <Layout lang={lang} setLang={setLang}>
+          <Routes>
+            {/* French routes (default) */}
+            <Route path="/" element={<Home lang={lang} />} />
+            <Route path="/pathologies" element={<Conditions lang={lang} />} />
+            <Route path="/services" element={<Services lang={lang} />} />
+            <Route path="/a-domicile" element={<HomeTherapy lang={lang} />} />
+            <Route path="/a-propos" element={<About lang={lang} />} />
+            <Route path="/contact" element={<Contact lang={lang} />} />
+            <Route path="/convention" element={<Convention lang={lang} />} />
+            <Route path="/blog" element={<BlogIndex lang={lang} />} />
+            <Route path="/blog/custom/:slug" element={<CustomArticle lang={lang} />} />
+            <Route path="/blog/sciatique-hernie-discale" element={<SciaticaArticle lang={lang} />} />
+            <Route path="/blog/lombalgie-cervicalgie" element={<BackPainArticle lang={lang} />} />
+            <Route path="/blog/traumatologie-sport" element={<SportsInjuriesArticle lang={lang} />} />
+            <Route path="/blog/arthrose-genou" element={<KneeOsteoarthritisArticle lang={lang} />} />
+            <Route path="/blog/douleurs-epaules-capsulite" element={<ShoulderPainArticle lang={lang} />} />
+            <Route path="/blog/migraines-cephalees" element={<MigrainesArticle lang={lang} />} />
+            <Route path="/blog/kine-pediatrique" element={<PediatricArticle lang={lang} />} />
+            <Route path="/blog/readaptation-post-avc" element={<PostStrokeArticle lang={lang} />} />
+            <Route path="/blog/posture-ergonomie" element={<PostureErgonomicsArticle lang={lang} />} />
+            <Route path="/blog/recuperation-sportive-prevention-blessures" element={<SportsRecoveryArticle lang={lang} />} />
+            <Route path="/gallerie" element={<Gallery lang={lang} />} />
+
+            {/* Legacy French slugs redirects */}
+            <Route path="/conditions" element={<Navigate to="/pathologies" replace />} />
+            <Route path="/home-therapy" element={<Navigate to="/a-domicile" replace />} />
+            <Route path="/about" element={<Navigate to="/a-propos" replace />} />
+            <Route path="/gallery" element={<Navigate to="/gallerie" replace />} />
+
+            {/* Arabic routes /ar */}
+            <Route path="/ar" element={<Home lang="ar" />} />
+            <Route path="/ar/pathologies" element={<Conditions lang="ar" />} />
+            <Route path="/ar/services" element={<Services lang="ar" />} />
+            <Route path="/ar/a-domicile" element={<HomeTherapy lang="ar" />} />
+            <Route path="/ar/a-propos" element={<About lang="ar" />} />
+            <Route path="/ar/contact" element={<Contact lang="ar" />} />
+            <Route path="/ar/convention" element={<Convention lang="ar" />} />
+            <Route path="/ar/blog" element={<BlogIndex lang="ar" />} />
+            <Route path="/ar/blog/custom/:slug" element={<CustomArticle lang="ar" />} />
+            <Route path="/ar/blog/sciatique-hernie-discale" element={<SciaticaArticle lang="ar" />} />
+            <Route path="/ar/blog/lombalgie-cervicalgie" element={<BackPainArticle lang="ar" />} />
+            <Route path="/ar/blog/traumatologie-sport" element={<SportsInjuriesArticle lang="ar" />} />
+            <Route path="/ar/blog/arthrose-genou" element={<KneeOsteoarthritisArticle lang="ar" />} />
+            <Route path="/ar/blog/douleurs-epaules-capsulite" element={<ShoulderPainArticle lang="ar" />} />
+            <Route path="/ar/blog/migraines-cephalees" element={<MigrainesArticle lang="ar" />} />
+            <Route path="/ar/blog/kine-pediatrique" element={<PediatricArticle lang="ar" />} />
+            <Route path="/ar/blog/readaptation-post-avc" element={<PostStrokeArticle lang="ar" />} />
+            <Route path="/ar/blog/posture-ergonomie" element={<PostureErgonomicsArticle lang="ar" />} />
+            <Route path="/ar/blog/recuperation-sportive-prevention-blessures" element={<SportsRecoveryArticle lang="ar" />} />
+            <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
+
+            {/* Legacy Arabic slugs redirects */}
+            <Route path="/ar/conditions" element={<Navigate to="/ar/pathologies" replace />} />
+            <Route path="/ar/home-therapy" element={<Navigate to="/ar/a-domicile" replace />} />
+            <Route path="/ar/about" element={<Navigate to="/ar/a-propos" replace />} />
+            <Route path="/ar/gallery" element={<Navigate to="/ar/gallerie" replace />} />
+
+            {/* 404 catch-all */}
+            <Route path="*" element={<NotFound lang={lang} />} />
+          </Routes>
+        </Layout>
+        <StickyCTA lang={lang} />
+      </>
+    );
+  };
+
   return (
     <BrowserRouter>
       <ScrollToTop />
       <LangSync setLang={setLang} />
-      <Layout lang={lang} setLang={setLang}>
-        <Routes>
-          {/* French routes (default) */}
-          <Route path="/" element={<Home lang={lang} />} />
-          <Route path="/pathologies" element={<Conditions lang={lang} />} />
-          <Route path="/services" element={<Services lang={lang} />} />
-          <Route path="/a-domicile" element={<HomeTherapy lang={lang} />} />
-          <Route path="/a-propos" element={<About lang={lang} />} />
-          <Route path="/contact" element={<Contact lang={lang} />} />
-          <Route path="/convention" element={<Convention lang={lang} />} />
-          <Route path="/blog" element={<BlogIndex lang={lang} />} />
-          <Route path="/blog/sciatique-hernie-discale" element={<SciaticaArticle lang={lang} />} />
-          <Route path="/blog/lombalgie-cervicalgie" element={<BackPainArticle lang={lang} />} />
-          <Route path="/blog/traumatologie-sport" element={<SportsInjuriesArticle lang={lang} />} />
-          <Route path="/blog/arthrose-genou" element={<KneeOsteoarthritisArticle lang={lang} />} />
-          <Route path="/blog/douleurs-epaules-capsulite" element={<ShoulderPainArticle lang={lang} />} />
-          <Route path="/blog/migraines-cephalees" element={<MigrainesArticle lang={lang} />} />
-          <Route path="/blog/kine-pediatrique" element={<PediatricArticle lang={lang} />} />
-          <Route path="/blog/readaptation-post-avc" element={<PostStrokeArticle lang={lang} />} />
-          <Route path="/blog/posture-ergonomie" element={<PostureErgonomicsArticle lang={lang} />} />
-          <Route path="/blog/recuperation-sportive-prevention-blessures" element={<SportsRecoveryArticle lang={lang} />} />
-          <Route path="/gallerie" element={<Gallery lang={lang} />} />
-
-          {/* Legacy French slugs redirects */}
-          <Route path="/conditions" element={<Navigate to="/pathologies" replace />} />
-          <Route path="/home-therapy" element={<Navigate to="/a-domicile" replace />} />
-          <Route path="/about" element={<Navigate to="/a-propos" replace />} />
-          <Route path="/gallery" element={<Navigate to="/gallerie" replace />} />
-
-          {/* Arabic routes /ar */}
-          <Route path="/ar" element={<Home lang="ar" />} />
-          <Route path="/ar/pathologies" element={<Conditions lang="ar" />} />
-          <Route path="/ar/services" element={<Services lang="ar" />} />
-          <Route path="/ar/a-domicile" element={<HomeTherapy lang="ar" />} />
-          <Route path="/ar/a-propos" element={<About lang="ar" />} />
-          <Route path="/ar/contact" element={<Contact lang="ar" />} />
-          <Route path="/ar/convention" element={<Convention lang="ar" />} />
-          <Route path="/ar/blog" element={<BlogIndex lang="ar" />} />
-          <Route path="/ar/blog/sciatique-hernie-discale" element={<SciaticaArticle lang="ar" />} />
-          <Route path="/ar/blog/lombalgie-cervicalgie" element={<BackPainArticle lang="ar" />} />
-          <Route path="/ar/blog/traumatologie-sport" element={<SportsInjuriesArticle lang="ar" />} />
-          <Route path="/ar/blog/arthrose-genou" element={<KneeOsteoarthritisArticle lang="ar" />} />
-          <Route path="/ar/blog/douleurs-epaules-capsulite" element={<ShoulderPainArticle lang="ar" />} />
-          <Route path="/ar/blog/migraines-cephalees" element={<MigrainesArticle lang="ar" />} />
-          <Route path="/ar/blog/kine-pediatrique" element={<PediatricArticle lang="ar" />} />
-          <Route path="/ar/blog/readaptation-post-avc" element={<PostStrokeArticle lang="ar" />} />
-          <Route path="/ar/blog/posture-ergonomie" element={<PostureErgonomicsArticle lang="ar" />} />
-          <Route path="/ar/blog/recuperation-sportive-prevention-blessures" element={<SportsRecoveryArticle lang="ar" />} />
-          <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
-
-          {/* Legacy Arabic slugs redirects */}
-          <Route path="/ar/conditions" element={<Navigate to="/ar/pathologies" replace />} />
-          <Route path="/ar/home-therapy" element={<Navigate to="/ar/a-domicile" replace />} />
-          <Route path="/ar/about" element={<Navigate to="/ar/a-propos" replace />} />
-          <Route path="/ar/gallery" element={<Navigate to="/ar/gallerie" replace />} />
-
-          {/* 404 catch-all */}
-          <Route path="*" element={<NotFound lang={lang} />} />
-        </Routes>
-      </Layout>
-      <StickyCTA lang={lang} />
+      <Routes>
+        <Route path="/LTM" element={<AdminDashboard />} />
+        <Route path="*" element={<AppContent />} />
+      </Routes>
     </BrowserRouter>
   );
 };

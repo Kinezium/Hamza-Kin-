@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, Globe, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Language } from '../types';
-import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL, PHONE_NUMBER, SOCIAL_LINKS, getWhatsAppBookingLink, GOOGLE_MAPS_CENTER_URL, ADDRESS } from '../constants';
+import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL } from '../constants';
+import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 import SchemaMarkup from './SchemaMarkup';
 
 interface LayoutProps {
@@ -14,6 +15,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = CONTENT[lang].nav;
+  const config = useAdminConfig();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -45,6 +47,13 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     { to: `${prefix}/contact`, label: t.contact },
     { to: `${prefix}/convention`, label: lang === 'fr' ? 'Convention' : 'الاتفاقيات' }
   ];
+
+  const managedPageLinks = config.pageLinks.map((item) => ({
+    to: lang === 'fr' ? item.pathFr : item.pathAr,
+    label: lang === 'fr' ? item.labelFr : item.labelAr
+  }));
+
+  const footerLinks = managedPageLinks.length ? managedPageLinks : siteLinks;
 
   const blogLinks = [
     {
@@ -105,19 +114,19 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
       <SchemaMarkup />
       
       {/* Top Bar */}
-      <div className="bg-medical-700 text-white text-sm py-2 px-4 hidden sm:block">
+      <div className="text-white text-sm py-2 px-4 hidden sm:block" style={{ backgroundColor: config.theme.primaryDark }}>
         <div className="container mx-auto flex justify-between items-center">
-          <a href={GOOGLE_MAPS_CENTER_URL} target="_blank" rel="noopener noreferrer" className="hover:underline">
-            📍 {ADDRESS}
+          <a href={config.contact.mapsLink} target="_blank" rel="noopener noreferrer" className="hover:underline">
+            📍 {config.contact.address}
           </a>
-          <a href={`tel:${PHONE_NUMBER}`} className="hover:underline font-bold flex items-center gap-1" dir="ltr">
-            <Phone size={14} /> <span dir="ltr">{PHONE_NUMBER}</span>
+          <a href={`tel:${config.contact.phone}`} className="hover:underline font-bold flex items-center gap-1" dir="ltr">
+            <Phone size={14} /> <span dir="ltr">{config.contact.phone}</span>
           </a>
         </div>
       </div>
 
       {/* Navbar */}
-      <nav className="bg-white shadow-lg sticky top-0 z-50 border-b-4 border-medical-600">
+      <nav className="bg-white shadow-lg sticky top-0 z-50 border-b-4" style={{ borderColor: config.theme.primary }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -149,7 +158,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                 <span>{lang === 'fr' ? 'العربية' : 'Français'}</span>
               </button>
 
-              <a href={getWhatsAppBookingLink(lang, 'Navbar')} target="_blank" rel="noopener noreferrer" className="bg-medical-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-medical-700 transition shadow-sm">
+              <a href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Navbar')} target="_blank" rel="noopener noreferrer" className="text-white px-4 py-2 rounded-lg font-bold transition shadow-sm" style={{ backgroundColor: config.theme.primary }}>
                 {t.bookNow}
               </a>
             </div>
@@ -182,7 +191,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <Link to={`${prefix}/a-propos`} onClick={closeMenu} className={linkClass(`${prefix}/a-propos`)}>{t.about}</Link>
               <Link to={`${prefix}/contact`} onClick={closeMenu} className={linkClass(`${prefix}/contact`)}>{t.contact}</Link>
               <div className="pt-4 pb-2">
-                <a href={getWhatsAppBookingLink(lang, 'Menu mobile')} target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block w-full text-center bg-medical-600 text-white px-4 py-3 rounded-lg font-bold">
+                <a href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Menu mobile')} target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block w-full text-center text-white px-4 py-3 rounded-lg font-bold" style={{ backgroundColor: config.theme.primary }}>
                   {t.bookNow}
                 </a>
               </div>
@@ -197,7 +206,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white pt-12 pb-24 md:pb-8">
+      <footer className="text-white pt-12 pb-24 md:pb-8" style={{ backgroundColor: config.theme.footerBackground }}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-start rtl:md:text-right">
             <div>
@@ -217,20 +226,18 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             <div>
               <h3 className="text-lg font-bold mb-4">{lang === 'fr' ? 'Liens Rapides' : 'روابط سريعة'}</h3>
               <ul className="space-y-2 text-slate-300">
-                <li><Link to={`${prefix}/pathologies`} className="hover:text-white">{t.conditions}</Link></li>
-                <li><Link to={`${prefix}/services`} className="hover:text-white">{t.services}</Link></li>
-                <li><Link to={`${prefix}/a-domicile`} className="hover:text-white">{t.homeTherapy}</Link></li>
-                <li><Link to={`${prefix}/gallerie`} className="hover:text-white">{t.gallery}</Link></li>
-                <li><Link to={`${prefix}/blog`} className="hover:text-white">{lang === 'fr' ? 'Blog' : 'مدونة'}</Link></li>
+                {footerLinks.map((item) => (
+                  <li key={item.to + item.label}><Link to={item.to} className="hover:text-white">{item.label}</Link></li>
+                ))}
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-bold mb-4">{t.contact}</h3>
-              <a href={GOOGLE_MAPS_CENTER_URL} target="_blank" rel="noopener noreferrer" className="text-slate-300 mb-2 hover:text-white hover:underline inline-block">{CONTENT[lang].contact.address}</a>
-              <p className="text-slate-300 font-bold text-lg" dir="ltr">{PHONE_NUMBER}</p>
+              <a href={config.contact.mapsLink} target="_blank" rel="noopener noreferrer" className="text-slate-300 mb-2 hover:text-white hover:underline inline-block">{config.contact.address}</a>
+              <p className="text-slate-300 font-bold text-lg" dir="ltr">{config.contact.phone}</p>
               <div className="mt-4 flex justify-center md:justify-start rtl:md:justify-end gap-4">
                 <a 
-                  href={SOCIAL_LINKS.facebook}
+                  href={config.contact.social.facebook}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="bg-slate-800 p-2 rounded-full hover:bg-blue-600 transition text-white" 
@@ -239,7 +246,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                   <Facebook size={20} />
                 </a>
                 <a 
-                  href={SOCIAL_LINKS.instagram}
+                  href={config.contact.social.instagram}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="bg-slate-800 p-2 rounded-full hover:bg-pink-600 transition text-white" 
@@ -248,7 +255,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                   <Instagram size={20} />
                 </a>
                 <a
-                  href={SOCIAL_LINKS.linkedin}
+                  href={config.contact.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-slate-800 p-2 rounded-full hover:bg-sky-700 transition text-white"
@@ -270,7 +277,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                   {lang === 'fr' ? 'Pages principales' : 'الصفحات الرئيسية'}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
-                  {siteLinks.map((item) => (
+                  {footerLinks.map((item) => (
                     <Link key={item.to} to={item.to} className="text-slate-300 hover:text-white text-sm">
                       {item.label}
                     </Link>

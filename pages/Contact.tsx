@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CONTENT, PHONE_NUMBER, MAP_EMBED_URL, getWhatsAppBookingLink, GOOGLE_MAPS_CENTER_URL } from '../constants';
+import { CONTENT } from '../constants';
+import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 import SEOHead from '../components/SEOHead';
 import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
@@ -11,6 +12,7 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ lang }) => {
   const t = CONTENT[lang].contact;
+   const config = useAdminConfig();
    const prefix = lang === 'ar' ? '/ar' : '';
 
    const relatedLinks = [
@@ -65,7 +67,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                        </div>
                        <div>
                           <h3 className="font-bold text-gray-900">{t.addressLabel}</h3>
-                          <a href={GOOGLE_MAPS_CENTER_URL} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-medical-700 hover:underline">{t.address}</a>
+                          <a href={config.contact.mapsLink} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-medical-700 hover:underline">{config.contact.address}</a>
                        </div>
                     </div>
 
@@ -75,8 +77,8 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
                        </div>
                        <div>
                           <h3 className="font-bold text-gray-900">{t.phoneLabel}</h3>
-                          <p className="text-gray-600 font-mono text-lg" dir="ltr">{t.phone}</p>
-                          <a href={`tel:${PHONE_NUMBER}`} className="text-sm text-medical-600 font-bold hover:underline mt-1 block" dir="ltr">
+                          <p className="text-gray-600 font-mono text-lg" dir="ltr">{config.contact.phone}</p>
+                          <a href={`tel:${config.contact.phone}`} className="text-sm text-medical-600 font-bold hover:underline mt-1 block" dir="ltr">
                              {lang === 'fr' ? 'Appeler maintenant' : 'اتصل الآن'}
                           </a>
                        </div>
@@ -96,7 +98,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
 
                  <div className="p-8 bg-gray-50 border-t border-gray-100 text-center">
                     <a 
-                                 href={getWhatsAppBookingLink(lang, 'Contact')} 
+                                 href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Contact')} 
                       className="inline-flex items-center justify-center gap-2 w-full py-4 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition"
                                  target="_blank"
                                  rel="noopener noreferrer"
@@ -109,7 +111,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
               {/* Map */}
               <div className="bg-white p-4 rounded-3xl shadow-xl h-[500px] lg:h-auto">
                  <iframe 
-                  src={MAP_EMBED_URL}
+                  src={config.contact.mapEmbedUrl}
                   width="100%" 
                   height="100%" 
                   style={{border:0, borderRadius: '1rem'}} 

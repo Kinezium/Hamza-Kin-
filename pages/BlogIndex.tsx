@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
 import { Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame } from 'lucide-react';
-import { getWhatsAppBookingLink } from '../constants';
-import { BLOG_TOPIC_IMAGES } from './Blog/blogImages';
+import { makeWhatsAppLink, useAdminConfig, useManagedBlogImages } from '../src/adminConfig';
 
 interface BlogPost {
   slug: string;
@@ -24,6 +23,8 @@ interface BlogIndexProps {
 
 const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
+  const config = useAdminConfig();
+  const managedImages = useManagedBlogImages();
 
   const posts: BlogPost[] = [
     {
@@ -33,7 +34,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Guide complet sur le traitement de la sciatique et hernie discale',
       descAr: 'دليل شامل لعلاج عرق النسا والانزلاق الغضروفي',
       icon: <Zap size={28} />,
-      image: BLOG_TOPIC_IMAGES['sciatique-hernie-discale'],
+      image: managedImages['sciatique-hernie-discale'],
       readTimeFr: '5 min',
       readTimeAr: '5 دقائق'
     },
@@ -44,7 +45,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Solutions efficaces pour soulager vos douleurs de dos et cou',
       descAr: 'حلول فعالة لتخفيف آلام الظهر والرقبة',
       icon: <ArrowUpDown size={28} />,
-      image: BLOG_TOPIC_IMAGES['lombalgie-cervicalgie'],
+      image: managedImages['lombalgie-cervicalgie'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     },
@@ -55,7 +56,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Récupération rapide après les blessures sportives',
       descAr: 'التعافي السريع من الإصابات الرياضية',
       icon: <Dumbbell size={28} />,
-      image: BLOG_TOPIC_IMAGES['traumatologie-sport'],
+      image: managedImages['traumatologie-sport'],
       readTimeFr: '7 min',
       readTimeAr: '7 دقائق'
     },
@@ -66,7 +67,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Vie sans douleur malgré l\'arthrose',
       descAr: 'الحياة بدون ألم رغم خشونة المفاصل',
       icon: <Bone size={28} />,
-      image: BLOG_TOPIC_IMAGES['arthrose-genou'],
+      image: managedImages['arthrose-genou'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     },
@@ -77,7 +78,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Traitement de la capsulite et douleurs d\'épaule',
       descAr: 'علاج تجمد الكتف وآلام الأكتاف',
       icon: <Stethoscope size={28} />,
-      image: BLOG_TOPIC_IMAGES['douleurs-epaules-capsulite'],
+      image: managedImages['douleurs-epaules-capsulite'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     },
@@ -88,7 +89,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Soulagement naturel des migraines et céphalées de tension',
       descAr: 'تخفيف طبيعي من الصداع والشقيقة',
       icon: <Brain size={28} />,
-      image: BLOG_TOPIC_IMAGES['migraines-cephalees'],
+      image: managedImages['migraines-cephalees'],
       readTimeFr: '5 min',
       readTimeAr: '5 دقائق'
     },
@@ -99,7 +100,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Développement normal de l\'enfant et rééducation pédiatrique',
       descAr: 'النمو الطبيعي للطفل والترويض الطبي',
       icon: <Baby size={28} />,
-      image: BLOG_TOPIC_IMAGES['kine-pediatrique'],
+      image: managedImages['kine-pediatrique'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     },
@@ -110,7 +111,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Reprendre votre vie après un AVC',
       descAr: 'استعادة الحياة بعد السكتة الدماغية',
       icon: <Flame size={28} />,
-      image: BLOG_TOPIC_IMAGES['readaptation-post-avc'],
+      image: managedImages['readaptation-post-avc'],
       readTimeFr: '7 min',
       readTimeAr: '7 دقائق'
     },
@@ -121,7 +122,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Prévention des douleurs par une bonne posture',
       descAr: 'منع الآلام من خلال وضعية صحيحة',
       icon: <Stethoscope size={28} />,
-      image: BLOG_TOPIC_IMAGES['posture-ergonomie'],
+      image: managedImages['posture-ergonomie'],
       readTimeFr: '5 min',
       readTimeAr: '5 دقائق'
     },
@@ -132,11 +133,25 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       descFr: 'Optimisation de la récupération et prévention des blessures',
       descAr: 'تحسين الاستشفاء والوقاية من الإصابات',
       icon: <Dumbbell size={28} />,
-      image: BLOG_TOPIC_IMAGES['recuperation-sportive-prevention-blessures'],
+      image: managedImages['recuperation-sportive-prevention-blessures'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
     }
   ];
+
+  const customPosts: BlogPost[] = config.customBlogPosts.map((item) => ({
+    slug: `custom/${item.slug}`,
+    titleFr: item.titleFr,
+    titleAr: item.titleAr,
+    descFr: item.descFr,
+    descAr: item.descAr,
+    icon: <Stethoscope size={28} />,
+    image: item.image,
+    readTimeFr: item.readTimeFr,
+    readTimeAr: item.readTimeAr
+  }));
+
+  const allPosts = [...customPosts, ...posts];
 
   const t = lang === 'fr'
     ? {
@@ -182,7 +197,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">{t.articles}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post) => (
+              {allPosts.map((post) => (
                 <Link
                   key={post.slug}
                   to={`${prefix}/blog/${post.slug}`}
@@ -220,7 +235,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
             <h2 className="text-3xl font-bold mb-4">{t.ctaTitle}</h2>
             <p className="text-medical-100 mb-8">{t.ctaText}</p>
             <a
-              href={getWhatsAppBookingLink(lang, 'Blog')}
+              href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Blog')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition"

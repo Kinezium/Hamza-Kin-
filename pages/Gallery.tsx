@@ -1,40 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { getWhatsAppBookingLink } from '../constants';
 import SEOHead from '../components/SEOHead';
+import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 
 interface GalleryProps {
   lang: Language;
 }
 
-// Gallery images – add new URLs here when provided by the client.
-// Note: gallery images must NOT appear in the home slideshow.
-const galleryImages = [
-  {
-    src: 'https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it',
-    altFr: 'Séance de kinésithérapie au Centre Chnider',
-    altAr: 'جلسة ترويض طبي في مركز شنيدر'
-  },
-  {
-    src: 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF',
-    altFr: 'Espace de soins et rééducation',
-    altAr: 'فضاء العلاج وإعادة التأهيل'
-  },
-  {
-    src: 'https://blogger.googleusercontent.com/img/a/AVvXsEgPpgnG8yWOLLpQ_YltbQjM6nuv3OcIRtxwl3KCf43F37Be2mYy3YtVddmnKWGS0VZ_5FwB2zhz2s8DevbEq_06S0HcQweW3nsmc4l1M1W3rOZfnAUWzUODt5aSwFYqqEIsun5_BWB4DR_dU7wOku3fk-8bRYnakekIqpk8jS_hqJRz5wsrq_Ro9hKn',
-    altFr: 'Séance de rééducation au centre',
-    altAr: 'جلسة إعادة تأهيل داخل المركز'
-  },
-  {
-    src: 'https://blogger.googleusercontent.com/img/a/AVvXsEiiOaAMnYdBDfw0riF-Zn7jkkp7_4dkSiAVy2x5oSePlVcH6ptw0XK5Z8C0JZHa_XIW-rtbve5oGtNrqmGM_gAbdnTYvzsgYDDwT8avZ5-98Dky1djCGEUMhgmoB8_xaS43W8X22IkwwOymaRoqJ-_cvU2XLFEnbUQ9pujMwUBiNSzejHijYx_Cm4eY',
-    altFr: 'Équipement de kinésithérapie',
-    altAr: 'معدات الترويض الطبي'
-  }
-];
-
 const Gallery: React.FC<GalleryProps> = ({ lang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
+  const config = useAdminConfig();
   return (
     <>
       <SEOHead
@@ -59,7 +35,7 @@ const Gallery: React.FC<GalleryProps> = ({ lang }) => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
+            {config.media.galleryImages.map((image, index) => (
               <figure
                 key={`${image.src}-${index}`}
                 className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm"
@@ -94,7 +70,7 @@ const Gallery: React.FC<GalleryProps> = ({ lang }) => {
             )}
           </p>
           <a
-            href={getWhatsAppBookingLink(lang, 'Page galerie')}
+            href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Page galerie')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-medical-600 text-white font-bold rounded-xl hover:bg-medical-700 transition shadow-sm"
