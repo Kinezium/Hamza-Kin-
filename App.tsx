@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Conditions from './pages/Conditions';
 import Services from './pages/Services';
 import HomeTherapy from './pages/HomeTherapy';
+import HomeTherapyGeriatrics from './pages/HomeTherapyGeriatrics';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import BlogIndex from './pages/BlogIndex';
@@ -106,6 +107,7 @@ const App: React.FC = () => {
             <Route path="/pathologies" element={<Conditions lang={lang} />} />
             <Route path="/services" element={<Services lang={lang} />} />
             <Route path="/a-domicile" element={<HomeTherapy lang={lang} />} />
+            <Route path="/a-domicile-geriatrie-casablanca" element={<HomeTherapyGeriatrics lang={lang} />} />
             <Route path="/a-propos" element={<About lang={lang} />} />
             <Route path="/contact" element={<Contact lang={lang} />} />
             <Route path="/convention" element={<Convention lang={lang} />} />
@@ -134,6 +136,7 @@ const App: React.FC = () => {
             <Route path="/ar/pathologies" element={<Conditions lang="ar" />} />
             <Route path="/ar/services" element={<Services lang="ar" />} />
             <Route path="/ar/a-domicile" element={<HomeTherapy lang="ar" />} />
+            <Route path="/ar/a-domicile-geriatrie-casablanca" element={<HomeTherapyGeriatrics lang="ar" />} />
             <Route path="/ar/a-propos" element={<About lang="ar" />} />
             <Route path="/ar/contact" element={<Contact lang="ar" />} />
             <Route path="/ar/convention" element={<Convention lang="ar" />} />

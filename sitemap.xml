@@ -156,6 +156,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/a-domicile-geriatrie-casablanca</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/a-domicile-geriatrie-casablanca" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/a-domicile-geriatrie-casablanca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/a-domicile-geriatrie-casablanca" />
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/contact</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/contact" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/contact" />
@@ -325,6 +334,15 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/a-domicile" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/a-domicile" />
     <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/a-domicile-geriatrie-casablanca</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/a-domicile-geriatrie-casablanca" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/a-domicile-geriatrie-casablanca" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/a-domicile-geriatrie-casablanca" />
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

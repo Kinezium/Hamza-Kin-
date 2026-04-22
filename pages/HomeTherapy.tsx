@@ -23,6 +23,7 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
    const serviceZones = lang === 'fr' ? SERVICE_ZONES_FR : SERVICE_ZONES_AR;
 
    const relatedLinks = [
+      { to: `${prefix}/a-domicile-geriatrie-casablanca`, label: lang === 'fr' ? 'Kiné gériatrique à domicile Casablanca' : 'ترويض منزلي للمسنين بالدار البيضاء' },
       { to: `${prefix}/services`, label: lang === 'fr' ? 'Services de kinésithérapie' : 'خدمات الترويض الطبي' },
       { to: `${prefix}/pathologies`, label: lang === 'fr' ? 'Pathologies traitées' : 'الأمراض المعالجة' },
       { to: `${prefix}/blog/readaptation-post-avc`, label: lang === 'fr' ? 'Article: réadaptation post AVC' : 'مقال: التأهيل بعد السكتة الدماغية' },
