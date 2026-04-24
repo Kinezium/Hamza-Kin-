@@ -8,7 +8,9 @@
   'kine-pediatrique': 'https://picsum.photos/seed/pediatric-chnider/1600/900',
   'readaptation-post-avc': 'https://blogger.googleusercontent.com/img/a/AVvXsEjgbD0gLWSDaXNFsN4jGAxfo57PmWI3zcdN5ATvsujcg2OTEN2KrePuU5ELFzI-XdssSSkmodmPZ_F80DUsvq1d3VPiAxkoqo_GvFoD_1PTMSIxXknfMcRiyonBSMPjnTOoqUfRAls6lPVBPX6f8m6Ps8mPQTsJgseCw90r5R37qAVlTftfcIrGGgy8',
   'posture-ergonomie': 'https://blogger.googleusercontent.com/img/a/AVvXsEjmjnzipPijYMh10L_4mFgkPe4oFb4Pr1RFw4KBgpoygO1KYKLiok1FdcIQAfNG76R_x3FjbWDesFFRQMOa630GA0d-HBb9DCSH8mmMLUxWcZ8mkH_HKx4ky--qkYIbk0O3DO5BVwmO1kZxKx1aijAA8SV81RoGv82G_6fn2ivPFnmoEOeewE_F-qZd',
-  'recuperation-sportive-prevention-blessures': 'https://blogger.googleusercontent.com/img/a/AVvXsEjVOBZMCgvh6xjfI8Iv6ZOvAQPLWnOPpU9arqpTUBOsocR6QzAtbtqG64Ha4q1G_2KVDvMYd27vy6l8gexMLz105SsBluWpcz1aqj-qTbVcsfTsxKVUp_KRJwpHgXzKnI3lGqdebH8iKwKvs4LEKAiSKf3mqXPHOgSiJOLkuz3vzz50y_KV-JZtFWgf'
+  'recuperation-sportive-prevention-blessures': 'https://blogger.googleusercontent.com/img/a/AVvXsEjVOBZMCgvh6xjfI8Iv6ZOvAQPLWnOPpU9arqpTUBOsocR6QzAtbtqG64Ha4q1G_2KVDvMYd27vy6l8gexMLz105SsBluWpcz1aqj-qTbVcsfTsxKVUp_KRJwpHgXzKnI3lGqdebH8iKwKvs4LEKAiSKf3mqXPHOgSiJOLkuz3vzz50y_KV-JZtFWgf',
+  'reeducation-geriatrique-importance-kine': 'https://picsum.photos/seed/geriatric-rehab-chnider/1600/900',
+  'activite-physique-adaptee-seniors': 'https://picsum.photos/seed/senior-activity-chnider/1600/900'
 };
 
 

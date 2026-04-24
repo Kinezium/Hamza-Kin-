@@ -141,6 +141,28 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       image: managedImages['recuperation-sportive-prevention-blessures'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
+    },
+    {
+      slug: 'reeducation-geriatrique-importance-kine',
+      titleFr: 'Rééducation Gériatrique',
+      titleAr: 'إعادة التأهيل لكبار السن',
+      descFr: 'Pourquoi la kiné est essentielle pour garder autonomie et équilibre après 60 ans',
+      descAr: 'لماذا الترويض الطبي ضروري للحفاظ على الحركة والاستقلالية بعد 60 سنة',
+      icon: <Stethoscope size={28} />,
+      image: managedImages['reeducation-geriatrique-importance-kine'],
+      readTimeFr: '6 min',
+      readTimeAr: '6 دقائق'
+    },
+    {
+      slug: 'activite-physique-adaptee-seniors',
+      titleFr: 'Activité Physique Adaptée Seniors',
+      titleAr: 'النشاط البدني الملائم لكبار السن',
+      descFr: 'Exercices simples pour maman et papa et risques à éviter si on ne bouge pas',
+      descAr: 'تمارين بسيطة للاب والام ومخاطر قلة الحركة',
+      icon: <Dumbbell size={28} />,
+      image: managedImages['activite-physique-adaptee-seniors'],
+      readTimeFr: '5 min',
+      readTimeAr: '5 دقائق'
     }
   ];
 

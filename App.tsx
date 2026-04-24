@@ -29,6 +29,8 @@ import PediatricArticle from './pages/Blog/PediatricArticle';
 import PostStrokeArticle from './pages/Blog/PostStrokeArticle';
 import PostureErgonomicsArticle from './pages/Blog/PostureErgonomicsArticle';
 import SportsRecoveryArticle from './pages/Blog/SportsRecoveryArticle';
+import GeriatricReeducationArticle from './pages/Blog/GeriatricReeducationArticle';
+import SeniorPhysicalActivityArticle from './pages/Blog/SeniorPhysicalActivityArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -123,6 +125,8 @@ const App: React.FC = () => {
             <Route path="/blog/readaptation-post-avc" element={<PostStrokeArticle lang={lang} />} />
             <Route path="/blog/posture-ergonomie" element={<PostureErgonomicsArticle lang={lang} />} />
             <Route path="/blog/recuperation-sportive-prevention-blessures" element={<SportsRecoveryArticle lang={lang} />} />
+            <Route path="/blog/reeducation-geriatrique-importance-kine" element={<GeriatricReeducationArticle lang={lang} />} />
+            <Route path="/blog/activite-physique-adaptee-seniors" element={<SeniorPhysicalActivityArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -152,6 +156,8 @@ const App: React.FC = () => {
             <Route path="/ar/blog/readaptation-post-avc" element={<PostStrokeArticle lang="ar" />} />
             <Route path="/ar/blog/posture-ergonomie" element={<PostureErgonomicsArticle lang="ar" />} />
             <Route path="/ar/blog/recuperation-sportive-prevention-blessures" element={<SportsRecoveryArticle lang="ar" />} />
+            <Route path="/ar/blog/reeducation-geriatrique-importance-kine" element={<GeriatricReeducationArticle lang="ar" />} />
+            <Route path="/ar/blog/activite-physique-adaptee-seniors" element={<SeniorPhysicalActivityArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 
             {/* Legacy Arabic slugs redirects */}
