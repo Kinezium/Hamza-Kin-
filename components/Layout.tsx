@@ -41,6 +41,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     { to: `${prefix}/pathologies`, label: t.conditions },
     { to: `${prefix}/services`, label: t.services },
     { to: `${prefix}/a-domicile`, label: t.homeTherapy },
+    { to: `${prefix}/a-domicile-geriatrie-casablanca`, label: lang === 'fr' ? 'Gériatrie domicile' : 'ترويض المسنين' },
     { to: `${prefix}/gallerie`, label: t.gallery },
     { to: `${prefix}/blog`, label: lang === 'fr' ? 'Blog' : 'مدونة' },
     { to: `${prefix}/a-propos`, label: t.about },
@@ -148,6 +149,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <NavLink to={`${prefix}/pathologies`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.conditions}</NavLink>
               <NavLink to={`${prefix}/services`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.services}</NavLink>
               <NavLink to={`${prefix}/a-domicile`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.homeTherapy}</NavLink>
+              <NavLink to={`${prefix}/a-domicile-geriatrie-casablanca`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{lang === 'fr' ? 'Gériatrie' : 'المسنين'}</NavLink>
               <NavLink to={`${prefix}/gallerie`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.gallery}</NavLink>
               <NavLink to={`${prefix}/blog`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{lang === 'fr' ? 'Blog' : 'مدونة'}</NavLink>
               <NavLink to={`${prefix}/a-propos`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.about}</NavLink>
@@ -186,6 +188,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <Link to={`${prefix}/pathologies`} onClick={closeMenu} className={linkClass(`${prefix}/pathologies`)}>{t.conditions}</Link>
               <Link to={`${prefix}/services`} onClick={closeMenu} className={linkClass(`${prefix}/services`)}>{t.services}</Link>
               <Link to={`${prefix}/a-domicile`} onClick={closeMenu} className={linkClass(`${prefix}/a-domicile`)}>{t.homeTherapy}</Link>
+              <Link to={`${prefix}/a-domicile-geriatrie-casablanca`} onClick={closeMenu} className={linkClass(`${prefix}/a-domicile-geriatrie-casablanca`)}>{lang === 'fr' ? 'Gériatrie domicile' : 'ترويض المسنين'}</Link>
               <Link to={`${prefix}/gallerie`} onClick={closeMenu} className={linkClass(`${prefix}/gallerie`)}>{t.gallery}</Link>
               <Link to={`${prefix}/blog`} onClick={closeMenu} className={linkClass(`${prefix}/blog`)}>{lang === 'fr' ? 'Blog' : 'مدونة'}</Link>
               <Link to={`${prefix}/a-propos`} onClick={closeMenu} className={linkClass(`${prefix}/a-propos`)}>{t.about}</Link>

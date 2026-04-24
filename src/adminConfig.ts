@@ -291,6 +291,7 @@ export const DEFAULT_ADMIN_CONFIG: AdminSiteConfig = {
     { id: 'services', labelFr: 'Services', labelAr: 'الخدمات', pathFr: '/services', pathAr: '/ar/services' },
     { id: 'conditions', labelFr: 'Pathologies', labelAr: 'الأمراض', pathFr: '/pathologies', pathAr: '/ar/pathologies' },
     { id: 'home-therapy', labelFr: 'A domicile', labelAr: 'ترويض منزلي', pathFr: '/a-domicile', pathAr: '/ar/a-domicile' },
+    { id: 'home-therapy-geriatrics', labelFr: 'Geriatrie domicile', labelAr: 'ترويض المسنين', pathFr: '/a-domicile-geriatrie-casablanca', pathAr: '/ar/a-domicile-geriatrie-casablanca' },
     { id: 'gallery', labelFr: 'Galerie', labelAr: 'المعرض', pathFr: '/gallerie', pathAr: '/ar/gallerie' },
     { id: 'blog', labelFr: 'Blog', labelAr: 'المدونة', pathFr: '/blog', pathAr: '/ar/blog' },
     { id: 'about', labelFr: 'A propos', labelAr: 'عن المركز', pathFr: '/a-propos', pathAr: '/ar/a-propos' },
