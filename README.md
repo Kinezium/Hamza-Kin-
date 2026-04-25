@@ -1,41 +1,64 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Centre Chnider - Site Officiel
 
-# Run and deploy your AI Studio app
+Projet web institutionnel du Centre Chnider, conçu et développé par la société Clinaxis.
 
-This contains everything you need to run your app locally.
+## A propos de Clinaxis
 
-View your app in AI Studio: https://ai.studio/apps/drive/1DFHo_ZW0zP6ZcgkKDdKT-jUQLwBYlZHp
+Clinaxis est une société qui conçoit des solutions médicales et paramédicales:
 
-## Run Locally
+- Gestion des cabinets
+- Suivi des patients
+- Facturation
+- Solutions dédiées aux familles des patients
+- E-learning pour les patients et leurs familles
+- Education thérapeutique des patients et des parents
+- Création de sites web pour les partenaires, centres médicaux et paramédicaux
 
-**Prerequisites:**  Node.js
+Site officiel: https://clinaxis.ma
 
+## Lancement en local
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Prerequis:
 
-## SPA Deployment (BrowserRouter)
+- Node.js
 
-This app uses clean URLs (`/page`) and needs a SPA fallback to `index.html` in production.
+Installation et execution:
 
-- Nginx:
-   ```nginx
-   location / {
-      try_files $uri $uri/ /index.html;
-   }
-   ```
-
-- Static hosting with `serve`:
+1. Installer les dependances:
    ```bash
-   npx serve dist --single --config serve.json
+   npm install
+   ```
+2. Lancer le serveur de developpement:
+   ```bash
+   npm run dev
    ```
 
-- Optional safety fallback (generate static route copies after build):
-   ```bash
-   npm run build:fallbacks
-   ```
+## Build production
+
+```bash
+npm run build
+```
+
+## Deploiement SPA (BrowserRouter)
+
+Ce projet utilise des URLs propres (`/page`) et necessite un fallback vers `index.html` en production.
+
+Nginx:
+
+```nginx
+location / {
+  try_files $uri $uri/ /index.html;
+}
+```
+
+Hebergement statique avec `serve`:
+
+```bash
+npx serve dist --single --config serve.json
+```
+
+Fallback statique optionnel apres build:
+
+```bash
+npm run build:fallbacks
+```

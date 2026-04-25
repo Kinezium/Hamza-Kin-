@@ -307,10 +307,15 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               © {new Date().getFullYear()} {lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}. {lang === 'ar' ? 'جميع الحقوق محفوظة' : 'Tous droits réservés'}.
             </p>
             <p className="mt-2 text-slate-400">
-              {lang === 'fr' ? 'Site créé par ' : 'الموقع تم تطويره بواسطة '}
+              {lang === 'fr' ? 'Conçu et développé par ' : 'تم تصميم وتطوير الموقع بواسطة '}
               <a href="https://clinaxis.ma" target="_blank" rel="noopener noreferrer" className="font-semibold text-medical-400 hover:text-medical-300">
                 CLINAXIS.MA
               </a>
+            </p>
+            <p className="mt-2 text-slate-500 max-w-4xl mx-auto leading-relaxed">
+              {lang === 'fr'
+                ? 'Clinaxis crée des solutions médicales et paramédicales: gestion des cabinets, suivi patient, facturation, solutions pour les familles, e-learning et éducation thérapeutique, ainsi que la création de sites pour les partenaires et centres médicaux/paramédicaux.'
+                : 'Clinaxis تطور حلولًا طبية وشبه طبية: إدارة العيادات، تتبع المرضى، الفوترة، حلولًا لعائلات المرضى، التعلّم الإلكتروني والتثقيف العلاجي، إضافة إلى إنشاء مواقع للشركاء والمراكز الطبية وشبه الطبية.'}
             </p>
           </div>
         </div>
