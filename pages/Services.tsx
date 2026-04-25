@@ -14,9 +14,9 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
   const t = CONTENT[lang];
   const config = useAdminConfig();
   const seo = getManagedSeo(config, 'services', lang, {
-    title: lang === 'fr' ? 'Services Kinesitherapie Casablanca | Reeducation, Respiratoire, Sport & Domicile' : 'خدمات الترويض الطبي بالدار البيضاء | إعادة التأهيل والتنفس والترويض المنزلي',
+    title: lang === 'fr' ? 'Services de kinésithérapie | Centre Chnider - Casablanca' : 'خدمات الترويض الطبي بالدار البيضاء | إعادة التأهيل والتنفس والترويض المنزلي',
     description: t.seo.servicesDesc,
-    keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, kine orthopedique, kine fonctionnelle, kine respiratoire, hijama medicale, kine a domicile, sidi othmane, maarif, hay hassani' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, خدمات الترويض الطبي, ترويض منزلي, علاج العظام, علاج التنفس'
+    keywords: lang === 'fr' ? 'kiné Aïn Chock, kiné Sbata, kiné Casablanca, kiné orthopédique, kiné fonctionnelle, kiné respiratoire, hijama médicale, kiné à domicile, Sidi Othmane, Maarif, Hay Hassani' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, خدمات الترويض الطبي, ترويض منزلي, علاج العظام, علاج التنفس'
   });
   const prefix = lang === 'ar' ? '/ar' : '';
 

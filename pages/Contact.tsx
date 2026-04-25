@@ -14,9 +14,9 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
   const t = CONTENT[lang].contact;
    const config = useAdminConfig();
    const seo = getManagedSeo(config, 'contact', lang, {
-      title: lang === 'fr' ? 'Contact Kine Casablanca | Centre Chnider Sbata, Cabinet & Domicile' : 'اتصل بمركز الترويض الطبي بالدار البيضاء | مركز اشنيدر',
+      title: lang === 'fr' ? 'Contact | Centre Chnider - Kiné Casablanca' : 'اتصل بمركز الترويض الطبي بالدار البيضاء | مركز اشنيدر',
       description: CONTENT[lang].seo.contactDesc,
-      keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, contact kine Casablanca, kine a domicile, kine mutuelle, kine CNSS, kine CNOPS, sidi othmane, maarif, hay hassani' : 'اتصال مروض طبي, مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني'
+      keywords: lang === 'fr' ? 'kiné Aïn Chock, kiné Sbata, kiné Casablanca, contact kiné Casablanca, kiné à domicile, kiné mutuelle, kiné CNSS, kiné CNOPS, Sidi Othmane, Maarif, Hay Hassani' : 'اتصال مروض طبي, مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني'
    });
    const prefix = lang === 'ar' ? '/ar' : '';
 

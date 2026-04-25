@@ -75,19 +75,19 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     },
     {
       to: `${prefix}/blog/douleurs-epaules-capsulite`,
-      label: lang === 'fr' ? 'Douleur d epaule & capsulite' : 'آلام الكتف والتهاب المحفظة'
+      label: lang === 'fr' ? 'Douleurs d’épaule et capsulite' : 'آلام الكتف والتهاب المحفظة'
     },
     {
       to: `${prefix}/blog/migraines-cephalees`,
-      label: lang === 'fr' ? 'Migraines & cephalees' : 'الصداع والشقيقة'
+      label: lang === 'fr' ? 'Migraines et céphalées' : 'الصداع والشقيقة'
     },
     {
       to: `${prefix}/blog/kine-pediatrique`,
-      label: lang === 'fr' ? 'Kinesitherapie pediatrique' : 'العلاج الطبيعي للأطفال'
+      label: lang === 'fr' ? 'Kinésithérapie pédiatrique' : 'العلاج الطبيعي للأطفال'
     },
     {
       to: `${prefix}/blog/readaptation-post-avc`,
-      label: lang === 'fr' ? 'Readaptation post AVC' : 'التأهيل بعد السكتة الدماغية'
+      label: lang === 'fr' ? 'Réadaptation post-AVC' : 'التأهيل بعد السكتة الدماغية'
     },
     {
       to: `${prefix}/blog/posture-ergonomie`,
@@ -95,7 +95,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     },
     {
       to: `${prefix}/blog/recuperation-sportive-prevention-blessures`,
-      label: lang === 'fr' ? 'Recuperation sportive' : 'الاستشفاء الرياضي'
+      label: lang === 'fr' ? 'Récupération sportive' : 'الاستشفاء الرياضي'
     }
   ];
 

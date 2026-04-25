@@ -5,19 +5,64 @@ interface SEOHeadProps {
   title: string;
   description: string;
   keywords?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  section?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
-const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
+const DEFAULT_SOCIAL_IMAGE = 'https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF';
+
+const SEOHead: React.FC<SEOHeadProps> = ({
+  title,
+  description,
+  keywords,
+  image,
+  type = 'website',
+  section,
+  publishedTime,
+  modifiedTime
+}) => {
   useEffect(() => {
     const baseUrl = 'https://kinesitherapie.clinaxis.ma';
     const faviconUrl = LATEST_FAVICON_URL;
     const fullUrl = new URL(window.location.pathname || '/', baseUrl).toString();
     const pathname = window.location.pathname || '/';
     const isArabicPath = pathname === '/ar' || pathname.startsWith('/ar/');
+    const language = isArabicPath ? 'ar-MA' : 'fr-MA';
+    const socialImage = image || DEFAULT_SOCIAL_IMAGE;
     const frPath = isArabicPath ? (pathname.replace(/^\/ar(?=\/|$)/, '') || '/') : pathname;
     const arPath = isArabicPath ? pathname : `/ar${pathname === '/' ? '' : pathname}`;
 
     document.title = title;
+    document.documentElement.lang = isArabicPath ? 'ar' : 'fr';
+    document.documentElement.dir = isArabicPath ? 'rtl' : 'ltr';
+
+    let metaLanguage = document.querySelector('meta[name="language"]');
+    if (!metaLanguage) {
+      metaLanguage = document.createElement('meta');
+      metaLanguage.setAttribute('name', 'language');
+      document.head.appendChild(metaLanguage);
+    }
+    metaLanguage.setAttribute('content', language);
+
+    let metaAuthor = document.querySelector('meta[name="author"]');
+    if (!metaAuthor) {
+      metaAuthor = document.createElement('meta');
+      metaAuthor.setAttribute('name', 'author');
+      document.head.appendChild(metaAuthor);
+    }
+    metaAuthor.setAttribute('content', 'Centre Chnider');
+
+    let metaContentLanguage = document.querySelector('meta[http-equiv="content-language"]');
+    if (!metaContentLanguage) {
+      metaContentLanguage = document.createElement('meta');
+      metaContentLanguage.setAttribute('http-equiv', 'content-language');
+      document.head.appendChild(metaContentLanguage);
+    }
+    metaContentLanguage.setAttribute('content', isArabicPath ? 'ar' : 'fr');
+
     // Update meta description
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
@@ -36,6 +81,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
         document.head.appendChild(metaKeywords);
       }
       metaKeywords.setAttribute('content', keywords);
+
+      let newsKeywords = document.querySelector('meta[name="news_keywords"]');
+      if (!newsKeywords) {
+        newsKeywords = document.createElement('meta');
+        newsKeywords.setAttribute('name', 'news_keywords');
+        document.head.appendChild(newsKeywords);
+      }
+      newsKeywords.setAttribute('content', keywords);
     }
 
     let robotsMeta = document.querySelector('meta[name="robots"]');
@@ -219,7 +272,23 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       ogType.setAttribute('property', 'og:type');
       document.head.appendChild(ogType);
     }
-    ogType.setAttribute('content', 'website');
+    ogType.setAttribute('content', type);
+
+    let ogImage = document.querySelector('meta[property="og:image"]');
+    if (!ogImage) {
+      ogImage = document.createElement('meta');
+      ogImage.setAttribute('property', 'og:image');
+      document.head.appendChild(ogImage);
+    }
+    ogImage.setAttribute('content', socialImage);
+
+    let ogImageAlt = document.querySelector('meta[property="og:image:alt"]');
+    if (!ogImageAlt) {
+      ogImageAlt = document.createElement('meta');
+      ogImageAlt.setAttribute('property', 'og:image:alt');
+      document.head.appendChild(ogImageAlt);
+    }
+    ogImageAlt.setAttribute('content', title);
 
     let twitterTitle = document.querySelector('meta[name="twitter:title"]');
     if (!twitterTitle) {
@@ -244,6 +313,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       document.head.appendChild(twitterCard);
     }
     twitterCard.setAttribute('content', 'summary_large_image');
+
+    let twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (!twitterImage) {
+      twitterImage = document.createElement('meta');
+      twitterImage.setAttribute('name', 'twitter:image');
+      document.head.appendChild(twitterImage);
+    }
+    twitterImage.setAttribute('content', socialImage);
 
     let twitterDomain = document.querySelector('meta[name="twitter:domain"]');
     if (!twitterDomain) {
@@ -308,12 +385,90 @@ const SEOHead: React.FC<SEOHeadProps> = ({ title, description, keywords }) => {
       name: title,
       description,
       url: fullUrl,
-      inLanguage: isArabicPath ? 'ar-MA' : 'fr-MA',
+      inLanguage: language,
       isPartOf: {
         '@type': 'WebSite',
         '@id': `${baseUrl}/#website`
       }
     });
+
+    let primaryImageOfPage = document.querySelector('meta[property="og:image:secure_url"]');
+    if (!primaryImageOfPage) {
+      primaryImageOfPage = document.createElement('meta');
+      primaryImageOfPage.setAttribute('property', 'og:image:secure_url');
+      document.head.appendChild(primaryImageOfPage);
+    }
+    primaryImageOfPage.setAttribute('content', socialImage);
+
+    document.querySelectorAll('meta[property^="article:"][data-article-meta]').forEach((node) => node.remove());
+    if (type === 'article') {
+      const articleMetaEntries = [
+        ['article:publisher', SOCIAL_LINKS.facebook],
+        ['article:section', section || (isArabicPath ? 'مقالات الترويض الطبي' : 'Articles de kinésithérapie')],
+        ['article:published_time', publishedTime || modifiedTime || new Date().toISOString()],
+        ['article:modified_time', modifiedTime || publishedTime || new Date().toISOString()]
+      ];
+
+      articleMetaEntries.forEach(([property, content]) => {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        meta.setAttribute('content', content);
+        meta.setAttribute('data-article-meta', 'true');
+        document.head.appendChild(meta);
+      });
+    }
+
+    let pageSchemaScript = document.querySelector('script[type="application/ld+json"][data-schema="page-primary"]');
+    if (!pageSchemaScript) {
+      pageSchemaScript = document.createElement('script');
+      pageSchemaScript.setAttribute('type', 'application/ld+json');
+      pageSchemaScript.setAttribute('data-schema', 'page-primary');
+      document.head.appendChild(pageSchemaScript);
+    }
+
+    const primarySchema = type === 'article'
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: title,
+          description,
+          image: [socialImage],
+          inLanguage: language,
+          mainEntityOfPage: fullUrl,
+          articleSection: section || (isArabicPath ? 'مدونة الترويض الطبي' : 'Blog kinésithérapie'),
+          datePublished: publishedTime || modifiedTime || new Date().toISOString(),
+          dateModified: modifiedTime || publishedTime || new Date().toISOString(),
+          author: {
+            '@type': 'Organization',
+            name: 'Centre Chnider'
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Centre Chnider',
+            logo: {
+              '@type': 'ImageObject',
+              url: faviconUrl
+            }
+          }
+        }
+      : {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: title,
+          description,
+          url: fullUrl,
+          inLanguage: language,
+          primaryImageOfPage: {
+            '@type': 'ImageObject',
+            url: socialImage
+          },
+          isPartOf: {
+            '@type': 'WebSite',
+            '@id': `${baseUrl}/#website`
+          }
+        };
+
+    pageSchemaScript.textContent = JSON.stringify(primarySchema);
   }, [title, description, keywords]);
   return null;
 };

@@ -14,9 +14,9 @@ const About: React.FC<AboutProps> = ({ lang }) => {
   const t = CONTENT[lang].about;
   const config = useAdminConfig();
   const seo = getManagedSeo(config, 'about', lang, {
-    title: lang === 'fr' ? 'A Propos Centre Chnider | Kinesitherapie Casablanca, Cabinet & Domicile' : 'عن مركز اشنيدر | الترويض الطبي بالدار البيضاء عيادة ومنزل',
+    title: lang === 'fr' ? 'À propos | Centre Chnider - Kinésithérapie à Casablanca' : 'عن مركز اشنيدر | الترويض الطبي بالدار البيضاء عيادة ومنزل',
     description: t.mission,
-    keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, centre kine Casablanca, kine a domicile, kine mutuelle, kine CNSS, kine CNOPS' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, مركز الترويض الطبي, الترويض المنزلي'
+    keywords: lang === 'fr' ? 'kiné Aïn Chock, kiné Sbata, kiné Casablanca, centre kiné Casablanca, kiné à domicile, kiné mutuelle, kiné CNSS, kiné CNOPS' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, مركز الترويض الطبي, الترويض المنزلي'
   });
   const prefix = lang === 'ar' ? '/ar' : '';
   

@@ -120,7 +120,7 @@ const defaultGalleryImages: GalleryImageItem[] = [
   },
   {
     src: 'https://blogger.googleusercontent.com/img/a/AVvXsEiiOaAMnYdBDfw0riF-Zn7jkkp7_4dkSiAVy2x5oSePlVcH6ptw0XK5Z8C0JZHa_XIW-rtbve5oGtNrqmGM_gAbdnTYvzsgYDDwT8avZ5-98Dky1djCGEUMhgmoB8_xaS43W8X22IkwwOymaRoqJ-_cvU2XLFEnbUQ9pujMwUBiNSzejHijYx_Cm4eY',
-    altFr: 'Equipement de kinesitherapie',
+    altFr: 'Équipement de kinésithérapie',
     altAr: 'معدات الترويض الطبي'
   }
 ];
@@ -128,9 +128,9 @@ const defaultGalleryImages: GalleryImageItem[] = [
 const defaultSeoPages: Record<string, SeoPageConfig> = {
   home: {
     fr: {
-      title: 'Kine Casablanca | Centre Chnider - Cabinet & Domicile',
-      description: 'Kinesitherapie a Casablanca: dos, sport, neurologie, domicile et cabinet.',
-      keywords: 'kine casablanca, kinesitherapie casa, sciatique, reeducation',
+      title: 'Kiné Casablanca | Centre Chnider - Cabinet et domicile',
+      description: 'Kinésithérapie à Casablanca : dos, sport, neurologie, soins à domicile et au cabinet.',
+      keywords: 'kiné Casablanca, kinésithérapie Casa, sciatique, rééducation',
       internalLinks: '/services,/pathologies,/a-domicile,/contact,/blog'
     },
     ar: {
@@ -142,9 +142,9 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
   },
   services: {
     fr: {
-      title: 'Services Kinesitherapie Casablanca',
-      description: 'Reeducation, kine respiratoire, sport et domicile a Casablanca.',
-      keywords: 'services kine, kine domicile, kine respiratoire, traumato sport',
+      title: 'Services de kinésithérapie à Casablanca',
+      description: 'Rééducation, kiné respiratoire, sport et domicile à Casablanca.',
+      keywords: 'services kiné, kiné à domicile, kiné respiratoire, traumatologie du sport',
       internalLinks: '/pathologies,/contact,/blog/lombalgie-cervicalgie'
     },
     ar: {
@@ -156,9 +156,9 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
   },
   conditions: {
     fr: {
-      title: 'Pathologies traitees | Centre Chnider',
-      description: 'Sciatique, hernie discale, arthrose, douleurs du dos et neurologie.',
-      keywords: 'sciatique, hernie discale, arthrose genou, douleur dos',
+      title: 'Pathologies traitées | Centre Chnider',
+      description: 'Sciatique, hernie discale, arthrose, douleurs du dos et prise en charge neurologique.',
+      keywords: 'sciatique, hernie discale, arthrose du genou, douleur du dos',
       internalLinks: '/services,/a-domicile,/contact,/blog/sciatique-hernie-discale'
     },
     ar: {
@@ -170,9 +170,9 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
   },
   homeTherapy: {
     fr: {
-      title: 'Kine a domicile Casablanca',
-      description: 'Seances de kinesitherapie a domicile sur Casablanca et quartiers proches.',
-      keywords: 'kine domicile casablanca, reeducation domicile, sbata',
+      title: 'Kiné à domicile à Casablanca',
+      description: 'Séances de kinésithérapie à domicile sur Casablanca et les quartiers proches.',
+      keywords: 'kiné domicile Casablanca, rééducation à domicile, Sbata',
       internalLinks: '/services,/pathologies,/contact'
     },
     ar: {
@@ -184,9 +184,9 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
   },
   about: {
     fr: {
-      title: 'A propos du Centre Chnider',
-      description: 'Centre de kinesitherapie a Casablanca et service a domicile.',
-      keywords: 'centre kine casablanca, a propos, equipe kine',
+      title: 'À propos du Centre Chnider',
+      description: 'Centre de kinésithérapie à Casablanca et service à domicile.',
+      keywords: 'centre kiné Casablanca, à propos, équipe kiné',
       internalLinks: '/services,/contact,/blog'
     },
     ar: {
@@ -198,9 +198,9 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
   },
   contact: {
     fr: {
-      title: 'Contact Kine Casablanca | Centre Chnider',
-      description: 'Prenez rendez-vous au cabinet ou a domicile a Casablanca.',
-      keywords: 'contact kine casablanca, rendez-vous, telephone kine',
+      title: 'Contact kiné Casablanca | Centre Chnider',
+      description: 'Prenez rendez-vous au cabinet ou à domicile à Casablanca.',
+      keywords: 'contact kiné Casablanca, rendez-vous, téléphone kiné',
       internalLinks: '/services,/pathologies,/a-domicile,/blog'
     },
     ar: {
@@ -226,9 +226,9 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
   },
   blog: {
     fr: {
-      title: 'Blog Kinesitherapie | Centre Chnider',
-      description: 'Articles sante, prevention et conseils de kinesitherapie.',
-      keywords: 'blog kine, conseils sante, articles physiotherapie',
+      title: 'Blog kinésithérapie | Centre Chnider',
+      description: 'Articles santé, prévention et conseils de kinésithérapie.',
+      keywords: 'blog kiné, conseils santé, articles physiothérapie',
       internalLinks: '/pathologies,/services,/contact'
     },
     ar: {
@@ -241,8 +241,8 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
   convention: {
     fr: {
       title: 'Convention assurance et mutuelle | Centre Chnider',
-      description: 'Page dediee aux conventions avec assurances et mutuelles.',
-      keywords: 'convention assurance, mutuelle, partenariat medical',
+      description: 'Page dédiée aux conventions avec assurances et mutuelles.',
+      keywords: 'convention assurance, mutuelle, partenariat médical',
       internalLinks: '/contact,/services,/a-propos'
     },
     ar: {

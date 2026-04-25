@@ -54,7 +54,14 @@ export const createArticle = (data: ArticleData) => {
 
     return (
       <>
-        <SEOHead title={title} description={description} keywords={keywords} />
+        <SEOHead
+          title={`${title} | Centre Chnider`}
+          description={description}
+          keywords={keywords}
+          image={image}
+          type="article"
+          section={lang === 'fr' ? 'Blog kinésithérapie' : 'مدونة الترويض الطبي'}
+        />
         
         <div className={lang === 'ar' ? 'font-arabic rtl' : 'ltr'} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
           {/* Article Header */}

@@ -21,28 +21,28 @@ const HomeTherapyGeriatrics: React.FC<HomeTherapyGeriatricsProps> = ({ lang }) =
 
   const seo = getManagedSeo(config, 'homeTherapyGeriatrics', lang, {
     title: lang === 'fr'
-      ? 'Kine a domicile Casablanca | Geriatrie & prevention chute'
+      ? 'Kiné à domicile à Casablanca | Gériatrie et prévention des chutes'
       : 'ترويض منزلي بالدار البيضاء | علاج وتأهيل المسنين',
     description: lang === 'fr'
-      ? 'Kine a domicile Casablanca en geriatrie: mobilite, Parkinson, prothese hanche/genou, prevention des chutes et autonomie. Reponse rapide sur WhatsApp direct.'
+      ? 'Kiné à domicile à Casablanca en gériatrie : mobilité, Parkinson, prothèse hanche/genou, prévention des chutes et autonomie. Réponse rapide sur WhatsApp.'
       : 'ترويض منزلي للمسنين بالدار البيضاء: تحسين الحركة، باركنسون، تأهيل بعد عمليات الورك والركبة، والوقاية من السقوط مع تواصل سريع عبر واتساب.',
     keywords: lang === 'fr'
-      ? 'kine a domicile Casablanca, kinesitherapie geriatrique, kine personne agee Casablanca, reeducation a domicile Casablanca, Parkinson kine, reeducation prothese hanche, reeducation prothese genou, prevention chute personne agee'
+      ? 'kiné à domicile Casablanca, kinésithérapie gériatrique, kiné personne âgée Casablanca, rééducation à domicile Casablanca, Parkinson kiné, rééducation prothèse hanche, rééducation prothèse genou, prévention chute personne âgée'
       : 'ترويض منزلي الدار البيضاء, ترويض المسنين, إعادة التأهيل المنزلي, باركنسون علاج طبيعي, تأهيل بعد عملية الورك, تأهيل بعد عملية الركبة, الوقاية من السقوط عند كبار السن'
   });
 
   const frFaq: FAQItem[] = [
     {
-      q: 'Combien coute une seance de kine a domicile a Casablanca ?',
-      a: 'Le prix depend du bilan initial, de la distance et du type de reeducation. Nous vous donnons un tarif clair avant de commencer.'
+      q: 'Combien coûte une séance de kiné à domicile à Casablanca ?',
+      a: 'Le prix dépend du bilan initial, de la distance et du type de rééducation. Nous vous donnons un tarif clair avant de commencer.'
     },
     {
-      q: 'Combien de seances faut-il apres une prothese de hanche ou de genou ?',
-      a: 'En moyenne, plusieurs semaines sont necessaires. Le nombre exact depend de l age, de l etat general et de l objectif de recuperation.'
+      q: 'Combien de séances faut-il après une prothèse de hanche ou de genou ?',
+      a: 'En moyenne, plusieurs semaines sont nécessaires. Le nombre exact dépend de l’âge, de l’état général et de l’objectif de récupération.'
     },
     {
-      q: 'La kinesitherapie a domicile est-elle remboursee ?',
-      a: 'Selon votre couverture, une partie peut etre remboursee. Nous preparons les documents utiles pour faciliter vos demarches.'
+      q: 'La kinésithérapie à domicile est-elle remboursée ?',
+      a: 'Selon votre couverture, une partie peut être remboursée. Nous préparons les documents utiles pour faciliter vos démarches.'
     },
     {
       q: 'Intervenez-vous dans tous les quartiers de Casablanca ?',
@@ -50,11 +50,11 @@ const HomeTherapyGeriatrics: React.FC<HomeTherapyGeriatricsProps> = ({ lang }) =
     },
     {
       q: 'Comment prendre rendez-vous rapidement ?',
-      a: 'Le plus simple est WhatsApp. Vous envoyez votre besoin, nous vous repondons vite avec une proposition de creneau.'
+      a: 'Le plus simple est WhatsApp. Vous envoyez votre besoin, nous vous répondons vite avec une proposition de créneau.'
     },
     {
-      q: 'Est-ce utile meme avant une chute ou une maladie ?',
-      a: 'Oui. Commencer tot permet de renforcer les muscles, de travailler l equilibre et d eviter une perte d autonomie future.'
+      q: 'Est-ce utile même avant une chute ou une maladie ?',
+      a: 'Oui. Commencer tôt permet de renforcer les muscles, de travailler l’équilibre et d’éviter une perte d’autonomie future.'
     }
   ];
 

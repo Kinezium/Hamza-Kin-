@@ -13,6 +13,7 @@ import Convention from './pages/Convention';
 import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
 import StickyCTA from './components/StickyCTA';
+import HomeTherapyPopup from './components/HomeTherapyPopup';
 import { Language } from './types';
 import AdminDashboard from './pages/AdminDashboard';
 import CustomArticle from './pages/Blog/CustomArticle';
@@ -171,6 +172,7 @@ const App: React.FC = () => {
           </Routes>
         </Layout>
         <StickyCTA lang={lang} />
+        <HomeTherapyPopup lang={lang} />
       </>
     );
   };
