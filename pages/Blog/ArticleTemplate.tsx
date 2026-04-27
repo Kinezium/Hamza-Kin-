@@ -80,7 +80,14 @@ export const createArticle = (data: ArticleData) => {
 
     return (
       <>
-        <SEOHead title={seo.seoTitle} description={seo.seoDescription} keywords={seo.seoKeywords} />
+        <SEOHead
+        title={seo.seoTitle}
+        description={seo.seoDescription}
+        keywords={seo.seoKeywords}
+          image={image}
+          type="article"
+          section={lang === 'fr' ? 'Blog kinésithérapie' : 'مدونة الترويض الطبي'}
+        />
         
         <div className={lang === 'ar' ? 'font-arabic rtl' : 'ltr'} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
           {/* Article Header */}

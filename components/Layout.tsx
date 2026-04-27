@@ -41,6 +41,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     { to: `${prefix}/pathologies`, label: t.conditions },
     { to: `${prefix}/services`, label: t.services },
     { to: `${prefix}/a-domicile`, label: t.homeTherapy },
+    { to: `${prefix}/a-domicile-geriatrie-casablanca`, label: lang === 'fr' ? 'Gériatrie domicile' : 'ترويض المسنين' },
     { to: `${prefix}/gallerie`, label: t.gallery },
     { to: `${prefix}/blog`, label: lang === 'fr' ? 'Blog' : 'مدونة' },
     { to: `${prefix}/a-propos`, label: t.about },
@@ -74,19 +75,19 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     },
     {
       to: `${prefix}/blog/douleurs-epaules-capsulite`,
-      label: lang === 'fr' ? 'Douleur d epaule & capsulite' : 'آلام الكتف والتهاب المحفظة'
+      label: lang === 'fr' ? 'Douleurs d’épaule et capsulite' : 'آلام الكتف والتهاب المحفظة'
     },
     {
       to: `${prefix}/blog/migraines-cephalees`,
-      label: lang === 'fr' ? 'Migraines & cephalees' : 'الصداع والشقيقة'
+      label: lang === 'fr' ? 'Migraines et céphalées' : 'الصداع والشقيقة'
     },
     {
       to: `${prefix}/blog/kine-pediatrique`,
-      label: lang === 'fr' ? 'Kinesitherapie pediatrique' : 'العلاج الطبيعي للأطفال'
+      label: lang === 'fr' ? 'Kinésithérapie pédiatrique' : 'العلاج الطبيعي للأطفال'
     },
     {
       to: `${prefix}/blog/readaptation-post-avc`,
-      label: lang === 'fr' ? 'Readaptation post AVC' : 'التأهيل بعد السكتة الدماغية'
+      label: lang === 'fr' ? 'Réadaptation post-AVC' : 'التأهيل بعد السكتة الدماغية'
     },
     {
       to: `${prefix}/blog/posture-ergonomie`,
@@ -94,7 +95,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     },
     {
       to: `${prefix}/blog/recuperation-sportive-prevention-blessures`,
-      label: lang === 'fr' ? 'Recuperation sportive' : 'الاستشفاء الرياضي'
+      label: lang === 'fr' ? 'Récupération sportive' : 'الاستشفاء الرياضي'
     },
     {
       to: `${prefix}/blog/avc-signes-alerte-reeducation-precoce`,
@@ -111,6 +112,14 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     {
       to: `${prefix}/blog/fracture-tibia-reeducation-marche`,
       label: lang === 'fr' ? 'Fracture du tibia' : 'كسر عظم الساق'
+    },
+    {
+      to: `${prefix}/blog/reeducation-geriatrique-importance-kine`,
+      label: lang === 'fr' ? 'Rééducation gériatrique' : 'إعادة التأهيل لكبار السن'
+    },
+    {
+      to: `${prefix}/blog/activite-physique-adaptee-seniors`,
+      label: lang === 'fr' ? 'Activité physique adaptée seniors' : 'النشاط البدني الملائم لكبار السن'
     }
   ];
 
@@ -164,6 +173,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <NavLink to={`${prefix}/pathologies`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.conditions}</NavLink>
               <NavLink to={`${prefix}/services`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.services}</NavLink>
               <NavLink to={`${prefix}/a-domicile`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.homeTherapy}</NavLink>
+              <NavLink to={`${prefix}/a-domicile-geriatrie-casablanca`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{lang === 'fr' ? 'Gériatrie' : 'المسنين'}</NavLink>
               <NavLink to={`${prefix}/gallerie`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.gallery}</NavLink>
               <NavLink to={`${prefix}/blog`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{lang === 'fr' ? 'Blog' : 'مدونة'}</NavLink>
               <NavLink to={`${prefix}/a-propos`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.about}</NavLink>
@@ -202,6 +212,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               <Link to={`${prefix}/pathologies`} onClick={closeMenu} className={linkClass(`${prefix}/pathologies`)}>{t.conditions}</Link>
               <Link to={`${prefix}/services`} onClick={closeMenu} className={linkClass(`${prefix}/services`)}>{t.services}</Link>
               <Link to={`${prefix}/a-domicile`} onClick={closeMenu} className={linkClass(`${prefix}/a-domicile`)}>{t.homeTherapy}</Link>
+              <Link to={`${prefix}/a-domicile-geriatrie-casablanca`} onClick={closeMenu} className={linkClass(`${prefix}/a-domicile-geriatrie-casablanca`)}>{lang === 'fr' ? 'Gériatrie domicile' : 'ترويض المسنين'}</Link>
               <Link to={`${prefix}/gallerie`} onClick={closeMenu} className={linkClass(`${prefix}/gallerie`)}>{t.gallery}</Link>
               <Link to={`${prefix}/blog`} onClick={closeMenu} className={linkClass(`${prefix}/blog`)}>{lang === 'fr' ? 'Blog' : 'مدونة'}</Link>
               <Link to={`${prefix}/a-propos`} onClick={closeMenu} className={linkClass(`${prefix}/a-propos`)}>{t.about}</Link>
@@ -320,10 +331,15 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
               © {new Date().getFullYear()} {lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}. {lang === 'ar' ? 'جميع الحقوق محفوظة' : 'Tous droits réservés'}.
             </p>
             <p className="mt-2 text-slate-400">
-              {lang === 'fr' ? 'Site créé par ' : 'الموقع تم تطويره بواسطة '}
+              {lang === 'fr' ? 'Conçu et développé par ' : 'تم تصميم وتطوير الموقع بواسطة '}
               <a href="https://clinaxis.ma" target="_blank" rel="noopener noreferrer" className="font-semibold text-medical-400 hover:text-medical-300">
                 CLINAXIS.MA
               </a>
+            </p>
+            <p className="mt-2 text-slate-500 max-w-4xl mx-auto leading-relaxed">
+              {lang === 'fr'
+                ? 'Clinaxis crée des solutions médicales et paramédicales: gestion des cabinets, suivi patient, facturation, solutions pour les familles, e-learning et éducation thérapeutique, ainsi que la création de sites pour les partenaires et centres médicaux/paramédicaux.'
+                : 'Clinaxis تطور حلولًا طبية وشبه طبية: إدارة العيادات، تتبع المرضى، الفوترة، حلولًا لعائلات المرضى، التعلّم الإلكتروني والتثقيف العلاجي، إضافة إلى إنشاء مواقع للشركاء والمراكز الطبية وشبه الطبية.'}
             </p>
           </div>
         </div>

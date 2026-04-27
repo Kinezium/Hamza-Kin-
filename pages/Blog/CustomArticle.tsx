@@ -34,7 +34,14 @@ const CustomArticle: React.FC<CustomArticleProps> = ({ lang }) => {
 
   return (
     <>
-      <SEOHead title={`${title} | Blog Centre Chnider`} description={desc} keywords={title} />
+      <SEOHead
+        title={`${title} | Centre Chnider`}
+        description={desc}
+        keywords={lang === 'fr' ? `${title}, kinésithérapie Casablanca, Centre Chnider` : `${title}, الترويض الطبي, مركز شنيدر`}
+        image={post.image}
+        type="article"
+        section={lang === 'fr' ? 'Blog kinésithérapie' : 'مدونة الترويض الطبي'}
+      />
       <article className="bg-gray-50 py-12 min-h-screen">
         <div className="container mx-auto px-4 max-w-4xl">
           <Link to={`${prefix}/blog`} className="text-sky-700 font-semibold hover:underline">

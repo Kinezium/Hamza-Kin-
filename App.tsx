@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Conditions from './pages/Conditions';
 import Services from './pages/Services';
 import HomeTherapy from './pages/HomeTherapy';
+import HomeTherapyGeriatrics from './pages/HomeTherapyGeriatrics';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import BlogIndex from './pages/BlogIndex';
@@ -12,6 +13,7 @@ import Convention from './pages/Convention';
 import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
 import StickyCTA from './components/StickyCTA';
+import HomeTherapyPopup from './components/HomeTherapyPopup';
 import { Language } from './types';
 import AdminDashboard from './pages/AdminDashboard';
 import CustomArticle from './pages/Blog/CustomArticle';
@@ -32,6 +34,8 @@ import AvcWarningSignsArticle from './pages/Blog/AvcWarningSignsArticle';
 import AnkleSprainArticle from './pages/Blog/AnkleSprainArticle';
 import AclRuptureArticle from './pages/Blog/AclRuptureArticle';
 import TibiaFractureArticle from './pages/Blog/TibiaFractureArticle';
+import GeriatricReeducationArticle from './pages/Blog/GeriatricReeducationArticle';
+import SeniorPhysicalActivityArticle from './pages/Blog/SeniorPhysicalActivityArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -110,6 +114,7 @@ const App: React.FC = () => {
             <Route path="/pathologies" element={<Conditions lang={lang} />} />
             <Route path="/services" element={<Services lang={lang} />} />
             <Route path="/a-domicile" element={<HomeTherapy lang={lang} />} />
+            <Route path="/a-domicile-geriatrie-casablanca" element={<HomeTherapyGeriatrics lang={lang} />} />
             <Route path="/a-propos" element={<About lang={lang} />} />
             <Route path="/contact" element={<Contact lang={lang} />} />
             <Route path="/convention" element={<Convention lang={lang} />} />
@@ -129,6 +134,8 @@ const App: React.FC = () => {
             <Route path="/blog/entorse-cheville-kinesitherapie" element={<AnkleSprainArticle lang={lang} />} />
             <Route path="/blog/rupture-ligament-croise-anterieur-reeducation" element={<AclRuptureArticle lang={lang} />} />
             <Route path="/blog/fracture-tibia-reeducation-marche" element={<TibiaFractureArticle lang={lang} />} />
+            <Route path="/blog/reeducation-geriatrique-importance-kine" element={<GeriatricReeducationArticle lang={lang} />} />
+            <Route path="/blog/activite-physique-adaptee-seniors" element={<SeniorPhysicalActivityArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -142,6 +149,7 @@ const App: React.FC = () => {
             <Route path="/ar/pathologies" element={<Conditions lang="ar" />} />
             <Route path="/ar/services" element={<Services lang="ar" />} />
             <Route path="/ar/a-domicile" element={<HomeTherapy lang="ar" />} />
+            <Route path="/ar/a-domicile-geriatrie-casablanca" element={<HomeTherapyGeriatrics lang="ar" />} />
             <Route path="/ar/a-propos" element={<About lang="ar" />} />
             <Route path="/ar/contact" element={<Contact lang="ar" />} />
             <Route path="/ar/convention" element={<Convention lang="ar" />} />
@@ -161,6 +169,8 @@ const App: React.FC = () => {
             <Route path="/ar/blog/entorse-cheville-kinesitherapie" element={<AnkleSprainArticle lang="ar" />} />
             <Route path="/ar/blog/rupture-ligament-croise-anterieur-reeducation" element={<AclRuptureArticle lang="ar" />} />
             <Route path="/ar/blog/fracture-tibia-reeducation-marche" element={<TibiaFractureArticle lang="ar" />} />
+            <Route path="/ar/blog/reeducation-geriatrique-importance-kine" element={<GeriatricReeducationArticle lang="ar" />} />
+            <Route path="/ar/blog/activite-physique-adaptee-seniors" element={<SeniorPhysicalActivityArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 
             {/* Legacy Arabic slugs redirects */}
@@ -174,6 +184,7 @@ const App: React.FC = () => {
           </Routes>
         </Layout>
         <StickyCTA lang={lang} />
+        <HomeTherapyPopup lang={lang} />
       </>
     );
   };

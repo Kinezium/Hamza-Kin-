@@ -12,7 +12,9 @@
   'avc-signes-alerte-reeducation-precoce': 'https://picsum.photos/seed/avc-signes-chnider/1600/900',
   'entorse-cheville-kinesitherapie': 'https://picsum.photos/seed/entorse-cheville-chnider/1600/900',
   'rupture-ligament-croise-anterieur-reeducation': 'https://picsum.photos/seed/lca-rupture-chnider/1600/900',
-  'fracture-tibia-reeducation-marche': 'https://picsum.photos/seed/fracture-tibia-chnider/1600/900'
+  'fracture-tibia-reeducation-marche': 'https://picsum.photos/seed/fracture-tibia-chnider/1600/900',
+  'reeducation-geriatrique-importance-kine': 'https://picsum.photos/seed/geriatric-rehab-chnider/1600/900',
+  'activite-physique-adaptee-seniors': 'https://picsum.photos/seed/senior-activity-chnider/1600/900'
 };
 
 
