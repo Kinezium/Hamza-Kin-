@@ -1,1 +1,5 @@
+http://kinesitherapie.clinaxis.ma/* https://kinesitherapie.clinaxis.ma/:splat 301!
+http://www.kinesitherapie.clinaxis.ma/* https://kinesitherapie.clinaxis.ma/:splat 301!
+https://www.kinesitherapie.clinaxis.ma/* https://kinesitherapie.clinaxis.ma/:splat 301!
+
 /* /index.html 200

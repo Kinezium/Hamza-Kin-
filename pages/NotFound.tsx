@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
 
@@ -8,24 +8,23 @@ interface NotFoundProps {
 }
 
 const NotFound: React.FC<NotFoundProps> = ({ lang }) => {
-  const navigate = useNavigate();
   const location = useLocation();
   const isArabicPath = location.pathname.startsWith('/ar');
   const homePath = isArabicPath ? '/ar' : '/';
+  const prefix = isArabicPath ? '/ar' : '';
 
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      navigate(homePath, { replace: true });
-    }, 2500);
-
-    return () => window.clearTimeout(timer);
-  }, [navigate, homePath]);
+  const helpfulLinks = [
+    { to: `${prefix}/blog`, labelFr: 'Voir le blog santé', labelAr: 'عرض المدونة الصحية' },
+    { to: `${prefix}/services`, labelFr: 'Découvrir nos services', labelAr: 'اكتشف خدماتنا' },
+    { to: `${prefix}/pathologies`, labelFr: 'Pathologies traitées', labelAr: 'الأمراض المعالجة' },
+    { to: `${prefix}/contact`, labelFr: 'Contacter le centre', labelAr: 'الاتصال بالمركز' }
+  ];
 
   return (
     <>
       <SEOHead
         title={lang === 'fr' ? '404 - Page introuvable | Centre Chnider' : '404 - الصفحة غير موجودة | مركز اشنيدر'}
-        description={lang === 'fr' ? 'La page demandee est introuvable. Redirection en cours vers l\'accueil.' : 'الصفحة المطلوبة غير موجودة. جاري التحويل الى الصفحة الرئيسية.'}
+        description={lang === 'fr' ? 'La page demandee est introuvable. Consultez nos liens utiles pour continuer votre navigation.' : 'الصفحة المطلوبة غير موجودة. يمكنكم متابعة التصفح عبر الروابط المفيدة.'}
         keywords={lang === 'fr' ? '404, page introuvable, centre chnider' : '404, صفحة غير موجودة, مركز اشنيدر'}
       />
 
@@ -37,9 +36,20 @@ const NotFound: React.FC<NotFoundProps> = ({ lang }) => {
           </h1>
           <p className="text-slate-600 mb-6">
             {lang === 'fr'
-              ? 'Cette page n\'existe pas ou a ete deplacee. Redirection automatique vers l\'accueil...'
-              : 'هذه الصفحة غير موجودة أو تم نقلها. سيتم التحويل تلقائيا الى الصفحة الرئيسية...'}
+              ? 'Cette page n\'existe pas ou a ete deplacee. Utilisez les liens ci-dessous pour continuer votre visite.'
+              : 'هذه الصفحة غير موجودة أو تم نقلها. استخدموا الروابط التالية لمواصلة التصفح.'}
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+            {helpfulLinks.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="rounded-lg border border-medical-100 bg-medical-50 px-4 py-3 text-medical-700 font-semibold hover:bg-medical-100 transition"
+              >
+                {lang === 'fr' ? item.labelFr : item.labelAr}
+              </Link>
+            ))}
+          </div>
           <Link
             to={homePath}
             className="inline-flex items-center justify-center px-6 py-3 bg-medical-600 text-white font-bold rounded-lg hover:bg-medical-700 transition"

@@ -22,19 +22,46 @@
     <meta name="twitter:description" content="Kiné cabinet & domicile à Casablanca. Zones: Aïn Chock, Californie, Oasis, Sbata, Maarif, Sidi Othmane, Hay Hassani. Tarif à domicile à partir de 200 DH." />
     <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF" />
     <meta name="theme-color" content="#0369a1" />
+    <meta name="ga-measurement-id" content="" />
     <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF" />
     <link rel="shortcut icon" type="image/png" href="https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF" />
     <link rel="apple-touch-icon" href="https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF" />
     <meta name="keywords" content="kiné ainchoq, kiné sbata, kiné casablanca, kiné casa, kiné autour de moi, kinésithérapie à Casablanca, centre de kinésithérapie à Sbata, rééducation fonctionnelle Casablanca, traitement sciatique Casablanca, douleurs lombaires Casablanca, hijama médicale Casablanca, kinésithérapeute, cabinet kiné, kiné à domicile, kiné sport, kiné bébé, kiné mutuelle, kiné CNSS, kiné CNOPS, Ain Chock, Sbata, Sidi Othmane, Maarif, Hay Hassani, Anfa, Sidi Maarouf, Maroc, الترويض, الترويض الطبي, مركز شنيدر, الحجامة الطبية, مروض طبي الدار البيضاء, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, ترويض منزلي كازا" />
     <!-- canonical / hreflang / og:url are injected per-route by SEOHead.tsx -->
     
-    <!-- Google Fonts: Cairo for Arabic, Inter for French/English -->
+    <!-- Google Fonts: loaded in a non-blocking way -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS local build -->
-    <link rel="stylesheet" href="/src/index.css" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    >
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Optional GA4: set VITE_GA_MEASUREMENT_ID in env to enable -->
+    <script>
+      (function () {
+        var gaMeta = document.querySelector('meta[name="ga-measurement-id"]');
+        var measurementId = gaMeta ? (gaMeta.getAttribute('content') || '').trim() : '';
+        if (!measurementId) return;
+
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', measurementId, { anonymize_ip: true });
+      })();
+    </script>
+
     <style>
       /* Smooth scrolling */
       html {

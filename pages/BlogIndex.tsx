@@ -21,6 +21,14 @@ interface BlogIndexProps {
   lang: Language;
 }
 
+const toCardImage = (src: string): string => {
+  // Serve smaller Picsum variants in cards to reduce transfer size.
+  if (src.includes('picsum.photos/seed/')) {
+    return src.replace(/\/1600\/900$/, '/800/450');
+  }
+  return src;
+};
+
 const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
   const config = useAdminConfig();
@@ -272,10 +280,14 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
                 >
                   <div className="relative h-40">
                     <img
-                      src={post.image}
+                      src={toCardImage(post.image)}
                       alt={lang === 'fr' ? post.titleFr : post.titleAr}
                       className="w-full h-full object-cover"
                       loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={450}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
                       <div className="text-white">{post.icon}</div>

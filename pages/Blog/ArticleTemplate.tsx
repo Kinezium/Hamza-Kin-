@@ -113,7 +113,16 @@ export const createArticle = (data: ArticleData) => {
 
           {/* Article Image */}
           <div className="w-full h-64 md:h-96 bg-gray-200 mt-8">
-            <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              width={1600}
+              height={900}
+              sizes="100vw"
+            />
           </div>
 
           {/* Article Content */}
