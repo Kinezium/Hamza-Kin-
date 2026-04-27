@@ -15,6 +15,8 @@ const routes = [
   'contact',
   'convention',
   'blog',
+  'blog/custom',
+  'blog/custom/kinesitherapie-cest-quoi',
   'blog/sciatique-hernie-discale',
   'blog/lombalgie-cervicalgie',
   'blog/traumatologie-sport',
@@ -29,6 +31,8 @@ const routes = [
   'blog/entorse-cheville-kinesitherapie',
   'blog/rupture-ligament-croise-anterieur-reeducation',
   'blog/fracture-tibia-reeducation-marche',
+  'blog/reeducation-geriatrique-importance-kine',
+  'blog/activite-physique-adaptee-seniors',
   'gallerie',
   'ar',
   'ar/pathologies',
@@ -39,6 +43,8 @@ const routes = [
   'ar/contact',
   'ar/convention',
   'ar/blog',
+  'ar/blog/custom',
+  'ar/blog/custom/kinesitherapie-cest-quoi',
   'ar/blog/sciatique-hernie-discale',
   'ar/blog/lombalgie-cervicalgie',
   'ar/blog/traumatologie-sport',
@@ -53,6 +59,8 @@ const routes = [
   'ar/blog/entorse-cheville-kinesitherapie',
   'ar/blog/rupture-ligament-croise-anterieur-reeducation',
   'ar/blog/fracture-tibia-reeducation-marche',
+  'ar/blog/reeducation-geriatrique-importance-kine',
+  'ar/blog/activite-physique-adaptee-seniors',
   'ar/gallerie'
 ];
 
