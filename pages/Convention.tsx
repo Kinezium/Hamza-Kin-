@@ -25,7 +25,7 @@ const Convention: React.FC<ConventionProps> = ({ lang }) => {
         description:
           'Page dédiée aux compagnies d’assurance, mutuelles et organismes souhaitant mettre en place une convention avec notre centre de kinésithérapie à Casablanca.',
         keywords:
-          'convention assurance kinésithérapie, convention mutuelle kiné Casablanca, partenariat assurance centre kiné, CNSS CNOPS kinésithérapie Casablanca, convention centre de kinésithérapie',
+          'convention assurance kinésithérapie, convention mutuelle kiné Casablanca, partenariat assurance centre kiné, CNSS CNOPS kinésithérapie Casablanca, convention centre de kinésithérapie, الترويض الطبي, الدار البيضاء',
         heroEyebrow: 'Espace convention',
         heroTitle: 'Demande de convention pour assurances, mutuelles et organismes partenaires',
         heroText:
@@ -77,7 +77,7 @@ const Convention: React.FC<ConventionProps> = ({ lang }) => {
         description:
           'صفحة مخصصة لشركات التأمين والتعاضديات والهيئات الراغبة في إبرام اتفاقية مع مركزنا للترويض الطبي بالدار البيضاء.',
         keywords:
-          'اتفاقية تأمين ترويض طبي, اتفاقية تعاضدية مع مركز ترويض, شراكة تأمين مع مركز شنيدر, الترويض الطبي الدار البيضاء, CNSS CNOPS',
+          'اتفاقية تأمين ترويض طبي, اتفاقية تعاضدية مع مركز ترويض, شراكة تأمين مع مركز شنيدر, الترويض الطبي الدار البيضاء, CNSS CNOPS, kinésithérapie casablanca, centre chnider',
         heroEyebrow: 'فضاء الاتفاقيات',
         heroTitle: 'طلب اتفاقية مع شركات التأمين والتعاضديات والهيئات الشريكة',
         heroText:

@@ -95,6 +95,22 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
     {
       to: `${prefix}/blog/recuperation-sportive-prevention-blessures`,
       label: lang === 'fr' ? 'Recuperation sportive' : 'الاستشفاء الرياضي'
+    },
+    {
+      to: `${prefix}/blog/avc-signes-alerte-reeducation-precoce`,
+      label: lang === 'fr' ? 'AVC: signes d alerte' : 'السكتة الدماغية: علامات الانذار'
+    },
+    {
+      to: `${prefix}/blog/entorse-cheville-kinesitherapie`,
+      label: lang === 'fr' ? 'Entorse de cheville' : 'التواء الكاحل'
+    },
+    {
+      to: `${prefix}/blog/rupture-ligament-croise-anterieur-reeducation`,
+      label: lang === 'fr' ? 'Rupture ligament croise' : 'تمزق الرباط الصليبي'
+    },
+    {
+      to: `${prefix}/blog/fracture-tibia-reeducation-marche`,
+      label: lang === 'fr' ? 'Fracture du tibia' : 'كسر عظم الساق'
     }
   ];
 

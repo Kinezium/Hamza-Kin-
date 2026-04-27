@@ -38,7 +38,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
   const seo = getManagedSeo(config, 'home', lang, {
     title: t.seo.homeTitle,
     description: t.seo.homeDesc,
-    keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, kinesitherapie a Casablanca, centre de kinesitherapie a Sbata, reeducation fonctionnelle Casablanca, traitement sciatique Casablanca, douleurs lombaires Casablanca, kine a domicile, sidi othmane, maarif, hay hassani, anfa' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, الترويض الطبي, علاج الظهر, علاج المفاصل, الترويض المنزلي'
+    keywords: lang === 'fr' ? 'kine casablanca, kinesitherapie casablanca, centre chnider, reeducation avc, entorse cheville, ligament croise, fracture tibia, kiné domicile, مروض طبي الدار البيضاء, الترويض الطبي' : 'مروض طبي الدار البيضاء, الترويض الطبي, علاج AVC, التواء الكاحل, الرباط الصليبي, كسر الساق, kinésithérapie casablanca, blog kine, centre chnider'
   });
   const featuredReviews = t.reviews.items.slice(0, 3);
   const prefix = lang === 'ar' ? '/ar' : '';

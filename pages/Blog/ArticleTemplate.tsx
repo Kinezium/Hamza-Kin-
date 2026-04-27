@@ -27,12 +27,36 @@ interface ArticleData {
   relatedArticles: Array<{ slug: string; titleFr: string; titleAr: string; icon: React.ReactNode }>;
 }
 
+const normalizeArticleSeo = (lang: Language, title: string, description: string, keywords: string) => {
+  const titleSuffixFr = ' | Blog Kinesitherapie Casablanca Centre Chnider';
+  const titleSuffixAr = ' | مدونة الترويض الطبي بالدار البيضاء - مركز شنيدر';
+
+  const seoTitle = lang === 'fr'
+    ? (title.includes('Centre Chnider') ? title : `${title}${titleSuffixFr}`)
+    : (title.includes('مركز') ? title : `${title}${titleSuffixAr}`);
+
+  const minLength = 145;
+  const fallbackFr = ' Prise en charge au cabinet et a domicile a Casablanca avec conseils de prevention et programme de reeducation personnalise.';
+  const fallbackAr = ' متابعة في العيادة والمنزل بالدار البيضاء مع نصائح وقائية وبرنامج تاهيل مخصص حسب الحالة.';
+  const seoDescription = description.length >= minLength
+    ? description
+    : `${description}${lang === 'fr' ? fallbackFr : fallbackAr}`;
+
+  const bilingualTail = lang === 'fr'
+    ? 'kinesitherapie casablanca, blog kine, الترويض الطبي, الدار البيضاء, AVC'
+    : 'الترويض الطبي, الدار البيضاء, kinésithérapie casablanca, blog kine, rééducation';
+  const seoKeywords = `${keywords}, ${bilingualTail}`;
+
+  return { seoTitle, seoDescription, seoKeywords };
+};
+
 export const createArticle = (data: ArticleData) => {
   const Article: React.FC<ArticleProps> = ({ lang }) => {
     const t = lang === 'fr' ? {
       publishedBy: 'Publié par Centre Chnider',
       readTime: data.readTimeFr,
       relatedArticles: 'Articles Connexes',
+      usefulLinks: 'Liens utiles',
       bookAppointment: 'Prendre RDV',
       shareArticle: 'Partager cet article',
       backToBlog: 'Retour au Blog'
@@ -40,6 +64,7 @@ export const createArticle = (data: ArticleData) => {
       publishedBy: 'نشر بواسطة مركز اشنيدر',
       readTime: data.readTimeAr,
       relatedArticles: 'مقالات ذات صلة',
+      usefulLinks: 'روابط مفيدة',
       bookAppointment: 'حجز موعد',
       shareArticle: 'مشاركة المقال',
       backToBlog: 'العودة للمدونة'
@@ -49,12 +74,13 @@ export const createArticle = (data: ArticleData) => {
     const title = lang === 'fr' ? data.titleFr : data.titleAr;
     const description = lang === 'fr' ? data.descriptionFr : data.descriptionAr;
     const keywords = lang === 'fr' ? data.keywordsFr : data.keywordsAr;
+    const seo = normalizeArticleSeo(lang, title, description, keywords);
     const image = BLOG_TOPIC_IMAGES[data.slug] || (lang === 'fr' ? data.imageFr : data.imageAr);
     const content = lang === 'fr' ? data.contentFr : data.contentAr;
 
     return (
       <>
-        <SEOHead title={title} description={description} keywords={keywords} />
+        <SEOHead title={seo.seoTitle} description={seo.seoDescription} keywords={seo.seoKeywords} />
         
         <div className={lang === 'ar' ? 'font-arabic rtl' : 'ltr'} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
           {/* Article Header */}
@@ -128,6 +154,24 @@ export const createArticle = (data: ArticleData) => {
                       </div>
                     </Link>
                   ))}
+                </div>
+              </div>
+
+              <div className="mt-10">
+                <h3 className="text-2xl font-bold mb-5">{t.usefulLinks}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <Link to={`${prefix}/blog`} className="p-4 rounded-lg border border-medical-100 bg-medical-50 hover:bg-medical-100 transition font-semibold text-medical-700">
+                    {lang === 'fr' ? 'Tous les articles du blog' : 'جميع مقالات المدونة'}
+                  </Link>
+                  <Link to={`${prefix}/pathologies`} className="p-4 rounded-lg border border-medical-100 bg-medical-50 hover:bg-medical-100 transition font-semibold text-medical-700">
+                    {lang === 'fr' ? 'Pathologies traitées' : 'الأمراض المعالجة'}
+                  </Link>
+                  <Link to={`${prefix}/services`} className="p-4 rounded-lg border border-medical-100 bg-medical-50 hover:bg-medical-100 transition font-semibold text-medical-700">
+                    {lang === 'fr' ? 'Services de kinésithérapie' : 'خدمات الترويض الطبي'}
+                  </Link>
+                  <Link to={`${prefix}/contact`} className="p-4 rounded-lg border border-medical-100 bg-medical-50 hover:bg-medical-100 transition font-semibold text-medical-700">
+                    {lang === 'fr' ? 'Contact et rendez-vous' : 'الاتصال وحجز الموعد'}
+                  </Link>
                 </div>
               </div>
             </div>

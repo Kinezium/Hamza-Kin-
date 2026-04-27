@@ -26,9 +26,9 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
   const config = useAdminConfig();
   const managedImages = useManagedBlogImages();
   const seo = getManagedSeo(config, 'blog', lang, {
-    title: lang === 'fr' ? 'Blog Kinesitherapie | Centre Chnider' : 'مدونة الترويض الطبي | مركز اشنيدر',
-    description: lang === 'fr' ? 'Articles sur les pathologies, conseils de prevention, solutions de traitement et exercices recommandes par nos experts.' : 'مقالات عن الأمراض والنصائح والحلول والتمارين الموصى بها من قبل خبرائنا.',
-    keywords: lang === 'fr' ? 'blog kine, articles kinesitherapie, conseils sante, pathologies, traitement' : 'مدونة ترويض طبي, مقالات صحية, أمراض, علاجات'
+    title: lang === 'fr' ? 'Blog Kinesitherapie Casablanca | Conseils, AVC, Entorse, LCA, Fracture Tibia' : 'مدونة الترويض الطبي بالدار البيضاء | AVC، التواء، رباط صليبي، كسر الساق',
+    description: lang === 'fr' ? 'Articles SEO sur la kinesitherapie a Casablanca: AVC, entorse de cheville, rupture du ligament croise, fracture du tibia, douleurs du dos et recuperation sportive.' : 'مقالات جاهزة للفهرسة عن الترويض الطبي بالدار البيضاء: السكتة الدماغية، التواء الكاحل، الرباط الصليبي، كسر الساق، وآلام الظهر.',
+    keywords: lang === 'fr' ? 'blog kine casablanca, article avc, entorse cheville, rupture ligament croise, fracture tibia, readaptation, مدونة الترويض الطبي, السكتة الدماغية' : 'مدونة الترويض الطبي, السكتة الدماغية, التواء الكاحل, الرباط الصليبي, كسر الساق, kinésithérapie casablanca, blog kine'
   });
 
   const posts: BlogPost[] = [
@@ -141,6 +141,50 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
       image: managedImages['recuperation-sportive-prevention-blessures'],
       readTimeFr: '6 min',
       readTimeAr: '6 دقائق'
+    },
+    {
+      slug: 'avc-signes-alerte-reeducation-precoce',
+      titleFr: 'AVC: signes d alerte et rééducation',
+      titleAr: 'السكتة الدماغية: العلامات والتأهيل',
+      descFr: 'Urgence AVC, signes clés et impact d une prise en charge précoce',
+      descAr: 'علامات AVC ودور الترويض الطبي المبكر في التعافي',
+      icon: <Brain size={28} />,
+      image: managedImages['avc-signes-alerte-reeducation-precoce'],
+      readTimeFr: '8 min',
+      readTimeAr: '8 دقائق'
+    },
+    {
+      slug: 'entorse-cheville-kinesitherapie',
+      titleFr: 'Entorse de cheville et kiné',
+      titleAr: 'التواء الكاحل والترويض الطبي',
+      descFr: 'Comment recuperer vite sans rechute apres une entorse',
+      descAr: 'برنامج تأهيل الكاحل لتفادي التواءات متكررة',
+      icon: <Dumbbell size={28} />,
+      image: managedImages['entorse-cheville-kinesitherapie'],
+      readTimeFr: '7 min',
+      readTimeAr: '7 دقائق'
+    },
+    {
+      slug: 'rupture-ligament-croise-anterieur-reeducation',
+      titleFr: 'Rupture du ligament croisé antérieur',
+      titleAr: 'تمزق الرباط الصليبي الأمامي',
+      descFr: 'Étapes clés de rééducation avant et apres chirurgie du LCA',
+      descAr: 'مراحل التأهيل قبل وبعد جراحة الرباط الصليبي',
+      icon: <Bone size={28} />,
+      image: managedImages['rupture-ligament-croise-anterieur-reeducation'],
+      readTimeFr: '8 min',
+      readTimeAr: '8 دقائق'
+    },
+    {
+      slug: 'fracture-tibia-reeducation-marche',
+      titleFr: 'Fracture du tibia et reprise de la marche',
+      titleAr: 'كسر عظم الساق واستعادة المشي',
+      descFr: 'Rééducation progressive pour marcher sans douleur ni boiterie',
+      descAr: 'خطة ترويض طبي لاسترجاع المشي بعد كسر الساق',
+      icon: <Bone size={28} />,
+      image: managedImages['fracture-tibia-reeducation-marche'],
+      readTimeFr: '7 min',
+      readTimeAr: '7 دقائق'
     }
   ];
 

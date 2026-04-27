@@ -28,6 +28,10 @@ import PediatricArticle from './pages/Blog/PediatricArticle';
 import PostStrokeArticle from './pages/Blog/PostStrokeArticle';
 import PostureErgonomicsArticle from './pages/Blog/PostureErgonomicsArticle';
 import SportsRecoveryArticle from './pages/Blog/SportsRecoveryArticle';
+import AvcWarningSignsArticle from './pages/Blog/AvcWarningSignsArticle';
+import AnkleSprainArticle from './pages/Blog/AnkleSprainArticle';
+import AclRuptureArticle from './pages/Blog/AclRuptureArticle';
+import TibiaFractureArticle from './pages/Blog/TibiaFractureArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -121,6 +125,10 @@ const App: React.FC = () => {
             <Route path="/blog/readaptation-post-avc" element={<PostStrokeArticle lang={lang} />} />
             <Route path="/blog/posture-ergonomie" element={<PostureErgonomicsArticle lang={lang} />} />
             <Route path="/blog/recuperation-sportive-prevention-blessures" element={<SportsRecoveryArticle lang={lang} />} />
+            <Route path="/blog/avc-signes-alerte-reeducation-precoce" element={<AvcWarningSignsArticle lang={lang} />} />
+            <Route path="/blog/entorse-cheville-kinesitherapie" element={<AnkleSprainArticle lang={lang} />} />
+            <Route path="/blog/rupture-ligament-croise-anterieur-reeducation" element={<AclRuptureArticle lang={lang} />} />
+            <Route path="/blog/fracture-tibia-reeducation-marche" element={<TibiaFractureArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -149,6 +157,10 @@ const App: React.FC = () => {
             <Route path="/ar/blog/readaptation-post-avc" element={<PostStrokeArticle lang="ar" />} />
             <Route path="/ar/blog/posture-ergonomie" element={<PostureErgonomicsArticle lang="ar" />} />
             <Route path="/ar/blog/recuperation-sportive-prevention-blessures" element={<SportsRecoveryArticle lang="ar" />} />
+            <Route path="/ar/blog/avc-signes-alerte-reeducation-precoce" element={<AvcWarningSignsArticle lang="ar" />} />
+            <Route path="/ar/blog/entorse-cheville-kinesitherapie" element={<AnkleSprainArticle lang="ar" />} />
+            <Route path="/ar/blog/rupture-ligament-croise-anterieur-reeducation" element={<AclRuptureArticle lang="ar" />} />
+            <Route path="/ar/blog/fracture-tibia-reeducation-marche" element={<TibiaFractureArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 
             {/* Legacy Arabic slugs redirects */}

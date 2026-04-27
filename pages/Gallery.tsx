@@ -14,7 +14,7 @@ const Gallery: React.FC<GalleryProps> = ({ lang }) => {
   const seo = getManagedSeo(config, 'gallery', lang, {
     title: lang === 'fr' ? 'Galerie | Centre Chnider Kinesitherapie Casablanca' : 'المعرض | مركز شنيدر للترويض الطبي بالدار البيضاء',
     description: lang === 'fr' ? 'Decouvrez la galerie du Centre Chnider: cabinet, materiel, seances de kinesitherapie et suivi a Casablanca.' : 'اكتشفوا معرض مركز شنيدر: العيادة، المعدات، وجلسات الترويض الطبي بالدار البيضاء.',
-    keywords: lang === 'fr' ? 'galerie kine Casablanca, centre kinesitherapie Sbata, photos cabinet kine' : 'معرض الترويض الطبي, صور مركز شنيدر, عيادة الترويض الدار البيضاء'
+    keywords: lang === 'fr' ? 'galerie kinesitherapie casablanca, photos centre chnider, cabinet sbata, reeducation, معرض الترويض الطبي, الدار البيضاء' : 'معرض الترويض الطبي, صور مركز شنيدر, عيادة الترويض الدار البيضاء, kinésithérapie casablanca, blog kine'
   });
   return (
     <>

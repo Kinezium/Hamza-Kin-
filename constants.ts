@@ -300,14 +300,14 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
       hours: "Lundi - Samedi : 09h00 - 19h00"
     },
     seo: {
-      homeTitle: "Kiné Casablanca | Centre Chnider - Cabinet & Domicile (Agréé Mutuelle)",
-      homeDesc: "Centre Chnider: kiné Casablanca, kiné Casa, kiné Sbata, kiné Aïn Chock et kiné autour de moi. Soins cabinet & domicile. Tarif à domicile à partir de 200 DH selon le bilan.",
-      servicesTitle: "Services Kiné Casablanca : Rééducation, Respiratoire, Sport & Hijama",
-      servicesDesc: "Soins complets : Kiné respiratoire bébé, rééducation AVC, traumatologie sport, Hijama médicale. Déplacement à domicile sur Casablanca (Aïn Chock, Sbata, Californie, Oasis, Maarif, Hay Hassani...).",
-      conditionsTitle: "Traitement Hernie Discale, Sciatique & Arthrose | Kiné Casablanca",
-      conditionsDesc: "Spécialiste dos et articulations : Sciatique, hernie discale sans opération, paralysie faciale, entorses.",
-      contactTitle: "Contact Kiné Casablanca | Rdv Cabinet ou Domicile - 0665646754",
-      contactDesc: "Appelez le 0665646754 pour un kiné à Casablanca. Cabinet à Sbata ou domicile zones Aïn Chock, Californie, Oasis, Maarif, Sidi Othmane, Hay Hassani."
+      homeTitle: "Kine Casablanca | Centre Chnider - Cabinet, Domicile, Reeducation & AVC",
+      homeDesc: "Centre Chnider a Casablanca: kinesitherapie au cabinet et a domicile, reeducation fonctionnelle, douleurs du dos, AVC, entorse et suivi personnalise sur Sbata, Ain Chock, Maarif et zones proches.",
+      servicesTitle: "Services Kinesitherapie Casablanca | Reeducation, Respiratoire, Sport, Domicile",
+      servicesDesc: "Soins complets de kinesitherapie a Casablanca: reeducation post-AVC, traumatologie sportive, entorse, ligament croise, fracture tibia, kine respiratoire et prise en charge a domicile.",
+      conditionsTitle: "Pathologies Traitees | Sciatique, Hernie Discale, Arthrose, AVC - Kine Casablanca",
+      conditionsDesc: "Prise en charge des douleurs lombaires, cervicalgies, arthrose, sequelles neurologiques post-AVC et traumatologie avec protocoles de reeducation adaptes.",
+      contactTitle: "Contact Kine Casablanca | Centre Chnider Cabinet & Domicile - 0665646754",
+      contactDesc: "Prenez rendez-vous rapidement avec Centre Chnider a Casablanca pour une consultation au cabinet ou en domicile, avec suivi, documents mutuelle et orientation vers les articles de prevention."
     }
   },
   ar: {
@@ -498,14 +498,14 @@ export const CONTENT: Record<'fr' | 'ar', ContentData> = {
       hours: "الإثنين - السبت : 09:00 - 19:00"
     },
     seo: {
-      homeTitle: "مروض طبي الدار البيضاء | مركز شنيدر - بالعيادة أو المنزل (وثائق التعويض)",
-      homeDesc: "مركز شنيدر للترويض الطبي بالدار البيضاء: مروض طبي كازا، سباتة، عين الشق، مروض قريب مني. سعر الترويض المنزلي يبدأ من 200 درهم حسب التقييم.",
-      servicesTitle: "خدمات الترويض الطبي: ترويض تنفسي، حجامة، وإصابات الملاعب",
-      servicesDesc: "علاج متكامل: ترويض الرضع، تأهيل بعد الجلطة، إصابات الرياضيين، وحجامة طبية. خدمة منزلية بمناطق الدار البيضاء: عين الشق، سباتة، المعاريف، الحي الحسني...",
-      conditionsTitle: "علاج الانزلاق الغضروفي، السياتيك والمفاصل | الدار البيضاء",
-      conditionsDesc: "علاج ديسك الظهر، عرق النسا، شلل الوجه، والتهاب المفاصل.",
-      contactTitle: "رقم مروض طبي الدار البيضاء | 0665646754 - منزلي أو بالمركز",
-      contactDesc: "للحجز اتصل بـ 0665646754. مروض طبي في الدار البيضاء (سباتة أو منزلي بمناطق عين الشق، المعاريف، سيدي عثمان، الحي الحسني)."
+      homeTitle: "مروض طبي الدار البيضاء | مركز شنيدر - عيادة، منزلي، تاهيل وAVC",
+      homeDesc: "مركز شنيدر للترويض الطبي بالدار البيضاء يقدم علاجا في العيادة والمنزل لحالات الظهر والمفاصل والتاهيل بعد السكتة الدماغية واصابات الرياضة في سباتة، عين الشق والمعاريف.",
+      servicesTitle: "خدمات الترويض الطبي بالدار البيضاء | تاهيل، تنفسي، رياضي ومنزلي",
+      servicesDesc: "خدمات شاملة في الترويض الطبي: تاهيل ما بعد الجلطة، التواء الكاحل، الرباط الصليبي، كسر الساق، الترويض التنفسي وخدمة منزلية بمناطق متعددة من الدار البيضاء.",
+      conditionsTitle: "الامراض المعالجة | الانزلاق الغضروفي، السياتيك، المفاصل وAVC",
+      conditionsDesc: "نعالج آلام الظهر والرقبة، خشونة المفاصل، الحالات العصبية بعد السكتة الدماغية واصابات الرياضة بخطط تاهيل عملية ومتابعة دقيقة.",
+      contactTitle: "اتصل بمروض طبي في الدار البيضاء | مركز شنيدر - 0665646754",
+      contactDesc: "للحجز السريع تواصلوا مع مركز شنيدر للترويض الطبي بالدار البيضاء، سواء للعلاج بالعيادة او بالمنزل، مع ملف تعويض ومواكبة علاجية واضحة."
     }
   }
 };

@@ -16,7 +16,7 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
    const seo = getManagedSeo(config, 'homeTherapy', lang, {
       title: lang === 'fr' ? 'Kine a Domicile Casablanca | Reeducation Fonctionnelle, Dos, Neurologie' : 'ترويض منزلي بالدار البيضاء | إعادة التأهيل وآلام الظهر والأعصاب',
       description: t.description,
-      keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, kine a domicile, reeducation a domicile, kine mutuelle, kine CNSS, kine CNOPS, sidi othmane, maarif, hay hassani, anfa' : 'الترويض المنزلي, مروض طبي قريب مني, مروض الدار البيضاء, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني, أنفا, علاج الظهر, علاج المفاصل'
+      keywords: lang === 'fr' ? 'kine a domicile casablanca, reeducation domicile, suivi post avc domicile, entorse domicile, douleurs dos domicile, centre chnider, الترويض المنزلي, الدار البيضاء' : 'الترويض المنزلي بالدار البيضاء, مروض طبي في المنزل, تاهيل بعد AVC في المنزل, علاج الام الظهر, kinésithérapie à domicile, centre chnider'
    });
    const prefix = lang === 'ar' ? '/ar' : '';
    const neighborhoods = lang === 'fr' ? CASABLANCA_NEIGHBORHOODS_FR : CASABLANCA_NEIGHBORHOODS_AR;

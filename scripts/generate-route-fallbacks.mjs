@@ -24,6 +24,10 @@ const routes = [
   'blog/readaptation-post-avc',
   'blog/posture-ergonomie',
   'blog/recuperation-sportive-prevention-blessures',
+  'blog/avc-signes-alerte-reeducation-precoce',
+  'blog/entorse-cheville-kinesitherapie',
+  'blog/rupture-ligament-croise-anterieur-reeducation',
+  'blog/fracture-tibia-reeducation-marche',
   'gallerie',
   'ar',
   'ar/pathologies',
@@ -43,6 +47,10 @@ const routes = [
   'ar/blog/readaptation-post-avc',
   'ar/blog/posture-ergonomie',
   'ar/blog/recuperation-sportive-prevention-blessures',
+  'ar/blog/avc-signes-alerte-reeducation-precoce',
+  'ar/blog/entorse-cheville-kinesitherapie',
+  'ar/blog/rupture-ligament-croise-anterieur-reeducation',
+  'ar/blog/fracture-tibia-reeducation-marche',
   'ar/gallerie'
 ];
 

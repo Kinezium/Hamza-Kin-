@@ -30,7 +30,7 @@ const Conditions: React.FC<ConditionsProps> = ({ lang }) => {
   const seo = getManagedSeo(config, 'conditions', lang, {
     title: t.seo.conditionsTitle,
     description: t.seo.conditionsDesc,
-    keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, hernie discale, sciatique, arthrose, paralysie faciale, AVC, rhumatologie, lombalgie, cervicalgie, traumatologie sport' : 'مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, علاج الانزلاق الغضروفي, عرق النسا, علاج المفاصل, علاج الأعصاب'
+    keywords: lang === 'fr' ? 'sciatique, hernie discale, arthrose genou, reeducation post avc, entorse cheville, rupture ligament croise, fracture tibia, pathologies kinesitherapie, الترويض الطبي' : 'الانزلاق الغضروفي, عرق النسا, خشونة الركبة, تاهيل ما بعد AVC, التواء الكاحل, الرباط الصليبي, كسر الساق, kinésithérapie casablanca'
   });
   const prefix = lang === 'ar' ? '/ar' : '';
 

@@ -16,7 +16,7 @@ const Contact: React.FC<ContactProps> = ({ lang }) => {
    const seo = getManagedSeo(config, 'contact', lang, {
       title: lang === 'fr' ? 'Contact Kine Casablanca | Centre Chnider Sbata, Cabinet & Domicile' : 'اتصل بمركز الترويض الطبي بالدار البيضاء | مركز اشنيدر',
       description: CONTENT[lang].seo.contactDesc,
-      keywords: lang === 'fr' ? 'kine ainchoq, kine sbata, kine casablanca, kine casa, kine autour de moi, contact kine Casablanca, kine a domicile, kine mutuelle, kine CNSS, kine CNOPS, sidi othmane, maarif, hay hassani' : 'اتصال مروض طبي, مروض طبي الدار البيضاء, مروض قريب مني, عين الشق, سباتة, سيدي عثمان, المعاريف, الحي الحسني'
+      keywords: lang === 'fr' ? 'contact kine casablanca, rendez-vous kinesitherapie, kine domicile, centre chnider sbata, whatsapp kine, مروض طبي الدار البيضاء, الترويض الطبي' : 'اتصال مروض طبي, حجز موعد ترويض طبي, مركز شنيدر سباتة, ترويض منزلي, kinésithérapie casablanca, blog kine'
    });
    const prefix = lang === 'ar' ? '/ar' : '';
 
