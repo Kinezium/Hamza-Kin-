@@ -129,13 +129,13 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
   home: {
     fr: {
       title: 'Kiné Casablanca | Centre Chnider - Cabinet et domicile',
-      description: 'Kinésithérapie à Casablanca : dos, sport, neurologie, soins à domicile et au cabinet.',
+      description: 'Centre Chnider à Casablanca : kinésithérapie du dos, traumatologie sportive, neurologie et rééducation personnalisée au cabinet et à domicile, avec suivi professionnel et prise de rendez-vous rapide.',
       keywords: 'kiné Casablanca, kinésithérapie Casa, sciatique, rééducation',
       internalLinks: '/services,/pathologies,/a-domicile,/contact,/blog'
     },
     ar: {
       title: 'مركز الترويض الطبي بالدار البيضاء | مركز شنيدر',
-      description: 'الترويض الطبي بالدار البيضاء داخل العيادة والمنزل.',
+      description: 'مركز شنيدر للترويض الطبي بالدار البيضاء يقدم علاج آلام الظهر، الإصابات الرياضية، التأهيل العصبي وإعادة التأهيل الوظيفي داخل العيادة وفي المنزل مع متابعة مهنية وحجز سريع.',
       keywords: 'الترويض الطبي, الدار البيضاء, عرق النسا, إعادة التأهيل',
       internalLinks: '/ar/services,/ar/pathologies,/ar/a-domicile,/ar/contact,/ar/blog'
     }

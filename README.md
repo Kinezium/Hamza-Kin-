@@ -57,6 +57,12 @@ Hebergement statique avec `serve`:
 npx serve dist --single --config serve.json
 ```
 
+Securite HTTPS (HSTS):
+
+- Le projet inclut deja `Strict-Transport-Security` dans [public/.htaccess](public/.htaccess) pour Apache.
+- Verifier que le module `mod_headers` est active cote serveur.
+- HSTS est effectif uniquement sur les reponses HTTPS.
+
 Fallback statique optionnel apres build:
 
 ```bash
