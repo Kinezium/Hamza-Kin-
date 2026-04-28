@@ -7,13 +7,15 @@ interface HomeTherapyPopupProps {
   lang: Language;
 }
 
-const DISMISS_KEY = 'chnider-home-therapy-popup-dismissed-at';
-const SUBMIT_KEY = 'chnider-home-therapy-popup-submitted-at';
+const DISMISS_KEY_BASE = 'chnider-home-therapy-popup-dismissed-at';
+const SUBMIT_KEY_BASE = 'chnider-home-therapy-popup-submitted-at';
 const REAPPEAR_DELAY_MS = 24 * 60 * 60 * 1000;
 const apiBase = ((import.meta as any).env?.VITE_ADMIN_API_URL || '').toString().replace(/\/$/, '');
 
 const HomeTherapyPopup: React.FC<HomeTherapyPopupProps> = ({ lang }) => {
   const config = useAdminConfig();
+  const dismissKey = `${DISMISS_KEY_BASE}-${lang}`;
+  const submitKey = `${SUBMIT_KEY_BASE}-${lang}`;
   const [isOpen, setIsOpen] = useState(false);
   const [phone, setPhone] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -57,8 +59,8 @@ const HomeTherapyPopup: React.FC<HomeTherapyPopupProps> = ({ lang }) => {
     if (typeof window === 'undefined') return;
 
     const now = Date.now();
-    const lastDismissed = Number(window.localStorage.getItem(DISMISS_KEY) || '0');
-    const lastSubmitted = Number(window.localStorage.getItem(SUBMIT_KEY) || '0');
+    const lastDismissed = Number(window.localStorage.getItem(dismissKey) || '0');
+    const lastSubmitted = Number(window.localStorage.getItem(submitKey) || '0');
 
     if (now - lastDismissed < REAPPEAR_DELAY_MS || now - lastSubmitted < REAPPEAR_DELAY_MS) {
       return;
@@ -68,7 +70,7 @@ const HomeTherapyPopup: React.FC<HomeTherapyPopupProps> = ({ lang }) => {
     const timer = window.setTimeout(() => setIsOpen(true), delay);
 
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [dismissKey, submitKey]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -87,7 +89,7 @@ const HomeTherapyPopup: React.FC<HomeTherapyPopupProps> = ({ lang }) => {
   };
 
   const closePopup = () => {
-    remember(DISMISS_KEY);
+    remember(dismissKey);
     setIsOpen(false);
   };
 
@@ -136,7 +138,7 @@ const HomeTherapyPopup: React.FC<HomeTherapyPopupProps> = ({ lang }) => {
         throw new Error('Lead request failed');
       }
 
-      remember(SUBMIT_KEY);
+      remember(submitKey);
       setFeedbackType('success');
       setFeedback(t.success);
       setPhone('');
@@ -217,7 +219,7 @@ const HomeTherapyPopup: React.FC<HomeTherapyPopupProps> = ({ lang }) => {
           </button>
 
           <a
-            href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'Popup kiné à domicile')}
+            href={makeWhatsAppLink(lang, config.contact.whatsappNumber, lang === 'fr' ? 'Popup kiné à domicile' : 'نافذة الترويض المنزلي')}
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center justify-center gap-2 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 font-semibold text-emerald-700 transition hover:bg-emerald-100"
