@@ -1,16 +1,37 @@
 ﻿const BASE_SITE_URL = 'https://kinesitherapie.clinaxis.ma';
 
 const SPECIALTIES = [
-  { slug: 'kinesitherapie', fr: 'Kinesitherapie', ar: 'الترويض الطبي' },
-  { slug: 'orthophonie', fr: 'Orthophonie', ar: 'تقويم النطق' },
-  { slug: 'medecin-generaliste', fr: 'Medecin generaliste', ar: 'الطب العام' },
-  { slug: 'cardiologie', fr: 'Medecin cardiologue', ar: 'طب القلب' },
-  { slug: 'dentisterie', fr: 'Dentiste', ar: 'طب الاسنان' },
-  { slug: 'radiologie', fr: 'Radiologie', ar: 'الاشعة الطبية' },
-  { slug: 'pharmacie', fr: 'Pharmacie', ar: 'الصيدلة' },
-  { slug: 'laboratoire-analyses', fr: 'Laboratoire des analyses', ar: 'مختبر التحاليل' },
-  { slug: 'psychomotricite', fr: 'Psychomotricite', ar: 'العلاج الحركي النفسي' },
-  { slug: 'clinique', fr: 'Clinique', ar: 'المصحة' }
+  // Reeducation & therapies
+  { slug: 'kinesitherapie', fr: 'Kinesitherapie', ar: 'الترويض الطبي', icon: '🏃' },
+  { slug: 'orthophonie', fr: 'Orthophonie', ar: 'تقويم النطق', icon: '🗣️' },
+  { slug: 'psychomotricite', fr: 'Psychomotricite', ar: 'العلاج الحركي النفسي', icon: '🧩' },
+  { slug: 'ergotherapie', fr: 'Ergotherapie', ar: 'العلاج الوظيفي', icon: '🙌' },
+  { slug: 'osteopathie', fr: 'Osteopathie', ar: 'العلاج اليدوي', icon: '🤲' },
+  // Medecins specialistes
+  { slug: 'medecin-generaliste', fr: 'Medecin generaliste', ar: 'الطب العام', icon: '🩺' },
+  { slug: 'cardiologie', fr: 'Cardiologie', ar: 'طب القلب', icon: '❤️' },
+  { slug: 'pediatrie', fr: 'Pediatrie', ar: 'طب الاطفال', icon: '👶' },
+  { slug: 'psychiatrie', fr: 'Psychiatrie', ar: 'الطب النفسي', icon: '🧠' },
+  { slug: 'neurologie', fr: 'Neurologie', ar: 'طب الاعصاب', icon: '🧬' },
+  { slug: 'gynecologie', fr: 'Gynecologie', ar: 'طب النساء والتوليد', icon: '⚕️' },
+  { slug: 'dermatologie', fr: 'Dermatologie', ar: 'الامراض الجلدية', icon: '🌡️' },
+  { slug: 'ophtalmologie', fr: 'Ophtalmologie', ar: 'طب العيون', icon: '👁️' },
+  { slug: 'orl', fr: 'ORL', ar: 'طب الانف والاذن والحنجرة', icon: '👂' },
+  { slug: 'rhumatologie', fr: 'Rhumatologie', ar: 'الرثية والمفاصل', icon: '🦴' },
+  { slug: 'gastroenterologie', fr: 'Gastro-enterologie', ar: 'امراض الجهاز الهضمي', icon: '🫁' },
+  // Chirurgie
+  { slug: 'dentisterie', fr: 'Dentiste', ar: 'طب الاسنان', icon: '🦷' },
+  // Imagerie & analyses
+  { slug: 'radiologie', fr: 'Radiologie', ar: 'الاشعة الطبية', icon: '🔬' },
+  { slug: 'laboratoire-analyses', fr: 'Laboratoire analyses', ar: 'مختبر التحاليل', icon: '🧪' },
+  // Soins & prevention
+  { slug: 'pharmacie', fr: 'Pharmacie', ar: 'الصيدلة', icon: '💊' },
+  { slug: 'infirmier', fr: 'Infirmier / Soins infirmiers', ar: 'التمريض', icon: '💉' },
+  { slug: 'sage-femme', fr: 'Sage-femme', ar: 'القابلة', icon: '🤱' },
+  { slug: 'nutritionniste', fr: 'Nutritionniste', ar: 'التغذية العلاجية', icon: '🥗' },
+  { slug: 'podologie', fr: 'Podologie', ar: 'طب القدم', icon: '🦶' },
+  // Structures
+  { slug: 'clinique', fr: 'Clinique / Polyclinique', ar: 'المصحة والعيادة', icon: '🏥' }
 ];
 
 const CITIES = [
@@ -26,7 +47,13 @@ const CITIES = [
       { slug: 'hay-hassani', fr: 'Hay Hassani', ar: 'الحي الحسني' },
       { slug: 'anfa', fr: 'Anfa', ar: 'انفا' },
       { slug: 'oasis', fr: 'Oasis', ar: 'الوازيس' },
-      { slug: 'californie', fr: 'Californie', ar: 'كاليفورنيا' }
+      { slug: 'californie', fr: 'Californie', ar: 'كاليفورنيا' },
+      { slug: 'bernoussa', fr: 'Bernoussa', ar: 'برنوصة' },
+      { slug: 'ben-msik', fr: 'Ben Msik', ar: 'بن مسيك' },
+      { slug: 'ain-sebaa', fr: 'Ain Sebaa', ar: 'عين السبع' },
+      { slug: 'al-fida', fr: 'Al Fida', ar: 'الفداء' },
+      { slug: 'bourgogne', fr: 'Bourgogne', ar: 'بورغون' },
+      { slug: 'nassim', fr: 'Nassim', ar: 'النسيم' }
     ]
   },
   {
@@ -39,7 +66,11 @@ const CITIES = [
       { slug: 'bellavista', fr: 'Bellavista', ar: 'بيلفيستا' },
       { slug: 'iberia', fr: 'Iberia', ar: 'ايبيريا' },
       { slug: 'bir-chifa', fr: 'Bir Chifa', ar: 'بير الشفا' },
-      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' },
+      { slug: 'charf', fr: 'Charf', ar: 'الشرف' },
+      { slug: 'beni-makada', fr: 'Beni Makada', ar: 'بني مكادة' },
+      { slug: 'val-fleuri-tanger', fr: 'Val Fleuri', ar: 'فال فلوري' },
+      { slug: 'ain-ktiouet', fr: 'Ain Ktiouet', ar: 'عين كتيوت' }
     ]
   },
   {
@@ -51,7 +82,11 @@ const CITIES = [
       { slug: 'hivernage', fr: 'Hivernage', ar: 'الحي الشتوي' },
       { slug: 'sidi-youssef', fr: 'Sidi Youssef', ar: 'سيدي يوسف' },
       { slug: 'massira', fr: 'Massira', ar: 'المسيرة' },
-      { slug: 'daoudiate', fr: 'Daoudiate', ar: 'الداوديات' }
+      { slug: 'daoudiate', fr: 'Daoudiate', ar: 'الداوديات' },
+      { slug: 'hay-hassani-marrakech', fr: 'Hay Hassani', ar: 'الحي الحسني' },
+      { slug: 'targa', fr: 'Targa', ar: 'تارگا' },
+      { slug: 'sidi-ghanem', fr: 'Sidi Ghanem', ar: 'سيدي غانم' },
+      { slug: 'bab-doukkala', fr: 'Bab Doukkala', ar: 'باب الدكالة' }
     ]
   },
   {
@@ -177,6 +212,94 @@ const CITIES = [
       { slug: 'beausite', fr: 'Beausite', ar: 'بوزيت' },
       { slug: 'wafa', fr: 'Wafa', ar: 'الوفاء' },
       { slug: 'al-alia', fr: 'Al Alia', ar: 'العالية' }
+    ]
+  },
+  {
+    slug: 'beni-mellal',
+    fr: 'Beni Mellal',
+    ar: 'بني ملال',
+    districts: [
+      { slug: 'hay-azhar', fr: 'Hay Azhar', ar: 'حي الازهر' },
+      { slug: 'manba', fr: 'Manba', ar: 'منبع' },
+      { slug: 'les-fleurs', fr: 'Les Fleurs', ar: 'الزهور' },
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
+    ]
+  },
+  {
+    slug: 'safi',
+    fr: 'Safi',
+    ar: 'آسفي',
+    districts: [
+      { slug: 'hay-atlas', fr: 'Hay Atlas', ar: 'حي الاطلس' },
+      { slug: 'bab-erraha', fr: 'Bab Erraha', ar: 'باب الراحة' },
+      { slug: 'laksour', fr: 'Laksour', ar: 'القصور' },
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
+    ]
+  },
+  {
+    slug: 'nador',
+    fr: 'Nador',
+    ar: 'الناظور',
+    districts: [
+      { slug: 'hay-salam', fr: 'Hay Salam', ar: 'حي السلام' },
+      { slug: 'hay-rif', fr: 'Hay Rif', ar: 'حي الريف' },
+      { slug: 'kariet-arkmane', fr: 'Kariet Arkmane', ar: 'قرية عرقمان' },
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
+    ]
+  },
+  {
+    slug: 'al-hoceima',
+    fr: 'Al Hoceima',
+    ar: 'الحسيمة',
+    districts: [
+      { slug: 'chantemar', fr: 'Chantemar', ar: 'شانتيمار' },
+      { slug: 'tala-youssef', fr: 'Tala Youssef', ar: 'تالا يوسف' },
+      { slug: 'ville-nouvelle', fr: 'Ville Nouvelle', ar: 'المدينة الجديدة' },
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
+    ]
+  },
+  {
+    slug: 'settat',
+    fr: 'Settat',
+    ar: 'سطات',
+    districts: [
+      { slug: 'hay-nakhil', fr: 'Hay Nakhil', ar: 'حي النخيل' },
+      { slug: 'ain-soltan', fr: 'Ain Soltan', ar: 'عين السلطان' },
+      { slug: 'les-pins', fr: 'Les Pins', ar: 'الصنوبر' },
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
+    ]
+  },
+  {
+    slug: 'khouribga',
+    fr: 'Khouribga',
+    ar: 'خريبكة',
+    districts: [
+      { slug: 'hay-ezzitoune', fr: 'Hay Ezzitoune', ar: 'حي الزيتون' },
+      { slug: 'karbouche', fr: 'Karbouche', ar: 'كرابوش' },
+      { slug: 'hay-salam', fr: 'Hay Salam', ar: 'حي السلام' },
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
+    ]
+  },
+  {
+    slug: 'larache',
+    fr: 'Larache',
+    ar: 'العرائش',
+    districts: [
+      { slug: 'hay-mohammadi', fr: 'Hay Mohammadi', ar: 'الحي المحمدي' },
+      { slug: 'plateau', fr: 'Plateau', ar: 'البلاتو' },
+      { slug: 'charif-idrissi', fr: 'Charif Idrissi', ar: 'شريف الادريسي' },
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
+    ]
+  },
+  {
+    slug: 'ouarzazate',
+    fr: 'Ouarzazate',
+    ar: 'ورزازات',
+    districts: [
+      { slug: 'hay-nassim', fr: 'Hay Nassim', ar: 'حي النسيم' },
+      { slug: 'draa', fr: 'Draa', ar: 'درعة' },
+      { slug: 'tabounte', fr: 'Tabounte', ar: 'تابونت' },
+      { slug: 'centre-ville', fr: 'Centre-ville', ar: 'وسط المدينة' }
     ]
   }
 ];
@@ -429,10 +552,40 @@ export const normalizeSpecialtySlug = (input) => {
     pharmacie: 'pharmacie',
     pharmacien: 'pharmacie',
     dentiste: 'dentisterie',
+    dentisterie: 'dentisterie',
     clinique: 'clinique',
+    polyclinique: 'clinique',
     psychomot: 'psychomotricite',
     psychomotricite: 'psychomotricite',
-    radiologue: 'radiologie'
+    radiologue: 'radiologie',
+    ergo: 'ergotherapie',
+    ergotherapeute: 'ergotherapie',
+    nutri: 'nutritionniste',
+    nutritioniste: 'nutritionniste',
+    dietetique: 'nutritionniste',
+    dieteticien: 'nutritionniste',
+    podo: 'podologie',
+    psy: 'psychiatrie',
+    psychiatre: 'psychiatrie',
+    neuro: 'neurologie',
+    neurologue: 'neurologie',
+    gyneco: 'gynecologie',
+    gynecologue: 'gynecologie',
+    obstetrique: 'gynecologie',
+    dermato: 'dermatologie',
+    dermatologue: 'dermatologie',
+    ophtalmo: 'ophtalmologie',
+    ophtalmologue: 'ophtalmologie',
+    oculiste: 'ophtalmologie',
+    rhuma: 'rhumatologie',
+    rhumatologue: 'rhumatologie',
+    gastro: 'gastroenterologie',
+    gastrologue: 'gastroenterologie',
+    infirmiere: 'infirmier',
+    soins: 'infirmier',
+    ostheo: 'osteopathie',
+    osteopathe: 'osteopathie',
+    pediatre: 'pediatrie'
   };
 
   if (aliases[source]) return aliases[source];

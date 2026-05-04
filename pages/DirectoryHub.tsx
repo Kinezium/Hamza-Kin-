@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import React, { useMemo, useState, useCallback } from 'react';
+import { Link, useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
 import { Language } from '../types';
 import {
@@ -31,17 +31,46 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
   const [applyCity, setApplyCity] = useState(resolvedCitySlug || 'casablanca');
   const [applyDistrict, setApplyDistrict] = useState(resolvedDistrictSlug || '');
 
+  const navigate = useNavigate();
+  // Search/filter state (annuaire homepage)
+  const [searchText, setSearchText] = useState('');
+  const [searchSpecialty, setSearchSpecialty] = useState('');
+  const [searchCity, setSearchCity] = useState('');
+  const [searchDistrict, setSearchDistrict] = useState('');
+
+  const handleSearch = useCallback(() => {
+    const sp = normalizeSpecialtySlug(searchText || searchSpecialty);
+    const ct = searchCity.trim().toLowerCase();
+    const dt = searchDistrict.trim().toLowerCase();
+    if (sp && ct && dt) {
+      navigate(`${prefix}/annuaire/${sp}/${ct}/${dt}`);
+    } else if (sp && ct) {
+      navigate(`${prefix}/annuaire/${sp}/${ct}`);
+    } else if (sp) {
+      navigate(`${prefix}/annuaire/${sp}`);
+    } else if (ct) {
+      // no specialty but city → go to annuaire with city query
+      navigate(`${prefix}/annuaire?city=${ct}${dt ? `&district=${dt}` : ''}`);
+    }
+  }, [searchText, searchSpecialty, searchCity, searchDistrict, navigate, prefix]);
+
   const prefix = lang === 'ar' ? '/ar' : '';
 
   const labels = useMemo(() => (lang === 'fr'
     ? {
-        homeTitle: 'Annuaire medical Maroc: specialites, villes, quartiers et profils verifies',
-        homeDesc: 'Annuaire SEO medical bilingue au Maroc: kinesitherapie, orthophonie, radiologie, laboratoire, psychomotricite, clinique et medecins multispecialites.',
-        chooseSpecialty: 'Choisir une specialite',
+        homeTitle: 'Annuaire medical Maroc — Trouvez un praticien pres de chez vous',
+        homeDesc: 'Annuaire medical bilingue Maroc: kinesitherapie, orthophonie, medecins, pharmacies, laboratoires, cliniques et 25 specialites medicales et paramedicales.',
+        chooseSpecialty: 'Parcourir par specialite',
         chooseCity: 'Choisir une ville',
         chooseDistrict: 'Choisir un quartier',
-        noProfiles: 'Aucun profil actif dans ce quartier pour le moment.',
-        applyBtn: 'Postuler pour ce quartier',
+        noProfiles: 'Aucun partenaire actif dans ce quartier pour le moment.',
+        applyBtn: 'Devenir partenaire dans ce quartier',
+        searchPlaceholder: 'Kinesitherapie, Cardiologue, Pharmacie...',
+        searchBtn: 'Rechercher',
+        allSpecialties: 'Toutes les specialites',
+        allCities: 'Toutes les villes',
+        allDistricts: 'Tous les quartiers',
+        partnerBadge: 'Partenaire verifie',
         ctaWhatsApp: 'Contacter sur WhatsApp',
         districtSection: 'Quartiers disponibles',
         cityProfiles: 'Profils principaux de la ville',
@@ -56,13 +85,19 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
         profilePageSuffix: 'profil complet, services, horaires, galerie et localisation'
       }
     : {
-        homeTitle: 'دليل طبي بالمغرب: تخصصات ومدن واحياء وملفات موثوقة',
-        homeDesc: 'دليل طبي ثنائي اللغة يشمل الترويض الطبي، تقويم النطق، الاشعة، المختبر، العلاج الحركي النفسي، المصحات والطب متعدد التخصصات.',
-        chooseSpecialty: 'اختيار التخصص',
+        homeTitle: 'الدليل الطبي بالمغرب — ابحث عن ممارس صحي قريب منك',
+        homeDesc: 'دليل طبي ثنائي اللغة بالمغرب: الترويض الطبي، تقويم النطق، الاطباء، الصيدليات، المختبرات، المصحات و25 تخصصا طبيا وشبه طبي.',
+        chooseSpecialty: 'تصفح حسب التخصص',
         chooseCity: 'اختيار المدينة',
         chooseDistrict: 'اختيار الحي',
-        noProfiles: 'لا توجد ملفات نشطة في هذا الحي حاليا.',
-        applyBtn: 'التقديم لهذا الحي',
+        noProfiles: 'لا يوجد شريك نشط في هذا الحي حاليا.',
+        applyBtn: 'انضم كشريك في هذا الحي',
+        searchPlaceholder: 'ترويض طبي، طبيب قلب، صيدلية...',
+        searchBtn: 'بحث',
+        allSpecialties: 'جميع التخصصات',
+        allCities: 'جميع المدن',
+        allDistricts: 'جميع الاحياء',
+        partnerBadge: 'شريك موثوق',
         ctaWhatsApp: 'التواصل عبر واتساب',
         districtSection: 'الاحياء المتاحة',
         cityProfiles: 'ملفات رئيسية داخل المدينة',
@@ -204,8 +239,8 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
             <h3 className="text-lg font-bold text-slate-900">{profileName}</h3>
             <p className="text-sm text-slate-600">{profileDescription}</p>
             {profile.isVerified && (
-              <span className="mt-2 inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">
-                {lang === 'fr' ? 'Profil verifie' : 'ملف موثوق'}
+              <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+                ✓ {lang === 'fr' ? 'Partenaire verifie' : 'شريك موثوق'}
               </span>
             )}
           </div>
@@ -245,42 +280,126 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
     <>
       <SEOHead title={seo.title} description={seo.description} keywords={seo.keywords} />
 
-      <div className="bg-gradient-to-br from-slate-900 via-sky-900 to-cyan-700 text-white py-14">
+      {/* Hero / breadcrumb bar */}
+      <div className="bg-gradient-to-br from-slate-900 via-sky-900 to-cyan-700 text-white py-10 md:py-14">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">{seo.title}</h1>
-          <p className="mt-4 max-w-3xl text-sky-50 text-lg">{labels.intro}</p>
+          <h1 className="text-2xl md:text-4xl font-extrabold leading-tight">{seo.title}</h1>
 
-          <div className="mt-6 flex flex-wrap gap-2 text-sm">
-            <Link to={`${prefix}/annuaire`} className="rounded-full bg-white/15 px-3 py-1.5 hover:bg-white/25 transition">{lang === 'fr' ? 'Accueil annuaire' : 'الصفحة الرئيسية للدليل'}</Link>
-            {currentSpecialty && <Link to={`${prefix}/annuaire/${currentSpecialty.slug}`} className="rounded-full bg-white/15 px-3 py-1.5 hover:bg-white/25 transition">{lang === 'fr' ? currentSpecialty.fr : currentSpecialty.ar}</Link>}
-            {currentCity && currentSpecialty && <Link to={`${prefix}/annuaire/${currentSpecialty.slug}/${currentCity.slug}`} className="rounded-full bg-white/15 px-3 py-1.5 hover:bg-white/25 transition">{lang === 'fr' ? currentCity.fr : currentCity.ar}</Link>}
-            {currentDistrict && currentSpecialty && currentCity && <Link to={`${prefix}/annuaire/${currentSpecialty.slug}/${currentCity.slug}/${currentDistrict.slug}`} className="rounded-full bg-white/15 px-3 py-1.5 hover:bg-white/25 transition">{lang === 'fr' ? currentDistrict.fr : currentDistrict.ar}</Link>}
-          </div>
+          {/* Search engine — only on homepage */}
+          {!resolvedSpecialtySlug && (
+            <div className="mt-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 p-5 md:p-6 max-w-3xl">
+              <p className="text-sky-100 font-semibold mb-4 text-sm uppercase tracking-wider">
+                {lang === 'fr' ? '🔍 Trouver un praticien partenaire' : '🔍 ابحث عن ممارس شريك'}
+              </p>
+              <div className="flex flex-col gap-3">
+                <input
+                  type="text"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                  placeholder={lang === 'fr' ? 'Kinesitherapie, Cardiologue, Pharmacie...' : 'ترويض طبي، طبيب قلب، صيدلية...'}
+                  className="w-full rounded-xl bg-white text-slate-900 placeholder-slate-400 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300"
+                />
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <select
+                    value={searchSpecialty}
+                    onChange={(e) => setSearchSpecialty(e.target.value)}
+                    className="rounded-xl bg-white text-slate-900 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300"
+                  >
+                    <option value="">{lang === 'fr' ? 'Toutes les spécialités' : 'جميع التخصصات'}</option>
+                    {specialties.map((s) => (
+                      <option key={s.slug} value={s.slug}>{(s as any).icon} {lang === 'fr' ? s.fr : s.ar}</option>
+                    ))}
+                  </select>
+                  <select
+                    value={searchCity}
+                    onChange={(e) => { setSearchCity(e.target.value); setSearchDistrict(''); }}
+                    className="rounded-xl bg-white text-slate-900 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300"
+                  >
+                    <option value="">{lang === 'fr' ? 'Toutes les villes' : 'جميع المدن'}</option>
+                    {cities.map((c) => (
+                      <option key={c.slug} value={c.slug}>{lang === 'fr' ? c.fr : c.ar}</option>
+                    ))}
+                  </select>
+                  <select
+                    value={searchDistrict}
+                    onChange={(e) => setSearchDistrict(e.target.value)}
+                    className="rounded-xl bg-white text-slate-900 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300"
+                    disabled={!searchCity}
+                  >
+                    <option value="">{lang === 'fr' ? 'Tous les quartiers' : 'جميع الأحياء'}</option>
+                    {searchCity && (cities.find((c) => c.slug === searchCity)?.districts || []).map((d) => (
+                      <option key={d.slug} value={d.slug}>{lang === 'fr' ? d.fr : d.ar}</option>
+                    ))}
+                  </select>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleSearch}
+                  className="self-start rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-semibold px-6 py-2.5 text-sm transition"
+                >
+                  {lang === 'fr' ? 'Rechercher' : 'بحث'}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Breadcrumb for sub-pages */}
+          {(resolvedSpecialtySlug || resolvedCitySlug) && (
+            <div className="mt-5 flex flex-wrap gap-2 text-sm">
+              <Link to={`${prefix}/annuaire`} className="rounded-full bg-white/15 px-3 py-1.5 hover:bg-white/25 transition">{lang === 'fr' ? 'Annuaire' : 'الدليل'}</Link>
+              {currentSpecialty && <Link to={`${prefix}/annuaire/${currentSpecialty.slug}`} className="rounded-full bg-white/15 px-3 py-1.5 hover:bg-white/25 transition">{(currentSpecialty as any).icon} {lang === 'fr' ? currentSpecialty.fr : currentSpecialty.ar}</Link>}
+              {currentCity && currentSpecialty && <Link to={`${prefix}/annuaire/${currentSpecialty.slug}/${currentCity.slug}`} className="rounded-full bg-white/15 px-3 py-1.5 hover:bg-white/25 transition">{lang === 'fr' ? currentCity.fr : currentCity.ar}</Link>}
+              {currentDistrict && currentSpecialty && currentCity && <Link to={`${prefix}/annuaire/${currentSpecialty.slug}/${currentCity.slug}/${currentDistrict.slug}`} className="rounded-full bg-white/20 border border-white/30 px-3 py-1.5">{lang === 'fr' ? currentDistrict.fr : currentDistrict.ar}</Link>}
+            </div>
+          )}
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12">
         {!resolvedSpecialtySlug && (
-          <section className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">{labels.chooseSpecialty}</h2>
-              <p className="text-slate-600">{seo.description}</p>
+          <section className="space-y-10">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900">{labels.chooseSpecialty}</h2>
+                <p className="text-slate-500 mt-1 text-sm">
+                  {lang === 'fr'
+                    ? 'Cabinets, centres et praticiens partenaires partout au Maroc'
+                    : 'عيادات، مراكز وممارسون شركاء في جميع أنحاء المغرب'}
+                </p>
+              </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
               {specialties.map((item) => (
                 <Link
                   key={item.slug}
                   to={`${prefix}/annuaire/${item.slug}`}
-                  className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-sky-300 hover:shadow-md transition"
+                  className="flex flex-col items-center gap-2 rounded-2xl border border-slate-200 bg-white p-4 text-center hover:border-sky-300 hover:shadow-md transition group"
                 >
-                  <h3 className="text-lg font-bold text-slate-900">{lang === 'fr' ? item.fr : item.ar}</h3>
-                  <p className="mt-2 text-sm text-slate-600">
-                    {lang === 'fr'
-                      ? `Voir les villes et quartiers pour ${item.fr}`
-                      : `عرض المدن والاحياء لتخصص ${item.ar}`}
-                  </p>
+                  <span className="text-3xl" role="img" aria-hidden="true">{(item as any).icon || '🏥'}</span>
+                  <span className="text-sm font-semibold text-slate-800 group-hover:text-sky-700 leading-tight">
+                    {lang === 'fr' ? item.fr : item.ar}
+                  </span>
                 </Link>
               ))}
+            </div>
+
+            {/* Popular cities quick links */}
+            <div>
+              <h3 className="text-lg font-bold text-slate-900 mb-3">
+                {lang === 'fr' ? 'Villes populaires' : 'المدن الرائجة'}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {cities.slice(0, 10).map((c) => (
+                  <Link
+                    key={c.slug}
+                    to={`${prefix}/annuaire/kinesitherapie/${c.slug}`}
+                    className="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-600 hover:border-sky-300 hover:text-sky-700 transition"
+                  >
+                    📍 {lang === 'fr' ? c.fr : c.ar}
+                  </Link>
+                ))}
+              </div>
             </div>
           </section>
         )}

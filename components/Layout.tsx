@@ -129,6 +129,14 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // Annuaire pages use their own LayoutDirectory — skip main nav/footer
+  const isAnnuairePage = location.pathname === `${prefix}/annuaire` ||
+    location.pathname.startsWith(`${prefix}/annuaire/`);
+  if (isAnnuairePage) {
+    return <>{children}</>;
+  }
+
+
   const linkClass = (path: string) => `
     block px-3 py-2 rounded-md text-base font-medium transition-colors
     ${isActive(path) 
