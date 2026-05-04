@@ -38,6 +38,8 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
   const [searchCity, setSearchCity] = useState('');
   const [searchDistrict, setSearchDistrict] = useState('');
 
+  const prefix = lang === 'ar' ? '/ar' : '';
+
   const handleSearch = useCallback(() => {
     const sp = normalizeSpecialtySlug(searchText || searchSpecialty);
     const ct = searchCity.trim().toLowerCase();
@@ -53,8 +55,6 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
       navigate(`${prefix}/annuaire?city=${ct}${dt ? `&district=${dt}` : ''}`);
     }
   }, [searchText, searchSpecialty, searchCity, searchDistrict, navigate, prefix]);
-
-  const prefix = lang === 'ar' ? '/ar' : '';
 
   const labels = useMemo(() => (lang === 'fr'
     ? {
