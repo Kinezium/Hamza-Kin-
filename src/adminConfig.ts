@@ -238,6 +238,20 @@ const defaultSeoPages: Record<string, SeoPageConfig> = {
       internalLinks: '/ar/pathologies,/ar/services,/ar/contact'
     }
   },
+  directory: {
+    fr: {
+      title: 'Annuaire medical Maroc | Specialites, villes et quartiers',
+      description: 'Annuaire bilingue des centres et praticiens par specialite, ville et quartier au Maroc.',
+      keywords: 'annuaire medical maroc, kine casa, orthophonie, radiologie, laboratoire, clinique',
+      internalLinks: '/annuaire,/services,/contact,/blog'
+    },
+    ar: {
+      title: 'دليل طبي المغرب | تخصصات ومدن واحياء',
+      description: 'دليل ثنائي اللغة للمراكز والممارسين حسب التخصص والمدينة والحي في المغرب.',
+      keywords: 'دليل طبي المغرب, الترويض, تقويم النطق, الاشعة, المختبر, المصحة',
+      internalLinks: '/ar/annuaire,/ar/services,/ar/contact,/ar/blog'
+    }
+  },
   convention: {
     fr: {
       title: 'Convention assurance et mutuelle | Centre Chnider',
@@ -288,6 +302,7 @@ export const DEFAULT_ADMIN_CONFIG: AdminSiteConfig = {
   },
   pageLinks: [
     { id: 'home', labelFr: 'Accueil', labelAr: 'الرئيسية', pathFr: '/', pathAr: '/ar' },
+    { id: 'directory', labelFr: 'Annuaire', labelAr: 'الدليل', pathFr: '/annuaire', pathAr: '/ar/annuaire' },
     { id: 'services', labelFr: 'Services', labelAr: 'الخدمات', pathFr: '/services', pathAr: '/ar/services' },
     { id: 'conditions', labelFr: 'Pathologies', labelAr: 'الأمراض', pathFr: '/pathologies', pathAr: '/ar/pathologies' },
     { id: 'home-therapy', labelFr: 'A domicile', labelAr: 'ترويض منزلي', pathFr: '/a-domicile', pathAr: '/ar/a-domicile' },

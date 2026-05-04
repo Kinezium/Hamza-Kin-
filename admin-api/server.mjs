@@ -15,6 +15,7 @@ const adminUser = process.env.ADMIN_USER || 'H@mza';
 const adminPassword = process.env.ADMIN_PASSWORD || 'Chn!d3r';
 const corsOrigin = process.env.CORS_ORIGIN || '*';
 const leadEmailTo = process.env.LEAD_EMAIL_TO || 'hamza.chnider@gmail.com';
+const providerLeadEmailTo = process.env.PROVIDER_LEAD_EMAIL_TO || 'clinaxis.ma@gmail.com';
 const smtpUrl = process.env.SMTP_URL || '';
 const smtpHost = process.env.SMTP_HOST || '';
 const smtpPort = Number(process.env.SMTP_PORT || 587);
@@ -191,6 +192,105 @@ app.post('/api/leads/home-therapy', async (req, res) => {
       `Langue: ${lang}`,
       `Source: ${source}`,
       `Page: ${pageTitle || '-'}`,
+      `URL: ${pageUrl || '-'}`,
+      `Date: ${submittedAt}`
+    ].join('\n'),
+    html
+  });
+
+  leadRequestLog.set(requesterKey, now);
+  return res.json({ ok: true });
+});
+
+app.post('/api/leads/provider-profile', async (req, res) => {
+  const lang = String(req.body?.lang || 'fr').trim();
+  const ownerName = String(req.body?.ownerName || '').trim();
+  const centerName = String(req.body?.centerName || '').trim();
+  const profileType = String(req.body?.profileType || 'center').trim();
+  const specialty = String(req.body?.specialty || '').trim();
+  const city = String(req.body?.city || '').trim();
+  const district = String(req.body?.district || '').trim();
+  const phone = String(req.body?.phone || '').trim();
+  const email = String(req.body?.email || '').trim();
+  const hours = String(req.body?.hours || '').trim();
+  const services = String(req.body?.services || '').trim();
+  const description = String(req.body?.description || '').trim();
+  const address = String(req.body?.address || '').trim();
+  const mapUrl = String(req.body?.mapUrl || '').trim();
+  const logoUrl = String(req.body?.logoUrl || '').trim();
+  const galleryUrls = String(req.body?.galleryUrls || '').trim();
+  const pageUrl = String(req.body?.pageUrl || '').trim();
+  const submittedAt = String(req.body?.submittedAt || new Date().toISOString()).trim();
+  const requesterKey = `provider:${(req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown').toString()}`;
+  const now = Date.now();
+  const lastSeen = leadRequestLog.get(requesterKey) || 0;
+
+  if (now - lastSeen < 60_000) {
+    return res.status(429).send(lang === 'ar' ? 'الرجاء الانتظار قبل إعادة المحاولة.' : 'Veuillez patienter avant de renvoyer une demande.');
+  }
+
+  if (!ownerName || !centerName || !specialty || !city || !district || !phone || !email || !services || !description || !address) {
+    return res.status(400).send(lang === 'ar' ? 'يرجى إكمال الحقول المطلوبة.' : 'Veuillez remplir les champs obligatoires.');
+  }
+
+  const mailer = getMailer();
+  if (!mailer) {
+    return res.status(503).send(lang === 'ar' ? 'خدمة البريد غير مفعلة.' : 'Service e-mail non configuré.');
+  }
+
+  const subject = lang === 'ar'
+    ? `طلب إضافة ملف مهني - ${centerName}`
+    : `Demande d'ajout de profil praticien - ${centerName}`;
+
+  const html = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #0f172a;">
+      <h2 style="margin-bottom: 16px;">${lang === 'ar' ? 'طلب ملف جديد من استمارة الممارس' : 'Nouvelle demande profil praticien'}</h2>
+      <table style="border-collapse: collapse; width: 100%; max-width: 760px;">
+        <tbody>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'اسم الممارس' : 'Praticien'}</strong></td><td>${ownerName}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'اسم المركز' : 'Centre/Cabinet'}</strong></td><td>${centerName}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'نوع الملف' : 'Type de profil'}</strong></td><td>${profileType}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'التخصص' : 'Specialite'}</strong></td><td>${specialty}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'المدينة' : 'Ville'}</strong></td><td>${city}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'الحي' : 'Quartier'}</strong></td><td>${district}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'الهاتف' : 'Telephone'}</strong></td><td>${phone}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>Email</strong></td><td>${email}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'المواعيد' : 'Horaires'}</strong></td><td>${hours || '-'}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'الخدمات' : 'Services'}</strong></td><td>${services}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'الوصف' : 'Description'}</strong></td><td>${description}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'العنوان' : 'Adresse'}</strong></td><td>${address}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>Google Maps</strong></td><td>${mapUrl || '-'}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'رابط الشعار' : 'Logo'}</strong></td><td>${logoUrl || '-'}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'روابط المعرض' : 'Galerie (liens)'}</strong></td><td>${galleryUrls || '-'}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>URL</strong></td><td>${pageUrl || '-'}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'التاريخ' : 'Date'}</strong></td><td>${submittedAt}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  await mailer.sendMail({
+    from: smtpFrom,
+    to: providerLeadEmailTo,
+    replyTo: email || smtpFrom,
+    subject,
+    text: [
+      lang === 'ar' ? 'طلب ملف جديد' : 'Nouvelle demande profil praticien',
+      `Praticien: ${ownerName}`,
+      `Centre: ${centerName}`,
+      `Type: ${profileType}`,
+      `Specialite: ${specialty}`,
+      `Ville: ${city}`,
+      `Quartier: ${district}`,
+      `Telephone: ${phone}`,
+      `Email: ${email}`,
+      `Horaires: ${hours || '-'}`,
+      `Services: ${services}`,
+      `Description: ${description}`,
+      `Adresse: ${address}`,
+      `Maps: ${mapUrl || '-'}`,
+      `Logo: ${logoUrl || '-'}`,
+      `Galerie: ${galleryUrls || '-'}`,
       `URL: ${pageUrl || '-'}`,
       `Date: ${submittedAt}`
     ].join('\n'),

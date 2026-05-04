@@ -1,68 +1,11 @@
 ﻿import { mkdir, copyFile } from 'node:fs/promises';
 import path from 'node:path';
+import { getAllStaticRoutes } from './route-catalog.mjs';
 
 const distDir = path.resolve('dist');
 const indexFile = path.join(distDir, 'index.html');
 const staticFiles = ['robots.txt', 'robot.txt', 'sitemap.xml', 'sitemaps.xml'];
-
-const routes = [
-  'LTM',
-  'pathologies',
-  'services',
-  'a-domicile',
-  'a-domicile-geriatrie-casablanca',
-  'a-propos',
-  'contact',
-  'convention',
-  'blog',
-  'blog/custom',
-  'blog/custom/kinesitherapie-cest-quoi',
-  'blog/sciatique-hernie-discale',
-  'blog/lombalgie-cervicalgie',
-  'blog/traumatologie-sport',
-  'blog/arthrose-genou',
-  'blog/douleurs-epaules-capsulite',
-  'blog/migraines-cephalees',
-  'blog/kine-pediatrique',
-  'blog/readaptation-post-avc',
-  'blog/posture-ergonomie',
-  'blog/recuperation-sportive-prevention-blessures',
-  'blog/avc-signes-alerte-reeducation-precoce',
-  'blog/entorse-cheville-kinesitherapie',
-  'blog/rupture-ligament-croise-anterieur-reeducation',
-  'blog/fracture-tibia-reeducation-marche',
-  'blog/reeducation-geriatrique-importance-kine',
-  'blog/activite-physique-adaptee-seniors',
-  'gallerie',
-  'ar',
-  'ar/pathologies',
-  'ar/services',
-  'ar/a-domicile',
-  'ar/a-domicile-geriatrie-casablanca',
-  'ar/a-propos',
-  'ar/contact',
-  'ar/convention',
-  'ar/blog',
-  'ar/blog/custom',
-  'ar/blog/custom/kinesitherapie-cest-quoi',
-  'ar/blog/sciatique-hernie-discale',
-  'ar/blog/lombalgie-cervicalgie',
-  'ar/blog/traumatologie-sport',
-  'ar/blog/arthrose-genou',
-  'ar/blog/douleurs-epaules-capsulite',
-  'ar/blog/migraines-cephalees',
-  'ar/blog/kine-pediatrique',
-  'ar/blog/readaptation-post-avc',
-  'ar/blog/posture-ergonomie',
-  'ar/blog/recuperation-sportive-prevention-blessures',
-  'ar/blog/avc-signes-alerte-reeducation-precoce',
-  'ar/blog/entorse-cheville-kinesitherapie',
-  'ar/blog/rupture-ligament-croise-anterieur-reeducation',
-  'ar/blog/fracture-tibia-reeducation-marche',
-  'ar/blog/reeducation-geriatrique-importance-kine',
-  'ar/blog/activite-physique-adaptee-seniors',
-  'ar/gallerie'
-];
+const routes = getAllStaticRoutes();
 
 async function run() {
   for (const staticFile of staticFiles) {

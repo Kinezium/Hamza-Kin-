@@ -79,10 +79,88 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+      #seo-fallback {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px 16px 48px;
+        color: #0f172a;
+        font-family: Inter, Cairo, sans-serif;
+      }
+      #seo-fallback a {
+        color: #0369a1;
+        text-decoration: none;
+      }
+      #seo-fallback a:hover {
+        text-decoration: underline;
+      }
+      #seo-fallback .seo-link-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+      #seo-fallback .seo-link-card {
+        border: 1px solid #dbeafe;
+        border-radius: 14px;
+        padding: 14px 16px;
+        background: #f8fbff;
+      }
     </style>
     <script type="module" src="/index.tsx"></script>
 </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main id="seo-fallback">
+        <header>
+          <p style="margin:0 0 10px;font-size:14px;font-weight:700;color:#0369a1;">Centre Chnider</p>
+          <h1 style="margin:0 0 14px;font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;">Kinésithérapie à Casablanca | الترويض الطبي بالدار البيضاء</h1>
+          <p style="margin:0 0 12px;font-size:1.05rem;line-height:1.7;max-width:900px;">
+            Centre de kinésithérapie à Casablanca pour les douleurs du dos, la rééducation fonctionnelle, la traumatologie sportive,
+            la réadaptation post AVC et les soins à domicile. مركز للترويض الطبي بالدار البيضاء لعلاج آلام الظهر، الإصابات الرياضية،
+            إعادة التأهيل الوظيفي والترويض المنزلي.
+          </p>
+        </header>
+
+        <section style="margin-top:30px;">
+          <h2 style="margin:0 0 10px;font-size:1.6rem;">Services et prise en charge | الخدمات والتكفل</h2>
+          <p style="margin:0;line-height:1.7;max-width:920px;">
+            Découvrez nos services de kinésithérapie au cabinet et à domicile, nos pathologies traitées, notre blog santé et les moyens de nous contacter rapidement.
+            تعرفوا على خدمات الترويض الطبي داخل العيادة والمنزل، الأمراض المعالجة، مقالات المدونة الصحية وطرق التواصل السريع.
+          </p>
+          <nav class="seo-link-grid" aria-label="Liens internes principaux">
+            <a class="seo-link-card" href="/services">Services de kinésithérapie</a>
+            <a class="seo-link-card" href="/pathologies">Pathologies traitées</a>
+            <a class="seo-link-card" href="/a-domicile">Kiné à domicile Casablanca</a>
+            <a class="seo-link-card" href="/blog">Blog kinésithérapie</a>
+            <a class="seo-link-card" href="/contact">Contact et rendez-vous</a>
+            <a class="seo-link-card" href="/a-propos">À propos du centre</a>
+            <a class="seo-link-card" href="/ar/services">خدمات الترويض الطبي</a>
+            <a class="seo-link-card" href="/ar/pathologies">الأمراض المعالجة</a>
+            <a class="seo-link-card" href="/ar/a-domicile">الترويض المنزلي</a>
+            <a class="seo-link-card" href="/ar/blog">مدونة الترويض الطبي</a>
+            <a class="seo-link-card" href="/ar/contact">الاتصال وحجز الموعد</a>
+            <a class="seo-link-card" href="/ar/a-propos">عن المركز</a>
+          </nav>
+        </section>
+
+        <section style="margin-top:30px;">
+          <h2 style="margin:0 0 10px;font-size:1.6rem;">Articles santé et liens utiles | مقالات صحية وروابط مفيدة</h2>
+          <div class="seo-link-grid">
+            <a class="seo-link-card" href="/blog/sciatique-hernie-discale">Sciatique et hernie discale</a>
+            <a class="seo-link-card" href="/blog/readaptation-post-avc">Réadaptation post AVC</a>
+            <a class="seo-link-card" href="/blog/entorse-cheville-kinesitherapie">Entorse de cheville</a>
+            <a class="seo-link-card" href="/blog/rupture-ligament-croise-anterieur-reeducation">Rupture du ligament croisé</a>
+            <a class="seo-link-card" href="/blog/fracture-tibia-reeducation-marche">Fracture du tibia</a>
+            <a class="seo-link-card" href="/blog/reeducation-geriatrique-importance-kine">Rééducation gériatrique</a>
+            <a class="seo-link-card" href="/ar/blog/sciatique-hernie-discale">عرق النسا والانزلاق الغضروفي</a>
+            <a class="seo-link-card" href="/ar/blog/readaptation-post-avc">إعادة التأهيل بعد السكتة</a>
+            <a class="seo-link-card" href="/ar/blog/entorse-cheville-kinesitherapie">التواء الكاحل</a>
+            <a class="seo-link-card" href="/ar/blog/rupture-ligament-croise-anterieur-reeducation">تمزق الرباط الصليبي</a>
+            <a class="seo-link-card" href="/ar/blog/fracture-tibia-reeducation-marche">كسر عظم الساق</a>
+            <a class="seo-link-card" href="/ar/blog/reeducation-geriatrique-importance-kine">إعادة التأهيل لكبار السن</a>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
