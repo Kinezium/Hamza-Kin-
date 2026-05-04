@@ -125,7 +125,6 @@ const App: React.FC = () => {
             <Route path="/annuaire/:specialty/:city" element={<DirectoryHub lang={lang} />} />
             <Route path="/annuaire/:specialty/:city/:district" element={<DirectoryHub lang={lang} />} />
             <Route path="/annuaire/:specialty/:city/:district/:profileSlug" element={<DirectoryHub lang={lang} />} />
-            <Route path="/espace-praticien" element={<ProviderIntake lang={lang} />} />
             <Route path="/blog" element={<BlogIndex lang={lang} />} />
             <Route path="/blog/custom/:slug" element={<CustomArticle lang={lang} />} />
             <Route path="/blog/sciatique-hernie-discale" element={<SciaticaArticle lang={lang} />} />
@@ -166,7 +165,6 @@ const App: React.FC = () => {
             <Route path="/ar/annuaire/:specialty/:city" element={<DirectoryHub lang="ar" />} />
             <Route path="/ar/annuaire/:specialty/:city/:district" element={<DirectoryHub lang="ar" />} />
             <Route path="/ar/annuaire/:specialty/:city/:district/:profileSlug" element={<DirectoryHub lang="ar" />} />
-            <Route path="/ar/espace-praticien" element={<ProviderIntake lang="ar" />} />
             <Route path="/ar/blog" element={<BlogIndex lang="ar" />} />
             <Route path="/ar/blog/custom/:slug" element={<CustomArticle lang="ar" />} />
             <Route path="/ar/blog/sciatique-hernie-discale" element={<SciaticaArticle lang="ar" />} />
@@ -209,6 +207,8 @@ const App: React.FC = () => {
       <LangSync setLang={setLang} />
       <Routes>
         <Route path="/LTM" element={<AdminDashboard />} />
+        <Route path="/espace-praticien" element={<ProviderIntake lang="fr" />} />
+        <Route path="/ar/espace-praticien" element={<ProviderIntake lang="ar" />} />
         <Route path="*" element={<AppContent />} />
       </Routes>
     </BrowserRouter>

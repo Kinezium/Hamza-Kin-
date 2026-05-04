@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
 import { Language } from '../types';
 import {
@@ -10,7 +10,8 @@ import {
   getDirectorySpecialties,
   getDirectoryWhatsapp,
   getDistrictBySlug,
-  getSpecialtyBySlug
+  getSpecialtyBySlug,
+  normalizeSpecialtySlug
 } from '../src/providerDirectoryData';
 
 interface DirectoryHubProps {
@@ -19,10 +20,16 @@ interface DirectoryHubProps {
 
 const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
   const { specialty, city, district, profileSlug } = useParams();
+  const [searchParams] = useSearchParams();
+
+  const resolvedSpecialtySlug = normalizeSpecialtySlug(specialty || searchParams.get('specialty') || '');
+  const resolvedCitySlug = (city || searchParams.get('city') || '').trim().toLowerCase();
+  const resolvedDistrictSlug = (district || searchParams.get('district') || '').trim().toLowerCase();
+
   const [showApplyModal, setShowApplyModal] = useState(false);
-  const [applySpecialty, setApplySpecialty] = useState(specialty || 'kinesitherapie');
-  const [applyCity, setApplyCity] = useState(city || 'casablanca');
-  const [applyDistrict, setApplyDistrict] = useState(district || '');
+  const [applySpecialty, setApplySpecialty] = useState(resolvedSpecialtySlug || 'kinesitherapie');
+  const [applyCity, setApplyCity] = useState(resolvedCitySlug || 'casablanca');
+  const [applyDistrict, setApplyDistrict] = useState(resolvedDistrictSlug || '');
 
   const prefix = lang === 'ar' ? '/ar' : '';
 
@@ -73,11 +80,11 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
   const specialties = getDirectorySpecialties();
   const cities = getDirectoryCities();
 
-  const currentSpecialty = specialty ? getSpecialtyBySlug(specialty) : null;
-  const currentCity = city ? getCityBySlug(city) : null;
-  const currentDistrict = city && district ? getDistrictBySlug(city, district) : null;
-  const currentProfile = (specialty && city && district && profileSlug)
-    ? findProfile({ specialtySlug: specialty, citySlug: city, districtSlug: district, profileSlug })
+  const currentSpecialty = resolvedSpecialtySlug ? getSpecialtyBySlug(resolvedSpecialtySlug) : null;
+  const currentCity = resolvedCitySlug ? getCityBySlug(resolvedCitySlug) : null;
+  const currentDistrict = resolvedCitySlug && resolvedDistrictSlug ? getDistrictBySlug(resolvedCitySlug, resolvedDistrictSlug) : null;
+  const currentProfile = (resolvedSpecialtySlug && resolvedCitySlug && resolvedDistrictSlug && profileSlug)
+    ? findProfile({ specialtySlug: resolvedSpecialtySlug, citySlug: resolvedCitySlug, districtSlug: resolvedDistrictSlug, profileSlug })
     : null;
 
   const seo = useMemo(() => {
@@ -253,7 +260,7 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        {!specialty && (
+        {!resolvedSpecialtySlug && (
           <section className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-2">{labels.chooseSpecialty}</h2>
@@ -278,7 +285,7 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
           </section>
         )}
 
-        {specialty && currentSpecialty && !city && (
+        {resolvedSpecialtySlug && currentSpecialty && !resolvedCitySlug && (
           <section className="space-y-7">
             <h2 className="text-2xl font-bold text-slate-900">{labels.chooseCity}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -300,7 +307,7 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
           </section>
         )}
 
-        {specialty && currentSpecialty && city && currentCity && !district && (
+        {resolvedSpecialtySlug && currentSpecialty && resolvedCitySlug && currentCity && !resolvedDistrictSlug && (
           <section className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold text-slate-900">{labels.districtSection}</h2>
@@ -327,7 +334,12 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">{labels.cityProfiles}</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-1">{labels.cityProfiles}</h3>
+              <p className="text-slate-600 mb-4">
+                {lang === 'fr'
+                  ? `Nos ${currentSpecialty.fr} a ${currentCity.fr}`
+                  : `${currentSpecialty.ar} في ${currentCity.ar}`}
+              </p>
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                 {cityProfiles.map((profile) => renderProfileCard(profile))}
               </div>
@@ -335,7 +347,7 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
           </section>
         )}
 
-        {specialty && currentSpecialty && city && currentCity && district && currentDistrict && !profileSlug && (
+        {resolvedSpecialtySlug && currentSpecialty && resolvedCitySlug && currentCity && resolvedDistrictSlug && currentDistrict && !profileSlug && (
           <section className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold text-slate-900">{labels.districtProfiles}</h2>
@@ -422,17 +434,17 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
           </section>
         )}
 
-        {specialty && !currentSpecialty && (
+        {resolvedSpecialtySlug && !currentSpecialty && (
           <p className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-rose-700">
             {lang === 'fr' ? 'Specialite non trouvee.' : 'التخصص غير موجود.'}
           </p>
         )}
-        {city && !currentCity && (
+        {resolvedCitySlug && !currentCity && (
           <p className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-rose-700">
             {lang === 'fr' ? 'Ville non trouvee.' : 'المدينة غير موجودة.'}
           </p>
         )}
-        {district && !currentDistrict && (
+        {resolvedDistrictSlug && !currentDistrict && (
           <p className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-rose-700">
             {lang === 'fr' ? 'Quartier non trouve.' : 'الحي غير موجود.'}
           </p>

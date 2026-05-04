@@ -6,6 +6,7 @@ interface ProviderIntakeProps {
 }
 
 const apiBase = ((import.meta as any).env?.VITE_ADMIN_API_URL || '').toString().replace(/\/$/, '');
+const PASSWORD_HELP_WHATSAPP = '212665646754';
 
 const formatDatePassword = (date: Date): string => {
   const day = String(date.getDate()).padStart(2, '0');
@@ -41,11 +42,10 @@ const ProviderIntake: React.FC<ProviderIntakeProps> = ({ lang }) => {
 
   const t = lang === 'fr'
     ? {
-        title: 'Espace praticien (acces prive)',
-        subtitle: 'Formulaire d ajout de profil centre/cabinet ou praticien a domicile.',
-        passwordLabel: 'Mot de passe du jour (dd.mm.yyyy)',
+        passwordLabel: 'Mot de passe',
         unlock: 'Debloquer le formulaire',
-        lockedInfo: 'Page non indexable, protegee par mot de passe dynamique date du jour.',
+        noPassword: 'Vous n avez pas le mot de passe ?'
+        ,
         badPassword: 'Mot de passe incorrect.',
         submit: 'Envoyer le profil',
         sending: 'Envoi en cours...',
@@ -53,17 +53,22 @@ const ProviderIntake: React.FC<ProviderIntakeProps> = ({ lang }) => {
         fail: 'Envoi impossible pour le moment.'
       }
     : {
-        title: 'فضاء الممارسين (وصول خاص)',
-        subtitle: 'استمارة اضافة ملف مركز/عيادة او ممارس منزلي.',
-        passwordLabel: 'كلمة مرور اليوم (dd.mm.yyyy)',
+        passwordLabel: 'كلمة المرور',
         unlock: 'فتح الاستمارة',
-        lockedInfo: 'صفحة غير مفهرسة ومحمية بكلمة مرور تاريخ اليوم.',
+        noPassword: 'ليس لديك كلمة المرور؟',
         badPassword: 'كلمة المرور غير صحيحة.',
         submit: 'ارسال الملف',
         sending: 'جار الارسال...',
         ok: 'شكرا، تم ارسال الملف الى فريق Clinaxis.',
         fail: 'تعذر الارسال حاليا.'
       };
+
+  const openWhatsAppPasswordRequest = () => {
+    const message = lang === 'fr'
+      ? 'Bonjour, je n ai pas le mot de passe de la page praticien. Pouvez-vous me l envoyer ?'
+      : 'السلام عليكم، ليس لدي كلمة مرور صفحة الممارس. هل يمكن ارسالها؟';
+    window.open(`https://wa.me/${PASSWORD_HELP_WHATSAPP}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+  };
 
   React.useEffect(() => {
     document.title = lang === 'fr' ? 'Espace praticien prive' : 'فضاء الممارسين الخاص';
@@ -141,9 +146,6 @@ const ProviderIntake: React.FC<ProviderIntakeProps> = ({ lang }) => {
   return (
     <div className="container mx-auto px-4 py-14" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h1 className="text-3xl font-extrabold text-slate-900">{t.title}</h1>
-        <p className="mt-2 text-slate-600">{t.subtitle}</p>
-        <p className="mt-2 text-sm text-amber-700">{t.lockedInfo}</p>
 
         {!isUnlocked && (
           <div className="mt-6 space-y-3">
@@ -158,6 +160,13 @@ const ProviderIntake: React.FC<ProviderIntakeProps> = ({ lang }) => {
             </label>
             <button type="button" onClick={onUnlock} className="rounded-xl bg-sky-700 px-4 py-2 text-white font-semibold hover:bg-sky-800 transition">
               {t.unlock}
+            </button>
+            <button
+              type="button"
+              onClick={openWhatsAppPasswordRequest}
+              className="rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-2 text-emerald-700 font-semibold hover:bg-emerald-100 transition"
+            >
+              {t.noPassword}
             </button>
           </div>
         )}

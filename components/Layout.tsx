@@ -5,6 +5,7 @@ import { Language } from '../types';
 import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL } from '../constants';
 import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 import SchemaMarkup from './SchemaMarkup';
+import SpecialistFinder from './SpecialistFinder';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -234,6 +235,8 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
       <main className="flex-grow">
         {children}
       </main>
+
+      <SpecialistFinder lang={lang} />
 
       {/* Footer */}
       <footer className="text-white pt-12 pb-24 md:pb-8" style={{ backgroundColor: config.theme.footerBackground }}>
