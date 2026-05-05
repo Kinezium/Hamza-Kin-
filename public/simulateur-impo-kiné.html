@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simulateur Impots Kinesitherapeute Maroc (BNC)</title>
+  <meta name="description" content="Simulateur d'impots pour kinesitherapeute au Maroc en personne physique (BNC)." />
+  <!-- Non indexe / invisible pour les moteurs -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
+
+  <style>
+    :root {
+      --bg: #f2f8fb;
+      --panel: #ffffff;
+      --text: #113247;
+      --muted: #4f6b7d;
+      --primary: #1e7db3;
+      --primary-2: #4db6ac;
+      --ok: #1f9d6b;
+      --warn: #ce7a00;
+      --danger: #c0392b;
+      --border: #d9e8ef;
+      --shadow: 0 10px 24px rgba(17, 50, 71, 0.08);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #dff3ff 0%, transparent 60%),
+        radial-gradient(1000px 500px at 90% -20%, #dff9ef 0%, transparent 60%),
+        var(--bg);
+      min-height: 100vh;
+      display: grid;
+      place-items: start center;
+      padding: 24px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 980px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .header {
+      background: linear-gradient(125deg, #1e7db3, #2a9fa5);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .header h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.2rem, 1rem + 1.4vw, 1.9rem);
+      line-height: 1.2;
+    }
+
+    .header p {
+      margin: 0;
+      opacity: 0.92;
+      font-size: 0.95rem;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    input {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #c6dce7;
+      border-radius: 10px;
+      font-size: 0.98rem;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(30, 125, 179, 0.14);
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(120deg, #1e7db3, #2a9fa5);
+      cursor: pointer;
+      transition: transform 0.08s ease, filter 0.2s ease;
+    }
+
+    button:hover { filter: brightness(1.03); }
+    button:active { transform: translateY(1px); }
+
+    .hint {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .alert {
+      display: none;
+      margin-top: 10px;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+    }
+
+    .alert.error {
+      display: block;
+      background: #fff3f2;
+      border-color: #ffd2ce;
+      color: var(--danger);
+    }
+
+    .alert.warn {
+      display: block;
+      background: #fff8ee;
+      border-color: #ffe2bb;
+      color: var(--warn);
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      min-height: 116px;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #375f74;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .value {
+      font-size: clamp(1.05rem, 0.95rem + 1vw, 1.45rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .sub {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .ok { color: var(--ok); }
+    .warn-text { color: var(--warn); }
+
+    .summary {
+      margin-top: 4px;
+      border-left: 4px solid var(--primary-2);
+      background: #f1fbf8;
+      border-radius: 10px;
+      padding: 11px 12px;
+      color: #1f4f5f;
+      font-weight: 600;
+      min-height: 48px;
+    }
+
+    .show .card {
+      animation: rise 380ms ease forwards;
+    }
+
+    .show .card:nth-child(2) { animation-delay: 70ms; }
+    .show .card:nth-child(3) { animation-delay: 140ms; }
+    .show .card:nth-child(4) { animation-delay: 210ms; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .results { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <section class="header" aria-label="En-tete">
+      <h1>Simulateur d'impots - Kinesitherapeute (Maroc, BNC)</h1>
+      <p>Estimation pedagogique: benefice net, IR progressif par tranches, TVA, patente et total estime.</p>
+    </section>
+
+    <section class="panel" aria-label="Formulaire">
+      <form id="taxForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="startDate">Date de debut d'activite</label>
+            <input id="startDate" name="startDate" type="date" required />
+          </div>
+
+          <div class="field">
+            <label for="turnover">Chiffre d'affaires annuel (MAD)</label>
+            <input id="turnover" name="turnover" type="number" min="0" step="0.01" placeholder="ex: 450000" required />
+          </div>
+
+          <div class="field">
+            <label for="expenses">Total des charges annuelles (MAD)</label>
+            <input id="expenses" name="expenses" type="number" min="0" step="0.01" placeholder="ex: 160000" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <button type="submit">Calculer</button>
+          <span class="hint">Valeurs negatives interdites. Le calcul IR est fait tranche par tranche.</span>
+        </div>
+
+        <div id="errorBox" class="alert" role="alert" aria-live="polite"></div>
+        <div id="warnBox" class="alert" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="panel" aria-label="Resultats">
+      <div id="results" class="results">
+        <article class="card">
+          <h3>Benefice net</h3>
+          <div id="benefitValue" class="value">-</div>
+          <p class="sub">CA - Charges</p>
+        </article>
+
+        <article class="card">
+          <h3>IR a payer</h3>
+          <div id="irValue" class="value">-</div>
+          <p class="sub">Barème progressif Maroc (calcul exact)</p>
+        </article>
+
+        <article class="card">
+          <h3>TVA</h3>
+          <div id="vatValue" class="value ok">Exonere</div>
+          <p class="sub">Profession exoneree</p>
+        </article>
+
+        <article class="card">
+          <h3>Taxe professionnelle (patente)</h3>
+          <div id="patenteValue" class="value">-</div>
+          <p id="patenteSub" class="sub">Exoneration 5 ans apres debut d'activite</p>
+        </article>
+      </div>
+
+      <div id="summary" class="summary" aria-live="polite">
+        Remplissez le formulaire puis cliquez sur "Calculer".
+      </div>
+
+      <p class="footer-note">
+        Note: cette simulation est informative. Pour une decision fiscale, verifier avec un comptable ou conseiller fiscal agree.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const form = document.getElementById("taxForm");
+      const errorBox = document.getElementById("errorBox");
+      const warnBox = document.getElementById("warnBox");
+      const results = document.getElementById("results");
+
+      const benefitValue = document.getElementById("benefitValue");
+      const irValue = document.getElementById("irValue");
+      const vatValue = document.getElementById("vatValue");
+      const patenteValue = document.getElementById("patenteValue");
+      const patenteSub = document.getElementById("patenteSub");
+      const summary = document.getElementById("summary");
+
+      // IR Maroc (personne physique): calcul tranche par tranche.
+      const IR_BRACKETS = [
+        { upTo: 40000, rate: 0.00 },
+        { upTo: 60000, rate: 0.10 },
+        { upTo: 80000, rate: 0.20 },
+        { upTo: 100000, rate: 0.30 },
+        { upTo: 180000, rate: 0.34 },
+        { upTo: Infinity, rate: 0.37 }
+      ];
+
+      function formatMAD(amount) {
+        return new Intl.NumberFormat("fr-MA", {
+          style: "currency",
+          currency: "MAD",
+          maximumFractionDigits: 2
+        }).format(amount);
+      }
+
+      function parseNonNegativeNumber(value) {
+        const num = Number(value);
+        if (!Number.isFinite(num)) return null;
+        if (num < 0) return null;
+        return num;
+      }
+
+      function computeIRProgressive(taxableIncome) {
+        if (taxableIncome <= 0) return 0;
+
+        let remaining = taxableIncome;
+        let lower = 0;
+        let tax = 0;
+
+        for (const bracket of IR_BRACKETS) {
+          if (remaining <= 0) break;
+
+          const sliceMax = bracket.upTo - lower;
+          const taxableSlice = Math.min(remaining, sliceMax);
+          tax += taxableSlice * bracket.rate;
+          remaining -= taxableSlice;
+          lower = bracket.upTo;
+        }
+
+        return tax;
+      }
+
+      function hasFiveYearsPassed(startDate) {
+        const now = new Date();
+        const threshold = new Date(startDate);
+        threshold.setFullYear(threshold.getFullYear() + 5);
+        return now >= threshold;
+      }
+
+      function setError(message) {
+        if (!message) {
+          errorBox.className = "alert";
+          errorBox.textContent = "";
+          return;
+        }
+        errorBox.className = "alert error";
+        errorBox.textContent = message;
+      }
+
+      function setWarning(message) {
+        if (!message) {
+          warnBox.className = "alert";
+          warnBox.textContent = "";
+          return;
+        }
+        warnBox.className = "alert warn";
+        warnBox.textContent = message;
+      }
+
+      function renderResults({ benefit, ir, patenteStatus }) {
+        const totalKnown = ir; // TVA = 0, patente non calculee en montant.
+
+        benefitValue.textContent = formatMAD(benefit);
+        irValue.textContent = formatMAD(ir);
+        vatValue.textContent = "Exonere";
+
+        if (patenteStatus === "EXONERE") {
+          patenteValue.textContent = "Exonere";
+          patenteValue.classList.remove("warn-text");
+          patenteSub.textContent = "Exoneration active (moins de 5 ans d'activite).";
+          summary.textContent = "Total estime des impots: " + formatMAD(totalKnown) + " (TVA exoneree, patente exoneree).";
+        } else {
+          patenteValue.textContent = "A payer";
+          patenteValue.classList.add("warn-text");
+          patenteSub.textContent = "Exoneration terminee (5 ans depasses). Montant de patente non inclus.";
+          summary.textContent = "Total estime des impots connus: " + formatMAD(totalKnown) + " + patente (montant a evaluer).";
+        }
+
+        // Relance legere de l'animation des cartes.
+        results.classList.remove("show");
+        void results.offsetWidth;
+        results.classList.add("show");
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        setError("");
+        setWarning("");
+
+        const startDateRaw = document.getElementById("startDate").value;
+        const turnoverRaw = document.getElementById("turnover").value;
+        const expensesRaw = document.getElementById("expenses").value;
+
+        if (!startDateRaw) {
+          setError("Veuillez choisir la date de debut d'activite.");
+          return;
+        }
+
+        const startDate = new Date(startDateRaw + "T00:00:00");
+        if (Number.isNaN(startDate.getTime())) {
+          setError("Date invalide.");
+          return;
+        }
+
+        const turnover = parseNonNegativeNumber(turnoverRaw);
+        const expenses = parseNonNegativeNumber(expensesRaw);
+
+        if (turnover === null || expenses === null) {
+          setError("Veuillez saisir des montants valides et positifs (ou zero).");
+          return;
+        }
+
+        const benefit = turnover - expenses;
+        const taxable = Math.max(0, benefit);
+        const ir = computeIRProgressive(taxable);
+
+        if (expenses > turnover) {
+          setWarning("Alerte: les charges depassent le chiffre d'affaires. Le benefice est negatif.");
+        }
+
+        const patenteStatus = hasFiveYearsPassed(startDate) ? "A_PAYER" : "EXONERE";
+
+        renderResults({
+          benefit,
+          ir,
+          patenteStatus
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
