@@ -5,7 +5,6 @@ import { Language } from '../types';
 import { CONTENT, LOGO_SYMBOL_WHITE_URL, LOGO_COLORED_URL, LOGO_TEXT_URL } from '../constants';
 import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 import SchemaMarkup from './SchemaMarkup';
-import SpecialistFinder from './SpecialistFinder';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -39,7 +38,6 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
 
   const siteLinks = [
     { to: `${prefix}/`, label: lang === 'fr' ? 'Accueil' : 'الرئيسية' },
-    { to: `${prefix}/annuaire`, label: lang === 'fr' ? 'Annuaire' : 'الدليل' },
     { to: `${prefix}/pathologies`, label: t.conditions },
     { to: `${prefix}/services`, label: t.services },
     { to: `${prefix}/a-domicile`, label: t.homeTherapy },
@@ -129,14 +127,6 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  // Annuaire pages use their own LayoutDirectory — skip main nav/footer
-  const isAnnuairePage = location.pathname === `${prefix}/annuaire` ||
-    location.pathname.startsWith(`${prefix}/annuaire/`);
-  if (isAnnuairePage) {
-    return <>{children}</>;
-  }
-
-
   const linkClass = (path: string) => `
     block px-3 py-2 rounded-md text-base font-medium transition-colors
     ${isActive(path) 
@@ -180,7 +170,6 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
               <NavLink to={`${prefix}/`} end className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.home}</NavLink>
-              <NavLink to={`${prefix}/annuaire`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{lang === 'fr' ? 'Annuaire' : 'الدليل'}</NavLink>
               <NavLink to={`${prefix}/pathologies`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.conditions}</NavLink>
               <NavLink to={`${prefix}/services`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.services}</NavLink>
               <NavLink to={`${prefix}/a-domicile`} className={({isActive}) => isActive ? 'text-medical-600 font-semibold' : 'text-gray-600 hover:text-medical-600'}>{t.homeTherapy}</NavLink>
@@ -220,7 +209,6 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
           <div className="md:hidden bg-white border-b border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link to={`${prefix}/`} onClick={closeMenu} className={linkClass(`${prefix}/`)}>{t.home}</Link>
-              <Link to={`${prefix}/annuaire`} onClick={closeMenu} className={linkClass(`${prefix}/annuaire`)}>{lang === 'fr' ? 'Annuaire' : 'الدليل'}</Link>
               <Link to={`${prefix}/pathologies`} onClick={closeMenu} className={linkClass(`${prefix}/pathologies`)}>{t.conditions}</Link>
               <Link to={`${prefix}/services`} onClick={closeMenu} className={linkClass(`${prefix}/services`)}>{t.services}</Link>
               <Link to={`${prefix}/a-domicile`} onClick={closeMenu} className={linkClass(`${prefix}/a-domicile`)}>{t.homeTherapy}</Link>
@@ -243,8 +231,6 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
       <main className="flex-grow">
         {children}
       </main>
-
-      <SpecialistFinder lang={lang} />
 
       {/* Footer */}
       <footer className="text-white pt-12 pb-24 md:pb-8" style={{ backgroundColor: config.theme.footerBackground }}>

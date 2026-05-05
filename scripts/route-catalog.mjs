@@ -1,5 +1,3 @@
-import { getDirectoryStaticRoutes } from '../src/providerDirectoryData.js';
-
 const BASE_ROUTES = [
   'LTM',
   'pathologies',
@@ -60,6 +58,6 @@ const BASE_ROUTES = [
 ];
 
 export const getAllStaticRoutes = () => {
-  const routeSet = new Set([...BASE_ROUTES, ...getDirectoryStaticRoutes()]);
+  const routeSet = new Set([...BASE_ROUTES]);
   return Array.from(routeSet);
 };
