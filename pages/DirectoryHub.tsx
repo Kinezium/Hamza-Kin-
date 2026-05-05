@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback } from 'react';
+import React, { useMemo, useState, useCallback, useEffect } from 'react';
 import { Link, useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
 import { Language } from '../types';
@@ -122,56 +122,77 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
     ? findProfile({ specialtySlug: resolvedSpecialtySlug, citySlug: resolvedCitySlug, districtSlug: resolvedDistrictSlug, profileSlug })
     : null;
 
+  const relatedSpecialtiesInDistrict = useMemo(() => {
+    if (!currentCity || !currentDistrict) return [];
+
+    return specialties
+      .map((item) => {
+        const count = filterProfiles({
+          specialtySlug: item.slug,
+          citySlug: currentCity.slug,
+          districtSlug: currentDistrict.slug,
+          type: 'center'
+        }).length;
+
+        return { specialty: item, count };
+      })
+      .filter((entry) => entry.count > 0 && entry.specialty.slug !== currentSpecialty?.slug)
+      .slice(0, 12);
+  }, [currentCity, currentDistrict, currentSpecialty?.slug, specialties]);
+
   const seo = useMemo(() => {
     if (currentProfile) {
+      const specialtyLabel = lang === 'fr' ? currentSpecialty?.fr : currentSpecialty?.ar;
+      const cityLabel = lang === 'fr' ? currentCity?.fr : currentCity?.ar;
+      const districtLabel = lang === 'fr' ? currentDistrict?.fr : currentDistrict?.ar;
       const title = lang === 'fr'
-        ? `${currentProfile.nameFr} | ${labels.profilePageSuffix}`
-        : `${currentProfile.nameAr} | ${labels.profilePageSuffix}`;
+        ? `${currentProfile.nameFr} - ${specialtyLabel || 'Sante'} a ${districtLabel || ''} ${cityLabel || ''} | Annuaire Maroc`
+        : `${currentProfile.nameAr} - ${specialtyLabel || 'الصحة'} في ${districtLabel || ''} ${cityLabel || ''} | دليل المغرب`;
       const description = lang === 'fr'
-        ? `${currentProfile.descriptionFr} ${currentProfile.addressFr}.`
-        : `${currentProfile.descriptionAr} ${currentProfile.addressAr}.`;
+        ? `${currentProfile.descriptionFr} Adresse: ${currentProfile.addressFr}. Telephone, horaires, localisation Google Maps et prise de rendez-vous rapide.`
+        : `${currentProfile.descriptionAr} العنوان: ${currentProfile.addressAr}. الهاتف، مواعيد العمل، الموقع على الخريطة وحجز سريع.`;
       const keywords = lang === 'fr'
-        ? `${currentProfile.specialtySlug}, ${currentProfile.citySlug}, ${currentProfile.districtSlug}, profil medical, centre, domicile`
-        : `${currentProfile.specialtySlug}, ${currentProfile.citySlug}, ${currentProfile.districtSlug}, ملف طبي, مركز, منزلي`;
+        ? `${currentProfile.specialtySlug}, ${currentProfile.citySlug}, ${currentProfile.districtSlug}, cabinet, centre medical, praticien, rendez-vous, annuaire medical maroc`
+        : `${currentProfile.specialtySlug}, ${currentProfile.citySlug}, ${currentProfile.districtSlug}, عيادة, مركز طبي, ممارس, موعد, دليل طبي المغرب`;
       return { title, description, keywords };
     }
 
     if (currentDistrict && currentSpecialty && currentCity) {
       const title = lang === 'fr'
-        ? `${currentSpecialty.fr} a ${currentDistrict.fr} ${currentCity.fr} | 2 profils + domicile`
-        : `${currentSpecialty.ar} في ${currentDistrict.ar} ${currentCity.ar} | ملفان + منزلي`;
+        ? `${currentSpecialty.fr} a ${currentDistrict.fr}, ${currentCity.fr} | Cabinets, centres et praticiens`
+        : `${currentSpecialty.ar} في ${currentDistrict.ar}، ${currentCity.ar} | عيادات ومراكز وممارسون`;
       const description = lang === 'fr'
-        ? `Comparez les profils ${currentSpecialty.fr} a ${currentDistrict.fr}, ${currentCity.fr} avec horaires, services, galerie, contact et localisation.`
-        : `قارنوا ملفات ${currentSpecialty.ar} في ${currentDistrict.ar}، ${currentCity.ar} مع المواعيد والخدمات والمعرض ووسائل التواصل.`;
+        ? `Trouvez un(e) ${currentSpecialty.fr} a ${currentDistrict.fr}, ${currentCity.fr}: profils verifies, horaires, services, contact WhatsApp et localisation.`
+        : `ابحث عن ${currentSpecialty.ar} في ${currentDistrict.ar}، ${currentCity.ar}: ملفات موثوقة، مواعيد، خدمات، تواصل واتساب وموقع.`;
       const keywords = lang === 'fr'
-        ? `${currentSpecialty.fr} ${currentDistrict.fr}, ${currentSpecialty.fr} ${currentCity.fr}, profil quartier`
-        : `${currentSpecialty.ar} ${currentDistrict.ar}, ${currentSpecialty.ar} ${currentCity.ar}, ملف حي`;
+        ? `${currentSpecialty.fr} ${currentDistrict.fr}, ${currentSpecialty.fr} ${currentCity.fr}, cabinet ${currentSpecialty.fr}, quartier ${currentDistrict.fr}`
+        : `${currentSpecialty.ar} ${currentDistrict.ar}, ${currentSpecialty.ar} ${currentCity.ar}, عيادة ${currentSpecialty.ar}, حي ${currentDistrict.ar}`;
       return { title, description, keywords };
     }
 
     if (currentCity && currentSpecialty) {
       const title = lang === 'fr'
-        ? `${currentSpecialty.fr} a ${currentCity.fr} | quartiers et profils`
-        : `${currentSpecialty.ar} في ${currentCity.ar} | احياء وملفات`;
+        ? `${currentSpecialty.fr} a ${currentCity.fr} | Tous les quartiers et profils verifies`
+        : `${currentSpecialty.ar} في ${currentCity.ar} | جميع الاحياء والملفات الموثوقة`;
       const description = lang === 'fr'
-        ? `Page ville ${currentSpecialty.fr} ${currentCity.fr}: liste des quartiers, profils centres et praticiens a domicile.`
-        : `صفحة المدينة ${currentSpecialty.ar} ${currentCity.ar}: قائمة الاحياء، ملفات المراكز والممارسين المنزليين.`;
+        ? `Annuaire local de ${currentSpecialty.fr} a ${currentCity.fr}: quartiers disponibles, partenaires verifies, praticiens a domicile et prise de contact direct.`
+        : `دليل محلي لـ ${currentSpecialty.ar} في ${currentCity.ar}: احياء متاحة، شركاء موثوقون، ممارسون منزليون وتواصل مباشر.`;
       const keywords = lang === 'fr'
-        ? `${currentSpecialty.fr} ${currentCity.fr}, quartier, centre, domicile`
-        : `${currentSpecialty.ar} ${currentCity.ar}, حي, مركز, منزلي`;
+        ? `${currentSpecialty.fr} ${currentCity.fr}, quartiers ${currentCity.fr}, centre ${currentSpecialty.fr}, domicile ${currentCity.fr}`
+        : `${currentSpecialty.ar} ${currentCity.ar}, احياء ${currentCity.ar}, مركز, منزلي`;
       return { title, description, keywords };
     }
 
     if (currentSpecialty) {
       const title = lang === 'fr'
-        ? `${currentSpecialty.fr} Maroc | villes, quartiers et profils`
-        : `${currentSpecialty.ar} المغرب | مدن واحياء وملفات`;
+        ? `${currentSpecialty.fr} au Maroc | Villes, quartiers, cabinets et profils`
+        : `${currentSpecialty.ar} في المغرب | مدن، احياء، عيادات وملفات`;
       const description = lang === 'fr'
-        ? `Consultez les pages ${currentSpecialty.fr} par ville et quartier avec profils detailles et contact direct.`
-        : `تصفحوا صفحات ${currentSpecialty.ar} حسب المدينة والحي مع ملفات مفصلة وتواصل مباشر.`;
+        ? `Comparez les professionnel(le)s ${currentSpecialty.fr} au Maroc par ville et quartier. Fiches detaillees, contact direct, horaires et localisation.`
+        : `قارنوا مختصي ${currentSpecialty.ar} في المغرب حسب المدينة والحي. ملفات مفصلة، تواصل مباشر، مواعيد وموقع.`;
       const keywords = lang === 'fr'
-        ? `${currentSpecialty.fr}, maroc, ville, quartier, profil`
-        : `${currentSpecialty.ar}, المغرب, مدينة, حي, ملف`;
+        ? `${currentSpecialty.fr}, maroc, ville, quartier, cabinet, centre, rendez-vous`
+        : `${currentSpecialty.ar}, المغرب, مدينة, حي, عيادة, مركز, موعد`;
       return { title, description, keywords };
     }
 
@@ -183,6 +204,62 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
         : 'دليل طبي المغرب, الترويض الطبي, تقويم النطق, الاشعة, المختبر, المصحة'
     };
   }, [currentCity, currentDistrict, currentProfile, currentSpecialty, labels, lang]);
+
+  useEffect(() => {
+    const scriptSelector = 'script[type="application/ld+json"][data-schema="directory-profile"]';
+    let script = document.querySelector(scriptSelector) as HTMLScriptElement | null;
+
+    if (!currentProfile || !currentCity || !currentDistrict) {
+      if (script) script.remove();
+      return;
+    }
+
+    const profileName = lang === 'fr' ? currentProfile.nameFr : currentProfile.nameAr;
+    const profileDescription = lang === 'fr' ? currentProfile.descriptionFr : currentProfile.descriptionAr;
+    const profileAddress = lang === 'fr' ? currentProfile.addressFr : currentProfile.addressAr;
+    const profileServices = lang === 'fr' ? currentProfile.servicesFr : currentProfile.servicesAr;
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'MedicalBusiness',
+      name: profileName,
+      description: profileDescription,
+      areaServed: [lang === 'fr' ? currentDistrict.fr : currentDistrict.ar, lang === 'fr' ? currentCity.fr : currentCity.ar],
+      medicalSpecialty: lang === 'fr' ? currentSpecialty?.fr : currentSpecialty?.ar,
+      telephone: currentProfile.phone,
+      email: currentProfile.email,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: lang === 'fr' ? currentCity.fr : currentCity.ar,
+        streetAddress: profileAddress,
+        addressCountry: 'MA'
+      },
+      openingHours: currentProfile.hoursFr,
+      hasMap: currentProfile.mapUrl,
+      sameAs: [currentProfile.mapUrl],
+      makesOffer: profileServices.map((service: string) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'MedicalProcedure',
+          name: service
+        }
+      }))
+    };
+
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-schema', 'directory-profile');
+      document.head.appendChild(script);
+    }
+
+    script.textContent = JSON.stringify(jsonLd);
+
+    return () => {
+      const stale = document.querySelector(scriptSelector) as HTMLScriptElement | null;
+      if (stale) stale.remove();
+    };
+  }, [currentCity, currentDistrict, currentProfile, currentSpecialty, lang]);
 
   const whatsappNumber = getDirectoryWhatsapp();
 
@@ -463,6 +540,19 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
                 {cityProfiles.map((profile) => renderProfileCard(profile))}
               </div>
             </div>
+
+            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-700 leading-7">
+              <h3 className="text-base font-bold text-slate-900 mb-2">
+                {lang === 'fr'
+                  ? `Guide local ${currentSpecialty.fr} a ${currentCity.fr}`
+                  : `دليل محلي ${currentSpecialty.ar} في ${currentCity.ar}`}
+              </h3>
+              <p>
+                {lang === 'fr'
+                  ? `Cette page ville regroupe les quartiers de ${currentCity.fr} pour la specialite ${currentSpecialty.fr}. Chaque fiche partenaire contient les informations importantes pour comparer rapidement: telephone, horaires, localisation et services proposes.`
+                  : `تجمع هذه الصفحة احياء ${currentCity.ar} بالنسبة لتخصص ${currentSpecialty.ar}. كل ملف شريك يتضمن معلومات مهمة للمقارنة بسرعة: الهاتف، المواعيد، الموقع والخدمات.`}
+              </p>
+            </article>
           </section>
         )}
 
@@ -505,6 +595,19 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
                 {districtHomeProfiles.map((profile) => renderProfileCard(profile))}
               </div>
             </div>
+
+            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-700 leading-7">
+              <h3 className="text-base font-bold text-slate-900 mb-2">
+                {lang === 'fr'
+                  ? `Informations utiles: ${currentSpecialty.fr} a ${currentDistrict.fr}`
+                  : `معلومات مفيدة: ${currentSpecialty.ar} في ${currentDistrict.ar}`}
+              </h3>
+              <p>
+                {lang === 'fr'
+                  ? `Vous etes sur une page hyper-locale ${currentSpecialty.fr} a ${currentDistrict.fr}, ${currentCity.fr}. Cette organisation par ville, quartier et specialite facilite la recherche d'un praticien proche, disponible et adapte a votre besoin.`
+                  : `انتم في صفحة محلية دقيقة لتخصص ${currentSpecialty.ar} في ${currentDistrict.ar}، ${currentCity.ar}. هذا التنظيم حسب المدينة والحي والتخصص يسهل ايجاد ممارس قريب ومناسب.`}
+              </p>
+            </article>
           </section>
         )}
 
@@ -550,6 +653,31 @@ const DirectoryHub: React.FC<DirectoryHubProps> = ({ lang }) => {
                 ))}
               </div>
             </section>
+
+            {relatedSpecialtiesInDistrict.length > 0 && (
+              <section className="rounded-2xl border border-slate-200 bg-white p-5">
+                <h3 className="text-xl font-bold text-slate-900">
+                  {lang === 'fr' ? 'Autres specialites dans ce meme quartier' : 'تخصصات اخرى في نفس الحي'}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">
+                  {lang === 'fr'
+                    ? `Vous consultez ${currentSpecialty?.fr} a ${currentDistrict?.fr}, ${currentCity?.fr}. Voici d'autres specialites disponibles dans ce quartier pour renforcer votre parcours de soins.`
+                    : `انتم تتصفحون ${currentSpecialty?.ar} في ${currentDistrict?.ar}، ${currentCity?.ar}. فيما يلي تخصصات اخرى متاحة في نفس الحي.`}
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {relatedSpecialtiesInDistrict.map(({ specialty: relatedSpecialty, count }) => (
+                    <Link
+                      key={relatedSpecialty.slug}
+                      to={`${prefix}/annuaire/${relatedSpecialty.slug}/${currentCity?.slug}/${currentDistrict?.slug}`}
+                      className="rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-semibold text-sky-800 hover:bg-sky-100 transition"
+                    >
+                      {(relatedSpecialty as any).icon || '🏥'} {lang === 'fr' ? relatedSpecialty.fr : relatedSpecialty.ar} ({count})
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
           </section>
         )}
 
