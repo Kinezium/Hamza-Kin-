@@ -15,6 +15,15 @@
   'fracture-tibia-reeducation-marche': 'https://picsum.photos/seed/fracture-tibia-chnider/1600/900',
   'reeducation-geriatrique-importance-kine': 'https://picsum.photos/seed/geriatric-rehab-chnider/1600/900',
   'activite-physique-adaptee-seniors': 'https://picsum.photos/seed/senior-activity-chnider/1600/900'
+  ,
+  'sclerose-en-plaque-kinesitherapie': 'https://picsum.photos/seed/sep-kine-chnider/1600/900',
+  'mal-de-dos-bons-gestes-a-eviter': 'https://picsum.photos/seed/mal-dos-gestes-chnider/1600/900',
+  'cervicalgie-bons-gestes-posture': 'https://picsum.photos/seed/cervicalgie-gestes-chnider/1600/900',
+  'surpoids-douleurs-genou': 'https://picsum.photos/seed/poids-genou-chnider/1600/900',
+  'surpoids-et-sciatique': 'https://picsum.photos/seed/poids-sciatique-chnider/1600/900',
+  'chaussures-douleur-genou': 'https://picsum.photos/seed/chaussures-genou-chnider/1600/900',
+  'chaussures-mal-de-dos': 'https://picsum.photos/seed/chaussures-dos-chnider/1600/900',
+  'telephone-cervicalgie-hernie-cervicale': 'https://picsum.photos/seed/phone-neck-chnider/1600/900'
 };
 
 

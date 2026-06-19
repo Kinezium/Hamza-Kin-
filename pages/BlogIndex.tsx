@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
-import { Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame } from 'lucide-react';
+import { Zap, ArrowUpDown, Dumbbell, Bone, Stethoscope, Brain, Baby, Flame, Activity, Scale, Smartphone, Shield } from 'lucide-react';
 import { getManagedSeo, makeWhatsAppLink, useAdminConfig, useManagedBlogImages } from '../src/adminConfig';
 
 interface BlogPost {
@@ -40,182 +40,30 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ lang }) => {
   });
 
   const posts: BlogPost[] = [
-    {
-      slug: 'sciatique-hernie-discale',
-      titleFr: 'La Sciatique & Hernie Discale',
-      titleAr: 'عرق النسا والانزلاق الغضروفي',
-      descFr: 'Guide complet sur le traitement de la sciatique et hernie discale',
-      descAr: 'دليل شامل لعلاج عرق النسا والانزلاق الغضروفي',
-      icon: <Zap size={28} />,
-      image: managedImages['sciatique-hernie-discale'],
-      readTimeFr: '5 min',
-      readTimeAr: '5 دقائق'
-    },
-    {
-      slug: 'lombalgie-cervicalgie',
-      titleFr: 'Lombalgie & Cervicalgie',
-      titleAr: 'آلام الظهر والرقبة',
-      descFr: 'Solutions efficaces pour soulager vos douleurs de dos et cou',
-      descAr: 'حلول فعالة لتخفيف آلام الظهر والرقبة',
-      icon: <ArrowUpDown size={28} />,
-      image: managedImages['lombalgie-cervicalgie'],
-      readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
-    },
-    {
-      slug: 'traumatologie-sport',
-      titleFr: 'Traumatologie du Sport',
-      titleAr: 'الإصابات الرياضية',
-      descFr: 'Récupération rapide après les blessures sportives',
-      descAr: 'التعافي السريع من الإصابات الرياضية',
-      icon: <Dumbbell size={28} />,
-      image: managedImages['traumatologie-sport'],
-      readTimeFr: '7 min',
-      readTimeAr: '7 دقائق'
-    },
-    {
-      slug: 'arthrose-genou',
-      titleFr: 'Arthrose du Genou',
-      titleAr: 'خشونة الركبة',
-      descFr: 'Vie sans douleur malgré l\'arthrose',
-      descAr: 'الحياة بدون ألم رغم خشونة المفاصل',
-      icon: <Bone size={28} />,
-      image: managedImages['arthrose-genou'],
-      readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
-    },
-    {
-      slug: 'douleurs-epaules-capsulite',
-      titleFr: 'Douleurs aux Épaules',
-      titleAr: 'ألم الكتفين',
-      descFr: 'Traitement de la capsulite et douleurs d\'épaule',
-      descAr: 'علاج تجمد الكتف وآلام الأكتاف',
-      icon: <Stethoscope size={28} />,
-      image: managedImages['douleurs-epaules-capsulite'],
-      readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
-    },
-    {
-      slug: 'migraines-cephalees',
-      titleFr: 'Migraines & Céphalées',
-      titleAr: 'الصداع والشقيقة',
-      descFr: 'Soulagement naturel des migraines et céphalées de tension',
-      descAr: 'تخفيف طبيعي من الصداع والشقيقة',
-      icon: <Brain size={28} />,
-      image: managedImages['migraines-cephalees'],
-      readTimeFr: '5 min',
-      readTimeAr: '5 دقائق'
-    },
-    {
-      slug: 'kine-pediatrique',
-      titleFr: 'Physiothérapie Pédiatrique',
-      titleAr: 'الترويض الطبي للأطفال',
-      descFr: 'Développement normal de l\'enfant et rééducation pédiatrique',
-      descAr: 'النمو الطبيعي للطفل والترويض الطبي',
-      icon: <Baby size={28} />,
-      image: managedImages['kine-pediatrique'],
-      readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
-    },
-    {
-      slug: 'readaptation-post-avc',
-      titleFr: 'Réadaptation Post-AVC',
-      titleAr: 'إعادة التأهيل ما بعد الجلطة',
-      descFr: 'Reprendre votre vie après un AVC',
-      descAr: 'استعادة الحياة بعد السكتة الدماغية',
-      icon: <Flame size={28} />,
-      image: managedImages['readaptation-post-avc'],
-      readTimeFr: '7 min',
-      readTimeAr: '7 دقائق'
-    },
-    {
-      slug: 'posture-ergonomie',
-      titleFr: 'Posture & Ergonomie',
-      titleAr: 'الوضعية والإرغونوميا',
-      descFr: 'Prévention des douleurs par une bonne posture',
-      descAr: 'منع الآلام من خلال وضعية صحيحة',
-      icon: <Stethoscope size={28} />,
-      image: managedImages['posture-ergonomie'],
-      readTimeFr: '5 min',
-      readTimeAr: '5 دقائق'
-    },
-    {
-      slug: 'recuperation-sportive-prevention-blessures',
-      titleFr: 'Récupération Sportive',
-      titleAr: 'الاستشفاء الرياضي',
-      descFr: 'Optimisation de la récupération et prévention des blessures',
-      descAr: 'تحسين الاستشفاء والوقاية من الإصابات',
-      icon: <Dumbbell size={28} />,
-      image: managedImages['recuperation-sportive-prevention-blessures'],
-      readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
-    },
-    {
-      slug: 'avc-signes-alerte-reeducation-precoce',
-      titleFr: 'AVC: signes d alerte et rééducation',
-      titleAr: 'السكتة الدماغية: العلامات والتأهيل',
-      descFr: 'Urgence AVC, signes clés et impact d une prise en charge précoce',
-      descAr: 'علامات AVC ودور الترويض الطبي المبكر في التعافي',
-      icon: <Brain size={28} />,
-      image: managedImages['avc-signes-alerte-reeducation-precoce'],
-      readTimeFr: '8 min',
-      readTimeAr: '8 دقائق'
-    },
-    {
-      slug: 'entorse-cheville-kinesitherapie',
-      titleFr: 'Entorse de cheville et kiné',
-      titleAr: 'التواء الكاحل والترويض الطبي',
-      descFr: 'Comment recuperer vite sans rechute apres une entorse',
-      descAr: 'برنامج تأهيل الكاحل لتفادي التواءات متكررة',
-      icon: <Dumbbell size={28} />,
-      image: managedImages['entorse-cheville-kinesitherapie'],
-      readTimeFr: '7 min',
-      readTimeAr: '7 دقائق'
-    },
-    {
-      slug: 'rupture-ligament-croise-anterieur-reeducation',
-      titleFr: 'Rupture du ligament croisé antérieur',
-      titleAr: 'تمزق الرباط الصليبي الأمامي',
-      descFr: 'Étapes clés de rééducation avant et apres chirurgie du LCA',
-      descAr: 'مراحل التأهيل قبل وبعد جراحة الرباط الصليبي',
-      icon: <Bone size={28} />,
-      image: managedImages['rupture-ligament-croise-anterieur-reeducation'],
-      readTimeFr: '8 min',
-      readTimeAr: '8 دقائق'
-    },
-    {
-      slug: 'fracture-tibia-reeducation-marche',
-      titleFr: 'Fracture du tibia et reprise de la marche',
-      titleAr: 'كسر عظم الساق واستعادة المشي',
-      descFr: 'Rééducation progressive pour marcher sans douleur ni boiterie',
-      descAr: 'خطة ترويض طبي لاسترجاع المشي بعد كسر الساق',
-      icon: <Bone size={28} />,
-      image: managedImages['fracture-tibia-reeducation-marche'],
-      readTimeFr: '7 min',
-      readTimeAr: '7 دقائق'
-        },
-        {
-      slug: 'reeducation-geriatrique-importance-kine',
-      titleFr: 'Rééducation Gériatrique',
-      titleAr: 'إعادة التأهيل لكبار السن',
-      descFr: 'Pourquoi la kiné est essentielle pour garder autonomie et équilibre après 60 ans',
-      descAr: 'لماذا الترويض الطبي ضروري للحفاظ على الحركة والاستقلالية بعد 60 سنة',
-      icon: <Stethoscope size={28} />,
-      image: managedImages['reeducation-geriatrique-importance-kine'],
-      readTimeFr: '6 min',
-      readTimeAr: '6 دقائق'
-    },
-    {
-      slug: 'activite-physique-adaptee-seniors',
-      titleFr: 'Activité Physique Adaptée Seniors',
-      titleAr: 'النشاط البدني الملائم لكبار السن',
-      descFr: 'Exercices simples pour maman et papa et risques à éviter si on ne bouge pas',
-      descAr: 'تمارين بسيطة للاب والام ومخاطر قلة الحركة',
-      icon: <Dumbbell size={28} />,
-      image: managedImages['activite-physique-adaptee-seniors'],
-      readTimeFr: '5 min',
-      readTimeAr: '5 دقائق'
-    }
+    { slug: 'sciatique-hernie-discale', titleFr: 'La Sciatique & Hernie Discale', titleAr: 'عرق النسا والانزلاق الغضروفي', descFr: 'Guide complet sur le traitement de la sciatique et hernie discale', descAr: 'دليل شامل لعلاج عرق النسا والانزلاق الغضروفي', icon: <Zap size={28} />, image: managedImages['sciatique-hernie-discale'], readTimeFr: '5 min', readTimeAr: '5 دقائق' },
+    { slug: 'lombalgie-cervicalgie', titleFr: 'Lombalgie & Cervicalgie', titleAr: 'آلام الظهر والرقبة', descFr: 'Solutions efficaces pour soulager vos douleurs de dos et cou', descAr: 'حلول فعالة لتخفيف آلام الظهر والرقبة', icon: <ArrowUpDown size={28} />, image: managedImages['lombalgie-cervicalgie'], readTimeFr: '6 min', readTimeAr: '6 دقائق' },
+    { slug: 'traumatologie-sport', titleFr: 'Traumatologie du Sport', titleAr: 'الإصابات الرياضية', descFr: 'Récupération rapide après les blessures sportives', descAr: 'التعافي السريع من الإصابات الرياضية', icon: <Dumbbell size={28} />, image: managedImages['traumatologie-sport'], readTimeFr: '7 min', readTimeAr: '7 دقائق' },
+    { slug: 'arthrose-genou', titleFr: 'Arthrose du Genou', titleAr: 'خشونة الركبة', descFr: 'Vie sans douleur malgré l\'arthrose', descAr: 'الحياة بدون ألم رغم خشونة المفاصل', icon: <Bone size={28} />, image: managedImages['arthrose-genou'], readTimeFr: '6 min', readTimeAr: '6 دقائق' },
+    { slug: 'douleurs-epaules-capsulite', titleFr: 'Douleurs aux Épaules', titleAr: 'ألم الكتفين', descFr: 'Traitement de la capsulite et douleurs d\'épaule', descAr: 'علاج تجمد الكتف وآلام الأكتاف', icon: <Stethoscope size={28} />, image: managedImages['douleurs-epaules-capsulite'], readTimeFr: '6 min', readTimeAr: '6 دقائق' },
+    { slug: 'migraines-cephalees', titleFr: 'Migraines & Céphalées', titleAr: 'الصداع والشقيقة', descFr: 'Soulagement naturel des migraines et céphalées de tension', descAr: 'تخفيف طبيعي من الصداع والشقيقة', icon: <Brain size={28} />, image: managedImages['migraines-cephalees'], readTimeFr: '5 min', readTimeAr: '5 دقائق' },
+    { slug: 'kine-pediatrique', titleFr: 'Physiothérapie Pédiatrique', titleAr: 'الترويض الطبي للأطفال', descFr: 'Développement normal de l\'enfant et rééducation pédiatrique', descAr: 'النمو الطبيعي للطفل والترويض الطبي', icon: <Baby size={28} />, image: managedImages['kine-pediatrique'], readTimeFr: '6 min', readTimeAr: '6 دقائق' },
+    { slug: 'readaptation-post-avc', titleFr: 'Réadaptation Post-AVC', titleAr: 'إعادة التأهيل ما بعد الجلطة', descFr: 'Reprendre votre vie après un AVC', descAr: 'استعادة الحياة بعد السكتة الدماغية', icon: <Flame size={28} />, image: managedImages['readaptation-post-avc'], readTimeFr: '7 min', readTimeAr: '7 دقائق' },
+    { slug: 'posture-ergonomie', titleFr: 'Posture & Ergonomie', titleAr: 'الوضعية والإرغونوميا', descFr: 'Prévention des douleurs par une bonne posture', descAr: 'منع الآلام من خلال وضعية صحيحة', icon: <Stethoscope size={28} />, image: managedImages['posture-ergonomie'], readTimeFr: '5 min', readTimeAr: '5 دقائق' },
+    { slug: 'recuperation-sportive-prevention-blessures', titleFr: 'Récupération Sportive', titleAr: 'الاستشفاء الرياضي', descFr: 'Optimisation de la récupération et prévention des blessures', descAr: 'تحسين الاستشفاء والوقاية من الإصابات', icon: <Dumbbell size={28} />, image: managedImages['recuperation-sportive-prevention-blessures'], readTimeFr: '6 min', readTimeAr: '6 دقائق' },
+    { slug: 'avc-signes-alerte-reeducation-precoce', titleFr: 'AVC: signes d alerte et rééducation', titleAr: 'السكتة الدماغية: العلامات والتأهيل', descFr: 'Urgence AVC, signes clés et impact d une prise en charge précoce', descAr: 'علامات AVC ودور الترويض الطبي المبكر في التعافي', icon: <Brain size={28} />, image: managedImages['avc-signes-alerte-reeducation-precoce'], readTimeFr: '8 min', readTimeAr: '8 دقائق' },
+    { slug: 'entorse-cheville-kinesitherapie', titleFr: 'Entorse de cheville et kiné', titleAr: 'التواء الكاحل والترويض الطبي', descFr: 'Comment recuperer vite sans rechute apres une entorse', descAr: 'برنامج تأهيل الكاحل لتفادي التواءات متكررة', icon: <Dumbbell size={28} />, image: managedImages['entorse-cheville-kinesitherapie'], readTimeFr: '7 min', readTimeAr: '7 دقائق' },
+    { slug: 'rupture-ligament-croise-anterieur-reeducation', titleFr: 'Rupture du ligament croisé antérieur', titleAr: 'تمزق الرباط الصليبي الأمامي', descFr: 'Étapes clés de rééducation avant et apres chirurgie du LCA', descAr: 'مراحل التأهيل قبل وبعد جراحة الرباط الصليبي', icon: <Bone size={28} />, image: managedImages['rupture-ligament-croise-anterieur-reeducation'], readTimeFr: '8 min', readTimeAr: '8 دقائق' },
+    { slug: 'fracture-tibia-reeducation-marche', titleFr: 'Fracture du tibia et reprise de la marche', titleAr: 'كسر عظم الساق واستعادة المشي', descFr: 'Rééducation progressive pour marcher sans douleur ni boiterie', descAr: 'خطة ترويض طبي لاسترجاع المشي بعد كسر الساق', icon: <Bone size={28} />, image: managedImages['fracture-tibia-reeducation-marche'], readTimeFr: '7 min', readTimeAr: '7 دقائق' },
+    { slug: 'reeducation-geriatrique-importance-kine', titleFr: 'Rééducation Gériatrique', titleAr: 'إعادة التأهيل لكبار السن', descFr: 'Pourquoi la kiné est essentielle pour garder autonomie et équilibre après 60 ans', descAr: 'لماذا الترويض الطبي ضروري للحفاظ على الحركة والاستقلالية بعد 60 سنة', icon: <Stethoscope size={28} />, image: managedImages['reeducation-geriatrique-importance-kine'], readTimeFr: '6 min', readTimeAr: '6 دقائق' },
+    { slug: 'activite-physique-adaptee-seniors', titleFr: 'Activité Physique Adaptée Seniors', titleAr: 'النشاط البدني الملائم لكبار السن', descFr: 'Exercices simples pour maman et papa et risques à éviter si on ne bouge pas', descAr: 'تمارين بسيطة للاب والام ومخاطر قلة الحركة', icon: <Dumbbell size={28} />, image: managedImages['activite-physique-adaptee-seniors'], readTimeFr: '5 min', readTimeAr: '5 دقائق' },
+    { slug: 'sclerose-en-plaque-kinesitherapie', titleFr: 'Sclérose en Plaque et Kiné', titleAr: 'التصلب المتعدد والترويض الطبي', descFr: 'Vivre et bouger avec la SEP grâce à la kinésithérapie', descAr: 'العيش والحركة مع التصلب المتعدد بفضل الترويض الطبي', icon: <Brain size={28} />, image: managedImages['sclerose-en-plaque-kinesitherapie'], readTimeFr: '8 min', readTimeAr: '8 دقائق' },
+    { slug: 'mal-de-dos-bons-gestes-a-eviter', titleFr: 'Mal de Dos : À Faire et À Éviter', titleAr: 'آلام الظهر: ما يجب فعله وتجنبه', descFr: 'Les bons gestes et erreurs classiques à éviter pour votre dos', descAr: 'التصرفات الصحيحة والأخطاء الشائعة لحماية ظهرك', icon: <ArrowUpDown size={28} />, image: managedImages['mal-de-dos-bons-gestes-a-eviter'], readTimeFr: '7 min', readTimeAr: '7 دقائق' },
+    { slug: 'cervicalgie-bons-gestes-posture', titleFr: 'Cervicalgie : Bons Gestes et Posture', titleAr: 'ألم الرقبة: النصائح والوضعية', descFr: 'Comment soulager et prévenir les douleurs cervicales', descAr: 'كيفية تخفيف والوقاية من آلام الرقبة', icon: <Activity size={28} />, image: managedImages['cervicalgie-bons-gestes-posture'], readTimeFr: '7 min', readTimeAr: '7 دقائق' },
+    { slug: 'surpoids-douleurs-genou', titleFr: 'Surpoids et Douleurs au Genou', titleAr: 'الوزن الزائد وآلام الركبة', descFr: 'Comment chaque kilo en trop abîme vos genoux', descAr: 'كيف يُتلف كل كيلو زائد ركبتيك', icon: <Scale size={28} />, image: managedImages['surpoids-douleurs-genou'], readTimeFr: '7 min', readTimeAr: '7 دقائق' },
+    { slug: 'surpoids-et-sciatique', titleFr: 'Surpoids et Sciatique', titleAr: 'الوزن الزائد وعرق النسا', descFr: 'Le lien entre les kilos en trop et la douleur sciatique', descAr: 'العلاقة بين الوزن الزائد وألم عرق النسا', icon: <Scale size={28} />, image: managedImages['surpoids-et-sciatique'], readTimeFr: '7 min', readTimeAr: '7 دقائق' },
+    { slug: 'chaussures-douleur-genou', titleFr: 'Chaussures et Douleur au Genou', titleAr: 'الأحذية وألم الركبة', descFr: 'L\'impact méconnu de vos chaussures sur vos genoux', descAr: 'التأثير الخفي لأحذيتك على ركبتيك', icon: <Bone size={28} />, image: managedImages['chaussures-douleur-genou'], readTimeFr: '6 min', readTimeAr: '6 دقائق' },
+    { slug: 'chaussures-mal-de-dos', titleFr: 'Chaussures et Mal de Dos', titleAr: 'الأحذية وآلام الظهر', descFr: 'Ce que vos pieds font à votre colonne vertébrale', descAr: 'ما تفعله قدماك بعمودك الفقري', icon: <Shield size={28} />, image: managedImages['chaussures-mal-de-dos'], readTimeFr: '6 min', readTimeAr: '6 دقائق' },
+    { slug: 'telephone-cervicalgie-hernie-cervicale', titleFr: 'Téléphone et Hernie Cervicale', titleAr: 'الهاتف والفتق الرقبي', descFr: 'Pourquoi regarder son téléphone abîme les cervicales', descAr: 'لماذا النظر للهاتف يُتلف الرقبة', icon: <Smartphone size={28} />, image: managedImages['telephone-cervicalgie-hernie-cervicale'], readTimeFr: '6 min', readTimeAr: '6 دقائق' }
   ];
 
   const customPosts: BlogPost[] = config.customBlogPosts.map((item) => ({

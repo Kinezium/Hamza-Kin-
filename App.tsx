@@ -37,6 +37,14 @@ import AclRuptureArticle from './pages/Blog/AclRuptureArticle';
 import TibiaFractureArticle from './pages/Blog/TibiaFractureArticle';
 import GeriatricReeducationArticle from './pages/Blog/GeriatricReeducationArticle';
 import SeniorPhysicalActivityArticle from './pages/Blog/SeniorPhysicalActivityArticle';
+import ScleroEnPlaqueArticle from './pages/Blog/ScleroEnPlaqueArticle';
+import MalDeDosGestesArticle from './pages/Blog/MalDeDosGestesArticle';
+import CervicalgieGestesArticle from './pages/Blog/CervicalgieGestesArticle';
+import SurpoidsGenouArticle from './pages/Blog/SurpoidsGenouArticle';
+import SurpoidsSciatiqueArticle from './pages/Blog/SurpoidsSciatiqeArticle';
+import ChaussuresGenouArticle from './pages/Blog/ChaussuresGenouArticle';
+import ChaussuresDosArticle from './pages/Blog/ChaussuresDosArticle';
+import TelephoneCervicalgieArticle from './pages/Blog/TelephoneCervicalgieArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -137,6 +145,14 @@ const App: React.FC = () => {
             <Route path="/blog/fracture-tibia-reeducation-marche" element={<TibiaFractureArticle lang={lang} />} />
             <Route path="/blog/reeducation-geriatrique-importance-kine" element={<GeriatricReeducationArticle lang={lang} />} />
             <Route path="/blog/activite-physique-adaptee-seniors" element={<SeniorPhysicalActivityArticle lang={lang} />} />
+              <Route path="/blog/sclerose-en-plaque-kinesitherapie" element={<ScleroEnPlaqueArticle lang={lang} />} />
+              <Route path="/blog/mal-de-dos-bons-gestes-a-eviter" element={<MalDeDosGestesArticle lang={lang} />} />
+              <Route path="/blog/cervicalgie-bons-gestes-posture" element={<CervicalgieGestesArticle lang={lang} />} />
+              <Route path="/blog/surpoids-douleurs-genou" element={<SurpoidsGenouArticle lang={lang} />} />
+              <Route path="/blog/surpoids-et-sciatique" element={<SurpoidsSciatiqueArticle lang={lang} />} />
+              <Route path="/blog/chaussures-douleur-genou" element={<ChaussuresGenouArticle lang={lang} />} />
+              <Route path="/blog/chaussures-mal-de-dos" element={<ChaussuresDosArticle lang={lang} />} />
+              <Route path="/blog/telephone-cervicalgie-hernie-cervicale" element={<TelephoneCervicalgieArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -172,6 +188,14 @@ const App: React.FC = () => {
             <Route path="/ar/blog/fracture-tibia-reeducation-marche" element={<TibiaFractureArticle lang="ar" />} />
             <Route path="/ar/blog/reeducation-geriatrique-importance-kine" element={<GeriatricReeducationArticle lang="ar" />} />
             <Route path="/ar/blog/activite-physique-adaptee-seniors" element={<SeniorPhysicalActivityArticle lang="ar" />} />
+              <Route path="/ar/blog/sclerose-en-plaque-kinesitherapie" element={<ScleroEnPlaqueArticle lang="ar" />} />
+              <Route path="/ar/blog/mal-de-dos-bons-gestes-a-eviter" element={<MalDeDosGestesArticle lang="ar" />} />
+              <Route path="/ar/blog/cervicalgie-bons-gestes-posture" element={<CervicalgieGestesArticle lang="ar" />} />
+              <Route path="/ar/blog/surpoids-douleurs-genou" element={<SurpoidsGenouArticle lang="ar" />} />
+              <Route path="/ar/blog/surpoids-et-sciatique" element={<SurpoidsSciatiqueArticle lang="ar" />} />
+              <Route path="/ar/blog/chaussures-douleur-genou" element={<ChaussuresGenouArticle lang="ar" />} />
+              <Route path="/ar/blog/chaussures-mal-de-dos" element={<ChaussuresDosArticle lang="ar" />} />
+              <Route path="/ar/blog/telephone-cervicalgie-hernie-cervicale" element={<TelephoneCervicalgieArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 
             {/* Legacy Arabic slugs redirects */}
