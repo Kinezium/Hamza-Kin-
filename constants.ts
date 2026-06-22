@@ -31,11 +31,14 @@ export const LOGO_TEXT_URL = LATEST_FAVICON_URL;
 // Preferred location for new files: /public/images/home-carousel/
 // Use public URLs like: /images/home-carousel/slide-01.jpg
 export const HERO_SLIDESHOW_IMAGES = [
-  "https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it",
-  "https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF",
-  "https://blogger.googleusercontent.com/img/a/AVvXsEjoZ1t4KEbcPAIWZJ0jiTa4bMoXjPRSSVAGH3FCr7ewT5EbwwNBpvSBqGw7PIwNX9Rzp7X-5-vE8ybPgskdZUa0nCGJyb4FWpfHO9GNp1_ml82JDpJqmAz-wqj_S8mILmu6srR2NuTqgaO3KDO0gNpJ6eRSdSKLCK7ukq1CEj5CgIRW1SkI5zXoFkoD",
-  "https://blogger.googleusercontent.com/img/a/AVvXsEheWruwVvKotuenNo045KpyFx2kB_ZY-gsPYgQdKtn7p7zPD3goA2oSaSLghfEACJ60WcFWfUGQeIe_21YpqvTuYvflsUNcPUm4l1idcUHnug49srkKxxX3vS49zbQDd-LLjlP1DdHlkgYyOvcpLyJM4TsogawPbTEDCl3DQhwZGuQyl4dbXwSUerX_",
-  "https://blogger.googleusercontent.com/img/a/AVvXsEhYDYO4k6kLCTB9aIU2zmvthh9gYBpHQ7CCU6LssefUMeIa-MCqWf1tIeopSv_iTJbK7CcaSfuNczUykDf_ZhiybXZZ-1EL87wXW8UP3jVI86qEExejXaGJtnGqljjajmWJrtPTyRbdlR_j9vh1AfsMo8BzHBXob_HcWGKVyy99zFj0hQLuIp5RTkaD"
+  "/images/home-carousel/slide-01-parkinson.png",
+  "/images/home-carousel/slide-02-kine-domicile.png",
+  "/images/home-carousel/slide-03-activite-adaptee.png",
+  "/images/home-carousel/slide-04-apres-avc.png",
+  "/images/home-carousel/slide-05-blessure-sportive.png",
+  "/images/home-carousel/slide-06-coureurs.png",
+  "/images/home-carousel/slide-07-massage-sportif.png",
+  "/images/home-carousel/slide-08-kine.png"
 ];
 
 export const CASABLANCA_NEIGHBORHOODS_FR = [
