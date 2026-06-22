@@ -27,7 +27,9 @@ export const LATEST_FAVICON_URL = "https://blogger.googleusercontent.com/img/a/A
 export const LOGO_COLORED_URL = LATEST_FAVICON_URL;
 // Full logo image used in navbar
 export const LOGO_TEXT_URL = LATEST_FAVICON_URL;
-// Slideshow images shown in the home hero (1:1). Add new URLs here when provided.
+// Slideshow images shown in the home hero (1:1).
+// Preferred location for new files: /public/images/home-carousel/
+// Use public URLs like: /images/home-carousel/slide-01.jpg
 export const HERO_SLIDESHOW_IMAGES = [
   "https://blogger.googleusercontent.com/img/a/AVvXsEgSufeTLTl6_zAaJynHbKie0wfFljxZBl90XVrfzh76FwzJCj7fLlg9X3D9HIsxgxtrCuj4clin3Ull2KUzXPWEiK6wOmxQ9-wpoPlhcSXgEOcTRhWYAftBDgAy_h5aoElSlvZU9zhI0wQWXcij2dOZxo5bnfXIIBIgVuuR-mjo7PBgbqy8thtlK3it",
   "https://blogger.googleusercontent.com/img/a/AVvXsEg7SfAbKvPprPkWKtIASqJ7jkzTIS4fEGPTNWZhTd_OFxe14xxH-XyjA-iwYjK_6Qx5vYtdW1EF7Z_BPvbmMEvFA6MJhZdkguNbbqeJZP5gAcqKaszQAIhheHZuJ_5DGL21fx2C4Xn-QDywnM6_H5FM1kHBt-s0E1TEKUYnL3xlQroT8mxz1I2YXMrF",
