@@ -55,6 +55,20 @@ import UrgenceKineParentsArticle from './pages/Blog/UrgenceKineParentsArticle';
 import KineMarocPortraitArticle from './pages/Blog/KineMarocPortraitArticle';
 import RemboursementKineMarocArticle from './pages/Blog/RemboursementKineMarocArticle';
 import KineLiberalCnssArticle from './pages/Blog/KineLiberalCnssArticle';
+import RuptureLcaLcpArticle from './pages/Blog/RuptureLcaLcpArticle';
+import RupturePartielleVsTotaleArticle from './pages/Blog/RupturePartielleVsTotaleArticle';
+import ElongationLcaLcpArticle from './pages/Blog/ElongationLcaLcpArticle';
+import RuptureDoubleLcaLcpArticle from './pages/Blog/RuptureDoubleLcaLcpArticle';
+import LigamentsCollaterauxArticle from './pages/Blog/LigamentsCollaterauxArticle';
+import DechiruresFootArticle from './pages/Blog/DechiruresFootArticle';
+import EntorsesTypesArticle from './pages/Blog/EntorsesTypesArticle';
+import MassageSportifArticle from './pages/Blog/MassageSportifArticle';
+import ChaussuresRunningArticle from './pages/Blog/ChaussuresRunningArticle';
+import DeformationPiedsArticle from './pages/Blog/DeformationPiedsArticle';
+import HalluxValgusArticle from './pages/Blog/HalluxValgusArticle';
+import EpineCalcaneenneArticle from './pages/Blog/EpineCalcaneenneArticle';
+import ParkinsonPthArticle from './pages/Blog/ParkinsonPthArticle';
+import NeuroplasticiteArticle from './pages/Blog/NeuroplasticiteArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -173,6 +187,20 @@ const App: React.FC = () => {
               <Route path="/blog/kinesitherapie-maroc-portrait" element={<KineMarocPortraitArticle lang={lang} />} />
               <Route path="/blog/remboursement-kine-maroc-cnss-cnops" element={<RemboursementKineMarocArticle lang={lang} />} />
               <Route path="/blog/kine-liberal-cnss-cnops-injustice" element={<KineLiberalCnssArticle lang={lang} />} />
+                          <Route path="/blog/rupture-lca-lcp-genou" element={<RuptureLcaLcpArticle lang={lang} />} />
+                          <Route path="/blog/rupture-partielle-vs-totale-ligaments" element={<RupturePartielleVsTotaleArticle lang={lang} />} />
+                          <Route path="/blog/elongation-lca-lcp" element={<ElongationLcaLcpArticle lang={lang} />} />
+                          <Route path="/blog/rupture-double-lca-lcp" element={<RuptureDoubleLcaLcpArticle lang={lang} />} />
+                          <Route path="/blog/ligaments-collateraux-lcm-lcl" element={<LigamentsCollaterauxArticle lang={lang} />} />
+                          <Route path="/blog/dechirures-musculaires-footballeurs" element={<DechiruresFootArticle lang={lang} />} />
+                          <Route path="/blog/entorses-types-classification-cat" element={<EntorsesTypesArticle lang={lang} />} />
+                          <Route path="/blog/massage-sportif-decontracturant" element={<MassageSportifArticle lang={lang} />} />
+                          <Route path="/blog/choisir-chaussures-running" element={<ChaussuresRunningArticle lang={lang} />} />
+                          <Route path="/blog/deformation-pieds" element={<DeformationPiedsArticle lang={lang} />} />
+                          <Route path="/blog/hallux-valgus-kinesitherapie" element={<HalluxValgusArticle lang={lang} />} />
+                          <Route path="/blog/epine-calcanienne-sans-ondes-de-choc" element={<EpineCalcaneenneArticle lang={lang} />} />
+                          <Route path="/blog/parkinson-prothese-hanche-pth" element={<ParkinsonPthArticle lang={lang} />} />
+                          <Route path="/blog/neuroplasticite-miracle-cerveau-kine" element={<NeuroplasticiteArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -226,6 +254,20 @@ const App: React.FC = () => {
               <Route path="/ar/blog/kinesitherapie-maroc-portrait" element={<KineMarocPortraitArticle lang="ar" />} />
               <Route path="/ar/blog/remboursement-kine-maroc-cnss-cnops" element={<RemboursementKineMarocArticle lang="ar" />} />
               <Route path="/ar/blog/kine-liberal-cnss-cnops-injustice" element={<KineLiberalCnssArticle lang="ar" />} />
+                            <Route path="/ar/blog/rupture-lca-lcp-genou" element={<RuptureLcaLcpArticle lang="ar" />} />
+                            <Route path="/ar/blog/rupture-partielle-vs-totale-ligaments" element={<RupturePartielleVsTotaleArticle lang="ar" />} />
+                            <Route path="/ar/blog/elongation-lca-lcp" element={<ElongationLcaLcpArticle lang="ar" />} />
+                            <Route path="/ar/blog/rupture-double-lca-lcp" element={<RuptureDoubleLcaLcpArticle lang="ar" />} />
+                            <Route path="/ar/blog/ligaments-collateraux-lcm-lcl" element={<LigamentsCollaterauxArticle lang="ar" />} />
+                            <Route path="/ar/blog/dechirures-musculaires-footballeurs" element={<DechiruresFootArticle lang="ar" />} />
+                            <Route path="/ar/blog/entorses-types-classification-cat" element={<EntorsesTypesArticle lang="ar" />} />
+                            <Route path="/ar/blog/massage-sportif-decontracturant" element={<MassageSportifArticle lang="ar" />} />
+                            <Route path="/ar/blog/choisir-chaussures-running" element={<ChaussuresRunningArticle lang="ar" />} />
+                            <Route path="/ar/blog/deformation-pieds" element={<DeformationPiedsArticle lang="ar" />} />
+                            <Route path="/ar/blog/hallux-valgus-kinesitherapie" element={<HalluxValgusArticle lang="ar" />} />
+                            <Route path="/ar/blog/epine-calcanienne-sans-ondes-de-choc" element={<EpineCalcaneenneArticle lang="ar" />} />
+                            <Route path="/ar/blog/parkinson-prothese-hanche-pth" element={<ParkinsonPthArticle lang="ar" />} />
+                            <Route path="/ar/blog/neuroplasticite-miracle-cerveau-kine" element={<NeuroplasticiteArticle lang="ar" />} />
               <Route path="/ar/blog/spasticite-definition-traitement-indications" element={<SpasticiteArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 

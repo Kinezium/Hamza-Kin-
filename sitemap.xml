@@ -136,6 +136,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/choisir-chaussures-running</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/choisir-chaussures-running" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/choisir-chaussures-running" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/choisir-chaussures-running" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/ar/blog/custom</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/custom" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/custom" />
@@ -149,6 +158,24 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/custom/kinesitherapie-cest-quoi" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/custom/kinesitherapie-cest-quoi" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/custom/kinesitherapie-cest-quoi" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/dechirures-musculaires-footballeurs</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/dechirures-musculaires-footballeurs" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/dechirures-musculaires-footballeurs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/dechirures-musculaires-footballeurs" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/deformation-pieds</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/deformation-pieds" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/deformation-pieds" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/deformation-pieds" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -181,10 +208,37 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/elongation-lca-lcp</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/elongation-lca-lcp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/elongation-lca-lcp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/elongation-lca-lcp" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/ar/blog/entorse-cheville-kinesitherapie</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/entorse-cheville-kinesitherapie" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/entorse-cheville-kinesitherapie" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/entorse-cheville-kinesitherapie" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/entorses-types-classification-cat</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/entorses-types-classification-cat" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/entorses-types-classification-cat" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/entorses-types-classification-cat" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/epine-calcanienne-sans-ondes-de-choc</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/epine-calcanienne-sans-ondes-de-choc" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/epine-calcanienne-sans-ondes-de-choc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/epine-calcanienne-sans-ondes-de-choc" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -203,6 +257,15 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/fracture-tibia-reeducation-marche" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/fracture-tibia-reeducation-marche" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/fracture-tibia-reeducation-marche" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/hallux-valgus-kinesitherapie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/hallux-valgus-kinesitherapie" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/hallux-valgus-kinesitherapie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/hallux-valgus-kinesitherapie" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -235,6 +298,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/ligaments-collateraux-lcm-lcl</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/ligaments-collateraux-lcm-lcl" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/ligaments-collateraux-lcm-lcl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/ligaments-collateraux-lcm-lcl" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/ar/blog/lombalgie-cervicalgie</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/lombalgie-cervicalgie" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/lombalgie-cervicalgie" />
@@ -253,6 +325,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/massage-sportif-decontracturant</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/massage-sportif-decontracturant" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/massage-sportif-decontracturant" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/massage-sportif-decontracturant" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/ar/blog/migraines-cephalees</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/migraines-cephalees" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/migraines-cephalees" />
@@ -262,10 +343,28 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/neuroplasticite-miracle-cerveau-kine</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/neuroplasticite-miracle-cerveau-kine" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/neuroplasticite-miracle-cerveau-kine" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/neuroplasticite-miracle-cerveau-kine" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/ar/blog/parents-paralysie-cerebrale-imc-education</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/parents-paralysie-cerebrale-imc-education" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/parents-paralysie-cerebrale-imc-education" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/parents-paralysie-cerebrale-imc-education" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/parkinson-prothese-hanche-pth</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/parkinson-prothese-hanche-pth" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/parkinson-prothese-hanche-pth" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/parkinson-prothese-hanche-pth" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -316,10 +415,37 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/rupture-double-lca-lcp</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/rupture-double-lca-lcp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/rupture-double-lca-lcp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/rupture-double-lca-lcp" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/rupture-lca-lcp-genou</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/rupture-lca-lcp-genou" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/rupture-lca-lcp-genou" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/rupture-lca-lcp-genou" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/ar/blog/rupture-ligament-croise-anterieur-reeducation</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/rupture-ligament-croise-anterieur-reeducation" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/rupture-ligament-croise-anterieur-reeducation" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/rupture-ligament-croise-anterieur-reeducation" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/ar/blog/rupture-partielle-vs-totale-ligaments</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/rupture-partielle-vs-totale-ligaments" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/rupture-partielle-vs-totale-ligaments" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/rupture-partielle-vs-totale-ligaments" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -514,6 +640,15 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/choisir-chaussures-running</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/choisir-chaussures-running" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/choisir-chaussures-running" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/choisir-chaussures-running" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/blog/custom</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/custom" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/custom" />
@@ -527,6 +662,24 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/custom/kinesitherapie-cest-quoi" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/custom/kinesitherapie-cest-quoi" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/custom/kinesitherapie-cest-quoi" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/dechirures-musculaires-footballeurs</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/dechirures-musculaires-footballeurs" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/dechirures-musculaires-footballeurs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/dechirures-musculaires-footballeurs" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/deformation-pieds</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/deformation-pieds" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/deformation-pieds" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/deformation-pieds" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -559,10 +712,37 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/elongation-lca-lcp</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/elongation-lca-lcp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/elongation-lca-lcp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/elongation-lca-lcp" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/blog/entorse-cheville-kinesitherapie</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/entorse-cheville-kinesitherapie" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/entorse-cheville-kinesitherapie" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/entorse-cheville-kinesitherapie" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/entorses-types-classification-cat</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/entorses-types-classification-cat" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/entorses-types-classification-cat" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/entorses-types-classification-cat" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/epine-calcanienne-sans-ondes-de-choc</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/epine-calcanienne-sans-ondes-de-choc" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/epine-calcanienne-sans-ondes-de-choc" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/epine-calcanienne-sans-ondes-de-choc" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -581,6 +761,15 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/fracture-tibia-reeducation-marche" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/fracture-tibia-reeducation-marche" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/fracture-tibia-reeducation-marche" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/hallux-valgus-kinesitherapie</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/hallux-valgus-kinesitherapie" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/hallux-valgus-kinesitherapie" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/hallux-valgus-kinesitherapie" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -613,6 +802,15 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/ligaments-collateraux-lcm-lcl</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/ligaments-collateraux-lcm-lcl" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/ligaments-collateraux-lcm-lcl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/ligaments-collateraux-lcm-lcl" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/blog/lombalgie-cervicalgie</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/lombalgie-cervicalgie" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/lombalgie-cervicalgie" />
@@ -631,6 +829,15 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/massage-sportif-decontracturant</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/massage-sportif-decontracturant" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/massage-sportif-decontracturant" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/massage-sportif-decontracturant" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/blog/migraines-cephalees</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/migraines-cephalees" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/migraines-cephalees" />
@@ -640,10 +847,28 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/neuroplasticite-miracle-cerveau-kine</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/neuroplasticite-miracle-cerveau-kine" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/neuroplasticite-miracle-cerveau-kine" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/neuroplasticite-miracle-cerveau-kine" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/blog/parents-paralysie-cerebrale-imc-education</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/parents-paralysie-cerebrale-imc-education" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/parents-paralysie-cerebrale-imc-education" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/parents-paralysie-cerebrale-imc-education" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/parkinson-prothese-hanche-pth</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/parkinson-prothese-hanche-pth" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/parkinson-prothese-hanche-pth" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/parkinson-prothese-hanche-pth" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -694,10 +919,37 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/rupture-double-lca-lcp</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/rupture-double-lca-lcp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/rupture-double-lca-lcp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/rupture-double-lca-lcp" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/rupture-lca-lcp-genou</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/rupture-lca-lcp-genou" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/rupture-lca-lcp-genou" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/rupture-lca-lcp-genou" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://kinesitherapie.clinaxis.ma/blog/rupture-ligament-croise-anterieur-reeducation</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/rupture-ligament-croise-anterieur-reeducation" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/rupture-ligament-croise-anterieur-reeducation" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/rupture-ligament-croise-anterieur-reeducation" />
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kinesitherapie.clinaxis.ma/blog/rupture-partielle-vs-totale-ligaments</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/blog/rupture-partielle-vs-totale-ligaments" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/blog/rupture-partielle-vs-totale-ligaments" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/blog/rupture-partielle-vs-totale-ligaments" />
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

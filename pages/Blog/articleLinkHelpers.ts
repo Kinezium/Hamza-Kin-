@@ -185,6 +185,13 @@ export const ARTICLE_LINKS: ArticleLink[] = [
     keywordsAr: ['التشنج العضلي', 'التشنج', 'فرط التوتر', 'العضلات المشدودة']
   },
   {
+    slug: 'neuroplasticite-miracle-cerveau-kine',
+    titleFr: 'Neuroplasticité: miracle du cerveau',
+    titleAr: 'المرونة العصبية: معجزة الدماغ',
+    keywordsFr: ['neuroplasticité', 'plasticité cérébrale', 'récupération neurologique', 'reeducation neurologique', 'stimulation du cerveau'],
+    keywordsAr: ['المرونة العصبية', 'لدونة الدماغ', 'التأهيل العصبي', 'تحفيز الدماغ', 'إعادة التأهيل العصبي']
+  },
+  {
     slug: 'faux-espoirs-kinesitherapie',
     titleFr: 'Faux espoirs en kiné',
     titleAr: 'الأوهام في الترويض الطبي',

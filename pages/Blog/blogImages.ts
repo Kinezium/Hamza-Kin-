@@ -34,6 +34,21 @@
   'kinesitherapie-maroc-portrait': 'https://picsum.photos/seed/kine-maroc-portrait-chnider/1600/900',
   'remboursement-kine-maroc-cnss-cnops': 'https://picsum.photos/seed/remboursement-kine-cnss-chnider/1600/900',
   'kine-liberal-cnss-cnops-injustice': 'https://picsum.photos/seed/kine-liberal-cnss-chnider/1600/900'
+  ,
+  'rupture-lca-lcp-genou': 'https://picsum.photos/seed/lca-lcp-genou-chnider/1600/900',
+  'rupture-partielle-vs-totale-ligaments': 'https://picsum.photos/seed/rupture-partielle-totale-chnider/1600/900',
+  'elongation-lca-lcp': 'https://picsum.photos/seed/elongation-lca-chnider/1600/900',
+  'rupture-double-lca-lcp': 'https://picsum.photos/seed/double-cruciate-chnider/1600/900',
+  'ligaments-collateraux-lcm-lcl': 'https://picsum.photos/seed/collateral-lcm-lcl-chnider/1600/900',
+  'dechirures-musculaires-footballeurs': 'https://picsum.photos/seed/dechirure-foot-chnider/1600/900',
+  'entorses-types-classification-cat': 'https://picsum.photos/seed/entorse-types-cat-chnider/1600/900',
+  'massage-sportif-decontracturant': 'https://picsum.photos/seed/massage-sport-chnider/1600/900',
+  'choisir-chaussures-running': 'https://picsum.photos/seed/chaussures-running-chnider/1600/900',
+  'deformation-pieds': 'https://picsum.photos/seed/deformation-pied-chnider/1600/900',
+  'hallux-valgus-kinesitherapie': 'https://picsum.photos/seed/hallux-valgus-chnider/1600/900',
+  'epine-calcanienne-sans-ondes-de-choc': 'https://picsum.photos/seed/epine-calcaneenne-chnider/1600/900',
+  'parkinson-prothese-hanche-pth': 'https://picsum.photos/seed/parkinson-pth-chnider/1600/900',
+  'neuroplasticite-miracle-cerveau-kine': 'https://picsum.photos/seed/neuroplasticite-kine-chnider/1600/900'
 };
 
 
