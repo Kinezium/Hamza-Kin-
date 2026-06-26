@@ -5,6 +5,7 @@ import SEOHead from '../../components/SEOHead';
 import { ArrowLeft, Clock, User } from 'lucide-react';
 import { BLOG_TOPIC_IMAGES } from './blogImages';
 import { getWhatsAppBookingLink } from '../../constants';
+import { ArticleContentWithLinks } from './ArticleContentWithLinks';
 
 interface ArticleProps {
   lang: Language;
@@ -129,7 +130,9 @@ export const createArticle = (data: ArticleData) => {
           <div className="py-16 bg-white">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="prose prose-lg max-w-none">
-                {content}
+                <ArticleContentWithLinks lang={lang} currentSlug={data.slug}>
+                  {content}
+                </ArticleContentWithLinks>
               </div>
 
               {/* Call to Action */}
