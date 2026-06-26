@@ -23,7 +23,8 @@
   'surpoids-et-sciatique': 'https://picsum.photos/seed/poids-sciatique-chnider/1600/900',
   'chaussures-douleur-genou': 'https://picsum.photos/seed/chaussures-genou-chnider/1600/900',
   'chaussures-mal-de-dos': 'https://picsum.photos/seed/chaussures-dos-chnider/1600/900',
-  'telephone-cervicalgie-hernie-cervicale': 'https://picsum.photos/seed/phone-neck-chnider/1600/900'
+  'telephone-cervicalgie-hernie-cervicale': 'https://picsum.photos/seed/phone-neck-chnider/1600/900',
+  'spasticite-definition-traitement-indications': 'https://picsum.photos/seed/spasticite-neuro-chnider/1600/900'
 };
 
 

@@ -10,6 +10,7 @@ Recommended naming (matching current homepage slider config):
 - slide-05-blessure-sportive.png
 - slide-06-coureurs.png
 - slide-07-massage-sportif.png
+- slide-08-kine.png
 
 Current paths in `constants.ts`:
 - /images/home-carousel/slide-01-parkinson.png
@@ -19,3 +20,4 @@ Current paths in `constants.ts`:
 - /images/home-carousel/slide-05-blessure-sportive.png
 - /images/home-carousel/slide-06-coureurs.png
 - /images/home-carousel/slide-07-massage-sportif.png
+- /images/home-carousel/slide-08-kine.png

@@ -34,6 +34,7 @@ const BASE_ROUTES = [
   'blog/chaussures-douleur-genou',
   'blog/chaussures-mal-de-dos',
   'blog/telephone-cervicalgie-hernie-cervicale',
+  'blog/spasticite-definition-traitement-indications',
   'gallerie',
   'ar',
   'ar/pathologies',
@@ -70,6 +71,7 @@ const BASE_ROUTES = [
   'ar/blog/chaussures-douleur-genou',
   'ar/blog/chaussures-mal-de-dos',
   'ar/blog/telephone-cervicalgie-hernie-cervicale',
+  'ar/blog/spasticite-definition-traitement-indications',
   'ar/gallerie'
 ];
 

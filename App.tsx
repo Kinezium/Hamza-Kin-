@@ -45,6 +45,7 @@ import SurpoidsSciatiqueArticle from './pages/Blog/SurpoidsSciatiqeArticle';
 import ChaussuresGenouArticle from './pages/Blog/ChaussuresGenouArticle';
 import ChaussuresDosArticle from './pages/Blog/ChaussuresDosArticle';
 import TelephoneCervicalgieArticle from './pages/Blog/TelephoneCervicalgieArticle';
+import SpasticiteArticle from './pages/Blog/SpasticiteArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -153,6 +154,7 @@ const App: React.FC = () => {
               <Route path="/blog/chaussures-douleur-genou" element={<ChaussuresGenouArticle lang={lang} />} />
               <Route path="/blog/chaussures-mal-de-dos" element={<ChaussuresDosArticle lang={lang} />} />
               <Route path="/blog/telephone-cervicalgie-hernie-cervicale" element={<TelephoneCervicalgieArticle lang={lang} />} />
+              <Route path="/blog/spasticite-definition-traitement-indications" element={<SpasticiteArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -196,6 +198,7 @@ const App: React.FC = () => {
               <Route path="/ar/blog/chaussures-douleur-genou" element={<ChaussuresGenouArticle lang="ar" />} />
               <Route path="/ar/blog/chaussures-mal-de-dos" element={<ChaussuresDosArticle lang="ar" />} />
               <Route path="/ar/blog/telephone-cervicalgie-hernie-cervicale" element={<TelephoneCervicalgieArticle lang="ar" />} />
+              <Route path="/ar/blog/spasticite-definition-traitement-indications" element={<SpasticiteArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 
             {/* Legacy Arabic slugs redirects */}
