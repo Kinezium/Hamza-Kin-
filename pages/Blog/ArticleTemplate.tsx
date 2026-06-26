@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../../types';
 import SEOHead from '../../components/SEOHead';
@@ -79,6 +79,23 @@ export const createArticle = (data: ArticleData) => {
     const image = BLOG_TOPIC_IMAGES[data.slug] || (lang === 'fr' ? data.imageFr : data.imageAr);
     const content = lang === 'fr' ? data.contentFr : data.contentAr;
 
+    // Copy protection: append source URL when text is copied
+    useEffect(() => {
+      const handleCopy = (e: ClipboardEvent) => {
+        const selected = window.getSelection()?.toString() || '';
+        if (selected.length > 30) {
+          const url = window.location.href;
+          const attribution = lang === 'fr'
+            ? `\n\n— Source: ${title} | Centre Chnider Kinésithérapie Casablanca\n${url}`
+            : `\n\n— المصدر: ${title} | مركز شنيدر للترويض الطبي بالدار البيضاء\n${url}`;
+          e.clipboardData?.setData('text/plain', selected + attribution);
+          e.preventDefault();
+        }
+      };
+      document.addEventListener('copy', handleCopy);
+      return () => document.removeEventListener('copy', handleCopy);
+    }, [lang, title]);
+
     return (
       <>
         <SEOHead
@@ -133,6 +150,15 @@ export const createArticle = (data: ArticleData) => {
                 <ArticleContentWithLinks lang={lang} currentSlug={data.slug}>
                   {content}
                 </ArticleContentWithLinks>
+              </div>
+
+              {/* Signature universelle */}
+              <div className="mt-12 p-6 bg-gradient-to-r from-slate-50 to-blue-50 border border-slate-200 rounded-xl">
+                <p className={`text-slate-700 leading-relaxed italic text-center ${lang === 'ar' ? 'text-lg' : ''}`}>
+                  {lang === 'fr'
+                    ? '🤝 La kinésithérapie seule ne donne pas de résultats durables sans que le patient change son mode de vie et participe activement au traitement avec sa volonté, sa discipline et ses connaissances. Nous ne sommes que des outils et des causes — la guérison vient de Dieu, c\'est Lui qui guérit.'
+                    : '🤝 الترويض الطبي وحده لا يعطي نتائج فعالة دون أن يغير المريض أسلوب حياته ويشارك في العلاج بإرادته وانضباطه ومعرفته. نحن لسنا إلا أدوات وأسباباً — والشفاء من عند الله وحده، وهو الشافي.'}
+                </p>
               </div>
 
               {/* Call to Action */}

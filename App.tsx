@@ -46,6 +46,15 @@ import ChaussuresGenouArticle from './pages/Blog/ChaussuresGenouArticle';
 import ChaussuresDosArticle from './pages/Blog/ChaussuresDosArticle';
 import TelephoneCervicalgieArticle from './pages/Blog/TelephoneCervicalgieArticle';
 import SpasticiteArticle from './pages/Blog/SpasticiteArticle';
+import FauxEspoirsArticle from './pages/Blog/FauxEspoirsArticle';
+import ElectrotherapieTensEmsArticle from './pages/Blog/ElectrotherapieTensEmsArticle';
+import ElectrotherapieNeuroArticle from './pages/Blog/ElectrotherapieNeuroArticle';
+import ParalysieImcParentsArticle from './pages/Blog/ParalysieImcParentsArticle';
+import ToutLeMondeKineArticle from './pages/Blog/ToutLeMondeKineArticle';
+import UrgenceKineParentsArticle from './pages/Blog/UrgenceKineParentsArticle';
+import KineMarocPortraitArticle from './pages/Blog/KineMarocPortraitArticle';
+import RemboursementKineMarocArticle from './pages/Blog/RemboursementKineMarocArticle';
+import KineLiberalCnssArticle from './pages/Blog/KineLiberalCnssArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -155,6 +164,15 @@ const App: React.FC = () => {
               <Route path="/blog/chaussures-mal-de-dos" element={<ChaussuresDosArticle lang={lang} />} />
               <Route path="/blog/telephone-cervicalgie-hernie-cervicale" element={<TelephoneCervicalgieArticle lang={lang} />} />
               <Route path="/blog/spasticite-definition-traitement-indications" element={<SpasticiteArticle lang={lang} />} />
+              <Route path="/blog/faux-espoirs-kinesitherapie" element={<FauxEspoirsArticle lang={lang} />} />
+              <Route path="/blog/electrotherapie-tens-ems-microcourant" element={<ElectrotherapieTensEmsArticle lang={lang} />} />
+              <Route path="/blog/electrotherapie-neurologie-utile-ou-non" element={<ElectrotherapieNeuroArticle lang={lang} />} />
+              <Route path="/blog/parents-paralysie-cerebrale-imc-education" element={<ParalysieImcParentsArticle lang={lang} />} />
+              <Route path="/blog/tout-le-monde-besoin-kine" element={<ToutLeMondeKineArticle lang={lang} />} />
+              <Route path="/blog/urgence-kine-parents-seniors" element={<UrgenceKineParentsArticle lang={lang} />} />
+              <Route path="/blog/kinesitherapie-maroc-portrait" element={<KineMarocPortraitArticle lang={lang} />} />
+              <Route path="/blog/remboursement-kine-maroc-cnss-cnops" element={<RemboursementKineMarocArticle lang={lang} />} />
+              <Route path="/blog/kine-liberal-cnss-cnops-injustice" element={<KineLiberalCnssArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -198,6 +216,16 @@ const App: React.FC = () => {
               <Route path="/ar/blog/chaussures-douleur-genou" element={<ChaussuresGenouArticle lang="ar" />} />
               <Route path="/ar/blog/chaussures-mal-de-dos" element={<ChaussuresDosArticle lang="ar" />} />
               <Route path="/ar/blog/telephone-cervicalgie-hernie-cervicale" element={<TelephoneCervicalgieArticle lang="ar" />} />
+              <Route path="/ar/blog/spasticite-definition-traitement-indications" element={<SpasticiteArticle lang="ar" />} />
+              <Route path="/ar/blog/faux-espoirs-kinesitherapie" element={<FauxEspoirsArticle lang="ar" />} />
+              <Route path="/ar/blog/electrotherapie-tens-ems-microcourant" element={<ElectrotherapieTensEmsArticle lang="ar" />} />
+              <Route path="/ar/blog/electrotherapie-neurologie-utile-ou-non" element={<ElectrotherapieNeuroArticle lang="ar" />} />
+              <Route path="/ar/blog/parents-paralysie-cerebrale-imc-education" element={<ParalysieImcParentsArticle lang="ar" />} />
+              <Route path="/ar/blog/tout-le-monde-besoin-kine" element={<ToutLeMondeKineArticle lang="ar" />} />
+              <Route path="/ar/blog/urgence-kine-parents-seniors" element={<UrgenceKineParentsArticle lang="ar" />} />
+              <Route path="/ar/blog/kinesitherapie-maroc-portrait" element={<KineMarocPortraitArticle lang="ar" />} />
+              <Route path="/ar/blog/remboursement-kine-maroc-cnss-cnops" element={<RemboursementKineMarocArticle lang="ar" />} />
+              <Route path="/ar/blog/kine-liberal-cnss-cnops-injustice" element={<KineLiberalCnssArticle lang="ar" />} />
               <Route path="/ar/blog/spasticite-definition-traitement-indications" element={<SpasticiteArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 

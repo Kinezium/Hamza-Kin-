@@ -183,6 +183,69 @@ export const ARTICLE_LINKS: ArticleLink[] = [
     titleAr: 'التشنج العضلي',
     keywordsFr: ['spasticité', 'spastique', 'hypertonie', 'raideur musculaire', 'muscle raide', 'spasmes'],
     keywordsAr: ['التشنج العضلي', 'التشنج', 'فرط التوتر', 'العضلات المشدودة']
+  },
+  {
+    slug: 'faux-espoirs-kinesitherapie',
+    titleFr: 'Faux espoirs en kiné',
+    titleAr: 'الأوهام في الترويض الطبي',
+    keywordsFr: ['faux espoirs', 'limites kiné', 'attentes kiné', 'guérison impossible', 'résultats réalistes'],
+    keywordsAr: ['توقعات خاطئة', 'حدود الترويض', 'الأوهام', 'الشفاء المستحيل']
+  },
+  {
+    slug: 'electrotherapie-tens-ems-microcourant',
+    titleFr: 'Électrothérapie TENS EMS',
+    titleAr: 'العلاج الكهربائي',
+    keywordsFr: ['TENS', 'EMS', 'électrothérapie', 'électrostimulation', 'courant électrique', 'microcourant'],
+    keywordsAr: ['TENS', 'EMS', 'علاج كهربائي', 'تحفيز كهربائي', 'تيار كهربائي']
+  },
+  {
+    slug: 'electrotherapie-neurologie-utile-ou-non',
+    titleFr: 'Électrothérapie et neurologie',
+    titleAr: 'العلاج الكهربائي والأعصاب',
+    keywordsFr: ['FES', 'stimulation fonctionnelle', 'électrothérapie neurologique', 'TENS neurologie'],
+    keywordsAr: ['FES', 'تحفيز وظيفي', 'علاج كهربائي عصبي']
+  },
+  {
+    slug: 'parents-paralysie-cerebrale-imc-education',
+    titleFr: 'Paralysie cérébrale IMC parents',
+    titleAr: 'الشلل الدماغي IMC',
+    keywordsFr: ['paralysie cérébrale', 'IMC', 'IMOC', 'infirmité motrice', 'enfant handicap moteur'],
+    keywordsAr: ['الشلل الدماغي', 'IMC', 'IMOC', 'الإعاقة الحركية', 'إعاقة الأطفال']
+  },
+  {
+    slug: 'tout-le-monde-besoin-kine',
+    titleFr: 'Tout le monde a besoin de kiné',
+    titleAr: 'الجميع يحتاج الترويض',
+    keywordsFr: ['kiné préventive', 'bilan postural', 'prévention musculaire', 'santé préventive'],
+    keywordsAr: ['ترويض وقائي', 'فحص وضعي', 'صحة وقائية']
+  },
+  {
+    slug: 'urgence-kine-parents-seniors',
+    titleFr: 'Kiné pour les seniors parents',
+    titleAr: 'الترويض لكبار السن',
+    keywordsFr: ['chutes seniors', 'sarcopénie', 'perte musculaire', 'chute personne âgée', 'fracture col fémur'],
+    keywordsAr: ['سقوط المسنين', 'السركوبينيا', 'ضمور العضلات', 'كسر عنق الفخذ']
+  },
+  {
+    slug: 'kinesitherapie-maroc-portrait',
+    titleFr: 'Kinésithérapie au Maroc',
+    titleAr: 'الترويض الطبي بالمغرب',
+    keywordsFr: ['kiné Maroc', 'kinésithérapeute marocain', 'IFCS', 'formation kiné Maroc'],
+    keywordsAr: ['ترويض طبي مغرب', 'معالج مغربي', 'IFCS المغرب']
+  },
+  {
+    slug: 'remboursement-kine-maroc-cnss-cnops',
+    titleFr: 'Remboursement kiné Maroc CNSS CNOPS',
+    titleAr: 'استرداد الترويض المغرب',
+    keywordsFr: ['remboursement kiné', 'CNSS kiné', 'CNOPS kiné', 'tarif kiné remboursement'],
+    keywordsAr: ['استرداد الترويض', 'CNSS ترويض', 'CNOPS ترويض', 'تعرفة الترويض']
+  },
+  {
+    slug: 'kine-liberal-cnss-cnops-injustice',
+    titleFr: 'Kinés libéraux CNSS injustice',
+    titleAr: 'المعالجون الخواص والنظام',
+    keywordsFr: ['kiné libéral', 'cabinet kiné charges', 'honoraires kiné', 'kiné conventionné'],
+    keywordsAr: ['معالج خاص', 'عيادة ترويض', 'أتعاب معالج', 'ترويض طبي مستقل']
   }
 ];
 

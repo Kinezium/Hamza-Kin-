@@ -24,7 +24,16 @@
   'chaussures-douleur-genou': 'https://picsum.photos/seed/chaussures-genou-chnider/1600/900',
   'chaussures-mal-de-dos': 'https://picsum.photos/seed/chaussures-dos-chnider/1600/900',
   'telephone-cervicalgie-hernie-cervicale': 'https://picsum.photos/seed/phone-neck-chnider/1600/900',
-  'spasticite-definition-traitement-indications': 'https://picsum.photos/seed/spasticite-neuro-chnider/1600/900'
+  'spasticite-definition-traitement-indications': 'https://picsum.photos/seed/spasticite-neuro-chnider/1600/900',
+  'faux-espoirs-kinesitherapie': 'https://picsum.photos/seed/faux-espoirs-kine-chnider/1600/900',
+  'electrotherapie-tens-ems-microcourant': 'https://picsum.photos/seed/electrotherapie-chnider/1600/900',
+  'electrotherapie-neurologie-utile-ou-non': 'https://picsum.photos/seed/electro-neuro-chnider/1600/900',
+  'parents-paralysie-cerebrale-imc-education': 'https://picsum.photos/seed/imc-parents-chnider/1600/900',
+  'tout-le-monde-besoin-kine': 'https://picsum.photos/seed/tout-le-monde-kine-chnider/1600/900',
+  'urgence-kine-parents-seniors': 'https://picsum.photos/seed/urgence-seniors-chnider/1600/900',
+  'kinesitherapie-maroc-portrait': 'https://picsum.photos/seed/kine-maroc-portrait-chnider/1600/900',
+  'remboursement-kine-maroc-cnss-cnops': 'https://picsum.photos/seed/remboursement-kine-cnss-chnider/1600/900',
+  'kine-liberal-cnss-cnops-injustice': 'https://picsum.photos/seed/kine-liberal-cnss-chnider/1600/900'
 };
 
 

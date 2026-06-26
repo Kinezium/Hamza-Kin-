@@ -110,6 +110,42 @@ const article = createArticle({
         </ul>
       </section>
 
+      <section className="bg-green-50 border-l-4 border-green-500 rounded-lg p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <CheckCircle className="text-green-600" size={24} />
+          <h2 className="text-2xl font-bold text-green-900">Ce que la kinésithérapie PEUT faire contre la spasticité</h2>
+        </div>
+        <p className="mb-4 text-green-900 font-medium">
+          La kinesitherapie ne guerit pas la spasticite. Elle ne peut pas reparer la lesion neurologique. Mais elle est <strong>l outil le plus puissant</strong> pour en limiter les consequences et ameliorer la qualite de vie.
+        </p>
+        <ul className="list-disc pl-6 space-y-2 text-green-900">
+          <li><strong>Maintenir l amplitude articulaire:</strong> etirements quotidiens et positionnement anti-spastique previennent les retractions musculaires.</li>
+          <li><strong>Reduire la raideur fonctionnelle:</strong> mobilisations douces et techniques de facilitation neuromusculaire abaissent le tonus pendant et apres la seance.</li>
+          <li><strong>Ameliorer la marche et les transferts:</strong> travail de reeducation du patron de marche et de l equilibre meme avec une spasticite importante.</li>
+          <li><strong>Eduquer les proches:</strong> apprendre les positionnements corrects au lit et au fauteuil, les etirements a domicile — un multiplicateur d effet cle.</li>
+          <li><strong>Prevenir les complications:</strong> escarres, deformations, douleurs chroniques — la kiné est le premier rempart.</li>
+          <li><strong>Optimiser l effet de la toxine botulique:</strong> quand elle est prescrite, la kinesitherapie dans les semaines suivantes multiplie le benefice.</li>
+          <li><strong>Preserver l autonomie:</strong> meme si la spasticite reste presente, on peut vivre, se deplacer, s habiller avec une bonne prise en charge.</li>
+        </ul>
+        <p className="mt-4 text-green-800 italic font-medium">
+          "La kiné ne supprime pas la spasticite — elle apprend au corps a vivre avec elle et a la contourner."
+        </p>
+      </section>
+
+      <section className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <AlertTriangle className="text-amber-600" size={24} />
+          <h2 className="text-2xl font-bold text-amber-900">Ce que la kinésithérapie ne peut PAS faire</h2>
+        </div>
+        <p className="mb-3 text-amber-900">Soyons honnetes — pour vous eviter des faux espoirs:</p>
+        <ul className="list-disc pl-6 space-y-2 text-amber-900">
+          <li><strong>Guerir la lesion neurologique:</strong> ni AVC ni SEP ne se guerissent par la kinesitherapie.</li>
+          <li><strong>Eliminer definitivement la spasticite:</strong> elle peut diminuer, mais tant que la lesion est presente, elle reviendra.</li>
+          <li><strong>Remplacer les medicaments ou injections:</strong> quand la spasticite est severe, la kiné seule est insuffisante. Elle accompagne, elle ne remplace pas.</li>
+          <li><strong>Agir de facon instantanee:</strong> le travail se fait sur des semaines et des mois. La patience est une vertu en neurologie.</li>
+        </ul>
+      </section>
+
       <section>
         <div className="flex items-center gap-3 mb-4">
           <Stethoscope className="text-medical-700" size={24} />
@@ -245,6 +281,42 @@ const article = createArticle({
           <li><strong>البوتوكس العضلي:</strong> يُتجنب عند وجود التهاب موضعي او حساسية معروفة، والحذر في الحمل/الرضاعة حسب القرار الطبي.</li>
           <li><strong>مضخة باكلوفين داخل السائل النخاعي:</strong> خيار تخصصي مع متابعة دقيقة لاحتمال فرط الجرعة او الانقطاع المفاجئ.</li>
           <li><strong>الجراحة:</strong> للحالات المنتقاة بعد فشل العلاج المحافظ.</li>
+        </ul>
+      </section>
+
+      <section className="bg-green-50 border-r-4 border-green-500 rounded-lg p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <CheckCircle className="text-green-600" size={24} />
+          <h2 className="text-2xl font-bold text-green-900">ما يمكن للترويض الطبي فعله ضد التشنج العضلي</h2>
+        </div>
+        <p className="mb-4 text-green-900 font-medium">
+          الترويض الطبي لا يشفي التشنج. لا يمكنه إصلاح الإصابة العصبية. لكنه <strong>الأداة الأقوى</strong> للحد من عواقبه وتحسين جودة الحياة.
+        </p>
+        <ul className="list-disc pl-6 space-y-2 text-green-900">
+          <li><strong>الحفاظ على مدى الحركة المفصلية:</strong> التمطيط اليومي والتموضع الصحيح يمنعان قصر العضلات والتشوهات.</li>
+          <li><strong>تخفيف التيبس الوظيفي:</strong> التعبئة الناعمة وتقنيات التيسير العصبي العضلي تخفض التوتر أثناء الجلسة وبعدها.</li>
+          <li><strong>تحسين المشي والانتقالات:</strong> تدريب نمط المشي والتوازن ممكن حتى مع وجود التشنج.</li>
+          <li><strong>تعليم الأسرة:</strong> التموضع الصحيح في الفراش والكرسي، التمطيط المنزلي — وهذا يضاعف التأثير.</li>
+          <li><strong>الوقاية من المضاعفات:</strong> قرحات الضغط، التشوهات، الألم المزمن — الترويض الطبي هو خط الدفاع الأول.</li>
+          <li><strong>تحسين مفعول حقن البوتوكس:</strong> بالترويض الطبي بعد الحقن تتضاعف الفائدة.</li>
+          <li><strong>الحفاظ على الاستقلالية:</strong> حتى مع استمرار التشنج، يمكن العيش والتنقل وارتداء الملابس مع المتابعة الجيدة.</li>
+        </ul>
+        <p className="mt-4 text-green-800 italic font-medium">
+          "الترويض الطبي لا يزيل التشنج — بل يعلم الجسم كيف يتعايش معه ويتجاوزه."
+        </p>
+      </section>
+
+      <section className="bg-amber-50 border-r-4 border-amber-500 rounded-lg p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <AlertTriangle className="text-amber-600" size={24} />
+          <h2 className="text-2xl font-bold text-amber-900">ما لا يمكن للترويض الطبي فعله</h2>
+        </div>
+        <p className="mb-3 text-amber-900">لنكن صادقين — حتى لا تكون لديك توقعات خاطئة:</p>
+        <ul className="list-disc pl-6 space-y-2 text-amber-900">
+          <li><strong>شفاء الإصابة العصبية:</strong> لا الجلطة ولا التصلب المتعدد يُشفيان بالترويض الطبي.</li>
+          <li><strong>إزالة التشنج نهائيًا:</strong> قد يتحسن، لكن طالما الإصابة قائمة، سيعود.</li>
+          <li><strong>الاستغناء عن الأدوية أو الحقن:</strong> عند التشنج الشديد، الترويض وحده غير كافٍ — هو مكمّل لا بديل.</li>
+          <li><strong>العمل بشكل فوري:</strong> النتائج تأتي بعد أسابيع وأشهر. الصبر فضيلة في علم الأعصاب.</li>
         </ul>
       </section>
 
