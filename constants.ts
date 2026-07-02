@@ -29,16 +29,20 @@ export const LOGO_COLORED_URL = LATEST_FAVICON_URL;
 export const LOGO_TEXT_URL = LATEST_FAVICON_URL;
 // Slideshow images shown in the home hero (1:1).
 // Preferred location for new files: /public/images/home-carousel/
-// Use public URLs like: /images/home-carousel/slide-01.jpg
+// Use public URLs like: /images/home-carousel/slide%201.png
 export const HERO_SLIDESHOW_IMAGES = [
-  "/images/home-carousel/slide-01-parkinson.png",
-  "/images/home-carousel/slide-02-kine-domicile.png",
-  "/images/home-carousel/slide-03-activite-adaptee.png",
-  "/images/home-carousel/slide-04-apres-avc.png",
-  "/images/home-carousel/slide-05-blessure-sportive.png",
-  "/images/home-carousel/slide-06-coureurs.png",
-  "/images/home-carousel/slide-07-massage-sportif.png",
-  "/images/home-carousel/slide-08-kine.png"
+  "/images/home-carousel/slide%201.png",
+  "/images/home-carousel/slide%202.png",
+  "/images/home-carousel/slide%203.png",
+  "/images/home-carousel/slide%204.png",
+  "/images/home-carousel/slide%205.png",
+  "/images/home-carousel/slide%206.png",
+  "/images/home-carousel/slide%207.png",
+  "/images/home-carousel/slide%208.png",
+  "/images/home-carousel/slide%209.png",
+  "/images/home-carousel/slide%2010.png",
+  "/images/home-carousel/slide%2011.png",
+  "/images/home-carousel/slide%2012.png"
 ];
 
 export const CASABLANCA_NEIGHBORHOODS_FR = [

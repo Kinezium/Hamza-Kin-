@@ -129,7 +129,7 @@ const Home: React.FC<HomeProps> = ({ lang }) => {
                       key={i}
                       onClick={() => setSlideIndex(i)}
                       className={`h-2 rounded-full transition-all duration-300 ${i === slideIndex ? 'bg-white w-6' : 'bg-white/60 w-2'}`}
-                      aria-label={`Slide ${i + 1}`}
+                      aria-label={`slide ${i + 1}`}
                     />
                   ))}
                 </div>

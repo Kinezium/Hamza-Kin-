@@ -3,21 +3,29 @@
 Place the homepage carousel photos in this folder.
 
 Recommended naming (matching current homepage slider config):
-- slide-01-parkinson.png
-- slide-02-kine-domicile.png
-- slide-03-activite-adaptee.png
-- slide-04-apres-avc.png
-- slide-05-blessure-sportive.png
-- slide-06-coureurs.png
-- slide-07-massage-sportif.png
-- slide-08-kine.png
+- slide 1.png
+- slide 2.png
+- slide 3.png
+- slide 4.png
+- slide 5.png
+- slide 6.png
+- slide 7.png
+- slide 8.png
+- slide 9.png
+- slide 10.png
+- slide 11.png
+- slide 12.png
 
 Current paths in `constants.ts`:
-- /images/home-carousel/slide-01-parkinson.png
-- /images/home-carousel/slide-02-kine-domicile.png
-- /images/home-carousel/slide-03-activite-adaptee.png
-- /images/home-carousel/slide-04-apres-avc.png
-- /images/home-carousel/slide-05-blessure-sportive.png
-- /images/home-carousel/slide-06-coureurs.png
-- /images/home-carousel/slide-07-massage-sportif.png
-- /images/home-carousel/slide-08-kine.png
+- /images/home-carousel/slide%201.png
+- /images/home-carousel/slide%202.png
+- /images/home-carousel/slide%203.png
+- /images/home-carousel/slide%204.png
+- /images/home-carousel/slide%205.png
+- /images/home-carousel/slide%206.png
+- /images/home-carousel/slide%207.png
+- /images/home-carousel/slide%208.png
+- /images/home-carousel/slide%209.png
+- /images/home-carousel/slide%2010.png
+- /images/home-carousel/slide%2011.png
+- /images/home-carousel/slide%2012.png
