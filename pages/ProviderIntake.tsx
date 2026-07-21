@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Language } from '../types';
 
 interface ProviderIntakeProps {
@@ -136,7 +137,8 @@ const ProviderIntake: React.FC<ProviderIntakeProps> = ({ lang, requirePassword =
         generatedPrompt: 'Prompt pret a copier',
         copyHint: 'Copiez ce bloc et collez-le directement pour ajouter ce client dans l annuaire.',
         cityHint: 'Villes principales + petites villes du Maroc disponibles.',
-        districtHint: 'Choisissez ou saisissez le quartier cible.'
+        districtHint: 'Choisissez ou saisissez le quartier cible.',
+        viewPartnerBenefits: 'Voir tous les avantages partenaires'
       }
     : {
         passwordLabel: 'كلمة المرور',
@@ -157,11 +159,13 @@ const ProviderIntake: React.FC<ProviderIntakeProps> = ({ lang, requirePassword =
         generatedPrompt: 'نص جاهز للنسخ',
         copyHint: 'انسخ هذا النص والصقه مباشرة لإضافة العميل في الدليل.',
         cityHint: 'مدن كبرى + مدن صغرى مغربية متاحة.',
-        districtHint: 'اختر أو اكتب الحي المستهدف.'
+        districtHint: 'اختر أو اكتب الحي المستهدف.',
+        viewPartnerBenefits: 'عرض جميع مزايا الشركاء'
       };
 
   const computedPrice = PRICE_TABLE[form.professionGroup][form.visibilityOption];
   const districtOptions = useMemo(() => CITY_DISTRICTS[form.city] || [], [form.city]);
+  const benefitsPath = lang === 'ar' ? '/ar/annuaire-partenaires' : '/annuaire-partenaires';
 
   const buildDirectoryPrompt = () => {
     const visibilityLabel = form.visibilityOption === 'exclusive'
@@ -292,6 +296,17 @@ const ProviderIntake: React.FC<ProviderIntakeProps> = ({ lang, requirePassword =
   return (
     <div className="container mx-auto px-4 py-14" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+
+        {!requirePassword && (
+          <div className="mb-4">
+            <Link
+              to={benefitsPath}
+              className="inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700 hover:bg-sky-100 transition"
+            >
+              {t.viewPartnerBenefits}
+            </Link>
+          </div>
+        )}
 
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
           <p className="font-semibold">{t.pricingTitle}</p>

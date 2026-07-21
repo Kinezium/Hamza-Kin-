@@ -27,6 +27,14 @@ const isSmtpSecure = String(process.env.SMTP_SECURE || '').toLowerCase() === 'tr
 const dataDir = path.resolve('data');
 const uploadsDir = path.resolve('uploads');
 const configPath = path.join(dataDir, 'config.json');
+const providerSignupsPath = path.join(dataDir, 'provider-signups.json');
+
+const TRACKED_PROVIDER_SLOTS = [
+  { city: 'Casablanca', district: 'Sbata', capacity: 1 },
+  { city: 'Casablanca', district: 'Maarif', capacity: 2 },
+  { city: 'Rabat', district: 'Agdal', capacity: 2 },
+  { city: 'Marrakech', district: 'Guelliz', capacity: 2 }
+];
 
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
@@ -79,6 +87,21 @@ const saveConfig = (config) => {
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2), 'utf8');
 };
 
+const readProviderSignups = () => {
+  if (!fs.existsSync(providerSignupsPath)) return [];
+  try {
+    const raw = fs.readFileSync(providerSignupsPath, 'utf8');
+    const parsed = JSON.parse(raw || '[]');
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+};
+
+const saveProviderSignups = (records) => {
+  fs.writeFileSync(providerSignupsPath, JSON.stringify(records, null, 2), 'utf8');
+};
+
 const signToken = (username) => jwt.sign({ username }, jwtSecret, { expiresIn: '8h' });
 
 const auth = (req, res, next) => {
@@ -101,6 +124,35 @@ const comparePassword = async (password, stored) => {
 
 app.get('/api/health', (_, res) => {
   res.json({ ok: true, service: 'ltm-admin-api' });
+});
+
+app.get('/api/provider-slots', (_, res) => {
+  const signups = readProviderSignups();
+  const exclusiveSignups = signups.filter((item) => String(item?.visibilityOption || '') === 'exclusive');
+
+  const rows = TRACKED_PROVIDER_SLOTS.map((slot) => {
+    const used = exclusiveSignups.filter(
+      (item) => String(item?.city || '') === slot.city && String(item?.district || '') === slot.district
+    ).length;
+
+    const remaining = Math.max(0, slot.capacity - used);
+
+    return {
+      city: slot.city,
+      district: slot.district,
+      capacity: slot.capacity,
+      used,
+      remaining
+    };
+  });
+
+  return res.json({
+    ok: true,
+    rows,
+    totalSignups: signups.length,
+    totalExclusiveSignups: exclusiveSignups.length,
+    updatedAt: new Date().toISOString()
+  });
 });
 
 app.post('/api/auth/login', async (req, res) => {
@@ -197,6 +249,33 @@ app.post('/api/leads/home-therapy', async (req, res) => {
     ].join('\n'),
     html
   });
+
+  const signups = readProviderSignups();
+  signups.push({
+    ownerName,
+    centerName,
+    profileType,
+    professionGroup,
+    visibilityOption,
+    computedPrice,
+    specialty,
+    city,
+    district,
+    phone,
+    whatsappUrl,
+    email,
+    hours,
+    services,
+    description,
+    address,
+    mapUrl,
+    logoUrl,
+    galleryUrls,
+    promptForDirectory,
+    pageUrl,
+    submittedAt
+  });
+  saveProviderSignups(signups);
 
   leadRequestLog.set(requesterKey, now);
   return res.json({ ok: true });

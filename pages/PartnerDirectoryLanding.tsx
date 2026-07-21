@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BadgeCheck, Building2, Globe2, MapPin, MessageCircle, PhoneCall, Search, Sparkles, Target } from 'lucide-react';
+import { ArrowRight, BadgeCheck, BarChart3, Building2, Clock3, Globe2, MapPin, MessageCircle, PhoneCall, Search, ShieldCheck, Sparkles, Target } from 'lucide-react';
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
 import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
@@ -8,6 +8,16 @@ import { makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
 interface PartnerDirectoryLandingProps {
   lang: Language;
 }
+
+type SlotRow = {
+  city: string;
+  district: string;
+  capacity: number;
+  used: number;
+  remaining: number;
+};
+
+const apiBase = ((import.meta as any).env?.VITE_ADMIN_API_URL || '').toString().replace(/\/$/, '');
 
 const MAJOR_CITIES = [
   'Casablanca',
@@ -51,6 +61,8 @@ const SMALL_CITIES = [
 const PartnerDirectoryLanding: React.FC<PartnerDirectoryLandingProps> = ({ lang }) => {
   const prefix = lang === 'ar' ? '/ar' : '';
   const config = useAdminConfig();
+  const [slotRows, setSlotRows] = useState<SlotRow[]>([]);
+  const [slotTotals, setSlotTotals] = useState({ totalSignups: 0, totalExclusiveSignups: 0 });
 
   const t = lang === 'fr'
     ? {
@@ -93,6 +105,50 @@ const PartnerDirectoryLanding: React.FC<PartnerDirectoryLandingProps> = ({ lang 
         pricingMedicalExclusive: 'Option exclusivite quartier (seul de votre quartier): 1500 DH',
         pricingParamed: 'Kine, orthophonie, psychomotricite (paramedical): 500 DH',
         pricingParamedExclusive: 'Option exclusivite quartier (seul de votre quartier): 800 DH',
+        proofTitle: 'Pourquoi les pros rejoignent deja l annuaire',
+        proofItems: [
+          { label: 'Visiteurs geolocalises/mois (objectif)', value: '12k+' },
+          { label: 'Demandes WhatsApp et appels qualifies', value: 'x3 plus vite' },
+          { label: 'Temps moyen pour mise en ligne', value: '< 24h' }
+        ],
+        urgencyTitle: 'Places quartier limitees (mise en avant locale)',
+        urgencySubtitle: 'Le mode exclusif bloque la concurrence dans le quartier choisi.',
+        urgencyRows: [
+          { city: 'Casablanca', district: 'Sbata', capacity: 1 },
+          { city: 'Casablanca', district: 'Maarif', capacity: 2 },
+          { city: 'Rabat', district: 'Agdal', capacity: 2 },
+          { city: 'Marrakech', district: 'Guelliz', capacity: 2 }
+        ],
+        sbataTitle: 'Casablanca Sbata: priorite secteur activee',
+        sbataText: 'Si vous voulez etre seul dans Sbata (ex: Centre Chnider), choisissez l option exclusivite quartier dans le formulaire pour reserver avant saturation.',
+        compareTitle: 'Avec annuaire vs sans annuaire',
+        compareWith: [
+          'Fiche geolocalisee orientee conversion',
+          'Reception directe des appels + WhatsApp',
+          'Positionnement local plus solide dans le temps',
+          'Priorite quartier possible (offre exclusive)'
+        ],
+        compareWithout: [
+          'Visibilite dispersee sans ciblage local fort',
+          'Dependance aux publications reseaux sociaux',
+          'Concurrence directe sur votre zone immediate',
+          'Moins de controle sur la qualite des leads'
+        ],
+        faqTitle: 'Questions frequentes avant inscription',
+        faqItems: [
+          {
+            q: 'Pourquoi payer une inscription annuaire ?',
+            a: 'Parce que votre fiche vous apporte un flux local cible, avec acces direct a votre telephone et WhatsApp. C est un levier concret de rendez-vous.'
+          },
+          {
+            q: 'Quelle difference avec les reseaux sociaux ?',
+            a: 'Les reseaux poussent du contenu. L annuaire capte l intention de recherche locale: les gens cherchent deja un service de sante proche.'
+          },
+          {
+            q: 'En combien de temps je suis visible ?',
+            a: 'Apres validation, la mise en ligne est rapide. Le formulaire est traite par email et vous recevez un retour de confirmation.'
+          }
+        ],
         finalCtaTitle: 'Inscrivez-vous maintenant et commencez a recevoir des clients cibles de votre region',
         finalCtaText: 'La page d inscription est prete. Votre demande est envoyee par e-mail pour traitement rapide.',
         finalCtaButton: 'Aller au formulaire d inscription'
@@ -137,10 +193,103 @@ const PartnerDirectoryLanding: React.FC<PartnerDirectoryLandingProps> = ({ lang 
         pricingMedicalExclusive: 'خيار الحصرية في الحي (الوحيد في الحي): 1500 درهم',
         pricingParamed: 'كينيزيثيرابي، ارطوفونيا، بسيخوموتريسيتي (شبه طبي): 500 درهم',
         pricingParamedExclusive: 'خيار الحصرية في الحي (الوحيد في الحي): 800 درهم',
+        proofTitle: 'لماذا المهنيون ينضمون للدليل الان',
+        proofItems: [
+          { label: 'زوار محليون شهريا (هدف)', value: '+12 الف' },
+          { label: 'رسائل واتساب ومكالمات مؤهلة', value: 'اسرع 3 مرات' },
+          { label: 'مدة النشر بعد التحقق', value: 'اقل من 24 ساعة' }
+        ],
+        urgencyTitle: 'اماكن محدودة حسب الاحياء',
+        urgencySubtitle: 'وضع الحصرية يمنع المنافسين في نفس الحي.',
+        urgencyRows: [
+          { city: 'Casablanca', district: 'Sbata', capacity: 1 },
+          { city: 'Casablanca', district: 'Maarif', capacity: 2 },
+          { city: 'Rabat', district: 'Agdal', capacity: 2 },
+          { city: 'Marrakech', district: 'Guelliz', capacity: 2 }
+        ],
+        sbataTitle: 'كازا سباتة: اولوية القطاع مفعلة',
+        sbataText: 'اذا كنتم تريدون الانفراد في سباتة (مثال: Centre Chnider)، اختاروا خيار الحصرية داخل الاستمارة قبل امتلاء الحي.',
+        compareTitle: 'مع الدليل مقابل بدون الدليل',
+        compareWith: [
+          'صفحة جغرافية مصممة للتحويل',
+          'استقبال مباشر للمكالمات وواتساب',
+          'تقوية التموقع المحلي مع الوقت',
+          'امكانية حصرية الحي عند الحاجة'
+        ],
+        compareWithout: [
+          'ظهور مشتت بدون استهداف محلي قوي',
+          'اعتماد كبير على نشرات مواقع التواصل',
+          'منافسة مباشرة داخل نفس المنطقة',
+          'تحكم اقل في جودة العملاء المحتملين'
+        ],
+        faqTitle: 'اسئلة شائعة قبل التسجيل',
+        faqItems: [
+          {
+            q: 'لماذا ادفع اشتراك الدليل؟',
+            a: 'لان صفحتكم تجلب طلبا محليا مباشرا مع وصول سريع للهاتف وواتساب. هذا مسار واضح لزيادة المواعيد.'
+          },
+          {
+            q: 'ما الفرق بينه وبين مواقع التواصل؟',
+            a: 'التواصل الاجتماعي ينشر المحتوى. الدليل يلتقط نية البحث المحلي عند من يبحث فعلا عن خدمة صحية قريبة.'
+          },
+          {
+            q: 'متى اظهر في الدليل؟',
+            a: 'بعد التحقق، النشر سريع. الاستمارة تصل بالبريد ويتم تاكيد الطلب في اقرب وقت.'
+          }
+        ],
         finalCtaTitle: 'سجلوا الان وابدؤوا في استقبال عملاء مستهدفين من منطقتكم',
         finalCtaText: 'صفحة التسجيل جاهزة. يتم ارسال طلبكم عبر البريد للمعالجة السريعة.',
         finalCtaButton: 'الذهاب لاستمارة التسجيل'
       };
+
+  const defaultSlotRows = useMemo<SlotRow[]>(() => (
+    t.urgencyRows.map((row) => ({
+      city: row.city,
+      district: row.district,
+      capacity: row.capacity,
+      used: 0,
+      remaining: row.capacity
+    }))
+  ), [t.urgencyRows]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadSlots = async () => {
+      if (!apiBase) return;
+      try {
+        const response = await fetch(`${apiBase}/api/provider-slots`);
+        if (!response.ok) return;
+        const payload = await response.json();
+        if (!isMounted || !Array.isArray(payload?.rows)) return;
+        setSlotRows(payload.rows);
+        setSlotTotals({
+          totalSignups: Number(payload?.totalSignups || 0),
+          totalExclusiveSignups: Number(payload?.totalExclusiveSignups || 0)
+        });
+      } catch {
+        // Keep fallback rows when API is unavailable.
+      }
+    };
+
+    loadSlots();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const displayedSlots = slotRows.length ? slotRows : defaultSlotRows;
+  const displayedTotalSignups = slotRows.length ? slotTotals.totalSignups : 0;
+
+  const formatRemaining = (remaining: number) => {
+    if (lang === 'fr') {
+      return remaining <= 1 ? `${remaining} place` : `${remaining} places`;
+    }
+    if (remaining === 0) return 'مكتمل';
+    if (remaining === 1) return 'مكان واحد';
+    if (remaining === 2) return 'مكانان';
+    return `${remaining} اماكن`;
+  };
 
   return (
     <>
@@ -203,6 +352,48 @@ const PartnerDirectoryLanding: React.FC<PartnerDirectoryLandingProps> = ({ lang 
         </div>
       </section>
 
+      <section className="bg-white py-10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-slate-900">{t.proofTitle}</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {t.proofItems.map((item) => (
+              <article key={item.label} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <p className="text-3xl font-black text-slate-900">{item.value}</p>
+                <p className="mt-1 text-sm text-slate-600">{item.label}</p>
+              </article>
+            ))}
+            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-5 md:col-span-3">
+              <p className="text-sm text-slate-700">
+                {lang === 'fr'
+                  ? `Inscriptions enregistrees a ce jour: ${displayedTotalSignups}`
+                  : `عدد التسجيلات المسجلة حتى الان: ${displayedTotalSignups}`}
+              </p>
+            </article>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-sky-100 bg-sky-50 p-5">
+              <div className="inline-flex items-center gap-2 text-sky-700 font-semibold">
+                <BarChart3 size={18} /> SEO Local
+              </div>
+              <p className="mt-2 text-slate-700 text-sm">{lang === 'fr' ? 'Vos positions locales progressent grace a une fiche complete et geolocalisee.' : 'تحسين التموقع المحلي عبر صفحة متكاملة ومحددة جغرافيا.'}</p>
+            </div>
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-5">
+              <div className="inline-flex items-center gap-2 text-emerald-700 font-semibold">
+                <ShieldCheck size={18} /> Qualite trafic
+              </div>
+              <p className="mt-2 text-slate-700 text-sm">{lang === 'fr' ? 'Des contacts plus qualifies qu une audience large non ciblee.' : 'اتصالات اكثر جودة من جمهور واسع غير مستهدف.'}</p>
+            </div>
+            <div className="rounded-2xl border border-amber-100 bg-amber-50 p-5">
+              <div className="inline-flex items-center gap-2 text-amber-700 font-semibold">
+                <Clock3 size={18} /> Activation rapide
+              </div>
+              <p className="mt-2 text-slate-700 text-sm">{lang === 'fr' ? 'Mise en ligne rapide pour capter la demande locale sans attendre.' : 'نشر سريع لالتقاط الطلب المحلي بدون انتظار.'}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-slate-50 py-14">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-slate-900">{t.pricingTitle}</h2>
@@ -220,6 +411,68 @@ const PartnerDirectoryLanding: React.FC<PartnerDirectoryLandingProps> = ({ lang 
               </div>
               <p className="mt-3 text-slate-800 font-semibold">{t.pricingParamed}</p>
               <p className="mt-1 text-slate-600">{t.pricingParamedExclusive}</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 py-14">
+        <h2 className="text-3xl font-bold text-slate-900">{t.urgencyTitle}</h2>
+        <p className="mt-3 text-slate-700">{t.urgencySubtitle}</p>
+        <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200">
+          <table className="w-full text-sm">
+            <thead className="bg-slate-900 text-white">
+              <tr>
+                <th className="px-4 py-3 text-left">{lang === 'fr' ? 'Ville' : 'المدينة'}</th>
+                <th className="px-4 py-3 text-left">{lang === 'fr' ? 'Quartier' : 'الحي'}</th>
+                <th className="px-4 py-3 text-left">{lang === 'fr' ? 'Disponibilite' : 'التوفر'}</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white">
+              {displayedSlots.map((row) => (
+                <tr key={`${row.city}-${row.district}`} className="border-t border-slate-100">
+                  <td className="px-4 py-3 text-slate-800">{row.city}</td>
+                  <td className="px-4 py-3 text-slate-800">{row.district}</td>
+                  <td className="px-4 py-3 font-semibold text-rose-700">{formatRemaining(row.remaining)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-rose-200 bg-rose-50 p-5">
+          <h3 className="text-xl font-bold text-rose-900">{t.sbataTitle}</h3>
+          <p className="mt-2 text-rose-800">{t.sbataText}</p>
+          <div className="mt-4">
+            <Link
+              to={`${prefix}/inscription-annuaire`}
+              className="inline-flex items-center gap-2 rounded-full bg-rose-700 px-5 py-2.5 font-semibold text-white hover:bg-rose-800 transition"
+            >
+              {t.ctaPrimary} <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-14">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-slate-900">{t.compareTitle}</h2>
+          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            <article className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+              <h3 className="text-xl font-bold text-emerald-900">{lang === 'fr' ? 'Avec annuaire' : 'مع الدليل'}</h3>
+              <ul className="mt-3 space-y-2 text-emerald-900">
+                {t.compareWith.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="rounded-2xl border border-slate-200 bg-white p-6">
+              <h3 className="text-xl font-bold text-slate-900">{lang === 'fr' ? 'Sans annuaire' : 'بدون الدليل'}</h3>
+              <ul className="mt-3 space-y-2 text-slate-700">
+                {t.compareWithout.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
             </article>
           </div>
         </div>
@@ -269,6 +522,18 @@ const PartnerDirectoryLanding: React.FC<PartnerDirectoryLandingProps> = ({ lang 
       </section>
 
       <section className="container mx-auto px-4 py-14">
+        <h2 className="text-3xl font-bold text-slate-900">{t.faqTitle}</h2>
+        <div className="mt-6 space-y-3">
+          {t.faqItems.map((item) => (
+            <details key={item.q} className="rounded-2xl border border-slate-200 bg-white p-5">
+              <summary className="cursor-pointer text-lg font-semibold text-slate-900">{item.q}</summary>
+              <p className="mt-3 text-slate-700 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 py-14">
         <div className="rounded-3xl border border-slate-200 bg-slate-900 p-8 text-white md:p-10">
           <h2 className="text-2xl md:text-3xl font-black">{t.finalCtaTitle}</h2>
           <p className="mt-3 text-slate-200">{t.finalCtaText}</p>
@@ -290,6 +555,25 @@ const PartnerDirectoryLanding: React.FC<PartnerDirectoryLandingProps> = ({ lang 
           </div>
         </div>
       </section>
+
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden">
+        <div className="mx-auto flex max-w-3xl items-center gap-2">
+          <Link
+            to={`${prefix}/inscription-annuaire`}
+            className="flex-1 rounded-xl bg-emerald-500 px-3 py-3 text-center text-sm font-bold text-white"
+          >
+            {lang === 'fr' ? 'Reserver maintenant' : 'احجز الان'}
+          </Link>
+          <a
+            href={makeWhatsAppLink(lang, config.contact.whatsappNumber, 'CTA sticky annuaire')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl border border-slate-300 px-3 py-3 text-sm font-semibold text-slate-800"
+          >
+            WhatsApp
+          </a>
+        </div>
+      </div>
     </>
   );
 };
