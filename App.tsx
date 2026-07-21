@@ -18,6 +18,7 @@ import { Language } from './types';
 import AdminDashboard from './pages/AdminDashboard';
 import CustomArticle from './pages/Blog/CustomArticle';
 import ProviderIntake from './pages/ProviderIntake';
+import PartnerDirectoryLanding from './pages/PartnerDirectoryLanding';
 import { applyAdminTheme, useAdminConfig } from './src/adminConfig';
 
 // Blog Article Imports
@@ -151,6 +152,8 @@ const App: React.FC = () => {
             <Route path="/a-propos" element={<About lang={lang} />} />
             <Route path="/contact" element={<Contact lang={lang} />} />
             <Route path="/convention" element={<Convention lang={lang} />} />
+            <Route path="/annuaire-partenaires" element={<PartnerDirectoryLanding lang={lang} />} />
+            <Route path="/inscription-annuaire" element={<ProviderIntake lang={lang} requirePassword={false} />} />
             <Route path="/blog" element={<BlogIndex lang={lang} />} />
             <Route path="/blog/custom/:slug" element={<CustomArticle lang={lang} />} />
             <Route path="/blog/sciatique-hernie-discale" element={<SciaticaArticle lang={lang} />} />
@@ -218,6 +221,8 @@ const App: React.FC = () => {
             <Route path="/ar/a-propos" element={<About lang="ar" />} />
             <Route path="/ar/contact" element={<Contact lang="ar" />} />
             <Route path="/ar/convention" element={<Convention lang="ar" />} />
+            <Route path="/ar/annuaire-partenaires" element={<PartnerDirectoryLanding lang="ar" />} />
+            <Route path="/ar/inscription-annuaire" element={<ProviderIntake lang="ar" requirePassword={false} />} />
             <Route path="/ar/blog" element={<BlogIndex lang="ar" />} />
             <Route path="/ar/blog/custom/:slug" element={<CustomArticle lang="ar" />} />
             <Route path="/ar/blog/sciatique-hernie-discale" element={<SciaticaArticle lang="ar" />} />

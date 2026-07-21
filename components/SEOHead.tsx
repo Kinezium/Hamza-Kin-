@@ -179,7 +179,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       'blog': 'Blog',
       'a-propos': 'À Propos',
       'contact': 'Contact',
-      'convention': 'Convention'
+      'convention': 'Convention',
+      'annuaire-partenaires': 'Annuaire partenaires',
+      'inscription-annuaire': 'Inscription annuaire'
     };
 
     const arLabels: Record<string, string> = {
@@ -192,7 +194,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       'blog': 'مدونة',
       'a-propos': 'عن المركز',
       'contact': 'اتصل بنا',
-      'convention': 'الاتفاقيات'
+      'convention': 'الاتفاقيات',
+      'annuaire-partenaires': 'دليل الشركاء',
+      'inscription-annuaire': 'تسجيل الدليل'
     };
 
     const pathWithoutLang = isArabicPath ? (pathname.replace(/^\/ar(?=\/|$)/, '') || '/') : pathname;

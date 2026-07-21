@@ -15,7 +15,7 @@ const adminUser = process.env.ADMIN_USER || 'H@mza';
 const adminPassword = process.env.ADMIN_PASSWORD || 'Chn!d3r';
 const corsOrigin = process.env.CORS_ORIGIN || '*';
 const leadEmailTo = process.env.LEAD_EMAIL_TO || 'hamza.chnider@gmail.com';
-const providerLeadEmailTo = process.env.PROVIDER_LEAD_EMAIL_TO || 'clinaxis.ma@gmail.com';
+const providerLeadEmailTo = process.env.PROVIDER_LEAD_EMAIL_TO || 'hamza.chnider@gmail.com';
 const smtpUrl = process.env.SMTP_URL || '';
 const smtpHost = process.env.SMTP_HOST || '';
 const smtpPort = Number(process.env.SMTP_PORT || 587);
@@ -207,10 +207,14 @@ app.post('/api/leads/provider-profile', async (req, res) => {
   const ownerName = String(req.body?.ownerName || '').trim();
   const centerName = String(req.body?.centerName || '').trim();
   const profileType = String(req.body?.profileType || 'center').trim();
+  const professionGroup = String(req.body?.professionGroup || '').trim();
+  const visibilityOption = String(req.body?.visibilityOption || '').trim();
+  const computedPrice = String(req.body?.computedPrice || '').trim();
   const specialty = String(req.body?.specialty || '').trim();
   const city = String(req.body?.city || '').trim();
   const district = String(req.body?.district || '').trim();
   const phone = String(req.body?.phone || '').trim();
+  const whatsappUrl = String(req.body?.whatsappUrl || '').trim();
   const email = String(req.body?.email || '').trim();
   const hours = String(req.body?.hours || '').trim();
   const services = String(req.body?.services || '').trim();
@@ -219,6 +223,7 @@ app.post('/api/leads/provider-profile', async (req, res) => {
   const mapUrl = String(req.body?.mapUrl || '').trim();
   const logoUrl = String(req.body?.logoUrl || '').trim();
   const galleryUrls = String(req.body?.galleryUrls || '').trim();
+  const promptForDirectory = String(req.body?.promptForDirectory || '').trim();
   const pageUrl = String(req.body?.pageUrl || '').trim();
   const submittedAt = String(req.body?.submittedAt || new Date().toISOString()).trim();
   const requesterKey = `provider:${(req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown').toString()}`;
@@ -250,10 +255,14 @@ app.post('/api/leads/provider-profile', async (req, res) => {
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'اسم الممارس' : 'Praticien'}</strong></td><td>${ownerName}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'اسم المركز' : 'Centre/Cabinet'}</strong></td><td>${centerName}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'نوع الملف' : 'Type de profil'}</strong></td><td>${profileType}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'فئة المهنة' : 'Famille profession'}</strong></td><td>${professionGroup || '-'}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'خيار الحي' : 'Option quartier'}</strong></td><td>${visibilityOption || '-'}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'السعر' : 'Tarif estime'}</strong></td><td>${computedPrice ? `${computedPrice} DH` : '-'}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'التخصص' : 'Specialite'}</strong></td><td>${specialty}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'المدينة' : 'Ville'}</strong></td><td>${city}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'الحي' : 'Quartier'}</strong></td><td>${district}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'الهاتف' : 'Telephone'}</strong></td><td>${phone}</td></tr>
+          <tr><td style="padding: 6px 0;"><strong>WhatsApp</strong></td><td>${whatsappUrl || '-'}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>Email</strong></td><td>${email}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'المواعيد' : 'Horaires'}</strong></td><td>${hours || '-'}</td></tr>
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'الخدمات' : 'Services'}</strong></td><td>${services}</td></tr>
@@ -266,6 +275,8 @@ app.post('/api/leads/provider-profile', async (req, res) => {
           <tr><td style="padding: 6px 0;"><strong>${lang === 'ar' ? 'التاريخ' : 'Date'}</strong></td><td>${submittedAt}</td></tr>
         </tbody>
       </table>
+      <h3 style="margin-top: 20px;">${lang === 'ar' ? 'بلوك جاهز للنسخ (إضافة الدليل)' : 'Bloc pret a copier (ajout annuaire)'}</h3>
+      <pre style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:12px; padding:12px; white-space:pre-wrap; font-family:Consolas, monospace;">${promptForDirectory || '-'}</pre>
     </div>
   `;
 
@@ -279,10 +290,14 @@ app.post('/api/leads/provider-profile', async (req, res) => {
       `Praticien: ${ownerName}`,
       `Centre: ${centerName}`,
       `Type: ${profileType}`,
+      `Famille profession: ${professionGroup || '-'}`,
+      `Option quartier: ${visibilityOption || '-'}`,
+      `Tarif estime: ${computedPrice ? `${computedPrice} DH` : '-'}`,
       `Specialite: ${specialty}`,
       `Ville: ${city}`,
       `Quartier: ${district}`,
       `Telephone: ${phone}`,
+      `WhatsApp: ${whatsappUrl || '-'}`,
       `Email: ${email}`,
       `Horaires: ${hours || '-'}`,
       `Services: ${services}`,
@@ -291,6 +306,9 @@ app.post('/api/leads/provider-profile', async (req, res) => {
       `Maps: ${mapUrl || '-'}`,
       `Logo: ${logoUrl || '-'}`,
       `Galerie: ${galleryUrls || '-'}`,
+      '',
+      'Prompt annuaire:',
+      promptForDirectory || '-',
       `URL: ${pageUrl || '-'}`,
       `Date: ${submittedAt}`
     ].join('\n'),
