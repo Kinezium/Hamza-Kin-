@@ -48,7 +48,17 @@
   'hallux-valgus-kinesitherapie': 'https://picsum.photos/seed/hallux-valgus-chnider/1600/900',
   'epine-calcanienne-sans-ondes-de-choc': 'https://picsum.photos/seed/epine-calcaneenne-chnider/1600/900',
   'parkinson-prothese-hanche-pth': 'https://picsum.photos/seed/parkinson-pth-chnider/1600/900',
-  'neuroplasticite-miracle-cerveau-kine': 'https://picsum.photos/seed/neuroplasticite-kine-chnider/1600/900'
+  'neuroplasticite-miracle-cerveau-kine': 'https://picsum.photos/seed/neuroplasticite-kine-chnider/1600/900',
+  'intelligence-artificielle-reeducation-kinesitherapie': 'https://picsum.photos/seed/ia-reeducation-chnider/1600/900',
+  'telereeducation-kinesitherapie-maroc': 'https://picsum.photos/seed/telereeducation-maroc-chnider/1600/900',
+  'exosquelette-robotique-reeducation-avc': 'https://picsum.photos/seed/exosquelette-avc-chnider/1600/900',
+  'douleur-chronique-neurosciences-kinesitherapie': 'https://picsum.photos/seed/douleur-chronique-chnider/1600/900',
+  'covid-longue-reeducation-kinesitherapie': 'https://picsum.photos/seed/covid-long-kine-chnider/1600/900',
+  'plancher-pelvien-postpartum-kinesitherapie-maroc': 'https://picsum.photos/seed/plancher-pelvien-chnider/1600/900',
+  'parkinson-exercice-reeducation-neurologique': 'https://picsum.photos/seed/parkinson-exercice-chnider/1600/900',
+  'prevention-chutes-seniors-kinesitherapie-maroc': 'https://picsum.photos/seed/prevention-chutes-seniors-chnider/1600/900',
+  'parcours-academique-kinesitherapeute-public-maroc': 'https://picsum.photos/seed/parcours-public-kine-maroc-chnider/1600/900',
+  'parcours-academique-kinesitherapeute-prive-maroc': 'https://picsum.photos/seed/parcours-prive-kine-maroc-chnider/1600/900'
 };
 
 

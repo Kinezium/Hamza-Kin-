@@ -70,6 +70,16 @@ import HalluxValgusArticle from './pages/Blog/HalluxValgusArticle';
 import EpineCalcaneenneArticle from './pages/Blog/EpineCalcaneenneArticle';
 import ParkinsonPthArticle from './pages/Blog/ParkinsonPthArticle';
 import NeuroplasticiteArticle from './pages/Blog/NeuroplasticiteArticle';
+import IAReeducationArticle from './pages/Blog/IAReeducationArticle';
+import TelereeducationArticle from './pages/Blog/TelereeducationArticle';
+import ExosqueletteAvcArticle from './pages/Blog/ExosqueletteAvcArticle';
+import DouleurChroniqueNeurosciencesArticle from './pages/Blog/DouleurChroniqueNeurosciencesArticle';
+import LongCovidKineArticle from './pages/Blog/LongCovidKineArticle';
+import PlancherPelvienPostpartumArticle from './pages/Blog/PlancherPelvienPostpartumArticle';
+import ParkinsonExerciceArticle from './pages/Blog/ParkinsonExerciceArticle';
+import PreventionChutesSeniorsArticle from './pages/Blog/PreventionChutesSeniorsArticle';
+import KineParcoursPublicMarocArticle from './pages/Blog/KineParcoursPublicMarocArticle';
+import KineParcoursPriveMarocArticle from './pages/Blog/KineParcoursPriveMarocArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -204,6 +214,16 @@ const App: React.FC = () => {
                           <Route path="/blog/epine-calcanienne-sans-ondes-de-choc" element={<EpineCalcaneenneArticle lang={lang} />} />
                           <Route path="/blog/parkinson-prothese-hanche-pth" element={<ParkinsonPthArticle lang={lang} />} />
                           <Route path="/blog/neuroplasticite-miracle-cerveau-kine" element={<NeuroplasticiteArticle lang={lang} />} />
+                          <Route path="/blog/intelligence-artificielle-reeducation-kinesitherapie" element={<IAReeducationArticle lang={lang} />} />
+                          <Route path="/blog/telereeducation-kinesitherapie-maroc" element={<TelereeducationArticle lang={lang} />} />
+                          <Route path="/blog/exosquelette-robotique-reeducation-avc" element={<ExosqueletteAvcArticle lang={lang} />} />
+                          <Route path="/blog/douleur-chronique-neurosciences-kinesitherapie" element={<DouleurChroniqueNeurosciencesArticle lang={lang} />} />
+                          <Route path="/blog/covid-longue-reeducation-kinesitherapie" element={<LongCovidKineArticle lang={lang} />} />
+                          <Route path="/blog/plancher-pelvien-postpartum-kinesitherapie-maroc" element={<PlancherPelvienPostpartumArticle lang={lang} />} />
+                          <Route path="/blog/parkinson-exercice-reeducation-neurologique" element={<ParkinsonExerciceArticle lang={lang} />} />
+                          <Route path="/blog/prevention-chutes-seniors-kinesitherapie-maroc" element={<PreventionChutesSeniorsArticle lang={lang} />} />
+                          <Route path="/blog/parcours-academique-kinesitherapeute-public-maroc" element={<KineParcoursPublicMarocArticle lang={lang} />} />
+                          <Route path="/blog/parcours-academique-kinesitherapeute-prive-maroc" element={<KineParcoursPriveMarocArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -273,6 +293,16 @@ const App: React.FC = () => {
                             <Route path="/ar/blog/epine-calcanienne-sans-ondes-de-choc" element={<EpineCalcaneenneArticle lang="ar" />} />
                             <Route path="/ar/blog/parkinson-prothese-hanche-pth" element={<ParkinsonPthArticle lang="ar" />} />
                             <Route path="/ar/blog/neuroplasticite-miracle-cerveau-kine" element={<NeuroplasticiteArticle lang="ar" />} />
+                            <Route path="/ar/blog/intelligence-artificielle-reeducation-kinesitherapie" element={<IAReeducationArticle lang="ar" />} />
+                            <Route path="/ar/blog/telereeducation-kinesitherapie-maroc" element={<TelereeducationArticle lang="ar" />} />
+                            <Route path="/ar/blog/exosquelette-robotique-reeducation-avc" element={<ExosqueletteAvcArticle lang="ar" />} />
+                            <Route path="/ar/blog/douleur-chronique-neurosciences-kinesitherapie" element={<DouleurChroniqueNeurosciencesArticle lang="ar" />} />
+                            <Route path="/ar/blog/covid-longue-reeducation-kinesitherapie" element={<LongCovidKineArticle lang="ar" />} />
+                            <Route path="/ar/blog/plancher-pelvien-postpartum-kinesitherapie-maroc" element={<PlancherPelvienPostpartumArticle lang="ar" />} />
+                            <Route path="/ar/blog/parkinson-exercice-reeducation-neurologique" element={<ParkinsonExerciceArticle lang="ar" />} />
+                            <Route path="/ar/blog/prevention-chutes-seniors-kinesitherapie-maroc" element={<PreventionChutesSeniorsArticle lang="ar" />} />
+                            <Route path="/ar/blog/parcours-academique-kinesitherapeute-public-maroc" element={<KineParcoursPublicMarocArticle lang="ar" />} />
+                            <Route path="/ar/blog/parcours-academique-kinesitherapeute-prive-maroc" element={<KineParcoursPriveMarocArticle lang="ar" />} />
               <Route path="/ar/blog/spasticite-definition-traitement-indications" element={<SpasticiteArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 

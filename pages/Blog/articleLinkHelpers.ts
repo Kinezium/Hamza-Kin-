@@ -10,6 +10,46 @@ export interface ArticleLink {
 
 export const ARTICLE_LINKS: ArticleLink[] = [
   {
+    slug: 'intelligence-artificielle-reeducation-kinesitherapie', titleFr: 'IA et kinésithérapie', titleAr: 'الذكاء الاصطناعي والترويض الطبي',
+    keywordsFr: ['intelligence artificielle', 'IA en rééducation', 'santé numérique'], keywordsAr: ['الذكاء الاصطناعي', 'الصحة الرقمية', 'التأهيل الرقمي']
+  },
+  {
+    slug: 'telereeducation-kinesitherapie-maroc', titleFr: 'Télérééducation au Maroc', titleAr: 'التأهيل عن بعد في المغرب',
+    keywordsFr: ['télérééducation', 'kinésithérapie en ligne', 'télésuivi'], keywordsAr: ['التأهيل عن بعد', 'العلاج عن بعد', 'الترويض عبر الإنترنت']
+  },
+  {
+    slug: 'exosquelette-robotique-reeducation-avc', titleFr: 'Exosquelettes après AVC', titleAr: 'الهياكل الخارجية بعد السكتة',
+    keywordsFr: ['exosquelette', 'robotique', 'robot'], keywordsAr: ['هيكل خارجي', 'الروبوتات', 'روبوتات التأهيل']
+  },
+  {
+    slug: 'douleur-chronique-neurosciences-kinesitherapie', titleFr: 'Douleur chronique et kiné', titleAr: 'الألم المزمن والترويض',
+    keywordsFr: ['douleur chronique', 'sensibilisation centrale', 'exercice thérapeutique'], keywordsAr: ['الألم المزمن', 'التحسس المركزي', 'التمارين العلاجية']
+  },
+  {
+    slug: 'covid-longue-reeducation-kinesitherapie', titleFr: 'Covid long et rééducation', titleAr: 'كوفيد طويل الأمد والتأهيل',
+    keywordsFr: ['Covid long', 'pacing', 'rééducation respiratoire'], keywordsAr: ['كوفيد طويل الأمد', 'التنفس', 'التعب بعد الجهد']
+  },
+  {
+    slug: 'plancher-pelvien-postpartum-kinesitherapie-maroc', titleFr: 'Rééducation périnéale', titleAr: 'تأهيل قاع الحوض',
+    keywordsFr: ['plancher pelvien', 'rééducation périnéale', 'post-partum'], keywordsAr: ['قاع الحوض', 'تأهيل الحوض', 'بعد الولادة']
+  },
+  {
+    slug: 'parkinson-exercice-reeducation-neurologique', titleFr: 'Parkinson et exercice', titleAr: 'باركنسون والتمارين',
+    keywordsFr: ['Parkinson', 'grands mouvements', 'blocages'], keywordsAr: ['باركنسون', 'التجمد', 'الحركات الواسعة']
+  },
+  {
+    slug: 'prevention-chutes-seniors-kinesitherapie-maroc', titleFr: 'Prévention des chutes', titleAr: 'الوقاية من السقوط',
+    keywordsFr: ['prévention des chutes', 'risque de chute', 'kiné gériatrique'], keywordsAr: ['الوقاية من السقوط', 'خطر السقوط', 'الترويض لكبار السن']
+  },
+  {
+    slug: 'parcours-academique-kinesitherapeute-public-maroc', titleFr: 'Parcours public du kiné au Maroc', titleAr: 'المسار العمومي للمعالج في المغرب',
+    keywordsFr: ['parcours public', 'études kinésithérapie au Maroc', 'formation public'], keywordsAr: ['المسار العمومي', 'دراسة الترويض بالمغرب', 'التكوين العمومي']
+  },
+  {
+    slug: 'parcours-academique-kinesitherapeute-prive-maroc', titleFr: 'Parcours privé du kiné au Maroc', titleAr: 'المسار الخاص للمعالج في المغرب',
+    keywordsFr: ['formation privée', 'école de kinésithérapie', 'stages kiné'], keywordsAr: ['التكوين الخاص', 'مدرسة الترويض', 'تداريب الترويض']
+  },
+  {
     slug: 'sciatique-hernie-discale',
     titleFr: 'La Sciatique & Hernie Discale',
     titleAr: 'عرق النسا والانزلاق الغضروفي',
