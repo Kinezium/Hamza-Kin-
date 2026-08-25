@@ -37,15 +37,6 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://kinesitherapie.clinaxis.ma/annuaire-partenaires</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/annuaire-partenaires" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/annuaire-partenaires" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/annuaire-partenaires" />
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://kinesitherapie.clinaxis.ma/ar</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar" />
@@ -77,15 +68,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/a-propos" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/a-propos" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/a-propos" />
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://kinesitherapie.clinaxis.ma/ar/annuaire-partenaires</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/annuaire-partenaires" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/annuaire-partenaires" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/annuaire-partenaires" />
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -662,15 +644,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/gallerie" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/gallerie" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/gallerie" />
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://kinesitherapie.clinaxis.ma/ar/inscription-annuaire</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/inscription-annuaire" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/inscription-annuaire" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/inscription-annuaire" />
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -1265,15 +1238,6 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/gallerie" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/gallerie" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/gallerie" />
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://kinesitherapie.clinaxis.ma/inscription-annuaire</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://kinesitherapie.clinaxis.ma/inscription-annuaire" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://kinesitherapie.clinaxis.ma/ar/inscription-annuaire" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://kinesitherapie.clinaxis.ma/inscription-annuaire" />
     <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

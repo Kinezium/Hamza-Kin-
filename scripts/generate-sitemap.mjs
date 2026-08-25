@@ -9,8 +9,6 @@ const toUrl = (route) => `${baseUrl}/${route}`;
 const isArabic = (route) => route === 'ar' || route.startsWith('ar/');
 const routePriority = (route) => {
   if (!route || route === 'ar') return '1.0';
-  if (route.includes('/annuaire/')) return '0.85';
-  if (route.startsWith('annuaire')) return '0.9';
   if (route.includes('/blog/')) return '0.8';
   if (route === 'blog' || route === 'ar/blog') return '0.85';
   return '0.75';
@@ -18,8 +16,6 @@ const routePriority = (route) => {
 
 const routeChangeFreq = (route) => {
   if (route.includes('/blog/')) return 'weekly';
-  if (route.includes('/annuaire/')) return 'weekly';
-  if (route.startsWith('annuaire')) return 'daily';
   return 'monthly';
 };
 
@@ -30,7 +26,7 @@ const pairRoute = (route) => {
 };
 
 const sanitizeRoutes = (routes) =>
-  routes.filter((route) => route !== 'LTM' && route !== 'espace-praticien' && route !== 'ar/espace-praticien');
+  routes.filter((route) => route !== 'LTM');
 
 const buildUrlEntry = (route) => {
   const frRoute = isArabic(route) ? pairRoute(route) : route;

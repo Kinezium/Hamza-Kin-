@@ -21,12 +21,12 @@ type TrendArticleOptions = {
   sourcesAr?: Source[];
 };
 
-const DirectoryLink = ({ specialty, specialtyAr }: Pick<TrendArticleOptions, 'specialty' | 'specialtyAr'>) => (
+const CabinetLink = ({ specialty, specialtyAr }: Pick<TrendArticleOptions, 'specialty' | 'specialtyAr'>) => (
   <p className="bg-emerald-50 border-l-4 border-emerald-500 p-5">
-    <strong>Besoin d un professionnel au Maroc ?</strong> Trouvez un kinésithérapeute selon votre spécialité dans l annuaire Clinaxis :{' '}
-    <a href={`https://clinaxis.ma/annuaire/${specialty}`} className="text-emerald-700 underline font-semibold">consulter l annuaire {specialty}</a>.
-    <span className="block mt-2" dir="rtl"><strong>هل تحتاجون إلى مختص في المغرب؟</strong> يمكنكم العثور على معالج فيزيائي حسب التخصص هنا :{' '}
-      <a href={`https://clinaxis.ma/annuaire/${specialty}`} className="text-emerald-700 underline font-semibold">دليل {specialtyAr}</a>.</span>
+    <strong>Besoin d un accompagnement au cabinet ?</strong> Le Centre Chnider vous accueille à Casablanca pour une évaluation et un programme adapté :{' '}
+    <a href="/contact" className="text-emerald-700 underline font-semibold">prendre contact avec le cabinet</a>.
+    <span className="block mt-2" dir="rtl"><strong>هل تحتاجون إلى مواكبة في العيادة؟</strong> يستقبلكم مركز شنيدر بالدار البيضاء للتقييم ووضع برنامج مناسب :{' '}
+      <a href="/ar/contact" className="text-emerald-700 underline font-semibold">التواصل مع المركز</a>.</span>
   </p>
 );
 
@@ -44,8 +44,8 @@ export const createTrendArticle = (options: TrendArticleOptions) => createArticl
   imageAr: `https://picsum.photos/seed/${options.imageSeed}/1600/900`,
   readTimeFr: `${options.readTime} min de lecture`,
   readTimeAr: `${options.readTime} دقائق قراءة`,
-  contentFr: <div className="space-y-6">{options.bodyFr}<DirectoryLink specialty={options.specialty} specialtyAr={options.specialtyAr} /><Sources sources={options.sources} sourcesAr={options.sourcesAr} /></div>,
-  contentAr: <div className="space-y-6" dir="rtl">{options.bodyAr}<DirectoryLink specialty={options.specialty} specialtyAr={options.specialtyAr} /><Sources sources={options.sourcesAr || options.sources} /></div>,
+  contentFr: <div className="space-y-6">{options.bodyFr}<CabinetLink specialty={options.specialty} specialtyAr={options.specialtyAr} /><Sources sources={options.sources} sourcesAr={options.sourcesAr} /></div>,
+  contentAr: <div className="space-y-6" dir="rtl">{options.bodyAr}<CabinetLink specialty={options.specialty} specialtyAr={options.specialtyAr} /><Sources sources={options.sourcesAr || options.sources} /></div>,
   relatedArticles: [
     { slug: 'neuroplasticite-miracle-cerveau-kine', titleFr: 'Neuroplasticité et kiné', titleAr: 'المرونة العصبية والترويض', icon: <Brain size={20} /> },
     { slug: 'electrotherapie-neurologie-utile-ou-non', titleFr: 'Électrothérapie et neurologie', titleAr: 'العلاج الكهربائي والأعصاب', icon: <Activity size={20} /> },
