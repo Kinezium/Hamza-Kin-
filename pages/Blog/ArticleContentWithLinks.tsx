@@ -82,6 +82,8 @@ const processNode = (node: ReactNode, lang: Language, currentSlug: string, depth
     const { type, props } = node;
 
     if (typeof type === 'string') {
+      if (type === 'a') return node;
+
       // Élément HTML natif
       const processedChildren = React.Children.map(props.children, (child) =>
         processNode(child, lang, currentSlug, depth + 1)

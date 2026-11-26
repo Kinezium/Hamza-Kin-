@@ -29,26 +29,25 @@ interface ArticleData {
 }
 
 const normalizeArticleSeo = (lang: Language, title: string, description: string, keywords: string) => {
-  const titleSuffixFr = ' | Blog Kinesitherapie Casablanca Centre Chnider';
-  const titleSuffixAr = ' | مدونة الترويض الطبي بالدار البيضاء - مركز شنيدر';
-
-  const seoTitle = lang === 'fr'
-    ? (title.includes('Centre Chnider') ? title : `${title}${titleSuffixFr}`)
-    : (title.includes('مركز') ? title : `${title}${titleSuffixAr}`);
+  const titleSuffix = lang === 'fr' ? ' | Centre Chnider' : ' | مركز شنيدر';
+  const brandedTitle = title.includes(lang === 'fr' ? 'Centre Chnider' : 'مركز')
+    ? title
+    : `${title}${titleSuffix}`;
+  const seoTitle = brandedTitle.length <= 60
+    ? brandedTitle
+    : `${title.slice(0, 60 - titleSuffix.length - 2).trimEnd()}…${titleSuffix}`;
 
   const minLength = 145;
   const fallbackFr = ' Prise en charge au cabinet et a domicile a Casablanca avec conseils de prevention et programme de reeducation personnalise.';
   const fallbackAr = ' متابعة في العيادة والمنزل بالدار البيضاء مع نصائح وقائية وبرنامج تاهيل مخصص حسب الحالة.';
-  const seoDescription = description.length >= minLength
+  const expandedDescription = description.length >= minLength
     ? description
     : `${description}${lang === 'fr' ? fallbackFr : fallbackAr}`;
+  const seoDescription = expandedDescription.length <= 160
+    ? expandedDescription
+    : `${expandedDescription.slice(0, 157).replace(/\s+\S*$/, '')}…`;
 
-  const bilingualTail = lang === 'fr'
-    ? 'kinesitherapie casablanca, blog kine, الترويض الطبي, الدار البيضاء, AVC'
-    : 'الترويض الطبي, الدار البيضاء, kinésithérapie casablanca, blog kine, rééducation';
-  const seoKeywords = `${keywords}, ${bilingualTail}`;
-
-  return { seoTitle, seoDescription, seoKeywords };
+  return { seoTitle, seoDescription, seoKeywords: keywords };
 };
 
 const HOME_HEALTH_RELATED_ARTICLES = new Set([

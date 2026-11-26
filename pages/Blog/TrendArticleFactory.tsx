@@ -19,6 +19,7 @@ type TrendArticleOptions = {
   bodyAr: React.ReactNode;
   sources: Source[];
   sourcesAr?: Source[];
+  relatedArticles?: Array<{ slug: string; titleFr: string; titleAr: string; icon: React.ReactNode }>;
 };
 
 const CabinetLink = ({ specialty, specialtyAr }: Pick<TrendArticleOptions, 'specialty' | 'specialtyAr'>) => (
@@ -30,9 +31,9 @@ const CabinetLink = ({ specialty, specialtyAr }: Pick<TrendArticleOptions, 'spec
   </p>
 );
 
-const Sources = ({ sources, sourcesAr }: { sources: Source[]; sourcesAr?: Source[] }) => (
+const Sources = ({ sources, sourcesAr, lang }: { sources: Source[]; sourcesAr?: Source[]; lang: 'fr' | 'ar' }) => (
   <section className="border-t border-gray-200 pt-6">
-    <h2 className="text-2xl font-bold mb-3 flex items-center gap-2"><BookOpen size={22} /> Sources médicales</h2>
+    <h2 className="text-2xl font-bold mb-3 flex items-center gap-2"><BookOpen size={22} />{lang === 'fr' ? 'Sources médicales' : 'المصادر الطبية'}</h2>
     <ul className="list-disc pl-6 space-y-2">{sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer" className="text-medical-700 underline">{source.label}</a></li>)}</ul>
     {sourcesAr && <p className="mt-4 text-gray-600">المصادر نفسها متاحة باللغة الأصلية للرجوع إليها.</p>}
   </section>
@@ -44,9 +45,9 @@ export const createTrendArticle = (options: TrendArticleOptions) => createArticl
   imageAr: `https://picsum.photos/seed/${options.imageSeed}/1600/900`,
   readTimeFr: `${options.readTime} min de lecture`,
   readTimeAr: `${options.readTime} دقائق قراءة`,
-  contentFr: <div className="space-y-6">{options.bodyFr}<CabinetLink specialty={options.specialty} specialtyAr={options.specialtyAr} /><Sources sources={options.sources} sourcesAr={options.sourcesAr} /></div>,
-  contentAr: <div className="space-y-6" dir="rtl">{options.bodyAr}<CabinetLink specialty={options.specialty} specialtyAr={options.specialtyAr} /><Sources sources={options.sourcesAr || options.sources} /></div>,
-  relatedArticles: [
+  contentFr: <div className="space-y-6">{options.bodyFr}<CabinetLink specialty={options.specialty} specialtyAr={options.specialtyAr} /><Sources sources={options.sources} sourcesAr={options.sourcesAr} lang="fr" /></div>,
+  contentAr: <div className="space-y-6" dir="rtl">{options.bodyAr}<CabinetLink specialty={options.specialty} specialtyAr={options.specialtyAr} /><Sources sources={options.sourcesAr || options.sources} lang="ar" /></div>,
+  relatedArticles: options.relatedArticles || [
     { slug: 'neuroplasticite-miracle-cerveau-kine', titleFr: 'Neuroplasticité et kiné', titleAr: 'المرونة العصبية والترويض', icon: <Brain size={20} /> },
     { slug: 'electrotherapie-neurologie-utile-ou-non', titleFr: 'Électrothérapie et neurologie', titleAr: 'العلاج الكهربائي والأعصاب', icon: <Activity size={20} /> },
     { slug: 'kinesitherapie-maroc-portrait', titleFr: 'La kinésithérapie au Maroc', titleAr: 'الترويض الطبي في المغرب', icon: <Stethoscope size={20} /> }

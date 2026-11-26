@@ -68,6 +68,9 @@ const BASE_ROUTES = [
     'blog/prevention-chutes-seniors-kinesitherapie-maroc',
     'blog/parcours-academique-kinesitherapeute-public-maroc',
     'blog/parcours-academique-kinesitherapeute-prive-maroc',
+    'blog/padel-blessures-prevention-casablanca',
+    'blog/diabete-activite-physique-pieds-maroc',
+    'blog/avc-orthophonie-soins-domicile-casablanca',
   'gallerie',
   'ar',
   'ar/pathologies',
@@ -138,6 +141,9 @@ const BASE_ROUTES = [
     'ar/blog/prevention-chutes-seniors-kinesitherapie-maroc',
     'ar/blog/parcours-academique-kinesitherapeute-public-maroc',
     'ar/blog/parcours-academique-kinesitherapeute-prive-maroc',
+    'ar/blog/padel-blessures-prevention-casablanca',
+    'ar/blog/diabete-activite-physique-pieds-maroc',
+    'ar/blog/avc-orthophonie-soins-domicile-casablanca',
   'ar/gallerie'
 ];
 

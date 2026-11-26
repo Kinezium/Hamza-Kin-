@@ -17,7 +17,13 @@ const routeTitle = (route) => {
     'a-domicile': 'Kiné à domicile à Casablanca | Centre Chnider',
     'a-domicile-geriatrie-casablanca': 'Kiné gériatrique à domicile à Casablanca | Centre Chnider',
     'ar/a-domicile': 'الترويض الطبي في المنزل بالدار البيضاء | مركز شنيدر',
-    'ar/a-domicile-geriatrie-casablanca': 'الترويض المنزلي للمسنين بالدار البيضاء | مركز شنيدر'
+    'ar/a-domicile-geriatrie-casablanca': 'الترويض المنزلي للمسنين بالدار البيضاء | مركز شنيدر',
+    'blog/padel-blessures-prevention-casablanca': 'Padel à Casablanca : prévenir les blessures | Centre Chnider',
+    'blog/diabete-activite-physique-pieds-maroc': 'Diabète et activité physique au Maroc | Centre Chnider',
+    'blog/avc-orthophonie-soins-domicile-casablanca': 'Après un AVC : orthophonie et soins à domicile | Centre Chnider',
+    'ar/blog/padel-blessures-prevention-casablanca': 'البادل في الدار البيضاء: الوقاية من الإصابات | مركز شنيدر',
+    'ar/blog/diabete-activite-physique-pieds-maroc': 'السكري والنشاط البدني في المغرب | مركز شنيدر',
+    'ar/blog/avc-orthophonie-soins-domicile-casablanca': 'بعد السكتة: تقويم النطق والرعاية المنزلية | مركز شنيدر'
   };
   if (knownTitles[route]) return knownTitles[route];
   if (cleanRoute === 'blog') return isArabic ? 'مدونة الترويض الطبي | مركز شنيدر' : 'Blog kinésithérapie | Centre Chnider';
@@ -36,7 +42,13 @@ const routeDescription = (route) => {
     'a-domicile': 'Kinésithérapie à domicile à Casablanca : rééducation fonctionnelle, suivi personnalisé et informations sur les zones d’intervention du Centre Chnider.',
     'a-domicile-geriatrie-casablanca': 'Rééducation gériatrique à domicile à Casablanca : mobilité, équilibre, prévention des chutes et accompagnement de l’autonomie par le Centre Chnider.',
     'ar/a-domicile': 'خدمات الترويض الطبي وإعادة التأهيل في المنزل بالدار البيضاء من مركز شنيدر، مع متابعة مناسبة للحالة ومعلومات عن مناطق التدخل.',
-    'ar/a-domicile-geriatrie-casablanca': 'إعادة تأهيل كبار السن في المنزل بالدار البيضاء: الحركة والتوازن والوقاية من السقوط والحفاظ على الاستقلالية مع مركز شنيدر.'
+    'ar/a-domicile-geriatrie-casablanca': 'إعادة تأهيل كبار السن في المنزل بالدار البيضاء: الحركة والتوازن والوقاية من السقوط والحفاظ على الاستقلالية مع مركز شنيدر.',
+    'blog/padel-blessures-prevention-casablanca': 'Padel à Casablanca : conseils de prévention, échauffement, douleurs du coude et de la cheville et reprise progressive après une blessure.',
+    'blog/diabete-activite-physique-pieds-maroc': 'Diabète et activité physique au Maroc : reprendre la marche progressivement, protéger ses pieds et demander un avis médical adapté.',
+    'blog/avc-orthophonie-soins-domicile-casablanca': 'Après un AVC à Casablanca, découvrez le rôle de l’orthophoniste, du kinésithérapeute et des professionnels de santé à domicile.',
+    'ar/blog/padel-blessures-prevention-casablanca': 'نصائح للوقاية من إصابات البادل في الدار البيضاء: الإحماء وآلام المرفق والكاحل والعودة التدريجية بعد الإصابة.',
+    'ar/blog/diabete-activite-physique-pieds-maroc': 'السكري والنشاط البدني في المغرب: استئناف المشي تدريجياً وحماية القدمين وطلب الرأي الطبي المناسب.',
+    'ar/blog/avc-orthophonie-soins-domicile-casablanca': 'بعد السكتة في الدار البيضاء، تعرفوا على دور أخصائي النطق والترويض ومهنيي الرعاية الصحية المنزلية.'
   };
   if (descriptions[route]) return descriptions[route];
 

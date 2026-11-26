@@ -10,6 +10,18 @@ export interface ArticleLink {
 
 export const ARTICLE_LINKS: ArticleLink[] = [
   {
+    slug: 'padel-blessures-prevention-casablanca', titleFr: 'Prévenir les blessures au padel à Casablanca', titleAr: 'الوقاية من إصابات البادل في الدار البيضاء',
+    keywordsFr: ['blessure au padel', 'padel à Casablanca', 'douleur au coude au padel'], keywordsAr: ['إصابات البادل', 'البادل في الدار البيضاء', 'ألم المرفق في البادل']
+  },
+  {
+    slug: 'diabete-activite-physique-pieds-maroc', titleFr: 'Diabète et activité physique au Maroc', titleAr: 'السكري والنشاط البدني في المغرب',
+    keywordsFr: ['activité physique et diabète', 'marcher avec un diabète', 'pied diabétique'], keywordsAr: ['النشاط البدني والسكري', 'المشي مع السكري', 'القدم السكري']
+  },
+  {
+    slug: 'avc-orthophonie-soins-domicile-casablanca', titleFr: 'Orthophonie et soins après un AVC à domicile', titleAr: 'تقويم النطق والرعاية بعد السكتة في المنزل',
+    keywordsFr: ['orthophonie après un AVC', 'troubles de la déglutition après un AVC', 'soins à domicile après un AVC'], keywordsAr: ['تقويم النطق بعد السكتة', 'صعوبة البلع بعد السكتة', 'الرعاية المنزلية بعد السكتة']
+  },
+  {
     slug: 'intelligence-artificielle-reeducation-kinesitherapie', titleFr: 'IA et kinésithérapie', titleAr: 'الذكاء الاصطناعي والترويض الطبي',
     keywordsFr: ['intelligence artificielle', 'IA en rééducation', 'santé numérique'], keywordsAr: ['الذكاء الاصطناعي', 'الصحة الرقمية', 'التأهيل الرقمي']
   },

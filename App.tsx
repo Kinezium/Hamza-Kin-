@@ -78,6 +78,9 @@ import ParkinsonExerciceArticle from './pages/Blog/ParkinsonExerciceArticle';
 import PreventionChutesSeniorsArticle from './pages/Blog/PreventionChutesSeniorsArticle';
 import KineParcoursPublicMarocArticle from './pages/Blog/KineParcoursPublicMarocArticle';
 import KineParcoursPriveMarocArticle from './pages/Blog/KineParcoursPriveMarocArticle';
+import PadelCasablancaArticle from './pages/Blog/PadelCasablancaArticle';
+import DiabeteActiviteArticle from './pages/Blog/DiabeteActiviteArticle';
+import AVCOrthophonieDomicileArticle from './pages/Blog/AVCOrthophonieDomicileArticle';
 
 // Detect user language from browser/search query
 const detectLanguage = (): Language => {
@@ -220,6 +223,9 @@ const App: React.FC = () => {
                           <Route path="/blog/prevention-chutes-seniors-kinesitherapie-maroc" element={<PreventionChutesSeniorsArticle lang={lang} />} />
                           <Route path="/blog/parcours-academique-kinesitherapeute-public-maroc" element={<KineParcoursPublicMarocArticle lang={lang} />} />
                           <Route path="/blog/parcours-academique-kinesitherapeute-prive-maroc" element={<KineParcoursPriveMarocArticle lang={lang} />} />
+                          <Route path="/blog/padel-blessures-prevention-casablanca" element={<PadelCasablancaArticle lang={lang} />} />
+                          <Route path="/blog/diabete-activite-physique-pieds-maroc" element={<DiabeteActiviteArticle lang={lang} />} />
+                          <Route path="/blog/avc-orthophonie-soins-domicile-casablanca" element={<AVCOrthophonieDomicileArticle lang={lang} />} />
             <Route path="/gallerie" element={<Gallery lang={lang} />} />
 
             {/* Legacy French slugs redirects */}
@@ -297,6 +303,9 @@ const App: React.FC = () => {
                             <Route path="/ar/blog/prevention-chutes-seniors-kinesitherapie-maroc" element={<PreventionChutesSeniorsArticle lang="ar" />} />
                             <Route path="/ar/blog/parcours-academique-kinesitherapeute-public-maroc" element={<KineParcoursPublicMarocArticle lang="ar" />} />
                             <Route path="/ar/blog/parcours-academique-kinesitherapeute-prive-maroc" element={<KineParcoursPriveMarocArticle lang="ar" />} />
+                            <Route path="/ar/blog/padel-blessures-prevention-casablanca" element={<PadelCasablancaArticle lang="ar" />} />
+                            <Route path="/ar/blog/diabete-activite-physique-pieds-maroc" element={<DiabeteActiviteArticle lang="ar" />} />
+                            <Route path="/ar/blog/avc-orthophonie-soins-domicile-casablanca" element={<AVCOrthophonieDomicileArticle lang="ar" />} />
               <Route path="/ar/blog/spasticite-definition-traitement-indications" element={<SpasticiteArticle lang="ar" />} />
             <Route path="/ar/gallerie" element={<Gallery lang="ar" />} />
 
