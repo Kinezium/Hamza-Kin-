@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Language } from '../types';
-import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
+import { CASABLANCA_NEIGHBORHOODS_AR, CASABLANCA_NEIGHBORHOODS_FR, CONTENT, HOME_HEALTH_SERVICES_URL, LOGO_SYMBOL_WHITE_URL, SERVICE_ZONES_AR, SERVICE_ZONES_FR } from '../constants';
 import SEOHead from '../components/SEOHead';
 import { Check, Home, Phone } from 'lucide-react';
 import { getManagedSeo, makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
@@ -74,6 +74,14 @@ const HomeTherapy: React.FC<HomeTherapyProps> = ({ lang }) => {
               className="inline-flex items-center gap-2 bg-medical-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-medical-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
                <Phone size={24} /> {t.cta}
+            </a>
+            <a
+              href={HOME_HEALTH_SERVICES_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center justify-center rounded-full border border-medical-600 px-6 py-3 font-semibold text-medical-700 transition hover:bg-medical-50"
+            >
+              {lang === 'fr' ? 'Découvrir les Services de Santé à Domicile' : 'اكتشفوا خدمات الرعاية الصحية المنزلية'}
             </a>
          </div>
       </div>

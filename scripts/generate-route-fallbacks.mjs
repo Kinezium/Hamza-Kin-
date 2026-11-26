@@ -9,9 +9,17 @@ const routes = getAllStaticRoutes();
 let indexHtml;
 
 const routeTitle = (route) => {
-  if (!route || route === 'ar') return 'Centre Chnider | Kinésithérapie à Casablanca';
+  if (!route) return 'Centre Chnider | Kinésithérapie à Casablanca';
+  if (route === 'ar') return 'الترويض الطبي بالدار البيضاء | مركز شنيدر';
   const isArabic = route.startsWith('ar/');
   const cleanRoute = isArabic ? route.slice(3) : route;
+  const knownTitles = {
+    'a-domicile': 'Kiné à domicile à Casablanca | Centre Chnider',
+    'a-domicile-geriatrie-casablanca': 'Kiné gériatrique à domicile à Casablanca | Centre Chnider',
+    'ar/a-domicile': 'الترويض الطبي في المنزل بالدار البيضاء | مركز شنيدر',
+    'ar/a-domicile-geriatrie-casablanca': 'الترويض المنزلي للمسنين بالدار البيضاء | مركز شنيدر'
+  };
+  if (knownTitles[route]) return knownTitles[route];
   if (cleanRoute === 'blog') return isArabic ? 'مدونة الترويض الطبي | مركز شنيدر' : 'Blog kinésithérapie | Centre Chnider';
   const label = cleanRoute
     .split('/')
@@ -24,18 +32,35 @@ const routeTitle = (route) => {
 };
 
 const routeDescription = (route) => {
-  if (route.startsWith('ar/')) {
-    return 'معلومات صحية وترويض طبي مبسطة من مركز شنيدر بالدار البيضاء، مع خدمات داخل العيادة والمنزل ومقالات موثوقة.';
+  const descriptions = {
+    'a-domicile': 'Kinésithérapie à domicile à Casablanca : rééducation fonctionnelle, suivi personnalisé et informations sur les zones d’intervention du Centre Chnider.',
+    'a-domicile-geriatrie-casablanca': 'Rééducation gériatrique à domicile à Casablanca : mobilité, équilibre, prévention des chutes et accompagnement de l’autonomie par le Centre Chnider.',
+    'ar/a-domicile': 'خدمات الترويض الطبي وإعادة التأهيل في المنزل بالدار البيضاء من مركز شنيدر، مع متابعة مناسبة للحالة ومعلومات عن مناطق التدخل.',
+    'ar/a-domicile-geriatrie-casablanca': 'إعادة تأهيل كبار السن في المنزل بالدار البيضاء: الحركة والتوازن والوقاية من السقوط والحفاظ على الاستقلالية مع مركز شنيدر.'
+  };
+  if (descriptions[route]) return descriptions[route];
+
+  const isArabic = route === 'ar' || route.startsWith('ar/');
+  if (isArabic) {
+    const label = routeTitle(route).replace(' | مركز شنيدر', '');
+    return `${label}: معلومات صحية مبسطة وإرشادات حول الترويض الطبي وإعادة التأهيل من مركز شنيدر بالدار البيضاء.`;
   }
-  return 'Centre Chnider à Casablanca : kinésithérapie au cabinet et à domicile, rééducation fonctionnelle et conseils santé fiables.';
+  const label = routeTitle(route).replace(' | Centre Chnider', '');
+  return `${label} : informations pratiques et conseils de rééducation proposés par le Centre Chnider, cabinet de kinésithérapie à Casablanca.`;
 };
 
 const buildRouteFallback = (html, route) => {
   const canonical = `https://kinesitherapie.clinaxis.ma/${route}`;
+  const title = routeTitle(route);
+  const description = routeDescription(route);
   return html
-    .replace(/<html lang="[^"]*">/, `<html lang="${route.startsWith('ar/') ? 'ar' : 'fr'}">`)
-    .replace(/<title>[^<]*<\/title>/, `<title>${routeTitle(route)}</title>`)
-    .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${routeDescription(route)}" />`)
+    .replace(/<html lang="[^"]*">/, `<html lang="${route === 'ar' || route.startsWith('ar/') ? 'ar' : 'fr'}">`)
+    .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
+    .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${description}" />`)
+    .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${title}" />`)
+    .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${description}" />`)
+    .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${title}" />`)
+    .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${description}" />`)
     .replace('</head>', `    <link rel="canonical" href="${canonical}" />\n  </head>`);
 };
 

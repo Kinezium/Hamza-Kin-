@@ -162,7 +162,7 @@ const Layout: React.FC<LayoutProps> = ({ children, lang, setLang }) => {
                  <img src={LOGO_COLORED_URL} alt="Logo Centre Chnider" className="w-10 h-10 object-contain" loading="lazy" />
                )}
                <div className="leading-tight">
-                 <h1 className="text-xl font-bold text-gray-900 tracking-tight">{lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}</h1>
+                 <span className="text-xl font-bold text-gray-900 tracking-tight">{lang === 'ar' ? 'مركز اشنيدر' : 'Centre Chnider'}</span>
                  <p className="text-xs text-medical-600 font-medium">{lang === 'ar' ? 'الترويض الطبي و الحجامة الطبية' : 'Kinésithérapie & Hijama Médicale'}</p>
                </div>
             </Link>

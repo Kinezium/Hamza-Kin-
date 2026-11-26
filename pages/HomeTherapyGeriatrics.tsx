@@ -4,6 +4,7 @@ import { AlertTriangle, ArrowRight, CheckCircle2, HeartHandshake, ShieldCheck, S
 import { Language } from '../types';
 import SEOHead from '../components/SEOHead';
 import { getManagedSeo, makeWhatsAppLink, useAdminConfig } from '../src/adminConfig';
+import { HOME_HEALTH_SERVICES_URL } from '../constants';
 
 interface HomeTherapyGeriatricsProps {
   lang: Language;
@@ -125,6 +126,14 @@ const HomeTherapyGeriatrics: React.FC<HomeTherapyGeriatricsProps> = ({ lang }) =
               <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm backdrop-blur-md">{ctaFast}</span>
               <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm backdrop-blur-md">{ctaNow}</span>
             </div>
+            <a
+              href={HOME_HEALTH_SERVICES_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center rounded-full border border-white/50 bg-white/10 px-5 py-3 font-semibold text-white transition hover:bg-white/20"
+            >
+              {lang === 'fr' ? 'Découvrir les Services de Santé à Domicile' : 'اكتشفوا خدمات الرعاية الصحية المنزلية'}
+            </a>
           </div>
         </div>
       </section>

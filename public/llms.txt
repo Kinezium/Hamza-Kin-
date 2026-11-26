@@ -23,6 +23,7 @@ Le Centre Chnider accueille les patients au cabinet a Sbata et propose aussi des
 - Pathologies traitees: https://kinesitherapie.clinaxis.ma/pathologies
 - Soins a domicile: https://kinesitherapie.clinaxis.ma/a-domicile
 - Geriatrie a domicile: https://kinesitherapie.clinaxis.ma/a-domicile-geriatrie-casablanca
+- Services de sante a domicile (kinesitherapie, orthophonie, psychomotricite, soins infirmiers, medecin et garde-malade): https://ssd.clinaxis.ma/
 - Blog sante: https://kinesitherapie.clinaxis.ma/blog
 - Contact et rendez-vous: https://kinesitherapie.clinaxis.ma/contact
 - Convention: https://kinesitherapie.clinaxis.ma/convention

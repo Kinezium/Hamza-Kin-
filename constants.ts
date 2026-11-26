@@ -2,6 +2,7 @@ import { ContentData } from './types';
 
 export const PHONE_NUMBER = "0665646754";
 export const WHATSAPP_NUMBER = "212665646754"; // Format for API
+export const HOME_HEALTH_SERVICES_URL = "https://ssd.clinaxis.ma";
 export const getWhatsAppBookingLink = (lang: 'fr' | 'ar', source?: string): string => {
   const baseMessage = lang === 'fr'
     ? 'Bonjour Centre Chnider, je souhaite reserver un rendez-vous.'

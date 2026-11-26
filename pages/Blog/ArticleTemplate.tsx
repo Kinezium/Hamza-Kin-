@@ -4,7 +4,7 @@ import { Language } from '../../types';
 import SEOHead from '../../components/SEOHead';
 import { ArrowLeft, Clock, User } from 'lucide-react';
 import { BLOG_TOPIC_IMAGES } from './blogImages';
-import { getWhatsAppBookingLink } from '../../constants';
+import { getWhatsAppBookingLink, HOME_HEALTH_SERVICES_URL } from '../../constants';
 import { ArticleContentWithLinks } from './ArticleContentWithLinks';
 
 interface ArticleProps {
@@ -50,6 +50,21 @@ const normalizeArticleSeo = (lang: Language, title: string, description: string,
 
   return { seoTitle, seoDescription, seoKeywords };
 };
+
+const HOME_HEALTH_RELATED_ARTICLES = new Set([
+  'avc-signes-alerte-reeducation-precoce',
+  'activite-physique-adaptee-seniors',
+  'kine-pediatrique',
+  'parkinson-exercice-reeducation-neurologique',
+  'parkinson-prothese-hanche-pth',
+  'parents-paralysie-cerebrale-imc-education',
+  'prevention-chutes-seniors-kinesitherapie-maroc',
+  'readaptation-post-avc',
+  'reeducation-geriatrique-importance-kine',
+  'sclerose-en-plaque-kinesitherapie',
+  'spasticite-definition-traitement-indications',
+  'urgence-kine-parents-seniors'
+]);
 
 export const createArticle = (data: ArticleData) => {
   const Article: React.FC<ArticleProps> = ({ lang }) => {
@@ -151,6 +166,27 @@ export const createArticle = (data: ArticleData) => {
                   {content}
                 </ArticleContentWithLinks>
               </div>
+
+              {HOME_HEALTH_RELATED_ARTICLES.has(data.slug) && (
+                <aside className="mt-10 rounded-xl border border-teal-200 bg-teal-50 p-6">
+                  <h2 className="text-xl font-bold text-teal-950">
+                    {lang === 'fr' ? 'Un accompagnement de santé à domicile' : 'مواكبة صحية متعددة التخصصات في المنزل'}
+                  </h2>
+                  <p className="mt-2 text-teal-900">
+                    {lang === 'fr'
+                      ? 'Pour compléter le parcours de soins, découvrez les services à domicile : orthophonie, psychomotricité, soins infirmiers, médecin et garde-malade.'
+                      : 'لاستكمال مسار الرعاية، اكتشفوا خدمات المنزل: تقويم النطق، العلاج النفسي الحركي، التمريض، الطبيب ومرافق المريض.'}
+                  </p>
+                  <a
+                    href={HOME_HEALTH_SERVICES_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex rounded-lg bg-teal-700 px-5 py-3 font-semibold text-white transition hover:bg-teal-800"
+                  >
+                    {lang === 'fr' ? 'Voir les Services de Santé à Domicile' : 'اكتشفوا خدمات الرعاية الصحية المنزلية'}
+                  </a>
+                </aside>
+              )}
 
               {/* Signature universelle */}
               <div className="mt-12 p-6 bg-gradient-to-r from-slate-50 to-blue-50 border border-slate-200 rounded-xl">
